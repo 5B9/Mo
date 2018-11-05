@@ -96,7 +96,6 @@
                 $('select').formSelect();
             });
         </script>
->>>>>>> origin/master
 
 
     </body>
