@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/**
 package br.edu.ifpr.irati.util;
 
 import br.edu.ifpr.irati.controle.ControleAgendamento;
@@ -26,6 +27,7 @@ import java.util.logging.Logger;
  *
  * @author Altai
  */
+/**
 public class Testes {
 
     public static void main(String[] args) {
@@ -83,3 +85,4 @@ public class Testes {
     }
 
 }
+*/

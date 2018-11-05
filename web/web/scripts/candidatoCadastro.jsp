@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCurriculo"%>
 <%@page import="java.util.Date"%>

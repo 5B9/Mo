@@ -31,10 +31,8 @@
                 
             } else {
                 faseTecnica = false;
-                               
-            }
+            }             
 
-          
             int idFuncionario = Integer.parseInt(request.getParameter("funcionario"));
             ControleFuncionario cf = new ControleFuncionario();
             Funcionario funcionario = cf.consultarFuncionarioPorId(idFuncionario);

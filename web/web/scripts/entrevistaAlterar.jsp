@@ -19,6 +19,7 @@
     </head>
     <body>
         <%
+
                 String fasePsicologica= request.getParameter("fasePsicologica");
                 boolean faseTecnica;
 
@@ -49,9 +50,7 @@
                 
            
             }
-
-          
-
+            
                 Entrevista e = new Entrevista(idEntrevista, funcionario, cargo, fasePsicologica, faseTecnica, candidato);
                 ControleEntrevista controleEntrevista = new ControleEntrevista();
                 controleEntrevista.alterarEntrevista(e);
