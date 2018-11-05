@@ -37,7 +37,8 @@
                         <th>Nome Cargo</th>
                         <th>Quantidade Vagas</th>
                         <th>Descrição</th>
-                        
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
 

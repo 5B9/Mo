@@ -39,8 +39,8 @@
                     <tr>
                         <th>Nome Completo</th>
                         <th>Tipo</th>
-                        
-                        
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
 
