@@ -34,6 +34,10 @@
             }
         </style>
     </head>
+    
+    <header>
+        <jsp:include page="cabecalho.jsp" flush="true" />
+    </header>
 
     <body>
         <%String e = request.getParameter("e");
@@ -44,20 +48,17 @@
         <div class="section"></div>
         <main>
             <center>
-                <img class="responsive-img" style="width: 70px; height: 70px" src="imagens/acome.jpg"/> <!-- https://i.imgur.com/ax0NCsK.gif --> 
+                <img class="responsive-img" style="width: 60px; height: 60px; padding-top: 5px;" src="imagens/acome.jpg"/>    
                 <div class="section"></div>
 
                 <p><%=mensagem%></p>
                 <div class="section"></div>
 
                 <div class="container">
-                    <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+                    <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 40px 0px 38px; border: 1px solid #EEE;">
 
                         <form class="col s12" action="scripts/login.jsp" method="post">
-                            <div class='row'>
-                                <div class='col s12'>
-                                </div>
-                            </div>
+                        
 
                             <div class='row'>
                                 <div class='input-field col s12'>
