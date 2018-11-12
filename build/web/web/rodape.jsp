@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<footer class="page-footer  indigo darken-3">
+<footer class="page-footer">
     <div class="container">
         <div class="row">
            
@@ -16,7 +16,7 @@
             
         </div>
     </div>
-    <div class="footer-copyright  indigo darken-4">
+    <div class="footer-copyright">
         <div class="container">
             ©   Acome Brasil Ltda.
             <a class="grey-text text-lighten-4 right" href="#!"></a>
@@ -34,4 +34,10 @@
     main {
         flex: 1 0 auto;
     }
+    .page-footer /*Classe que terá suas propriedades de estilo modificadas*/{
+        background-color /*Propriedade que será alterada*/
+        : #003366;/*Cor desejada*/
+    }/*Encerrando as modificações de estilo dos elementos com essa classe*/
+    
+    
 </style>

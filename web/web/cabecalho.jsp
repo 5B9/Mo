@@ -9,7 +9,7 @@
 <%@page import="br.edu.ifpr.irati.controle.ControlePaginas"%> 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <nav>
-    <div class="nav-wrapper indigo darken-4">
+    <div class="nav-wrapper">
         <a href="index.jsp" class="brand-logo">Currículos</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons left left">menu</i></a>
         <ul class="right hide-on-med-and-down">
@@ -63,7 +63,13 @@
         </ul>
     </div>
 </nav>
+<style>
 
+    .nav-wrapper /*Classe que terá suas propriedades de estilo modificadas*/{
+        background-color /*Propriedade que será alterada*/
+        : #004080;/*Cor desejada*/
+    }/*Encerrando as modificações de estilo dos elementos com essa classe*/
+</style>
 <script type="text/javascript">
     /*
      document.addEventListener('DOMContentLoaded', function () {
