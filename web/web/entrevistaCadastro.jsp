@@ -151,7 +151,7 @@
 
 
                                       
-                                            <button  class="waves-effect waves-light btn blue darken-3" type="submit" name="salvar"><span>Cadastrar</span></button>
+                                            <button  class="waves-effect waves-light btn  indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
                     
                                             
                             </div>

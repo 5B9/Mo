@@ -127,7 +127,8 @@
                                         </div>
 
 
-                                        <input type="submit" name="salvar" value="Cadastrar" class="waves-effect waves-indigo btn"/>
+                                    <!--    <input type="submit" name="salvar" value="Cadastrar" class="waves-effect waves-ligth  btn indigo"/> -->
+                                       <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
                                     </form>
                                 </div>
                             </div>

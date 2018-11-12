@@ -116,7 +116,7 @@
                     </div>
                             
                    
-                            <input type="submit" name="salvar" value="Alterar!" class="waves-effect waves-indigo darken-3 btn-flat"/>
+                            <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Alterar</span></button>
              </form>    
             </div>
            

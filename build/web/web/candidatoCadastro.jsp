@@ -36,8 +36,8 @@
             %> <p> Acesso Negado </p>
             <p> Clique <a href="login.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
-         
-                <div class="container" style=" width:50%;">
+            <br>
+                <div class="container" style=" width:50%; ">
                     <div class="col s12 m6">
                         <div class="card blue-grey lighten-5">
                             <div class="card-content black-text ">

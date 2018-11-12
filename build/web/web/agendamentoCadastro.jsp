@@ -19,20 +19,21 @@
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
         <main>
-            
+
             <%
-            session = request.getSession();
-            Usuario u = (Usuario) session.getAttribute("usuario");
-            boolean logado = false;
-            if (u != null) {
-                logado = true;
-            }
-        %>
-        <%
-                                    if (!logado || u.getTipoUsuario().equals("candidato")) {
-                                %> <p> Acesso Negado </p>
-                                <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
-                                <%} else { %>
+                session = request.getSession();
+                Usuario u = (Usuario) session.getAttribute("usuario");
+                boolean logado = false;
+                if (u != null) {
+                    logado = true;
+                }
+            %>
+            <%
+                if (!logado || u.getTipoUsuario().equals("candidato")) {
+            %> <p> Acesso Negado </p>
+            <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
+            <%} else { %>
+            <br><br>
             <div class="container" style="width: 30%;">
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
@@ -48,18 +49,18 @@
 
                                     <div class="row">
                                         <div class="input-field col s12">
-                                  <input placeholder="12/12/2012" id="first_name" type="date" name="dataSessao" class="validate">
-                                            
+                                            <input placeholder="12/12/2012" id="first_name" type="text" date-format="DD/MM/YYYY" name="dataSessao" class="validate">
+
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input placeholder="10:30:15" id="first_name" type="time" name="hora" class="validate">
+                                            <input placeholder="10:30:15" id="first_name" type="text" name="hora" class="validate">
                                             <label for="Horario de Início">Horario de Início</label>
                                         </div>
                                     </div>
                                     <center>
-                                     <button  class="waves-effect waves-light btn blue darken-3" type="submit" name="salvar"><span>Cadastrar</span></button>
+                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
                                     </center>
                                 </form>
                             </div>
@@ -67,10 +68,10 @@
                     </div>
                 </div>
             </div>
-            <% } %>
+            <% }%>
 
         </main>
-
+            <br>
         <footer>
             <jsp:include page="rodape.jsp" flush="true" />
         </footer>    
@@ -84,7 +85,7 @@
             $(document).ready(
                     function () {
                         $('.datepicker').datepicker();
-                       
+
                     }
             );
 

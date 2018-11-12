@@ -24,7 +24,7 @@
            
 
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            SimpleDateFormat stf = new SimpleDateFormat("HH:mm:ss");
+            SimpleDateFormat stf = new SimpleDateFormat("HH:mm");
 
             String local = request.getParameter("local");
             String data = request.getParameter("dataSessao");

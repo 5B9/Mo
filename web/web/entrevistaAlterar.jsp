@@ -41,111 +41,110 @@
                 ControleEntrevista e = new ControleEntrevista();
                 Entrevista ei = e.consultarEntrevistaPorId(idEntevista);
             %>
-<<<<<<< HEAD
+
             <center>
-            <div class="container" style="width: 50%;">
-                <form class="col s12" action="scripts/entrevistaAlterar.jsp" method="post">
+                <div class="container" style="width: 50%;">
+                    <form class="col s12" action="scripts/entrevistaAlterar.jsp" method="post">
 
-                       <div class="card grey lighten-5">
+                        <div class="card grey lighten-5">
                             <div class="card-content white-text ">
-                    
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input placeholder="" id="first_name" type="hidden" name="idEntrevista" value="<%= idEntevista%>"class="validate"/>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <div class="input-field col s12">
-                                <select name="funcionario">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="" id="first_name" type="hidden" name="idEntrevista" value="<%= idEntevista%>"class="validate"/>
+                                    </div>
+                                </div>
 
-                                    <%
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <div class="input-field col s12">
+                                            <select name="funcionario">
 
-                                        Funcionario f = ei.getFuncionarioMinistrante();%>
-                                    <option value="<%=f.getIdPessoa()%>"><%=f.getNomeCompleto()%></option>
+                                                <%
 
-                                </select>
-                                <label>Funcionario</label>
+                                                    Funcionario f = ei.getFuncionarioMinistrante();%>
+                                                <option value="<%=f.getIdPessoa()%>"><%=f.getNomeCompleto()%></option>
+
+                                            </select>
+                                            <label>Funcionario</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <div class="input-field col s12">
+                                            <select name="cargo">
+
+                                                <%
+                                                    ControleCargo controleCargo = new ControleCargo();
+                                                    for (Cargo c : controleCargo.consultarTodosCargos()) {%>
+                                                <option value="<%=c.getIdCargo()%>"><%=c.getNomeCargo()%></option>
+                                                <%}%>
+                                            </select>
+                                            <label>Cargo</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Uma Combo Box contendo os benditos Candidatos-->
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <div class="input-field col s12">
+                                            <select name="candidato">
+
+                                                <%
+                                                    Candidato c = ei.getCandidato();
+                                                %>
+                                                <option value="<%=c.getIdPessoa()%>"><%=c.getNomeCompleto()%></option>
+
+                                            </select>
+                                            <label>Candidato</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <div class="input-field col s12">
+                                            <select name="faseTeorica">
+
+
+                                                <option value="aprovado" >Aprovado</option>
+
+                                                <option value="reprovado" >Reprovado</option>
+
+                                            </select>
+                                            <label>Andamento na Entrevista Prática</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <div class="input-field col s12">
+                                            <select name="fasePsicologica">
+
+
+                                                <option value="aprovado">Aprovado</option>
+
+                                                <option value="reprovado">Reprovado</option>
+
+
+                                            </select>
+                                            <label>Andamento na Entrevista Psicológica</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button  class="waves-effect waves-light btn indigo " type="submit" name="salvar"><span>Alterar</span></button>
+                                </form>
                             </div>
+                            <% }%>
                         </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <div class="input-field col s12">
-                                <select name="cargo">
-
-                                    <%
-                                        ControleCargo controleCargo = new ControleCargo();
-                                        for (Cargo c : controleCargo.consultarTodosCargos()) {%>
-                                    <option value="<%=c.getIdCargo()%>"><%=c.getNomeCargo()%></option>
-                                    <%}%>
-                                </select>
-                                <label>Cargo</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Uma Combo Box contendo os benditos Candidatos-->
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <div class="input-field col s12">
-                                <select name="candidato">
-
-                                    <%
-                                        Candidato c = ei.getCandidato();
-                                    %>
-                                    <option value="<%=c.getIdPessoa()%>"><%=c.getNomeCompleto()%></option>
-
-                                </select>
-                                <label>Candidato</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <div class="input-field col s12">
-                                <select name="faseTeorica">
-
-
-                                    <option value="aprovado" >Aprovado</option>
-
-                                    <option value="reprovado" >Reprovado</option>
-
-                                </select>
-                                <label>Andamento na Entrevista Prática</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <div class="input-field col s12">
-                                <select name="fasePsicologica">
-
-
-                                    <option value="aprovado">Aprovado</option>
-
-                                    <option value="reprovado">Reprovado</option>
-
-
-                                </select>
-                                <label>Andamento na Entrevista Psicológica</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <input type="submit" name="salvar" value="Alterar!" class="waves-effect waves-indigo  btn-flat"/>
-
-                </form>
-            </div>
-            <% }%>
-                       </div>
-            </div>
-        </center>
+                </div>
+            </center>
         </main>
 
         <footer>
