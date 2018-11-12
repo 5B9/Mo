@@ -29,18 +29,24 @@
       
         
         <main>
+              
         <%
                 if(!logado || u.getTipoUsuario().equals("candidato")){
                    %> <p> Acesso Negado </p>
                     <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
              <%} else{ %>
+             <br><br><br>
+             <div class="container" >
+                <div class="col s12 m6">
+                    <div class="card grey lighten-5">
+                        <div class="card-content black-text ">
             <table class="highlight">
                 <thead>
                     <tr>
                         <th>Nome Completo</th>
                         <th>Tipo</th>
-                        
-                        
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -54,9 +60,11 @@
                         <%----%><td><%=f.getTipoFuncionario()%></td>
 
                         <td>
-                            <a href="funcionarioAlterar.jsp?idFuncionario=<%=f.getIdPessoa()%>" class="waves-effect waves-indigo btn-flat "><i class="material-icons right">refresh</i>Alterar</a>
+                          <!--  <a href="funcionarioAlterar.jsp?idFuncionario=<%=f.getIdPessoa()%>" class="waves-effect waves-indigo btn-flat "><i class="material-icons right">refresh</i>Alterar</a> -->
+                            <a href="funcionarioAlterar.jsp?idFuncionario=<%=f.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
                         </td>
-                        <td><a href="scripts/funcionarioExcluir.jsp?idFuncionario=<%=f.getIdPessoa()%>" class="waves-effect waves-indigo btn-flat "><i class="material-icons right">delete</i>Excluir</a>
+                        <td><!--<a href="scripts/funcionarioExcluir.jsp?idFuncionario=<%=f.getIdPessoa()%>" class="waves-effect waves-indigo btn-flat "><i class="material-icons right">delete</i>Excluir</a> -->
+                            <a href="scripts/funcionarioExcluir.jsp?idFuncionario=<%=f.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light indigo "><i class="material-icons">delete</i></a>
                         </td>
                        
                     </tr>
@@ -65,8 +73,15 @@
 
             </table>
            
-                
-                <a href="funcionarioCadastro.jsp"class="waves-effect  btn-flat "><i class="material-icons right">create</i>Cadastrar</a>
+                <br>
+                <center>
+                <a href="funcionarioCadastro.jsp"class="waves-effect  btn-small indigo "><i class="material-icons right">create</i>Cadastrar</a> 
+             
+                </center>
+                        </div>
+                    </div>
+                </div>
+             </div>
            <% } %>
         </main>
              

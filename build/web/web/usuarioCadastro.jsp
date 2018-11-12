@@ -20,64 +20,64 @@
         </header>
 
         <main>
-            
-                <div class="container" style="width: 30%;">
-                    <div class="col s12 m6">
-                        <div class="card grey lighten-5">
-                            <div class="card-content white-text ">
-                                <div class="row">
-                                    <form class="col s12" action="scripts/cadastrarUsuario.jsp" method="post">
 
-                                        <div class="row">
+            <div class="container" style="width: 30%;">
+                <div class="col s12 m6">
+                    <div class="card grey lighten-5">
+                        <div class="card-content white-text ">
+                            <div class="row">
+                                <form class="col s12" action="scripts/cadastrarUsuario.jsp" method="post">
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
                                             <div class="input-field col s12">
-                                                <div class="input-field col s12">
 
-                                                    <select onchange="aparece()" name="tipo" id="tipo">
-                                                        <option value="" disabled selected>Tipo Usuário</option>
+                                                <select onchange="aparece()" name="tipo" id="tipo">
+                                                    <option value="" disabled selected>Tipo Usuário</option>
 
-                                                        <option value="funcionario">funcionário</option>
+                                                    <option value="funcionario">funcionário</option>
 
-                                                        <option value="candidato" >candidato</option>
+                                                    <option value="candidato" >candidato</option>
 
-                                                    </select>
-                                                    <label>Tipo de Usuário</label>
-                                                </div>
+                                                </select>
+                                                <label>Tipo de Usuário</label>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="nomeUsuario" type="text" name="nomeUsuario" class="validate">
-                                                <label for="nomeUsuario">Nome de Usuário:</label>
-                                            </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input placeholder="" id="nomeUsuario" type="text" name="nomeUsuario" class="validate">
+                                            <label for="nomeUsuario">Nome de Usuário:</label>
                                         </div>
+                                    </div>
 
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="senha" type="password" name="senha" class="validate">
-                                                <label for="senha">Senha:</label>
-                                            </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input placeholder="" id="senha" type="password" name="senha" class="validate">
+                                            <label for="senha">Senha:</label>
                                         </div>
+                                    </div>
 
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="matricula" type="hidden" name="nomeUsuario" class="validate">
-                                                <label id="mabel" style="display:none;" for="nomeUsuario">Nº de matrícula</label>
-                                            </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input placeholder="..." id="matricula" type="hidden" name="matricula" class="validate">
+                                            <label id="mabel" style="display:none;" for="Ma">Nº de matrícula</label>
                                         </div>
-                                        <center>
+                                    </div>
+                                    <center>
                                         <button  class="waves-effect waves-light btn grey darken-2" type="submit" name="salvar"><span>Cadastrar</span></button>
-                                        </center>
-                                    </form>
-                                     </div>
- 
+                                    </center>
+                                </form>
                             </div>
+
                         </div>
                     </div>
                 </div>
-                                   
-                               
-            
+            </div>
+
+
+
         </main>
 
         <footer>
@@ -90,15 +90,21 @@
                                                         });
         </script>
         <script>
-            function aparece() {
-                var sel = document.getElementById("les").value;
+            function aparece()//Função referente ao input número de matrícula
+            {
+                var comboBox = document.getElementById("tipo").value;
+                //Variável contendo o valor da option
                 var mathmagic = document.getElementById("matricula");
-                var las = document.getElementById("mabel");
-                if (sel == "funcionario") {
-                    las.style.display = "block";
+                //Variável contendo o input do nº da matrícula 
+                var label = document.getElementById("mabel");
+                //Variável referente a Label
+                
+                if (comboBox == "funcionario") {
+                    
+                    label.style.display = "block";
                     mathmagic.setAttribute("type", "text");
-                }else{
-                    las.style.display = "none";
+                } else {
+                    label.style.display = "none";
                     mathmagic.setAttribute("type", "hidden");
                 }
             }

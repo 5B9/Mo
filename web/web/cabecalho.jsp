@@ -9,7 +9,7 @@
 <%@page import="br.edu.ifpr.irati.controle.ControlePaginas"%> 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <nav>
-    <div class="nav-wrapper indigo darken-3">
+    <div class="nav-wrapper indigo darken-4">
         <a href="index.jsp" class="brand-logo">Currículos</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons left left">menu</i></a>
         <ul class="right hide-on-med-and-down">

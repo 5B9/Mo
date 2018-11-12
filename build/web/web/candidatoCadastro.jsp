@@ -8,7 +8,7 @@
     <head>
         <style>
             body{
-                background-color: #424242;
+                background-color: #263238;
             }
         </style>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -36,6 +36,13 @@
             %> <p> Acesso Negado </p>
             <p> Clique <a href="login.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
+         
+                <div class="container" style=" width:50%;">
+                    <div class="col s12 m6">
+                        <div class="card blue-grey lighten-5">
+                            <div class="card-content black-text ">
+                                <div class="row">
+                                    <form class="col s12" action="scripts/candidatoCadastro.jsp" method="post">
 
             <div class="container" style=" width:50%;">
                 <div class="col s12 m6">
@@ -144,11 +151,57 @@
                                                 <input class="file-path validate" type="text">
                                             </div>
                                         </div>
-                                    </div>
-                                    <center>
-                                        <button  onclick="return validar();"class="waves-effect waves-light btn grey darken-2" type="submit" name="salvar"><span>Cadastrar</span></button>
-                                    </center>
-                                </form>
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input placeholder="" id="cpf" type="text" name="cpf" class="validate">
+                                                <label for="cpf">CPF</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input placeholder="" id="rg" type="text" name="rg" class="validate">
+                                                <label for="rg">RG</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <div class="input-field col s12">
+                                                    <select name="sexo">
+                                                        <option value="" disabled selected>Sexo</option>
+                                                        <option value="M">Masculino</option>
+                                                        <option value="F">Feminino</option>
+                                                    </select>
+                                                    <label>Sexo</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="endereco" type="email" name="endereco" class="validate">
+                                                <label for="endereco">Email</label>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="row">
+                                            <div class="file-field input-field">
+                                                <div class="waves-effect waves-light btn blue-grey ">
+                                                    <span>File</span>
+                                                    <input type="file" name="curriculo">
+                                                </div>
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <center>
+                                         <button  class="waves-effect waves-light btn blue-grey " type="submit" name="salvar"><span>Cadastrar</span></button>
+                                         </center>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>

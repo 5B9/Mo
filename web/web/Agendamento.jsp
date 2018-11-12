@@ -41,6 +41,8 @@
                         <th>Data</th>
                         <th>Local</th>
                         <th>Horário</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
 

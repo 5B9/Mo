@@ -6,7 +6,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-<<<<<<< HEAD
        
             
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -35,6 +34,11 @@
                    %> <p> Acesso Negado </p>
                     <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
              <%} else{ %>
+             <br><br><br>
+             <div class="container" >
+                <div class="col s12 m6">
+                    <div class="card grey lighten-5">
+                        <div class="card-content black-text ">
              <div class="row" white-text>
              <table class="highlight" 
                 <thead>
@@ -58,9 +62,12 @@
                                 <td><%=c.getEnderecoEmail()%></td>
                                 <td><%=c.getEscolaridade()%></td>
                         <td>
-                            <a href="candidatoAlterar.jsp?idCandidato=<%=c.getIdPessoa()%>" class="waves-effect waves-indigo darken-3 btn-flat "><i class="material-icons right">refresh</i>Alterar</a>
+                           <!-- <a href="candidatoAlterar.jsp?idCandidato=<%=c.getIdPessoa()%>" class="waves-effect waves-indigo darken-3 btn-flat "><i class="material-icons right">refresh</i>Alterar</a> -->
+                             <a href="candidatoAlterar.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
                         </td>
-                        <td><a href="scripts/excluirCandidato.jsp?idCandidato=<%=c.getIdPessoa()%>" class="waves-effect waves-grey btn-flat"><i class="material-icons right">delete</i>Excluir</a>
+                        <td>
+                            <!--<a href="scripts/excluirCandidato.jsp?idCandidato=<%=c.getIdPessoa()%>" class="waves-effect waves-grey btn-flat"><i class="material-icons right">delete</i>Excluir</a> -->
+                             <a href="scripts/excluirCandidato.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">delete</i></a>
                         </td>
                        
                     </tr>
@@ -69,8 +76,15 @@
 
             </table>
             </div>
-            <a href="candidatoCadastro.jsp" class="waves-effect waves-indigo darken-3 btn-flat "><i class="material-icons right">create</i>Cadastrar</a>
-         <% } %>
+                <br>
+                <center>
+            <a href="candidatoCadastro.jsp" class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right">create</i>Cadastrar</a>
+                </center>
+            <% } %>
+                        </div>
+                    </div>
+                </div>
+             </div>
         </main>
 
         <footer>
