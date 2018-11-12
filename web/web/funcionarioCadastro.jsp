@@ -66,7 +66,7 @@
                                         
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input placeholder="12/12/2012" id="first_name" type="date" name="data" class="validate">
+                                                <input placeholder="12/12/2012" id="first_name" type="text" name="data" class="validate">
                                                 <label for="data">Data de admissão</label>
                                             </div>
                                         </div>
@@ -127,7 +127,7 @@
                                         </div>
 
 
-                                        <input type="submit" name="salvar" value="Cadastrar" class="waves-effect waves-indigo btn-flat"/>
+                                        <input type="submit" name="salvar" value="Cadastrar" class="waves-effect waves-indigo btn"/>
                                     </form>
                                 </div>
                             </div>
