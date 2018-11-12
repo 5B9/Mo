@@ -67,7 +67,7 @@
                     </div>
                     
                             <center>
-                     <button  class="waves-effect waves-light btn blue darken-3" type="submit" name="salvar"><span>Cadastrar</span></button>
+                                <button  class="waves-effect waves-light btn blue darken-3" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
                             </center>
                 </form>
             </div>
@@ -84,6 +84,22 @@
             $(document).ready(function () {
                 $('select').formSelect();
             });
+        </script>
+        <script>
+            function validar() {
+                if (document.formulario.local.value == "") {
+                    alert("Por favor, insira o local onde dessa sessão");
+                    return false;
+                } else if (document.formulario.dia.value == "") {
+                    alert("Por favor, insira a data dessa sessão");
+                    return false;
+                } else if (document.formulario.hora.value == "") {
+                    alert("Por favor, insira o horário de início dessa sessão");
+                    return false;
+                } else {
+                    return true;
+                }
+            }
         </script>
     </body>
 </html>

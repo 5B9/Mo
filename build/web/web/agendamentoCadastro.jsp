@@ -19,26 +19,26 @@
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
         <main>
-            
+
             <%
-            session = request.getSession();
-            Usuario u = (Usuario) session.getAttribute("usuario");
-            boolean logado = false;
-            if (u != null) {
-                logado = true;
-            }
-        %>
-        <%
-                                    if (!logado || u.getTipoUsuario().equals("candidato")) {
-                                %> <p> Acesso Negado </p>
-                                <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
-                                <%} else { %>
+                session = request.getSession();
+                Usuario u = (Usuario) session.getAttribute("usuario");
+                boolean logado = false;
+                if (u != null) {
+                    logado = true;
+                }
+            %>
+            <%
+                if (!logado || u.getTipoUsuario().equals("candidato")) {
+            %> <p> Acesso Negado </p>
+            <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
+            <%} else { %>
             <div class="container" style="width: 30%;">
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
                         <div class="card-content">
                             <div class="row">
-                                <form class=" col s12" action="scripts/agendamentoCadastro.jsp" method="post">
+                                <form class=" col s12" action="scripts/agendamentoCadastro.jsp" method="post" name="formulario">
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <input placeholder="" id="first_name" type="text" name="local" class="validate">
@@ -48,8 +48,8 @@
 
                                     <div class="row">
                                         <div class="input-field col s12">
-                                  <input placeholder="12/12/2012" id="first_name" type="date" name="dataSessao" class="validate">
-                                            
+                                            <input placeholder="12/12/2012" id="first_name" type="date" name="dataSessao" class="validate">
+
                                         </div>
                                     </div>
                                     <div class="row">
@@ -59,7 +59,7 @@
                                         </div>
                                     </div>
                                     <center>
-                                     <button  class="waves-effect waves-light btn blue darken-3" type="submit" name="salvar"><span>Cadastrar</span></button>
+                                        <button  class="waves-effect waves-light btn blue darken-3" type="submit" onclick="return validar()"name="salvar"><span>Cadastrar</span></button>
                                     </center>
                                 </form>
                             </div>
@@ -67,7 +67,7 @@
                     </div>
                 </div>
             </div>
-            <% } %>
+            <% }%>
 
         </main>
 
@@ -76,18 +76,32 @@
         </footer>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-            $(document).ready(function () {
-                $('select').formSelect();
-            });
+                                            $(document).ready(function () {
+                                                $('select').formSelect();
+                                            });
         </script>
         <script>
             $(document).ready(
                     function () {
                         $('.datepicker').datepicker();
-                       
                     }
             );
-
+        </script>
+        <script>
+            function validar() {
+                if (document.formulario.local.value == "") {
+                    alert("Por favor, insira o local onde dessa sessão.");
+                    return false;
+                } else if (document.formulario.dataSessao.value == "") {
+                    alert("Por favor, insira a data dessa sessão.");
+                    return false;
+                } else if (document.formulario.data.value == "") {
+                    alert("Por favor, insira o horário de início dessa sessão.");
+                    return false;
+                } else {
+                    return true;
+                }
+            }
         </script>
     </body>
 </html>
