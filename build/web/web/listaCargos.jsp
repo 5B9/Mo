@@ -31,6 +31,11 @@
                    %> <p> Acesso Negado </p>
                     <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
              <%} else{ %>
+             <br><br><br>
+             <div class="container" >
+                <div class="col s12 m6">
+                    <div class="card grey lighten-5">
+                        <div class="card-content black-text ">
             <table class="highlight">
                 <thead>
                     <tr>
@@ -51,9 +56,11 @@
                         <%----%><td><%=c.getQtdVagas()%></td>
                         <%----%><td><%=c.getDescricao()%></td>
                         <td>
-                            <a href="cargoAlteracao.jsp?idCargo=<%=c.getIdCargo()%>" class="waves-effect waves-indigo darken-3 btn-flat "><i class="material-icons right">refresh</i>Alterar</a>
+                           <!-- <a href="cargoAlteracao.jsp?idCargo=<%=c.getIdCargo()%>" class="waves-effect waves-indigo darken-3 btn-flat "><i class="material-icons right">refresh</i>Alterar</a> -->
+                            <a href="cargoAlteracao.jsp?idCargo=<%=c.getIdCargo()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
                         </td>
-                        <td><a href="scripts/cargoExcluir.jsp?idCargo=<%=c.getIdCargo()%>" class="waves-effect  btn-flat "><i class="material-icons right">delete</i>Excluir</a>
+                        <td><!--<a href="scripts/cargoExcluir.jsp?idCargo=<%=c.getIdCargo()%>" class="waves-effect  btn-flat "><i class="material-icons right">delete</i>Excluir</a> -->
+                            <a href="scripts/cargoExcluir.jsp?idCargo=<%=c.getIdCargo()%>" class="btn-floating btn waves-effect waves-light indigo "><i class="material-icons">delete</i></a>
                         </td>
                        
                     </tr>
@@ -61,8 +68,15 @@
                 <%}%>
 
             </table>
-            <a href="cargoCadastro.jsp"class="waves-effect waves-darken-3 btn-flat "><i class="material-icons right">create</i>Cadastrar</a>
-        <% } %>
+                <br>
+                <center>
+            <a href="cargoCadastro.jsp"class="waves-effect waves-light waves-darken-3 btn-small indigo "><i class="material-icons right">create</i>Cadastrar</a>
+                </center>
+            <% } %>
+                        </div>
+                    </div>
+                </div>
+             </div>
         </main>
 
         <footer>

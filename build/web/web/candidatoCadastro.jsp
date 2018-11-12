@@ -8,7 +8,7 @@
     <head>
         <style>
             body{
-                background-color: #424242;
+                background-color: #263238;
             }
         </style>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -39,8 +39,8 @@
          
                 <div class="container" style=" width:50%;">
                     <div class="col s12 m6">
-                        <div class="card grey lighten-2">
-                            <div class="card-content white-text ">
+                        <div class="card blue-grey lighten-5">
+                            <div class="card-content black-text ">
                                 <div class="row">
                                     <form class="col s12" action="scripts/candidatoCadastro.jsp" method="post">
 
@@ -140,7 +140,7 @@
                                       
                                         <div class="row">
                                             <div class="file-field input-field">
-                                                <div class="waves-effect waves-light btn grey darken-2">
+                                                <div class="waves-effect waves-light btn blue-grey ">
                                                     <span>File</span>
                                                     <input type="file" name="curriculo">
                                                 </div>
@@ -150,7 +150,7 @@
                                             </div>
                                         </div>
                                         <center>
-                                         <button  class="waves-effect waves-light btn grey darken-2" type="submit" name="salvar"><span>Cadastrar</span></button>
+                                         <button  class="waves-effect waves-light btn blue-grey " type="submit" name="salvar"><span>Cadastrar</span></button>
                                          </center>
                                     </form>
                                 </div>

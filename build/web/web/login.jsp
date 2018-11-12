@@ -3,6 +3,8 @@
     <head>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+                
+
         <style>
             body {
                 display: flex;
@@ -35,11 +37,13 @@
         </style>
     </head>
     
-    <header>
-        <jsp:include page="cabecalho.jsp" flush="true" />
-    </header>
+    
 
     <body>
+        <header>
+        <jsp:include page="cabecalho.jsp" flush="true" />
+    </header>
+        
         <%String e = request.getParameter("e");
             String mensagem = "";
             if (e != null) {
@@ -48,7 +52,7 @@
         <div class="section"></div>
         <main>
             <center>
-                <img class="responsive-img" style="width: 60px; height: 60px; padding-top: 5px;" src="imagens/acome.jpg"/>    
+                <img class="responsive-img" style="width: 60px; height: 60px;" src="imagens/acome.jpg"/>    
                 <div class="section"></div>
 
                 <p><%=mensagem%></p>
@@ -72,6 +76,7 @@
                                     <input class='validate' type='password' name='senha' id='senha' />
                                     <label for='senha'>Senha: </label>
                                 </div>
+                                
                                 <label style='float: right;'>
                                     <a class='pink-text' href="esqueceuSenha.jsp"><b>Esqueceu a senha?</b></a>
                                 </label>
