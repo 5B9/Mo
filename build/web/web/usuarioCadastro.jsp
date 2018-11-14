@@ -14,13 +14,14 @@
 
 
     </head>
-    <body>
-        <header>
+    <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
+    <body>
+        
 
         <main>
-
+            <br>
             <div class="container" style="width: 30%;">
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
@@ -66,7 +67,7 @@
                                         </div>
                                     </div>
                                     <center>
-                                        <button  class="waves-effect waves-light btn grey darken-2" type="submit" name="salvar"><span>Cadastrar</span></button>
+                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
                                     </center>
                                 </form>
                             </div>

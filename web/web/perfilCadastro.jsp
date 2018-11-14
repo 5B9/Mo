@@ -121,7 +121,7 @@
 
                                         <div class="row">
                                             <div class="file-field input-field">
-                                                <div class="btn">
+                                                <div class="waves-effect waves-light btn indigo">
                                                     <span>File</span>
                                                     <input type="file" name="curriculo">
                                                 </div>
@@ -131,7 +131,7 @@
                                             </div>
                                         </div>
 
-                                        <button  class="waves-effect waves-light btn grey darken-2" type="submit" name="salvar"><span>Cadastrar</span></button>
+                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
 
                                     </form>
                                 </div>

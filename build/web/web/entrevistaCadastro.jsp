@@ -17,7 +17,7 @@
     <head>
         <style>
             body{
-                background-color:#424242;
+                background-color: #263238;
             }
         </style>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

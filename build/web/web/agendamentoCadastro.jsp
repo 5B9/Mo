@@ -19,7 +19,11 @@
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
         <main>
-
+<style>
+            body{
+                background-color: #263238;
+            }
+        </style>
             <%
                 session = request.getSession();
                 Usuario u = (Usuario) session.getAttribute("usuario");
