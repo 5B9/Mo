@@ -56,6 +56,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
             if (u != null) {
                 logado = true;
             }
+            // Oi
         
       out.write("\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
@@ -69,7 +70,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "cabecalho.jsp", out, true);
       out.write("\n");
       out.write("    </header>\n");
-      out.write("\n");
       out.write("    <body>\n");
       out.write("\n");
       out.write("        <main>\n");
@@ -80,12 +80,25 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<p>");
 u.getNomeCompleto();
       out.write("</p>\n");
+      out.write("             <div class=\"carousel\">\n");
+      out.write("    <a class=\"carousel-item\" href=\"#one!\"><img src=\"https://lorempixel.com/250/250/nature/1\"></a>\n");
+      out.write("    <a class=\"carousel-item\" href=\"#two!\"><img src=\"https://lorempixel.com/250/250/nature/2\"></a>\n");
+      out.write("    <a class=\"carousel-item\" href=\"#three!\"><img src=\"https://lorempixel.com/250/250/nature/3\"></a>\n");
+      out.write("    <a class=\"carousel-item\" href=\"#four!\"><img src=\"https://lorempixel.com/250/250/nature/4\"></a>\n");
+      out.write("    <a class=\"carousel-item\" href=\"#five!\"><img src=\"https://lorempixel.com/250/250/nature/5\"></a>\n");
+      out.write("  </div>\n");
       out.write("            ");
  } else { 
       out.write("<p>Nenhum usuário Logado! \n");
       out.write("            </p>");
  }
-      out.write("\n");
+      out.write(" <div class=\"carousel\">\n");
+      out.write("    <a class=\"carousel-item\" href=\"#one!\"><img src=\"imagens/Acome.jpeg\"></a>\n");
+      out.write("    <a class=\"carousel-item\" href=\"#two!\"><img src=\"imagens/logo-ifpr.png\"></a>\n");
+      out.write("    <a class=\"carousel-item\" href=\"#three!\"><img src=\"https://lorempixel.com/250/250/nature/3\"></a>\n");
+      out.write("    <a class=\"carousel-item\" href=\"#four!\"><img src=\"https://lorempixel.com/250/250/nature/4\"></a>\n");
+      out.write("    <a class=\"carousel-item\" href=\"#five!\"><img src=\"https://lorempixel.com/250/250/nature/5\"></a>\n");
+      out.write("  </div>\n");
       out.write("        </main>\n");
       out.write("  \n");
       out.write("    <footer>\n");

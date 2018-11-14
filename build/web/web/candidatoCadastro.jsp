@@ -150,7 +150,7 @@
                                             </div>
                                         </div>
                                         <center>
-                                         <button  class="waves-effect waves-light btn blue-grey " type="submit" name="salvar"><span>Cadastrar</span></button>
+                                            <button  class="waves-effect waves-light btn blue-grey " type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
                                          </center>
                                     </form>
                                 </div>
@@ -158,7 +158,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            
 
             <% }%>
         </main>

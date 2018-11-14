@@ -49,7 +49,7 @@
 
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input placeholder="12/12/2012" id="first_name" type="date" name="dataSessao" class="validate">
+                                            <input placeholder="12/12/2012" id="first_name" type="text" name="dataSessao" class="validate">
 
                                         </div>
                                     </div>
@@ -60,7 +60,7 @@
                                         </div>
                                     </div>
                                     <center>
-                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
+                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
                                     </center>
                                 </form>
                             </div>
@@ -96,7 +96,7 @@
                 } else if (document.formulario.dataSessao.value == "") {
                     alert("Por favor, insira a data dessa sessão.");
                     return false;
-                } else if (document.formulario.data.value == "") {
+                } else if (document.formulario.hora.value == "") {
                     alert("Por favor, insira o horário de início dessa sessão.");
                     return false;
                 } else {
