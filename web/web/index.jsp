@@ -15,6 +15,7 @@
             if (u != null) {
                 logado = true;
             }
+            // Oi
         %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Currículos</title>
@@ -25,7 +26,6 @@
     <header>
         <jsp:include page="cabecalho.jsp" flush="true" />
     </header>
-
     <body>
 
         <main>
