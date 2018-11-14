@@ -39,7 +39,7 @@
                     <div class="card grey lighten-5">
                         <div class="card-content">
                             <div class="row">
-                                <form class=" col s12" action="scripts/agendamentoCadastro.jsp" method="post">
+                                <form class=" col s12" action="scripts/agendamentoCadastro.jsp" method="post" name="formulario">
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <input placeholder="" id="first_name" type="text" name="local" class="validate">
@@ -49,7 +49,7 @@
 
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input placeholder="12/12/2012" id="first_name" type="text" date-format="DD/MM/YYYY" name="dataSessao" class="validate">
+                                            <input placeholder="12/12/2012" id="first_name" type="date" name="dataSessao" class="validate">
 
                                         </div>
                                     </div>
@@ -77,18 +77,32 @@
         </footer>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-            $(document).ready(function () {
-                $('select').formSelect();
-            });
+                                            $(document).ready(function () {
+                                                $('select').formSelect();
+                                            });
         </script>
         <script>
             $(document).ready(
                     function () {
                         $('.datepicker').datepicker();
-
                     }
             );
-
+        </script>
+        <script>
+            function validar() {
+                if (document.formulario.local.value == "") {
+                    alert("Por favor, insira o local onde dessa sessão.");
+                    return false;
+                } else if (document.formulario.dataSessao.value == "") {
+                    alert("Por favor, insira a data dessa sessão.");
+                    return false;
+                } else if (document.formulario.data.value == "") {
+                    alert("Por favor, insira o horário de início dessa sessão.");
+                    return false;
+                } else {
+                    return true;
+                }
+            }
         </script>
     </body>
 </html>

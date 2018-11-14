@@ -136,6 +136,44 @@
             $(document).ready(function () {
                 $('select').formSelect();
             });
+        </script>
+ </script>
+        <script>
+            function validar() {
+                if (document.formulario.escolaridade.value == "") {
+                    alert("Por favor, insira o nível de escolaridade do candidato.");
+                    return false;
+                } else if (document.formulario.cargoDesejado.value == "") {
+                    alert("Por favor, insira o cargo desejado.");
+                    return false;
+                } else if (document.formulario.nomeUsuario.value == "") {
+                    alert("Por favor, insira o seu nome de usuário.");
+                    return false;
+                } else if (document.formulario.senha.value == "") {
+                    alert("Por favor, insira a sua senha.");
+                    return false;
+                } else if (document.formulario.nome.value == "") {
+                    alert("Por favor, insira o seu nome completo.");
+                    return false;
+                } else if (document.formulario.cpf.value == "") {
+                    alert("Por favor, insira o seu CPF.");
+                    return false;
+                } else if (document.formulario.rg.value == "") {
+                    alert("Por favor, insira o seu RG.");
+                    return false;
+                } else if (document.formulario.sexo.value == "") {
+                    alert("Por favor, insira o seu sexo.");
+                    return false;
+                } else if (document.formulario.endereco.value == "") {
+                    alert("Por favor, insira o seu endereço de e-mail.");
+                    return false;
+                } else if (document.formulario.curriculo.value == "") {
+                    alert("Por favor, insira o seu currículo.");
+                    return false;
+                } else {
+                    return true;
+                }
+            }
         </script>        
     </body>
 </html>
