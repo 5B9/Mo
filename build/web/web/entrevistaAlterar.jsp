@@ -41,7 +41,6 @@
                 ControleEntrevista e = new ControleEntrevista();
                 Entrevista ei = e.consultarEntrevistaPorId(idEntevista);
             %>
-<<<<<<< HEAD
             <center>
             <div class="container" style="width: 50%;">
                 <form class="col s12" action="scripts/entrevistaAlterar.jsp" method="post">

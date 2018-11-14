@@ -1,5 +1,6 @@
 
 
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Entrevista"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleEntrevista"%>
@@ -21,6 +22,7 @@
         <main>
 
             <%
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                 session = request.getSession();
                 Usuario u = (Usuario) session.getAttribute("usuario");
                 boolean logado = false;
@@ -95,7 +97,7 @@
                 } else if (document.formulario.dataSessao.value == "") {
                     alert("Por favor, insira a data dessa sessão.");
                     return false;
-                } else if (document.formulario.data.value == "") {
+                } else if (document.formulario.hora.value == "") {
                     alert("Por favor, insira o horário de início dessa sessão.");
                     return false;
                 } else {

@@ -1,7 +1,7 @@
 <%-- 
     Document   : cabecalho
-    Created on : 08/05/2018, 13:20:35
-    Author     : Usuario
+    Created on : 12/12/2012, 00:00:00
+    Author     : Usualho
 --%>
 
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
