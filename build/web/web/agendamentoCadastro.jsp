@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cadastrar</title>
+        <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
@@ -35,6 +35,7 @@
             %> <p> Acesso Negado </p>
             <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
+            <br><br>
             <div class="container" style="width: 30%;">
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
@@ -50,18 +51,18 @@
 
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input placeholder="12/12/2012" id="first_name" type="date" name="dataSessao" class="validate">
-
+                                            <!-- format="dd/mm/yyyy" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}" -->
+                                            <input type="text" class="datepicker" name="dataSessao">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input placeholder="10:30:15" id="first_name" type="time" name="hora" class="validate">
+                                            <input type="text" class="timepicker" name="hora" >
                                             <label for="Horario de Início">Horario de Início</label>
                                         </div>
                                     </div>
                                     <center>
-                                        <button  class="waves-effect waves-light btn blue darken-3" type="submit" onclick="return validar()"name="salvar"><span>Cadastrar</span></button>
+                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
                                     </center>
                                 </form>
                             </div>
@@ -72,22 +73,25 @@
             <% }%>
 
         </main>
-
+        <br>
         <footer>
             <jsp:include page="rodape.jsp" flush="true" />
         </footer>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-                                            $(document).ready(function () {
-                                                $('select').formSelect();
-                                            });
+            $(document).ready(function () {
+                $('select').formSelect();
+            });
         </script>
         <script>
-            $(document).ready(
-                    function () {
-                        $('.datepicker').datepicker();
-                    }
-            );
+            $(document).ready(function () {
+                $('.datepicker').datepicker({format: 'mm/dd/yyyy'});
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('.timepicker').timepicker({format: "HH:ii:SS"});
+            });
         </script>
         <script>
             function validar() {

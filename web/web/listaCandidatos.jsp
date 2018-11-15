@@ -9,7 +9,7 @@
        
             
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Candidatos</title>
+        <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
@@ -47,6 +47,8 @@
                         <th>Cargo Desejado</th>
                         <th>Email</th>
                         <th>Escolaridade</th>
+                        <th>Alterar</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead>
 
@@ -67,7 +69,7 @@
                         </td>
                         <td>
                             <!--<a href="scripts/excluirCandidato.jsp?idCandidato=<%=c.getIdPessoa()%>" class="waves-effect waves-grey btn-flat"><i class="material-icons right">delete</i>Excluir</a> -->
-                             <a href="scripts/excluirCandidato.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">delete</i></a>
+                             <a href="scripts/excluirCandidato.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">all_inclusive</i></a>
                         </td>
                        
                     </tr>

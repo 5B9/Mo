@@ -6,7 +6,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cadastrar Cargo</title>
+        <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
@@ -38,7 +38,7 @@
                             <div class="card-content white-text ">
 
                                 <div class="row">
-                                    <form class="col s12" action="scripts/cargoCadastrar.jsp" method="post">
+                                    <form class="col s12" action="scripts/cargoCadastrar.jsp" method="post" name="formulario">
 
                                         <div class="row">
                                             <div class="input-field col s12">
@@ -75,7 +75,7 @@
                                             </div>
                                         </div>
 
-                                        <input type="submit" name="salvar" value="Cadastrar!" class="waves-effect waves-teal btn-flat"/>
+                                        <input type="submit" name="salvar" value="Cadastrar" onclick="return validar()" class="waves-effect waves-teal btn indigo"/>
                                     </form>
 
                                 </div>
@@ -92,11 +92,33 @@
         </footer>                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-            $(document).ready(function () {
-                $('select').formSelect();
-            });
+                                            $(document).ready(function () {
+                                                $('select').formSelect();
+                                            });
         </script>
-
+        <!--Receber os clientes pela cabeça, assim, pela cabeça, agarrá-los cabeça e ,com toda a sua cabeça, jooj-->
+        <script>
+            function validar() {
+                if (document.formulario.vargas.value == "") {
+                    alert("Por favor, insira a quantdade de vagas.");
+                    return false;
+                } else if (document.formulario.descricao.value == "") {
+                    alert("Por favor, insira a descrição desse cargo.");
+                    return false;
+                } else if (document.formulario.nome.value == "") {
+                    alert("Por favor, insira o nome desse cargo.");
+                    return false;
+                } else if (document.formulario.salario.value == "") {
+                    alert("Por favor, insira o motivo desse cargo.");
+                    return false;
+                } else if (document.formulario.modalidade.value == "") {
+                    alert("Por favor, insira a modalidade.");
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        </script>
 
     </body>
 </html>

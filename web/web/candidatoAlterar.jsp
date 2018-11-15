@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Alterar Candidato</title>
+        <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@
                 c = controleCandidato.consultarCandidatoPorId(idCandidato);
             %>
             <div class="row">
-            <form class="col s12" action="scripts/alterarCandidato.jsp" method="post">
+            <form class="col s12" action="scripts/alterarCandidato.jsp" name="formulario" method="post">
 
                 
                 <div class="row">
@@ -116,7 +116,7 @@
                     </div>
                             
                    
-                            <input type="submit" name="salvar" value="Alterar!" class="waves-effect waves-indigo darken-3 btn-flat"/>
+                            <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Alterar</span></button>
              </form>    
             </div>
            
@@ -137,7 +137,6 @@
                 $('select').formSelect();
             });
         </script>
- </script>
         <script>
             function validar() {
                 if (document.formulario.escolaridade.value == "") {

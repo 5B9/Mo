@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Agendamentos</title>
+        <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
@@ -20,7 +20,7 @@
         </header>
         <%
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                SimpleDateFormat sdfHora = new SimpleDateFormat("HH:mm:ss");
+                SimpleDateFormat sdfHora = new SimpleDateFormat("HH:mm");
             session = request.getSession();
             Usuario u = (Usuario) session.getAttribute("usuario");
             boolean logado = false;
@@ -35,14 +35,19 @@
             %> <p> Acesso Negado </p>
             <p> Clique <a href="login.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
+              <br><br><br>
+             <div class="container" >
+                <div class="col s12 m6">
+                    <div class="card grey lighten-5">
+                        <div class="card-content black-text ">
             <table class="highlight">
                 <thead>
                     <tr>
                         <th>Data</th>
                         <th>Local</th>
                         <th>Horário</th>
-                        <th></th>
-                        <th></th>
+                        <th>Alterar</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead>
 
@@ -58,9 +63,11 @@
                         <td><%=a.getLocalSessao()%></td>
                         <td><%=sdfHora.format(a.getHoraInicio().getTime())%></td>
                         <td>
-                            <a href="agendamentoAlterar.jsp?idAgendamento=<%=a.getIdSessao()%>" class="waves-effect waves-indigo btn-flat "><i class="material-icons right">refresh</i>Alterar</a>
+                          <!--  <a href="agendamentoAlterar.jsp?idAgendamento=<%=a.getIdSessao()%>" class="waves-effect waves-indigo btn-flat "><i class="material-icons right">refresh</i>Alterar</a>-->
+                        <a href="agendamentoAlterar.jsp?idAgendamento=<%=a.getIdSessao()%>" class="btn-floating btn waves-effect waves-light indigo "><i class="material-icons">refresh</i></a>
                         </td>
-                        <td><a href="scripts/agendamentoExcluir.jsp?idAgendamento=<%=a.getIdSessao()%>" class="waves-effect waves-indigo btn-flat "><i class="material-icons right">delete</i>Excluir</a>
+                        <td><!--<a href="scripts/agendamentoExcluir.jsp?idAgendamento=<%=a.getIdSessao()%>" class="waves-effect waves-indigo btn-flat "><i class="material-icons right">delete</i>Excluir</a>-->
+                            <a href="scripts/agendamentoExcluir.jsp?idAgendamento=<%=a.getIdSessao()%>" class="btn-floating btn waves-effect waves-light indigo "><i class="material-icons">delete</i></a>
                         </td>
 
                     </tr>
@@ -68,7 +75,14 @@
                 <%}%>
 
             </table>
-            <a href="agendamentoCadastro.jsp"class="waves-effect waves-indigo btn-flat "><i class="material-icons right">create</i>Cadastrar</a>
+                <br>
+                <center>
+            <a href="agendamentoCadastro.jsp"class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right">create</i>Cadastrar</a>
+                </center>
+                        </div>
+                    </div>
+                </div>
+             </div>
             <% }%>
 
         </main>

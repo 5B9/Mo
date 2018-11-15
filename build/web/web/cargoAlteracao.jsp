@@ -7,7 +7,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Alterar</title>
+        <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
@@ -45,7 +45,7 @@
 
             <div class="row">
                 
-                <form class="col s12" action="scripts/cargoAlterar.jsp" method="post">
+                <form name="formulario"class="col s12" action="scripts/cargoAlterar.jsp" method="post">
 
                     <div class="row">
                         <div class="input-field col s12">
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                             
-                    <input type="submit" name="salvar" value="Alterar!" class="waves-effect waves-indigo darken-3 btn-flat"/>
+                    <input onclick="return validar()" type="submit" name="salvar" value="Alterar!" class="waves-effect waves-indigo darken-3 btn-flat"/>
                 
                 </form>
 
@@ -109,6 +109,28 @@
             $(document).ready(function () {
                 $('select').formSelect();
             });
-        </script>        
+        </script>   
+                <script>
+            function validar() {
+                if (document.formulario.vagas.value == "") {
+                    alert("Por favor, insira a quantdade de vagas.");
+                    return false;
+                } else if (document.formulario.descricao.value == "") {
+                    alert("Por favor, insira a descrição desse cargo.");
+                    return false;
+                } else if (document.formulario.nome.value == "") {
+                    alert("Por favor, insira o nome desse cargo.");
+                    return false;
+                } else if (document.formulario.salario.value == "") {
+                    alert("Por favor, insira o motivo desse cargo.");
+                    return false;
+                } else if (document.formulario.modalidade.value == "") {
+                    alert("Por favor, insira a modalidade.");
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        </script>
     </body>
 </html>

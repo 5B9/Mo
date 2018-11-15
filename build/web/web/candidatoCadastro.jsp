@@ -6,13 +6,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            body{
-                background-color: #263238;
-            }
-        </style>
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cadastrar</title>
+        <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
@@ -36,18 +32,11 @@
             %> <p> Acesso Negado </p>
             <p> Clique <a href="login.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
-         
-                <div class="container" style=" width:50%;">
-                    <div class="col s12 m6">
-                        <div class="card blue-grey lighten-5">
-                            <div class="card-content black-text ">
-                                <div class="row">
-                                    <form class="col s12" action="scripts/candidatoCadastro.jsp" method="post">
-
-            <div class="container" style=" width:50%;">
+            <br>
+            <div class="container" style=" width:50%; ">
                 <div class="col s12 m6">
-                    <div class="card grey lighten-2">
-                        <div class="card-content white-text ">
+                    <div class="card blue-grey lighten-5">
+                        <div class="card-content black-text ">
                             <div class="row">
                                 <form class="col s12" action="scripts/candidatoCadastro.jsp" method="post" name="formulario">
                                     <div class="row" >
@@ -143,7 +132,7 @@
 
                                     <div class="row">
                                         <div class="file-field input-field">
-                                            <div class="waves-effect waves-light btn grey darken-2">
+                                            <div class="waves-effect waves-light btn indigo">
                                                 <span>File</span>
                                                 <input type="file" name="curriculo">
                                             </div>
@@ -151,57 +140,11 @@
                                                 <input class="file-path validate" type="text">
                                             </div>
                                         </div>
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="cpf" type="text" name="cpf" class="validate">
-                                                <label for="cpf">CPF</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="rg" type="text" name="rg" class="validate">
-                                                <label for="rg">RG</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <div class="input-field col s12">
-                                                    <select name="sexo">
-                                                        <option value="" disabled selected>Sexo</option>
-                                                        <option value="M">Masculino</option>
-                                                        <option value="F">Feminino</option>
-                                                    </select>
-                                                    <label>Sexo</label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input id="endereco" type="email" name="endereco" class="validate">
-                                                <label for="endereco">Email</label>
-                                            </div>
-                                        </div>
-                                      
-                                        <div class="row">
-                                            <div class="file-field input-field">
-                                                <div class="waves-effect waves-light btn blue-grey ">
-                                                    <span>File</span>
-                                                    <input type="file" name="curriculo">
-                                                </div>
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <center>
-                                         <button  class="waves-effect waves-light btn blue-grey " type="submit" name="salvar"><span>Cadastrar</span></button>
-                                         </center>
-                                    </form>
-                                </div>
+                                    </div>
+                                    <center>
+                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
+                                    </center>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -216,9 +159,9 @@
         </footer>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-                                            $(document).ready(function () {
-                                                $('select').formSelect();
-                                            });
+            $(document).ready(function () {
+                $('select').formSelect();
+            });
         </script>
         <script>
             function validar() {

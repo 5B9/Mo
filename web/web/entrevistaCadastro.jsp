@@ -1,5 +1,3 @@
-
-
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="br.edu.ifpr.irati.modelo.AgendamentoEntrevista"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleAgendamento"%>
@@ -21,7 +19,7 @@
             }
         </style>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cadastro Entrevistas</title>
+        <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
@@ -47,7 +45,7 @@
             <%} else { %>
             <center>
                 <div class="container" style="width:50%;">
-                    <form class="col s12" action="scripts/entrevistaCadastro.jsp" method="post">
+                    <form name="formulario" class="col s12" action="scripts/entrevistaCadastro.jsp" method="post">
                         <div class="card grey lighten-5">
                             <div class="card-content white-text ">
 
@@ -128,7 +126,7 @@
                                                 <option value="reprovado">Reprovado</option>
                                                 <option value="aprovado">Aprovado</option>
                                             </select>
-                                            <label>Fase Tecnica</label>
+                                            <label>Fase Técnica</label>
                                         </div>
                                     </div>
                                 </div>
@@ -142,7 +140,7 @@
                                                 <option value="aprovado">Aprovado</option>
                                                 <option value="andamento">Em Andamento...</option>
                                             </select>
-                                            <label>Fase Psicologica</label>
+                                            <label>Fase Psicológica</label>
                                         </div>
                                     </div>
                                 </div>
@@ -151,7 +149,7 @@
 
 
                                       
-                                            <button  class="waves-effect waves-light btn blue darken-3" type="submit" name="salvar"><span>Cadastrar</span></button>
+                                            <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
                     
                                             
                             </div>
@@ -171,6 +169,43 @@
             $(document).ready(function () {
                 $('select').formSelect();
             });
+        </script>
+                <script>
+            function validar() {
+                if (document.formulario.funcionario.value == "") {
+                    alert("Por favor, selecione o candidato que presidirá a entrevista.");
+                    return false;
+                } else if (document.formulario.cargo.value == "") {
+                    alert("Por favor, insira um cargo para a entrevista.");
+                    return false;
+                } else if (document.formulario.candidato.value == "") {
+                    alert("Por favor, insira o candidato que fará a entrevista.");
+                    return false;
+                } else if (document.formulario.sessao.value == "") {
+                    alert("Por favor, insira a sessão que esta entrevista ocorrerá.");
+                    return false;
+                } else if (document.formulario.nomeCompleto.value == "") {
+                    alert("Por favor, insira o seu nome completo.");
+                    return false;
+                } else if (document.formulario.cpf.value == "") {
+                    alert("Por favor, insira o seu CPF.");
+                    return false;
+                } else if (document.formulario.rg.value == "") {
+                    alert("Por favor, insira o seu RG.");
+                    return false;
+                } else if (document.formulario.sexo.value == "") {
+                    alert("Por favor, insira o seu sexo.");
+                    return false;
+                } else if (document.formulario.endereco.value == "") {
+                    alert("Por favor, insira o seu endereço de e-mail.");
+                    return false;
+                } else if (document.formulario.curriculo.value == "") {
+                    alert("Por favor, insira o seu currículo.");
+                    return false;
+                } else {
+                    return true;
+                }
+            }
         </script>
     </body>
 </html>
