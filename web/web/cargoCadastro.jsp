@@ -20,6 +20,11 @@
         %>
 
     </head>
+    <style>
+            body{
+                background-color: #263238;
+            }
+        </style>
     <body>
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
@@ -32,6 +37,7 @@
                 %> <p> Acesso Negado </p>
                 <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
                 <%} else { %>
+                <br>
                 <div class="container" style="width: 50%;">
                     <div class="col s12 m6">
                         <div class="card grey lighten-5">

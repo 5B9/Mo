@@ -69,7 +69,7 @@
                         </td>
                         <td>
                             <!--<a href="scripts/excluirCandidato.jsp?idCandidato=<%=c.getIdPessoa()%>" class="waves-effect waves-grey btn-flat"><i class="material-icons right">delete</i>Excluir</a> -->
-                             <a href="scripts/excluirCandidato.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">all_inclusive</i></a>
+                             <a href="scripts/excluirCandidato.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">delete</i></a>
                         </td>
                        
                     </tr>

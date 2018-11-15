@@ -138,18 +138,22 @@
                                             </div>
                                             <div class="file-path-wrapper">
                                                 <input class="file-path validate" type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <center>
-                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
-                                    </center>
-                                </form>
-                            </div>
-                        </div>
+=======
+                                                <div class="waves-effect waves-light btn indigo ">
+                                                    <span>File</span>
+                                                    <input type="file" name="curriculo">
+                                                </div>
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text">
+                                                </div>
+                                        <center>
+                                            <button  class="waves-effect waves-light btn indigo " type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
+                                         </center>
+                                    </form>
+                                </div>
                     </div>
                 </div>
-            </div>
+            
 
             <% }%>
         </main>

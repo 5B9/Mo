@@ -20,7 +20,11 @@
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
         <main>
-
+<style>
+            body{
+                background-color: #263238;
+            }
+        </style>
             <%
                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                 session = request.getSession();
@@ -51,8 +55,8 @@
 
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <!-- format="dd/mm/yyyy" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}" -->
-                                            <input type="text" class="datepicker" name="dataSessao">
+                                            <input placeholder="12/12/2012" id="first_name" type="text" name="dataSessao" class="validate">
+
                                         </div>
                                     </div>
                                     <div class="row">
