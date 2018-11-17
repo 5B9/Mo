@@ -28,6 +28,7 @@
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
 
+        
         <main>
             <%
                 if(!logado || u.getTipoUsuario().equals("candidato")){
@@ -47,6 +48,8 @@
                         <th>Cargo Desejado</th>
                         <th>Email</th>
                         <th>Escolaridade</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -61,6 +64,7 @@
                         <%----%><td><%=c.getCargoDesejado()%></td>
                                 <td><%=c.getEnderecoEmail()%></td>
                                 <td><%=c.getEscolaridade()%></td>
+                               
                         <td>
                            <!-- <a href="candidatoAlterar.jsp?idCandidato=<%=c.getIdPessoa()%>" class="waves-effect waves-indigo darken-3 btn-flat "><i class="material-icons right">refresh</i>Alterar</a> -->
                              <a href="candidatoAlterar.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>

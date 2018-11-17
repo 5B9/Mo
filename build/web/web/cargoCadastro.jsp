@@ -48,16 +48,30 @@
 
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input placeholder="..." id="first_name" type="text" name="vargas"class="validate">
+                                                <input placeholder="..." id="first_name" type="number" name="vargas"class="validate">
                                                 <label for="vagas">Quantidade de Vagas</label>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        
+                                         <div class="row" >
+                                   
                                             <div class="input-field col s12">
-                                                <input placeholder="..." id="first_name" type="text" name="descricao"class="validate">
-                                                <label for="descricao">Descrição</label>
-                                            </div>
+                                                <select name="descricao">
+                                                    <option value="" disabled selected>Exigências</option>
+                                                    <option value="Ensino Fudamental Incompleto">Ensino Fundamental Incompleto</option>
+                                                    <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
+                                                    <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
+                                                    <option value="Ensino Médio Completo">Ensino Médio Completo</option>
+                                                    <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+                                                    <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+                                                </select>
+                                                <label>Exigências</label>
+                                           
                                         </div>
+                                    </div>
+                                        
+                                        
+                                        
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="...." id="first_name" type="text" name="nome"class="validate">

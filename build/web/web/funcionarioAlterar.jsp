@@ -25,19 +25,23 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
-
+        <style>
+            body{
+                background-color: #263238;
+            }
+        </style>
         <main>
             <center>
-                 <%
-                                    if (!logado || u.getTipoUsuario().equals("candidato")) {
-                                %> <p> Acesso Negado </p>
-                                <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
-                                <%} else { %>
+                <%
+                    if (!logado || u.getTipoUsuario().equals("candidato")) {
+                %> <p> Acesso Negado </p>
+                <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
+                <%} else { %>
                 <div class="container" style="width: 50%;">
                     <div class="col s12 m6">
                         <div class="card grey lighten-5">
                             <div class="card-content white-text ">
-                               
+
 
                                 <%
 
@@ -50,7 +54,8 @@
                                 %>
                                 <div class="row">
                                     <form class="col s12" action="scripts/funcionarioAlterar.jsp" method="post">
-
+                                        <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="funcionario"class="validate"/>
+                                        <input placeholder="" id="first_name" type="hidden" name="id" value="<%=funcionario.getIdPessoa()%>"class="validate"/>
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <div class="input-field col s12">
@@ -63,17 +68,9 @@
                                             </div>
                                         </div>
 
-                                        <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="funcionario"class="validate"/>
-
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="hidden" name="id" value="<%=funcionario.getIdPessoa()%>"class="validate"/>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="text" name="matricula" value="<%=funcionario.getMatricula() %>"class="validate">
+                                                <input placeholder="" id="first_name" type="text" name="matricula" value="<%=funcionario.getMatricula()%>"class="validate">
                                                 <label for="matricula">Nº matrícula</label>
                                             </div>
                                         </div>
@@ -129,8 +126,8 @@
                                             </div>
                                         </div>
 
-                                        
-<button  class="waves-effect waves-light btn indigo " type="submit" name="salvar"><span>Alterar</span></button>
+
+                                        <button  class="waves-effect waves-light btn indigo " type="submit" name="salvar"><span>Alterar</span></button>
                                     </form>
 
                                 </div>

@@ -46,7 +46,8 @@
                         <th>Candidatos</th>
                         <th>Fase Psiclógica</th>
                         <th>Fase Técnica</th>
-
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
 
