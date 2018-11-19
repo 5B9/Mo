@@ -18,7 +18,11 @@
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
     <body>
-        
+         <style>
+            body{
+                background-color: #263238;
+            }
+        </style>
 
         <main>
             <br>

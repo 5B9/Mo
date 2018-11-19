@@ -66,14 +66,14 @@
 
                             <div class='row'>
                                 <div class='input-field col s12'>
-                                    <input class='validate' type='text' name='usuario' id='usuario' />
+                                    <input class='autocomplete' type='text' name='usuario' id='usuario' />
                                     <label for='usuario'>Usuário:</label>
                                 </div>
                             </div>
 
                             <div class='row'>
                                 <div class='input-field col s12'>
-                                    <input class='validate' type='password' name='senha' id='senha' />
+                                    <input class='autocomplete' type='password' name='senha' id='senha' />
                                     <label for='senha'>Senha: </label>
                                 </div>
                                 
@@ -102,5 +102,23 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
     </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.autocomplete');
+    var instances = M.Autocomplete.init(elems, options);
+  });
 
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('input.autocomplete').autocomplete({
+      data: {
+        "Apple": null,
+        "Microsoft": null,
+        "Google": 'https://placehold.it/250x250'
+      },
+    });
+  });
+        </script>
 </html>

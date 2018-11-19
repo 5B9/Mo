@@ -11,7 +11,7 @@
 <nav>
     <div class="nav-wrapper">
         <a href="index.jsp" class="brand-logo">Currículos</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons left left">menu</i></a>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <%
 
@@ -36,6 +36,9 @@
             <li><a href="listaCargos.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
             <li><a href="Agendamento.jsp"><i class="material-icons left">insert_invitation</i>Agendamentos</a></li>
             <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
+            
+            
+          
                 <%                    }
                     }
 
@@ -61,6 +64,7 @@
             <% }
             %>
         </ul>
+        
     </div>
 </nav>
 <style>

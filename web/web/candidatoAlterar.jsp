@@ -18,9 +18,14 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
-
+ <style>
+            body{
+                background-color: #263238;
+            }
+        </style>
         <main>
             <center>
+                <br>
                 <div class="container" style="width: 50%;">
                     <div class="col s12 m6">
                         <div class="card grey lighten-5">

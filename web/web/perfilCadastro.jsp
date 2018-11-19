@@ -27,12 +27,13 @@
         </header>
         <main>
             <center>
+              
 
 
                 <div class="container" style="width: 50%;">
                     <div class="col s12 m6">
                         <div class="card grey lighten-5">
-                            <div class="card-content black-text ">
+                            <div class="card-content white-text ">
                                 <div class="row">
                                     <form class="col s12" action="scripts/candidatoCadastro.jsp" method="post">
 
@@ -152,5 +153,6 @@
                 $('select').formSelect();
             });
         </script>
+   
     </body>
 </html>

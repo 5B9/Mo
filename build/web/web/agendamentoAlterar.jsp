@@ -13,6 +13,11 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
     </head>
     <body>
+        <style>
+            body{
+                background-color: #263238;
+            }
+        </style>
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
@@ -37,6 +42,7 @@
                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                 SimpleDateFormat sdfHora = new SimpleDateFormat("HH:mm:ss");
             %>
+            <br>
             <div class="container" style="width: 30%;">
                 <form class="col s12" action="scripts/agendamentoAlterar.jsp" method="post" name="formulario">
                     <div class="card grey lighten-5">
