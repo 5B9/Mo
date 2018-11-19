@@ -1,5 +1,3 @@
-
-
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Entrevista"%>
@@ -20,7 +18,8 @@
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
         <main>
-
+            <style>
+            </style>
             <%
                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                 session = request.getSession();
@@ -44,20 +43,20 @@
                                 <form class=" col s12" action="scripts/agendamentoCadastro.jsp" method="post" name="formulario">
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input placeholder="" id="first_name" type="text" name="local" class="validate">
+                                            <input placeholder="Rua ..." id="first_name" type="text" name="local" class="validate">
                                             <label for="local">Local</label>
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <!-- format="dd/mm/yyyy" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}" -->
-                                            <input type="text" class="datepicker" name="dataSessao">
+                                            <input placeholder="12/12/2012" id="first_name" type="text" name="dataSessao" class="datepicker">
+                                            <label for="Data">Data da Sessão</label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input type="text" class="timepicker" name="hora" >
+                                            <input placeholder="12:12:00" type="text" class="timepicker" name="hora" >
                                             <label for="Horario de Início">Horario de Início</label>
                                         </div>
                                     </div>
@@ -79,18 +78,13 @@
         </footer>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-            $(document).ready(function () {
-                $('select').formSelect();
-            });
+                                            $(document).ready(function () {
+                                                $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
+                                            });
         </script>
         <script>
             $(document).ready(function () {
-                $('.datepicker').datepicker({format: 'mm/dd/yyyy'});
-            });
-        </script>
-        <script>
-            $(document).ready(function () {
-                $('.timepicker').timepicker({format: "HH:ii:SS"});
+                $('.timepicker').timepicker({});
             });
         </script>
         <script>

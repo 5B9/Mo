@@ -59,7 +59,7 @@
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input placeholder="10:30:15" id="first_name" type="text" name="hora" value="<%=sdfHora.format(agendamento.getHoraInicio().getTime())%>"class="timepicker">
+                                    <input placeholder="12:12:00" id="first_name" type="text" name="hora" value="<%=sdfHora.format(agendamento.getHoraInicio().getTime())%>"class="timepicker">
                                     <label for="Horario de Início">Horario de Início</label>
                                 </div>
                             </div>
@@ -80,11 +80,15 @@
         </footer>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-                                    $(document).ready(function () {
-                                        $('select').formSelect();
-                                    });
+            $(document).ready(function () {
+                $('.datepicker').datepicker({format: 'mm/dd/yyyy'});
+            });
         </script>
-
+        <script>
+            $(document).ready(function () {
+                $('.timepicker').timepicker({});
+            });
+        </script>
         <script>
             function validar() {
                 if (document.formulario.local.value == "") {

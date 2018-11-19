@@ -132,25 +132,24 @@
 
                                     <div class="row">
                                         <div class="file-field input-field">
-                                                <div class="waves-effect waves-light btn indigo ">
-                                                    <span>File</span>
-                                                    <input type="file" name="curriculo">
-                                                </div>
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text">
-                                                </div>
+                                            <div class="waves-effect waves-light btn indigo ">
+                                                <span>File</span>
+                                                <input type="file" name="curriculo">
+
                                             </div>
+                                            <label for="crriculo">Currículo</label>
                                         </div>
-                                        <center>
-                                            <button  class="waves-effect waves-light btn indigo " type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
-                                         </center>
-                                    </form>
-                                </div>
+                                    </div>
+                                    <center>
+                                        <button  class="waves-effect waves-light btn indigo " type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
+                                    </center>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-            
+            </div>
+
 
             <% }%>
         </main>
@@ -160,9 +159,9 @@
         </footer>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-            $(document).ready(function () {
-                $('select').formSelect();
-            });
+                                            $(document).ready(function () {
+                                                $('select').formSelect();
+                                            });
         </script>
         <script>
             function validar() {
