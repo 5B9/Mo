@@ -92,7 +92,10 @@
         </script>
         <script>
             $(document).ready(function () {
-                $('.timepicker').timepicker({});
+                $('.timepicker').timepicker({
+                    twelveHour:false
+                    
+                });
             });
         </script>
         <script>
