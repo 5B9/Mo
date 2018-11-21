@@ -75,7 +75,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row">
+                                        <!--<div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="" id="first_name" type="text" name="nomeUsuario" class="validate">
                                                 <label for="nomeUsuario">Nome de Usuário</label>
@@ -87,7 +87,7 @@
                                                 <input placeholder="" id="first_name" type="password" name="senha" class="validate">
                                                 <label for="senha">senha</label>
                                             </div>
-                                        </div>
+                                        </div>-->
 
                                         <div class="row">
                                             <div class="input-field col s12">

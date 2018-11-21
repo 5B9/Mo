@@ -56,15 +56,17 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
             if (u != null) {
                 logado = true;
             }
+            //lel
         
       out.write("\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Currículos</title>\n");
+      out.write("        <title>SGC Acome</title>\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css\">\n");
       out.write("        <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\n");
       out.write("        <script src=\"https://code.jquery.com/jquery-3.3.1.min.js\" integrity=\"sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=\"  crossorigin=\"anonymous\"></script>\n");
       out.write("    </head>\n");
       out.write("    <header>\n");
+      out.write("        \n");
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "cabecalho.jsp", out, true);
       out.write("\n");
@@ -72,31 +74,39 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <body>\n");
       out.write("\n");
       out.write("        <main>\n");
-      out.write("                            ");
+      out.write("            ");
  if (u != null) {
+                 
+            if(u.getTipoUsuario().equals("funcionario")){
                 
-      out.write("<\n");
-      out.write("              <div class=\"carousel carousel-slider center\">\n");
-      out.write("    <div class=\"carousel-fixed-item center\">\n");
-      out.write("      \n");
-      out.write("    </div>\n");
-      out.write("    <div class=\"carousel-item red white-text\" href=\"#one!\">\n");
-      out.write("      <h2>First Panel</h2>\n");
-      out.write("      <p class=\"white-text\">This is your first panel</p>\n");
-      out.write("    </div>\n");
-      out.write("    <div class=\"carousel-item amber white-text\" href=\"#two!\">\n");
-      out.write("      <h2>Second Panel</h2>\n");
-      out.write("      <p class=\"white-text\">This is your second panel</p>\n");
-      out.write("    </div>\n");
-      out.write("    <div class=\"carousel-item green white-text\" href=\"#three!\">\n");
-      out.write("      <h2>Third Panel</h2>\n");
-      out.write("      <p class=\"white-text\">This is your third panel</p>\n");
-      out.write("    </div>\n");
-      out.write("    <div class=\"carousel-item blue white-text\" href=\"#four!\">\n");
-      out.write("      <h2>Fourth Panel</h2>\n");
-      out.write("      <p class=\"white-text\">This is your fourth panel</p>\n");
-      out.write("    </div>\n");
-      out.write("  </div>\n");
+            
+                 
+            
+      out.write("\n");
+      out.write(" \n");
+      out.write("\n");
+      out.write("            <ul id=\"slide-out\" class=\"sidenav\" style=\"background-color: #004080;\">\n");
+      out.write("    <li><div class=\"user-view\">\n");
+      out.write("      <div class=\"background\">\n");
+      out.write("        <img src=\"imagens/Acome_1.jpeg\">\n");
+      out.write("      </div>\n");
+      out.write("      <a href=\"#user\"><img class=\"circle\" src=\"imagens/fotos/foto5.png\"></a>\n");
+      out.write("      <a href=\"#name\"><span class=\"black-text name\">");
+      out.print(u.getNomeUsuario());
+      out.write("</span></a>\n");
+      out.write("      <a href=\"#email\"><span class=\"black-text email\">");
+      out.print(u.getEnderecoEmail());
+      out.write("</span></a>\n");
+      out.write("    </div></li>\n");
+      out.write("  \n");
+      out.write("    <li><a href=\"funcionarioAlterar.jsp?idFuncionario=");
+      out.print(u.getIdPessoa() );
+      out.write("\" class=\"white-text\">Alterar Dados Pessoais</a></li>\n");
+      out.write("    <li><div class=\"divider\"></div></li>\n");
+      out.write("   \n");
+      out.write("    <li><a class=\"waves-effect white-text\" href=\"#!\" > Alterar dados de usuário</a></li>\n");
+      out.write("  </ul>\n");
+      out.write("  <a href=\"#\" data-target=\"slide-out\" class=\"sidenav-trigger\"><i class=\"material-icons\">menu</i></a>\n");
       out.write("            ");
  } else { 
       out.write("\n");
@@ -126,7 +136,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("            ");
 
-                }
+             }   }
       out.write("\n");
       out.write("\n");
       out.write("        </main>\n");
@@ -140,26 +150,23 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </body>\n");
       out.write("\n");
       out.write("    <script>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("        var instance = M.Carousel.init({\n");
-      out.write("            fullWidth: true,\n");
-      out.write("            indicators: true\n");
-      out.write("        });\n");
-      out.write("\n");
-      out.write("        // Or with jQuery\n");
-      out.write("\n");
       out.write("        $('.carousel.carousel-slider').carousel({\n");
       out.write("            fullWidth: true,\n");
       out.write("            indicators: true\n");
       out.write("        }\n");
-      out.write("\n");
       out.write("        );\n");
-      out.write("\n");
-      out.write("\n");
       out.write("    </script>\n");
+      out.write("    <script>\n");
+      out.write("   \n");
+      out.write("document.addEventListener('DOMContentLoaded', function() {\n");
+      out.write("    var elems = document.querySelectorAll('.sidenav');\n");
+      out.write("    var instances = M.Sidenav.init(elems, options);\n");
+      out.write("  });\n");
       out.write("\n");
-      out.write("    \n");
+      out.write("  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)\n");
+      out.write("  // var collapsibleElem = document.querySelector('.collapsible');\n");
+      out.write("  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);\n");
+      out.write("  </script>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

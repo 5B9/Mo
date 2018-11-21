@@ -31,7 +31,7 @@
 
              Date dataAdm = sdf.parse(data);
             
-            Funcionario f = new Funcionario(matricula,tipoFuncionario, dataAdm, nomeUsuario, senha, tipoUsuario, 0, nomeCompleto, cpf, rg, sexo, endereco);
+            Funcionario f = new Funcionario(matricula,tipoFuncionario, dataAdm, tipoUsuario, 0, nomeCompleto, cpf, rg, sexo, endereco);
 
             ControleFuncionario controleFuncionario = new ControleFuncionario();
             controleFuncionario.inserirFuncionario(f);

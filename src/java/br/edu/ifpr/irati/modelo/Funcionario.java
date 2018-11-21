@@ -43,6 +43,13 @@ public class Funcionario extends Usuario implements Serializable {
         this.dataAdmissao = dataAdmissao;
         this.matricula = matricula;
     }
+    
+    public Funcionario(int matricula,String tipoFuncionario, Date dataAdmissao, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail) {
+        super(tipoUsuario, idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
+        this.tipoFuncionario = tipoFuncionario;
+        this.dataAdmissao = dataAdmissao;
+        this.matricula = matricula;
+    }
 
     public String getTipoFuncionario() {
         return tipoFuncionario;

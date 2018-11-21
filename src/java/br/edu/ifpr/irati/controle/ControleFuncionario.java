@@ -44,6 +44,12 @@ public class ControleFuncionario {
         return funcionarioDAO.buscarPorTipoFuncionario(tipoFuncionario);
     }
     
+       public Funcionario consultarFuncionarioPorMatricula(int matricula)throws PersistenciaException{
+        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+        return funcionarioDAO.buscarFuncionarioPorMatricula(matricula);
+    }
+    
+    
     public void excluirFuncionario(Funcionario funcionario) throws PersistenciaException{
         Dao<Funcionario> usuarioDAO = new GenericDAO<>(Funcionario.class);
         usuarioDAO.excluir(funcionario);
