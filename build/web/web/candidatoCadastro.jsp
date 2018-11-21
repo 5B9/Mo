@@ -135,7 +135,10 @@
                                             <div class="waves-effect waves-light btn indigo ">
                                                 <span>File</span>
                                                 <input type="file" name="curriculo">
-                                                 
+
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text">
                                             </div>
                                             <label for="crriculo">Currículo</label>
                                         </div>
