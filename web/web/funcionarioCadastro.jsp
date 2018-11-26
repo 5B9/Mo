@@ -43,7 +43,7 @@
                             <div class="card-content white-text ">
 
                                 <div class="row">
-                                    <form class="col s12" action="scripts/funcionarioCadastro.jsp" method="post">
+                                    <form class="col s12" action="scripts/funcionarioCadastro.jsp" method="post" name="formulario">
 
                                         <div class="row">
                                             <div class="input-field col s12">
@@ -70,7 +70,7 @@
                                         
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input placeholder="12/12/2012" id="first_name" type="text" name="data" class="validate">
+                                                <input placeholder="12/12/2012" id="first_name" type="text" name="data" class="datepicker">
                                                 <label for="data">Data de admissão</label>
                                             </div>
                                         </div>
@@ -98,14 +98,14 @@
 
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="text" name="cpf" class="validate">
+                                                <input placeholder="" id="ddd" type="text" name="cpf" class="validate">
                                                 <label for="cpf">CPF</label>
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="text" name="rg" class="validate">
+                                                <input pattern="" placeholder="" id="first_name" type="text" name="rg" class="validate">
                                                 <label for="rg">RG</label>
                                             </div>
                                         </div>
@@ -132,7 +132,7 @@
 
 
                                     <!--    <input type="submit" name="salvar" value="Cadastrar" class="waves-effect waves-ligth  btn indigo"/> -->
-                                       <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
+                                       <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
                                     </form>
                                 </div>
                             </div>
@@ -153,6 +153,52 @@
                 $('select').formSelect();
             });
         </script>
-
+        <script>
+            $(document).ready(function () {
+                $('.datepicker').datepicker({format:'mm/dd/yyyy'});
+            });
+        </script>
+        <script>
+            $(document).ready(funcition(){
+                $("#ddd").inputmask({"mask": "(999) 999-9999"});
+            })
+        </script>
+        <script>
+            function validar() {
+                if (document.formulario.tipoFuncionario.value == "") {
+                    alert("Por favor, insira o tipo do funcionário.");
+                    return false;
+                } else if (document.formulario.matricula.value == "") {
+                    alert("Por favor, o número da matrícula do funcionário.");
+                    return false;
+                } else if (document.formulario.data.value == "") {
+                    alert("Por favor, insira a data que esse funcionário foi admitido.");
+                    return false;
+                } else if (document.formulario.nomeUsuario.value == "") {
+                    alert("Por favor, insira o nome de usuário desse funcionário.");
+                    return false;
+                } else if (document.formulario.senha.value == "") {
+                    alert("Por favor, insira a senha do funcionário.");
+                    return false;
+                }else if (document.formulario.nome.value == "") {
+                    alert("Por favor, insira o nome do funcionário.");
+                    return false;
+                } else if (document.formulario.cpf.value == "") {
+                    alert("Por favor, insira o CPF do funcionário.");
+                    return false;
+                } else if (document.formulario.rg.value == "") {
+                    alert("Por favor, insira o RG do funcionário.");
+                    return false;
+                } else if (document.formulario.sexo.value == "") {
+                    alert("Por favor, insira o sexo do funcionário.");
+                    return false;
+                } else if (document.formulario.endereco.value == "") {
+                    alert("Por favor, insira o endereço de e-mail desse funcionário.");
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        </script>
     </body>
 </html>

@@ -16,7 +16,7 @@
         <%
 
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            SimpleDateFormat stf = new SimpleDateFormat("HH:mm:ss");
+            SimpleDateFormat stf = new SimpleDateFormat("HH:mm");
             
             int id=Integer.parseInt(request.getParameter("idAgendamento"));
             String local = request.getParameter("local");
