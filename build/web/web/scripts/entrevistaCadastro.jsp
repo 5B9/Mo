@@ -24,7 +24,6 @@
 
             String prasix = request.getParameter("faseTecnica");
 
-
             if (prasix.equals("aprovado")) {
 
                 faseTecnica = true;
@@ -52,7 +51,6 @@
             Entrevista e = new Entrevista(0, funcionario, cargo, fasePsicologica, faseTecnica, candidato);
             ControleEntrevista controleEntrevista = new ControleEntrevista();
 
-            //a.getEntrevistas().add(e);
             controleEntrevista.inserirEntrevista(e);
             response.sendRedirect("../listaEntrevistas.jsp");
 

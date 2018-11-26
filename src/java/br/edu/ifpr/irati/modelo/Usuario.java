@@ -40,6 +40,13 @@ public class Usuario extends Pessoa implements Serializable {
         this.senha = senha;
         this.tipoUsuario = tipoUsuario;
     }
+    
+     public Usuario( String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail) {
+        super(idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
+        nomeUsuario = "";
+        senha = "";
+        this.tipoUsuario = tipoUsuario;
+    }
 
     public Usuario(String nomeUsuario, String senha, String tipoUsuario) {
         this.nomeUsuario = nomeUsuario;

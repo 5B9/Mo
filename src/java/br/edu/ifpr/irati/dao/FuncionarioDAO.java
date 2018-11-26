@@ -29,6 +29,17 @@ public class FuncionarioDAO {
         session.close();
         return funcionario;
     }
+    
+      public Funcionario buscarFuncionarioPorMatricula(int matricula){
+        Session session = HibernateUtil.getSessionFactory().openSession();
+       String hql = "from funcionario f where f.matricula = '"+matricula +"' ";
+        Query query = session.createQuery(hql);
+        query.setMaxResults(1);
+        Funcionario funcionario = (Funcionario) query.uniqueResult();        
+        session.clear();
+        session.close();
+        return funcionario;
+    }
      
       
    

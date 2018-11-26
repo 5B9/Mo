@@ -45,6 +45,7 @@
                     <tr>
                         <th>Nome Completo</th>
                         <th>Tipo</th>
+                        <th>Matrícula</th>
                         <th>Alterar</th>
                         <th>Excluir</th>
                     </tr>
@@ -58,6 +59,7 @@
                     <tr>
                         <%----%><td><%=f.getNomeCompleto()%></td>
                         <%----%><td><%=f.getTipoFuncionario()%></td>
+                        <td><%=f.getMatricula()%></td>
 
                         <td>
                           <!--  <a href="funcionarioAlterar.jsp?idFuncionario=<%=f.getIdPessoa()%>" class="waves-effect waves-indigo btn-flat "><i class="material-icons right">refresh</i>Alterar</a> -->

@@ -3,7 +3,7 @@
     <head>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-        <title>SGC Acome</title>
+        <title>Login</title>
 
         <style>
             body {
@@ -36,13 +36,11 @@
             }
         </style>
     </head>
-    
+ 
     
 
     <body>
-        <header>
-        <jsp:include page="cabecalho.jsp" flush="true" />
-    </header>
+       
         
         <%String e = request.getParameter("e");
             String mensagem = "";
@@ -66,14 +64,14 @@
 
                             <div class='row'>
                                 <div class='input-field col s12'>
-                                    <input class='autocomplete' type='text' name='usuario' id='usuario' />
+                                    <input class='validate' type='text' name='usuario' id='usuario' />
                                     <label for='usuario'>Usuário:</label>
                                 </div>
                             </div>
 
                             <div class='row'>
                                 <div class='input-field col s12'>
-                                    <input class='autocomplete' type='password' name='senha' id='senha' />
+                                    <input class='validate' type='password' name='senha' id='senha' />
                                     <label for='senha'>Senha: </label>
                                 </div>
                                 
@@ -92,7 +90,7 @@
                     </div>
                 </div>
                 <a href="usuarioCadastro.jsp">Criar Conta</a><br>
-              
+                <a href="index.jsp">Voltar</a><br>
             </center>
 
             <div class="section"></div>

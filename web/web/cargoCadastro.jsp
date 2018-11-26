@@ -21,10 +21,10 @@
 
     </head>
     <style>
-            body{
-                background-color: #263238;
-            }
-        </style>
+        body{
+            background-color: #263238;
+        }
+    </style>
     <body>
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
@@ -52,9 +52,9 @@
                                                 <label for="vagas">Quantidade de Vagas</label>
                                             </div>
                                         </div>
-                                        
-                                         <div class="row" >
-                                   
+
+                                        <div class="row" >
+
                                             <div class="input-field col s12">
                                                 <select name="descricao">
                                                     <option value="" disabled selected>Exigências</option>
@@ -66,12 +66,12 @@
                                                     <option value="Ensino Superior Completo">Ensino Superior Completo</option>
                                                 </select>
                                                 <label>Exigências</label>
-                                           
+
+                                            </div>
                                         </div>
-                                    </div>
-                                        
-                                        
-                                        
+
+
+
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="...." id="first_name" type="text" name="nome"class="validate">
@@ -95,7 +95,9 @@
                                             </div>
                                         </div>
 
-                                        <input type="submit" name="salvar" value="Cadastrar" onclick="return validar()" class="waves-effect waves-teal btn indigo"/>
+                                        <center>
+                                            <button  class="waves-effect waves-light btn indigo " type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
+                                        </center>
                                     </form>
 
                                 </div>

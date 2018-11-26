@@ -46,7 +46,7 @@
             <div class="container" style="width: 30%;">
                 <form class="col s12" action="scripts/agendamentoAlterar.jsp" method="post" name="formulario">
                     <div class="card grey lighten-5">
-                        <div class="card-content white-text ">
+                        <div class="card-content black-text ">
                             <input placeholder="" id="first_name" type="hidden" name="idAgendamento" value="<%= idAgendamento%>" class="validate"/>
 
                             <div class="row">
@@ -87,7 +87,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
             $(document).ready(function () {
-                $('.datepicker').datepicker({format: 'mm/dd/yyyy'});
+                $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
             });
         </script>
         <script>

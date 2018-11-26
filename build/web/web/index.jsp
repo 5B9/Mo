@@ -26,6 +26,7 @@
     <header>
         
         <jsp:include page="cabecalho.jsp" flush="true" />
+        
     </header>
     <body>
 
@@ -37,24 +38,24 @@
             
                  
             %>
- 
-
-            <ul id="slide-out" class="sidenav" style="background-color: #004080;">
+  <ul id="slide-out" class="sidenav" style="background-color: #004080;">
     <li><div class="user-view">
       <div class="background">
         <img src="imagens/Acome_1.jpeg">
       </div>
       <a href="#user"><img class="circle" src="imagens/fotos/foto5.png"></a>
       <a href="#name"><span class="black-text name"><%=u.getNomeUsuario()%></span></a>
-      <a href="#email"><span class="black-text email"><%=u.getEnderecoEmail()%>@gmail.com</span></a>
+      <a href="#email"><span class="black-text email"><%=u.getEnderecoEmail()%></span></a>
     </div></li>
   
     <li><a href="funcionarioAlterar.jsp?idFuncionario=<%=u.getIdPessoa() %>" class="white-text">Alterar Dados Pessoais</a></li>
     <li><div class="divider"></div></li>
    
-    <li><a class="waves-effect white-text" href="#!" > Alterar dados de usuário</a></li>
+    <li><a class="waves-effect white-text" href="usuarioAlterar.jsp?idFuncionario=<%=u.getIdPessoa() %>" > Alterar dados de usuário</a></li>
   </ul>
   <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+           
             <% } else { %>
 
             <div class="carousel carousel-slider center" >
