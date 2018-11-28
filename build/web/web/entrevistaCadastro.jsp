@@ -173,7 +173,7 @@
                 <script>
             function validar() {
                 if (document.formulario.funcionario.value == "") {
-                    alert("Por favor, selecione o candidato que presidirá a entrevista.");
+                    alert("Por favor, selecione o funcionário que presidirá a entrevista.");
                     return false;
                 } else if (document.formulario.cargo.value == "") {
                     alert("Por favor, insira um cargo para a entrevista.");

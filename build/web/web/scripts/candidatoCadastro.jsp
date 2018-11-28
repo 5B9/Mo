@@ -28,7 +28,7 @@
             String rg = request.getParameter("rg");
             String sexo = request.getParameter("sexo");
             String enderecoEmail = request.getParameter("endereco");
-
+            
             Curriculo curriculo = new Curriculo(0, new Date(), new File(request.getParameter("curriculo")));
 
             Candidato c = new Candidato(escolaridade, cargoDesejado, curriculo, nomeUsuario, senha, tipoUsuario, 0, nomeCompleto, cpf, rg, sexo, enderecoEmail);

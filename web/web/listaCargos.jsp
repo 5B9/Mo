@@ -42,6 +42,7 @@
                         <th>Nome Cargo</th>
                         <th>Quantidade Vagas</th>
                         <th>Descrição</th>
+                        <th>Modalidade</th>
                         <th>Alterar</th>
                         <th>Excluir</th>
                     </tr>
@@ -55,6 +56,7 @@
                         <%----%><td><%=c.getNomeCargo()%></td>
                         <%----%><td><%=c.getQtdVagas()%></td>
                         <%----%><td><%=c.getDescricao()%></td>
+                       <td><%=c.getModalidade()%></td>
                         <td>
                            <!-- <a href="cargoAlteracao.jsp?idCargo=<%=c.getIdCargo()%>" class="waves-effect waves-indigo darken-3 btn-flat "><i class="material-icons right">refresh</i>Alterar</a> -->
                             <a href="cargoAlteracao.jsp?idCargo=<%=c.getIdCargo()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>

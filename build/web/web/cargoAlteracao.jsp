@@ -50,47 +50,7 @@
                 
                 <form name="formulario"class="col s12" action="scripts/cargoAlterar.jsp" method="post">
 
-                                <div class="row">
-
-                                    <form class="col s12" action="scripts/cargoAlterar.jsp" method="post">
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="hidden" name="id" value="<%= idCargo%>" class="validate"/>
-                                            </div>
-                                        </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input placeholder="...." id="first_name" type="text" name="descricao" vagas="<%=c.getDescricao()%>" class="validate">
-                            <label for="descricao">Descrição</label>
-                        </div>
-                    </div>
-                            
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input placeholder="..." id="first_name" type="text" name="nome" value="<%=c.getNomeCargo()%>" class="validate">
-                            <label for="nome">Nome Cargo</label>
-                        </div>
-                    </div>
-                            
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input placeholder="1300" id="first_name" type="text" name="salario" value="<%=c.getSalario()%>" class="validate">
-                            <label for="salario">Salário</label>
-                        </div>
-                    </div>
-                            
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input placeholder="..." id="first_name" type="text" name="modalidade" value="<%=c.getModalidade()%>" class="validate">
-                            <label for="modalidade">Modalidade</label>
-                        </div>
-                    </div>
-                            
-                    <input onclick="return validar()" type="submit" name="salvar" value="Alterar!" class="waves-effect waves-indigo darken-3 btn-flat"/>
-                
-                </form>
-
+<div class="row"><input placeholder="" id="first_name" type="hidden" name="idCargo" value="<%=idCargo %>" class="validate"/>
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="..." id="first_name" type="text" name="vagas" value="<%=c.getQtdVagas()%>" class="validate">
@@ -128,12 +88,17 @@
                                             </div>
                                         </div>
 
-                                        <div class="row">
+                                  <div class="row">
                                             <div class="input-field col s12">
-                                                <input placeholder="..." id="first_name" type="text" name="modalidade" value="<%=c.getModalidade()%>" class="validate">
+                                                <select  name="modalidade">
+                                                    <option value="" disabled selected>Modalidade</option>
+                                                    <option value="CLT">CLT</option>
+                                                    <option value="Contrato">Contrato</option>
+                                                </select>
                                                 <label for="modalidade">Modalidade</label>
                                             </div>
                                         </div>
+
 
                                         <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Alterar</span></button>
 

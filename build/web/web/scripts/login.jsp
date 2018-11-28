@@ -1,4 +1,6 @@
 
+<%@page import="br.edu.ifpr.irati.modelo.Candidato"%>
+<%@page import="br.edu.ifpr.irati.controle.ControleCandidato"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleUsuario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleLogin"%>
@@ -25,8 +27,14 @@
                         session.setAttribute("usuario", u);
                         if(u.getTipoUsuario().equals("funcionario")){
                         response.sendRedirect("../index.jsp");
-                        }else{
-                            response.sendRedirect("../perfilCadastro.jsp");
+                        }if(u.getTipoUsuario().equals("candidato")){
+                            ControleCandidato controle = new ControleCandidato();
+                            Candidato c = controle.consultarCandidatoPorId(u.getIdPessoa());
+                            if(c.isPerfilPreenchido()){
+                            response.sendRedirect("../index.jsp");
+                            }else{
+                              response.sendRedirect("../perfilCadastro.jsp");  
+                            }
                         }
                 } catch (Exception e) {
                     session.setAttribute("usuario", null);
