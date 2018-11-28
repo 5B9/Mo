@@ -15,16 +15,16 @@ import org.hibernate.Session;
  * @author Altai
  */
 public class CargoDAO {
-    
-    public Cargo buscarPorModalidadeCargo(String str){
+
+    public Cargo buscarPorModalidadeCargo(String str) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        String hql = "from cargo c where c.modalidade = '"+str+"' ";
+        String hql = "from cargo c where c.modalidade = '" + str + "' ";
         Query query = session.createQuery(hql);
         query.setMaxResults(1);
-        Cargo cargo = (Cargo) query.uniqueResult();        
+        Cargo cargo = (Cargo) query.uniqueResult();
         session.clear();
         session.close();
         return cargo;
     }
-    
+
 }

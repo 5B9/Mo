@@ -11,10 +11,10 @@
 <!DOCTYPE html>
 <html>
     <style>
-            body{
-                background-color: #263238;
-            }
-        </style>
+        body{
+            background-color: #263238;
+        }
+    </style>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SGC Acome</title>
@@ -147,13 +147,13 @@
                             </div>
                         </div>
                     </form>
-                      
+
 
                     <% }%>
                 </div>
-<!--Esse fechamento de tags está confuso
-    Veje se está certo =P -->
-               
+                <!--Esse fechamento de tags está confuso
+                    Veje se está certo =P -->
+
 
             </center>
         </main>

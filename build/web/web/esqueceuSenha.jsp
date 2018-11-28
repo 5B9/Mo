@@ -19,8 +19,8 @@
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
 
-    
-     <main>
+
+        <main>
             <br>
             <div class="container" style="width: 30%;">
                 <div class="col s12 m6">
@@ -81,13 +81,13 @@
 
         </main>
 
-    <footer>
-        <jsp:include page="rodape.jsp" flush="true" />
-    </footer>  
-    <script>
-                                                        $(document).ready(function () {
-                                                            $('select').formSelect();
-                                                        });
+        <footer>
+            <jsp:include page="rodape.jsp" flush="true" />
+        </footer>  
+        <script>
+            $(document).ready(function () {
+                $('select').formSelect();
+            });
         </script>
         <script>
             function aparece()//Função referente ao input número de matrícula
@@ -98,9 +98,9 @@
                 //Variável contendo o input do nº da matrícula 
                 var label = document.getElementById("mabel");
                 //Variável referente a Label
-                
+
                 if (comboBox == "funcionario") {
-                    
+
                     label.style.display = "block";
                     mathmagic.setAttribute("type", "text");
                 } else {
@@ -110,7 +110,7 @@
             }
 
         </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
-</body>
+    </body>
 </html>

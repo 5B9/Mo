@@ -46,96 +46,96 @@
                                     ControleCargo cc = new ControleCargo();
                                     Cargo c = cc.consultarCargoPorId(idCargo);
                                 %>
-            <div class="row">
-                
-                <form name="formulario"class="col s12" action="scripts/cargoAlterar.jsp" method="post">
-
                                 <div class="row">
 
-                                    <form class="col s12" action="scripts/cargoAlterar.jsp" method="post">
+                                    <form name="formulario"class="col s12" action="scripts/cargoAlterar.jsp" method="post">
 
                                         <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="hidden" name="id" value="<%= idCargo%>" class="validate"/>
+
+                                            <form class="col s12" action="scripts/cargoAlterar.jsp" method="post">
+
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input placeholder="" id="first_name" type="hidden" name="id" value="<%= idCargo%>" class="validate"/>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input placeholder="...." id="first_name" type="text" name="descricao" vagas="<%=c.getDescricao()%>" class="validate">
+                                                        <label for="descricao">Descrição</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input placeholder="..." id="first_name" type="text" name="nome" value="<%=c.getNomeCargo()%>" class="validate">
+                                                        <label for="nome">Nome Cargo</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input placeholder="1300" id="first_name" type="text" name="salario" value="<%=c.getSalario()%>" class="validate">
+                                                        <label for="salario">Salário</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input placeholder="..." id="first_name" type="text" name="modalidade" value="<%=c.getModalidade()%>" class="validate">
+                                                        <label for="modalidade">Modalidade</label>
+                                                    </div>
+                                                </div>
+
+                                                <input onclick="return validar()" type="submit" name="salvar" value="Alterar!" class="waves-effect waves-indigo darken-3 btn-flat"/>
+
+                                            </form>
+
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input placeholder="..." id="first_name" type="text" name="vagas" value="<%=c.getQtdVagas()%>" class="validate">
+                                                    <label for="vagas">Quantidade de Vagas</label>
+                                                </div>
                                             </div>
-                                        </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input placeholder="...." id="first_name" type="text" name="descricao" vagas="<%=c.getDescricao()%>" class="validate">
-                            <label for="descricao">Descrição</label>
-                        </div>
-                    </div>
-                            
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input placeholder="..." id="first_name" type="text" name="nome" value="<%=c.getNomeCargo()%>" class="validate">
-                            <label for="nome">Nome Cargo</label>
-                        </div>
-                    </div>
-                            
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input placeholder="1300" id="first_name" type="text" name="salario" value="<%=c.getSalario()%>" class="validate">
-                            <label for="salario">Salário</label>
-                        </div>
-                    </div>
-                            
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input placeholder="..." id="first_name" type="text" name="modalidade" value="<%=c.getModalidade()%>" class="validate">
-                            <label for="modalidade">Modalidade</label>
-                        </div>
-                    </div>
-                            
-                    <input onclick="return validar()" type="submit" name="salvar" value="Alterar!" class="waves-effect waves-indigo darken-3 btn-flat"/>
-                
-                </form>
+                                            <div class="row" >
 
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="..." id="first_name" type="text" name="vagas" value="<%=c.getQtdVagas()%>" class="validate">
-                                                <label for="vagas">Quantidade de Vagas</label>
+                                                <div class="input-field col s12">
+                                                    <select name="descricao">
+                                                        <option value="" disabled selected>Exigências</option>
+                                                        <option value="Ensino Fudamental Incompleto">Ensino Fundamental Incompleto</option>
+                                                        <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
+                                                        <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
+                                                        <option value="Ensino Médio Completo">Ensino Médio Completo</option>
+                                                        <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+                                                        <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+                                                    </select>
+                                                    <label>Exigências</label>
+
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row" >
 
-                                            <div class="input-field col s12">
-                                                <select name="descricao">
-                                                    <option value="" disabled selected>Exigências</option>
-                                                    <option value="Ensino Fudamental Incompleto">Ensino Fundamental Incompleto</option>
-                                                    <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
-                                                    <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
-                                                    <option value="Ensino Médio Completo">Ensino Médio Completo</option>
-                                                    <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
-                                                    <option value="Ensino Superior Completo">Ensino Superior Completo</option>
-                                                </select>
-                                                <label>Exigências</label>
-
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input placeholder="..." id="first_name" type="text" name="nome" value="<%=c.getNomeCargo()%>" class="validate">
+                                                    <label for="nome">Nome Cargo</label>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="..." id="first_name" type="text" name="nome" value="<%=c.getNomeCargo()%>" class="validate">
-                                                <label for="nome">Nome Cargo</label>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input placeholder="1300" id="first_name" type="text" name="salario" value="<%=c.getSalario()%>" class="validate">
+                                                    <label for="salario">Salário</label>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="1300" id="first_name" type="text" name="salario" value="<%=c.getSalario()%>" class="validate">
-                                                <label for="salario">Salário</label>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input placeholder="..." id="first_name" type="text" name="modalidade" value="<%=c.getModalidade()%>" class="validate">
+                                                    <label for="modalidade">Modalidade</label>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="..." id="first_name" type="text" name="modalidade" value="<%=c.getModalidade()%>" class="validate">
-                                                <label for="modalidade">Modalidade</label>
-                                            </div>
-                                        </div>
-
-                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Alterar</span></button>
+                                            <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Alterar</span></button>
 
                                     </form>
 
@@ -153,11 +153,11 @@
         </footer>                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-            $(document).ready(function () {
-                $('select').formSelect();
-            });
+                                                    $(document).ready(function () {
+                                                        $('select').formSelect();
+                                                    });
         </script>   
-                <script>
+        <script>
             function validar() {
                 if (document.formulario.vagas.value == "") {
                     alert("Por favor, insira a quantdade de vagas.");

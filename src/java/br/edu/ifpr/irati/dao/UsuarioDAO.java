@@ -27,7 +27,7 @@ public class UsuarioDAO {
         session.close();
         return usuario;
     }
-    
+
     public Usuario buscarPorNomeUsuario(String str) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         String hql = "from usuario u where u.nomeUsuario = '" + str + "' ";
@@ -41,12 +41,12 @@ public class UsuarioDAO {
 
     public Usuario loginUsuario(String nomeUsuario, String senha) throws Exception {
         Session session = HibernateUtil.getSessionFactory().openSession();
-       // String senhaResumo = Digest.hashString(senha, "SHA-512");
+        // String senhaResumo = Digest.hashString(senha, "SHA-512");
         String hql = "from usuario u where u.nomeUsuario = '" + nomeUsuario + "' and senha='" + senha + "'";
         Query query = session.createQuery(hql);
         query.setMaxResults(1);
-       // Usuario usuario = new Usuario(nomeUsuario, senhaResumo, "");
-       Usuario  usuario = (Usuario) query.uniqueResult();
+        // Usuario usuario = new Usuario(nomeUsuario, senhaResumo, "");
+        Usuario usuario = (Usuario) query.uniqueResult();
         if (usuario != null) {
             session.clear();
             session.close();

@@ -85,7 +85,7 @@
         <script>
             $(document).ready(function () {
                 $('.timepicker').timepicker({
-                    twelveHour:false
+                    twelveHour: false
                 });
             });
         </script>

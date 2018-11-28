@@ -17,37 +17,42 @@ import org.hibernate.annotations.Proxy;
  *
  * @author Altai
  */
-@Entity (name = "candidato")
+@Entity(name = "candidato")
 @PrimaryKeyJoinColumn(name = "idPessoa")
 @Proxy(lazy = false)
 public class Candidato extends Usuario implements Serializable {
-    
+
     @Column(name = "escolaridade", nullable = false, length = 50)
     private String escolaridade;
-    @Column(name = "cargoDesejado", nullable = false, length = 15) 
-    private String cargoDesejado; 
-    @OneToOne (fetch = FetchType.LAZY)
+    @Column(name = "cargoDesejado", nullable = false, length = 15)
+    private String cargoDesejado;
+    @OneToOne(fetch = FetchType.LAZY)
     private Curriculo curriculo;
+    @Column(name = "perfilPreenchido", nullable = false, length = 15)
+    private boolean perfilPreenchido;
 
     public Candidato() {
-       super();
-       escolaridade = "";
-       cargoDesejado = "";
-       curriculo = new Curriculo();
+        super();
+        escolaridade = "";
+        cargoDesejado = "";
+        curriculo = new Curriculo();
+        perfilPreenchido=false;
     }
 
-    public Candidato(String escolaridade, String cargoDesejado, String nomeUsuario, String senha, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail) {
+    public Candidato(String escolaridade, String cargoDesejado, String nomeUsuario, String senha, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail,boolean perfilPreenchido) {
         super(nomeUsuario, senha, tipoUsuario, idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
         this.escolaridade = escolaridade;
         this.cargoDesejado = cargoDesejado;
         curriculo = new Curriculo();
+        this.perfilPreenchido=  perfilPreenchido;
     }
 
-    public Candidato(String escolaridade, String cargoDesejado, Curriculo curriculo, String nomeUsuario, String senha, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail) {
+    public Candidato(String escolaridade, String cargoDesejado, Curriculo curriculo, String nomeUsuario, String senha, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail,boolean perfilPreenchido) {
         super(nomeUsuario, senha, tipoUsuario, idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
         this.escolaridade = escolaridade;
         this.cargoDesejado = cargoDesejado;
         this.curriculo = curriculo;
+        this.perfilPreenchido=perfilPreenchido;
     }
 
     public String getEscolaridade() {
@@ -73,5 +78,13 @@ public class Candidato extends Usuario implements Serializable {
     public void setCurriculo(Curriculo curriculo) {
         this.curriculo = curriculo;
     }
-    
+
+    public boolean isPerfilPreenchido() {
+        return perfilPreenchido;
+    }
+
+    public void setPerfilPreenchido(boolean perfilPreenchido) {
+        this.perfilPreenchido = perfilPreenchido;
+    }
+
 }

@@ -15,16 +15,16 @@ import org.hibernate.Session;
  * @author Altai
  */
 public class EntrevistaDAO {
-    
-    public Entrevista buscarPorIdCandidato(int idCandidato){
+
+    public Entrevista buscarPorIdCandidato(int idCandidato) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        String hql = "from entrevista where candidato_idPessoa = "+idCandidato+" ";
+        String hql = "from entrevista where candidato_idPessoa = " + idCandidato + " ";
         Query query = session.createQuery(hql);
         query.setMaxResults(1);
-        Entrevista entrevista = (Entrevista) query.uniqueResult();        
+        Entrevista entrevista = (Entrevista) query.uniqueResult();
         session.clear();
         session.close();
         return entrevista;
     }
-    
+
 }

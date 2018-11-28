@@ -21,10 +21,10 @@ import org.hibernate.annotations.Proxy;
  *
  * @author Altai
  */
-@Entity (name = "curriculo")
+@Entity(name = "curriculo")
 @Proxy(lazy = false)
-public class Curriculo implements  Serializable {
-    
+public class Curriculo implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idCurriculo;
@@ -68,6 +68,5 @@ public class Curriculo implements  Serializable {
     public void setIdCurriculo(int idCurriculo) {
         this.idCurriculo = idCurriculo;
     }
-    
-    
+
 }

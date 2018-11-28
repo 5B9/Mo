@@ -114,9 +114,9 @@
         </footer>                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-                                            $(document).ready(function () {
-                                                $('select').formSelect();
-                                            });
+                                                $(document).ready(function () {
+                                                    $('select').formSelect();
+                                                });
         </script>
         <!--Receber os clientes pela cabeça, assim, pela cabeça, agarrá-los cabeça e ,com toda a sua cabeça, jooj-->
         <script>

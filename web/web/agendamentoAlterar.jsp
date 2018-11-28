@@ -86,15 +86,15 @@
         </footer>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-            $(document).ready(function () {
-                $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
-            });
+                                    $(document).ready(function () {
+                                        $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
+                                    });
         </script>
         <script>
             $(document).ready(function () {
                 $('.timepicker').timepicker({
-                    twelveHour:false
-                    
+                    twelveHour: false
+
                 });
             });
         </script>

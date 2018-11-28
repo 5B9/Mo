@@ -149,9 +149,9 @@
                 $('select').formSelect();
             });
         </script>
-<script>
+        <script>
             $(document).ready(function () {
-                $('.datepicker').datepicker({format:'mm/dd/yyyy'});
+                $('.datepicker').datepicker({format: 'mm/dd/yyyy'});
             });
         </script>
         <script>
@@ -171,7 +171,7 @@
                 } else if (document.formulario.senha.value == "") {
                     alert("Por favor, insira a senha do funcionário.");
                     return false;
-                }else if (document.formulario.nome.value == "") {
+                } else if (document.formulario.nome.value == "") {
                     alert("Por favor, insira o nome do funcionário.");
                     return false;
                 } else if (document.formulario.cpf.value == "") {

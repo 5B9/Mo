@@ -35,73 +35,73 @@
             <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
             <br><br><br>
-             <div class="container" >
+            <div class="container" >
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
-            <table class="highlight">
-                <thead>
-                    <tr>
-                        <th>Funcionarios Presidindo</th>
-                        <th>Candidatos</th>
-                        <th>Fase Psiclógica</th>
-                        <th>Fase Técnica</th>
-                        <th>Alterar</th>
-                        <th>Excluir</th>
-                    </tr>
-                </thead>
+                            <table class="highlight">
+                                <thead>
+                                    <tr>
+                                        <th>Funcionarios Presidindo</th>
+                                        <th>Candidatos</th>
+                                        <th>Fase Psiclógica</th>
+                                        <th>Fase Técnica</th>
+                                        <th>Alterar</th>
+                                        <th>Excluir</th>
+                                    </tr>
+                                </thead>
 
 
-                <tbody>
-                    <%
-                        ControleEntrevista controleEntrevista = new ControleEntrevista();
-                        Entrevista entrevista = new Entrevista();
-                        for (Entrevista e : controleEntrevista.consultarTodasEntrevistas(entrevista)) {%>
-                    <tr>
-                        <td><%=e.getFuncionarioMinistrante().getNomeCompleto()%></td>
-                        <td><%=e.getCandidato().getNomeCompleto()%></td>
-                        
-                        <%if (e.getFasePsicologica().equals("aprovado")) {%>
-                        <td>Aprovado</td>
-                        <%
+                                <tbody>
+                                    <%
+                                        ControleEntrevista controleEntrevista = new ControleEntrevista();
+                                        Entrevista entrevista = new Entrevista();
+                                        for (Entrevista e : controleEntrevista.consultarTodasEntrevistas(entrevista)) {%>
+                                    <tr>
+                                        <td><%=e.getFuncionarioMinistrante().getNomeCompleto()%></td>
+                                        <td><%=e.getCandidato().getNomeCompleto()%></td>
+
+                                        <%if (e.getFasePsicologica().equals("aprovado")) {%>
+                                        <td>Aprovado</td>
+                                        <%
                             if (e.getFasePsicologica().equals("reprovado")) {%>
-                        <td>Reprovado</td>
-                        <%}} else { %>
-                        <td>Em Andamento...</td>
-                        <%}%>
-                        
-                        <%if (e.isFaseTecnica() == true) {%>
-                        <td>Aprovado</td>
-                        <%} else {%>
-                        <td>Reprovado</td>
-                        <%}%>
+                                        <td>Reprovado</td>
+                                        <%}} else { %>
+                                        <td>Em Andamento...</td>
+                                        <%}%>
+
+                                        <%if (e.isFaseTecnica() == true) {%>
+                                        <td>Aprovado</td>
+                                        <%} else {%>
+                                        <td>Reprovado</td>
+                                        <%}%>
 
 
-                        <td>
-                        <!--    <a href="entrevistaAlterar.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="waves-effect waves-indigo darken-4 btn-flat "><i class="material-icons right">refresh</i>Alterar</a> -->
-                         <a href="entrevistaAlterar.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
-                        </td>
-                        <td>
-                         <!--   <a href="scripts/entrevistaExcluir.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="waves-effect waves-indigo darken-4 btn-flat "><i class="material-icons right">delete</i>Excluir</a> -->
-                        <a href="scripts/entrevistaExcluir.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">delete</i></a>
-                        </td>
+                                        <td>
+                                        <!--    <a href="entrevistaAlterar.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="waves-effect waves-indigo darken-4 btn-flat "><i class="material-icons right">refresh</i>Alterar</a> -->
+                                            <a href="entrevistaAlterar.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
+                                        </td>
+                                        <td>
+                                         <!--   <a href="scripts/entrevistaExcluir.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="waves-effect waves-indigo darken-4 btn-flat "><i class="material-icons right">delete</i>Excluir</a> -->
+                                            <a href="scripts/entrevistaExcluir.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">delete</i></a>
+                                        </td>
 
-                    </tr>
+                                    </tr>
 
-                </tbody>
-                <%}%>
-            </table>
+                                </tbody>
+                                <%}%>
+                            </table>
 
 
-            <br>
-            <center>
-            <a href="entrevistaCadastro.jsp"class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right">create</i>Cadastrar</a>
-            </center>
-            <% }%>
+                            <br>
+                            <center>
+                                <a href="entrevistaCadastro.jsp"class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right">create</i>Cadastrar</a>
+                            </center>
+                            <% }%>
                         </div>
                     </div>
                 </div>
-             </div>
+            </div>
         </main>
         <script>
             $(document).ready(function () {

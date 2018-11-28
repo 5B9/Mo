@@ -17,10 +17,10 @@ import org.hibernate.annotations.Proxy;
  *
  * @author Altai
  */
-@Entity (name = "cargo")
+@Entity(name = "cargo")
 @Proxy(lazy = false)
 public class Cargo implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idCargo;
@@ -52,8 +52,6 @@ public class Cargo implements Serializable {
         this.salario = salario;
         this.modalidade = modalidade;
     }
-    
-    
 
     public int getIdCargo() {
         return idCargo;
@@ -102,6 +100,5 @@ public class Cargo implements Serializable {
     public void setModalidade(String modalidade) {
         this.modalidade = modalidade;
     }
-    
-    
+
 }

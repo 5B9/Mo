@@ -98,7 +98,7 @@
 
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input placeholder="" id="cpf" type="text" name="cpf" class="validate">
+                                            <input placeholder="" id="cpf" type="text" name="cpf" class="validate" onkeydown="javascript: fMasc(this,mCPF):" onkeypress="if(!isNaN(String.fromCharCode(window.event.keyCode)))" >
                                             <label for="cpf">CPF</label>
                                         </div>
                                     </div>

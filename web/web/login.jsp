@@ -36,12 +36,12 @@
             }
         </style>
     </head>
- 
-    
+
+
 
     <body>
-       
-        
+
+
         <%String e = request.getParameter("e");
             String mensagem = "";
             if (e != null) {
@@ -60,7 +60,7 @@
                     <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 40px 0px 38px; border: 1px solid #EEE;">
 
                         <form class="col s12" action="scripts/login.jsp" method="post">
-                        
+
 
                             <div class='row'>
                                 <div class='input-field col s12'>
@@ -74,7 +74,7 @@
                                     <input class='validate' type='password' name='senha' id='senha' />
                                     <label for='senha'>Senha: </label>
                                 </div>
-                                
+
                                 <label style='float: right;'>
                                     <a class='pink-text' href="esqueceuSenha.jsp"><b>Esqueceu a senha?</b></a>
                                 </label>
@@ -96,29 +96,29 @@
             <div class="section"></div>
             <div class="section"></div>
         </main>
-    <footer>
-        <jsp:include page="rodape.jsp" flush="true" />
-    </footer>
+        <footer>
+            <jsp:include page="rodape.jsp" flush="true" />
+        </footer>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
     </body>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.autocomplete');
-    var instances = M.Autocomplete.init(elems, options);
-  });
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.autocomplete');
+            var instances = M.Autocomplete.init(elems, options);
+        });
 
 
-  // Or with jQuery
+        // Or with jQuery
 
-  $(document).ready(function(){
-    $('input.autocomplete').autocomplete({
-      data: {
-        "Apple": null,
-        "Microsoft": null,
-        "Google": 'https://placehold.it/250x250'
-      },
-    });
-  });
-        </script>
+        $(document).ready(function () {
+            $('input.autocomplete').autocomplete({
+                data: {
+                    "Apple": null,
+                    "Microsoft": null,
+                    "Google": 'https://placehold.it/250x250'
+                },
+            });
+        });
+    </script>
 </html>

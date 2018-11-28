@@ -1,4 +1,6 @@
 
+<%@page import="br.edu.ifpr.irati.modelo.Candidato"%>
+<%@page import="br.edu.ifpr.irati.controle.ControleCandidato"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleUsuario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleLogin"%>
@@ -19,18 +21,20 @@
             if (nome != null && senha != null) {
                 ControleLogin lc = new ControleLogin();
                 try {
-
-                  
-                        Usuario u = lc.login(nome, senha);
-                        session.setAttribute("usuario", u);
-                        if(u.getTipoUsuario().equals("funcionario")){
+                    
+                    Usuario u = lc.login(nome, senha);
+                    session.setAttribute("usuario", u);
+                    
+                    if (u.getTipoUsuario().equals("funcionario")) {
                         response.sendRedirect("../index.jsp");
-                        }else{
-                            response.sendRedirect("../perfilCadastro.jsp");
-                        }
+                    } else {
+                        ControleCandidato cc = new ControleCandidato();
+                        Candidato c = cc.consultarCandidatoPorId(u.getIdPessoa());
+                        response.sendRedirect("../perfilCadastro.jsp");
+                    }
                 } catch (Exception e) {
                     session.setAttribute("usuario", null);
-                    //alterar o valor na variável de sessão
+                    //valterar o valor na variável de sessão
 
                     response.sendRedirect("../login.jsp?e=" + e.getMessage());
                 }

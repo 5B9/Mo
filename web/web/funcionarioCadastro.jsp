@@ -25,7 +25,7 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
-<style>
+        <style>
             body{
                 background-color: #263238;
             }
@@ -66,8 +66,8 @@
                                                 <label for="matricula">Nº matrícula</label>
                                             </div>
                                         </div>
-                                        
-                                        
+
+
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="12/12/2012" id="first_name" type="text" name="data" class="datepicker">
@@ -131,8 +131,8 @@
                                         </div>
 
 
-                                    <!--    <input type="submit" name="salvar" value="Cadastrar" class="waves-effect waves-ligth  btn indigo"/> -->
-                                       <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
+                                        <!--    <input type="submit" name="salvar" value="Cadastrar" class="waves-effect waves-ligth  btn indigo"/> -->
+                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
                                     </form>
                                 </div>
                             </div>
@@ -149,19 +149,20 @@
         </footer>                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-            $(document).ready(function () {
-                $('select').formSelect();
-            });
+                                            $(document).ready(function () {
+                                                $('select').formSelect();
+                                            });
         </script>
         <script>
             $(document).ready(function () {
-                $('.datepicker').datepicker({format:'mm/dd/yyyy'});
+                $('.datepicker').datepicker({format: 'mm/dd/yyyy'});
             });
         </script>
         <script>
             $(document).ready(funcition(){
-                $("#ddd").inputmask({"mask": "(999) 999-9999"});
-            })
+            $("#ddd").inputmask({"mask": "(999) 999-9999"});
+            }
+            )
         </script>
         <script>
             function validar() {
@@ -180,7 +181,7 @@
                 } else if (document.formulario.senha.value == "") {
                     alert("Por favor, insira a senha do funcionário.");
                     return false;
-                }else if (document.formulario.nome.value == "") {
+                } else if (document.formulario.nome.value == "") {
                     alert("Por favor, insira o nome do funcionário.");
                     return false;
                 } else if (document.formulario.cpf.value == "") {

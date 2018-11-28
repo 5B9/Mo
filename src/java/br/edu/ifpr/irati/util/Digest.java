@@ -11,11 +11,11 @@ import java.security.NoSuchAlgorithmException;
 public class Digest {
 
     /**
-     * 
+     *
      * @param message
      * @param algorithm MD5, SHA-1, SHA-256 and SHA-512
      * @return
-     * @throws HashGenerationException 
+     * @throws HashGenerationException
      */
     public static String hashString(String message, String algorithm)
             throws HashGenerationException {
@@ -25,8 +25,8 @@ public class Digest {
             byte[] hashedBytes = digest.digest(message.getBytes("UTF-8"));
             return convertByteArrayToHexString(hashedBytes);
         } catch (NoSuchAlgorithmException | UnsupportedEncodingException ex) {
-            throw new HashGenerationException("Não foi possível gerar um Hash para a senha.");       
-        } 
+            throw new HashGenerationException("Não foi possível gerar um Hash para a senha.");
+        }
     }
 
     private static String convertByteArrayToHexString(byte[] arrayBytes) {

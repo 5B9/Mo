@@ -15,24 +15,24 @@
     </head>
     <body>
         <header>
-             <% 
-        session = request.getSession();
-        Usuario u = (Usuario) session.getAttribute("usuario");
-        boolean logado = false;
-               if (u != null) {
-               logado = true;
-             }
-         %>
+            <% 
+       session = request.getSession();
+       Usuario u = (Usuario) session.getAttribute("usuario");
+       boolean logado = false;
+              if (u != null) {
+              logado = true;
+            }
+            %>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
         <main>
             <center>
                 <% 
                  if(!logado || u.getTipoUsuario().equals("funcionario")){
-                   %> <p> Acesso Negado </p>
-                    <p> Clique <a href="index.jsp"> aqui</a> para voltar. </p> 
-             <%} else{ %>
-                
+                %> <p> Acesso Negado </p>
+                <p> Clique <a href="index.jsp"> aqui</a> para voltar. </p> 
+                <%} else{ %>
+
                 <div class="row">
                     <div class="col s12 m6">
                         <div class="card grey lighten-5">
@@ -41,7 +41,7 @@
                                     <form class="col s12" action="scripts/candidatoCadastro.jsp" method="post">
 
 
- 
+
 
                                         <div class="row">
                                             <div class="input-field col s12">
@@ -69,7 +69,7 @@
                                                                 
                                                                 for (Cargo c : cr.consultarTodosCargos()) {%>
                                                             <option value="<%=c.getNomeCargo()%>"><%=c.getNomeCargo()%></option>
-                                                          <% } %>
+                                                            <% } %>
                                                     </select>
                                                     <label>Cargo Desejado</label>
                                                 </div>
@@ -155,7 +155,7 @@
                     </div>
                 </div>
             </center>
-                                                <% } %>
+            <% } %>
         </main>
 
         <footer>

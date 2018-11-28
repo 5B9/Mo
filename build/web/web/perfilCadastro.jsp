@@ -27,7 +27,7 @@
         </header>
         <main>
             <center>
-              
+
 
 
                 <div class="container" style="width: 50%;">
@@ -76,9 +76,9 @@
                                         <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="candidato" class="validate"/>
 
                                         <input placeholder="" id="first_name" type="hidden" name="nomeUsuario" value="<%=u.getNomeUsuario()%>" class="validate"/>
-                                        
+
                                         <input placeholder="" id="first_name" type="hidden" name="senha" value="<%=u.getSenha() %>" class="validate"/>
-                                        
+
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="" id="nomeCompleto" type="text" name="nomeCompleto" class="validate">
@@ -153,6 +153,6 @@
                 $('select').formSelect();
             });
         </script>
-   
+
     </body>
 </html>

@@ -18,7 +18,7 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
- <style>
+        <style>
             body{
                 background-color: #263238;
             }
@@ -70,7 +70,7 @@
                                                 </select>
                                                 <label>Cargo Desejado</label> 
 
-                                              
+
                                             </div>
                                         </div>
 

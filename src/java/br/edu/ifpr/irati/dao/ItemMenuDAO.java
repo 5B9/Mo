@@ -27,8 +27,8 @@ import org.hibernate.Session;
  * @author Valter Estevam
  */
 public class ItemMenuDAO {
-    
- public List<ItemMenu> buscarTodos(){
+
+    public List<ItemMenu> buscarTodos() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         String hql = "from itemmenu order by id asc";

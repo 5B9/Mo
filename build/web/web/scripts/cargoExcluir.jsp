@@ -7,14 +7,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-         <%
+        <%
 
-            int id=Integer.parseInt(request.getParameter("idCargo"));
+           int id=Integer.parseInt(request.getParameter("idCargo"));
 
-            ControleCargo controleCargo = new ControleCargo();
-            controleCargo.excluirCargo(controleCargo.consultarCargoPorId(id) );
+           ControleCargo controleCargo = new ControleCargo();
+           controleCargo.excluirCargo(controleCargo.consultarCargoPorId(id) );
 
-            response.sendRedirect("../listaCargos.jsp");
-         %>
+           response.sendRedirect("../listaCargos.jsp");
+        %>
     </body>
 </html>

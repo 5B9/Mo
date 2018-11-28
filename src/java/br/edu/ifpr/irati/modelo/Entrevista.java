@@ -19,22 +19,22 @@ import org.hibernate.annotations.Proxy;
  *
  * @author Altai
  */
-@Entity (name = "entrevista")
+@Entity(name = "entrevista")
 @Proxy(lazy = false)
 public class Entrevista implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idEntrevista;
-    @OneToOne (fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     private Funcionario funcionarioMinistrante;
-    @OneToOne (fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     private Cargo cargo;
     @Column(name = "fasePsicologica", nullable = false, length = 20)
     private String fasePsicologica;
     @Column(name = "faseTecnica", nullable = false, length = 20)
     private boolean faseTecnica;
-    @OneToOne (fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     private Candidato candidato;
 
     public Entrevista() {
@@ -102,5 +102,5 @@ public class Entrevista implements Serializable {
     public void setCandidato(Candidato candidato) {
         this.candidato = candidato;
     }
-    
+
 }

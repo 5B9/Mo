@@ -23,39 +23,40 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
     </head>
-    <header>
-        
-        <jsp:include page="cabecalho.jsp" flush="true" />
-        
-    </header>
     <body>
+    <header>
+
+        <jsp:include page="cabecalho.jsp" flush="true" />
+
+    </header>
+   
+        
 
         <main>
             <% if (u != null) {
-                 
-            if(u.getTipoUsuario().equals("funcionario")){
-                
-            
-                 
-            %>
-  <ul id="slide-out" class="sidenav" style="background-color: #004080;">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="imagens/Acome_1.jpeg">
-      </div>
-      <a href="#user"><img class="circle" src="imagens/fotos/foto5.png"></a>
-      <a href="#name"><span class="black-text name"><%=u.getNomeUsuario()%></span></a>
-      <a href="#email"><span class="black-text email"><%=u.getEnderecoEmail()%></span></a>
-    </div></li>
-  
-    <li><a href="funcionarioAlterar.jsp?idFuncionario=<%=u.getIdPessoa() %>" class="white-text">Alterar Dados Pessoais</a></li>
-    <li><div class="divider"></div></li>
-   
-    <li><a class="waves-effect white-text" href="usuarioAlterar.jsp?idFuncionario=<%=u.getIdPessoa() %>" > Alterar dados de usuário</a></li>
-  </ul>
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
-           
+                    if (u.getTipoUsuario().equals("funcionario")) {
+
+
+            %>
+            <ul id="slide-out" class="sidenav" style="background-color: #004080;">
+                <li><div class="user-view">
+                        <div class="background">
+                            <img src="imagens/Acome_1.jpeg">
+                        </div>
+                        <a href="#user"><img class="circle" src="imagens/fotos/foto5.png"></a>
+                        <a href="#name"><span class="black-text name"><%=u.getNomeUsuario()%></span></a>
+                        <a href="#email"><span class="black-text email"><%=u.getEnderecoEmail()%></span></a>
+                    </div></li>
+
+                <li><a href="funcionarioAlterar.jsp?idFuncionario=<%=u.getIdPessoa()%>" class="white-text">Alterar Dados Pessoais</a></li>
+                <li><div class="divider"></div></li>
+
+                <li><a class="waves-effect white-text" href="usuarioAlterar.jsp?idFuncionario=<%=u.getIdPessoa()%>" > Alterar dados de usuário</a></li>
+            </ul>
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+
             <% } else { %>
 
             <div class="carousel carousel-slider center" >
@@ -82,7 +83,8 @@
             </div>
 
             <%
-             }   }%>
+                    }
+                }%>
 
         </main>
 
@@ -90,7 +92,7 @@
             <jsp:include page="rodape.jsp" flush="true" />
         </footer>                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>        
-    </body>
+    
 
     <script>
         $('.carousel.carousel-slider').carousel({
@@ -100,14 +102,16 @@
         );
     </script>
     <script>
-   
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
-  });
 
-  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-  // var collapsibleElem = document.querySelector('.collapsible');
-  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
-  </script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, options);
+        });
+
+        // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
+        // var collapsibleElem = document.querySelector('.collapsible');
+        // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+    </script>
+    </body>
 </html>
+

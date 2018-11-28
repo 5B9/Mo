@@ -13,9 +13,8 @@ import br.edu.ifpr.irati.modelo.Usuario;
  * @author Altai
  */
 public class ControleLogin {
-    
-    
-    public Usuario login(String nome,String senha) throws Exception{
+
+    public Usuario login(String nome, String senha) throws Exception {
         UsuarioDAO uDAO = new UsuarioDAO();
         return uDAO.loginUsuario(nome, senha); //faremos uma criptografia da senha; 
     }

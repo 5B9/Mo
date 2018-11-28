@@ -27,24 +27,20 @@ import java.util.List;
  * @author Valter Estevam
  */
 public class ControlePaginas {
-    
+
     private List<ItemMenu> itens;
 
     public ControlePaginas() {
-        
+
         ItemMenuDAO iDAO = new ItemMenuDAO();
         itens = iDAO.buscarTodos();
     }
 
-    
-    
     /**
      * @return the itens
      */
     public List<ItemMenu> getItens() {
         return itens;
     }
-    
-    
-    
+
 }

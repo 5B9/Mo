@@ -24,10 +24,10 @@ import org.hibernate.annotations.Proxy;
  *
  * @author Altai
  */
-@Entity (name = "agendamento")
+@Entity(name = "agendamento")
 @Proxy(lazy = false)
 public class AgendamentoEntrevista implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idSessao;
@@ -37,7 +37,7 @@ public class AgendamentoEntrevista implements Serializable {
     private Date horaInicio;
     @Temporal(TemporalType.DATE)
     private Date dataSessao;
-    @OneToMany(fetch = FetchType.LAZY) 
+    @OneToMany(fetch = FetchType.LAZY)
     private List<Entrevista> entrevistas;
 
     public AgendamentoEntrevista() {
@@ -64,19 +64,18 @@ public class AgendamentoEntrevista implements Serializable {
         this.entrevistas = entrevistas;
     }
 
-    public void adicionarEntrevista(Entrevista entrevista){
+    public void adicionarEntrevista(Entrevista entrevista) {
         this.entrevistas.add(entrevista);
     }
-    
-    public void removerEentrevista(Entrevista entrevista){
+
+    public void removerEentrevista(Entrevista entrevista) {
         this.entrevistas.remove(entrevista);
     }
 
-    
     public Date getHoraInicio() {
         return horaInicio;
     }
-    
+
     public void setHoraInicio(Date horaInicio) {
         this.horaInicio = horaInicio;
     }

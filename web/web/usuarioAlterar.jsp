@@ -20,7 +20,7 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
- <style>
+        <style>
             body{
                 background-color: #263238;
             }
@@ -57,7 +57,7 @@
                                             </div>
                                         </div>
 
-                                   
+
 
 
                                         <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Alterar</span></button>
@@ -83,14 +83,14 @@
         </script>
         <script>
             function validar() {
-                 if (document.formulario.nomeUsuario.value == "") {
+                if (document.formulario.nomeUsuario.value == "") {
                     alert("Por favor, insira o seu nome de usuário.");
                     return false;
                 } else if (document.formulario.senha.value == "") {
                     alert("Por favor, insira a sua senha.");
                     return false;
-                
-            }
+
+                }
         </script>        
     </body>
 </html>

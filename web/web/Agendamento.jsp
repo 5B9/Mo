@@ -15,7 +15,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
     </head>
     <body>
-            
+
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
@@ -36,54 +36,54 @@
             %> <p> Acesso Negado </p>
             <p> Clique <a href="login.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
-              <br><br><br>
-             <div class="container" >
+            <br><br><br>
+            <div class="container" >
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
-            <table class="highlight">
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Local</th>
-                        <th>Horário</th>
-                        <th>Alterar</th>
-                        <th>Excluir</th>
-                    </tr>
-                </thead>
+                            <table class="highlight">
+                                <thead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Local</th>
+                                        <th>Horário</th>
+                                        <th>Alterar</th>
+                                        <th>Excluir</th>
+                                    </tr>
+                                </thead>
 
 
-                <tbody>
-                    <%ControleAgendamento controleAgendamento = new ControleAgendamento();
-                        AgendamentoEntrevista agendamento = new AgendamentoEntrevista();
-                        for (AgendamentoEntrevista a : controleAgendamento.consultarTodosAgendamentos(agendamento)) {%>
-                    <tr>
-                        <%----%><td><%=sdf.format(a.getDataSessao().getTime())%></td>
+                                <tbody>
+                                    <%ControleAgendamento controleAgendamento = new ControleAgendamento();
+                                        AgendamentoEntrevista agendamento = new AgendamentoEntrevista();
+                                        for (AgendamentoEntrevista a : controleAgendamento.consultarTodosAgendamentos(agendamento)) {%>
+                                    <tr>
+                                        <%----%><td><%=sdf.format(a.getDataSessao().getTime())%></td>
 
 
-                        <td><%=a.getLocalSessao()%></td>
-                        <td><%=sdfHora.format(a.getHoraInicio().getTime())%></td>
-                        <td>
-                          <!--  <a href="agendamentoAlterar.jsp?idAgendamento=<%=a.getIdSessao()%>" class="waves-effect waves-indigo btn-flat "><i class="material-icons right">refresh</i>Alterar</a>-->
-                        <a href="agendamentoAlterar.jsp?idAgendamento=<%=a.getIdSessao()%>" class="btn-floating btn waves-effect waves-light indigo "><i class="material-icons">refresh</i></a>
-                        </td>
-                        <td><!--<a href="scripts/agendamentoExcluir.jsp?idAgendamento=<%=a.getIdSessao()%>" class="waves-effect waves-indigo btn-flat "><i class="material-icons right">delete</i>Excluir</a>-->
-                            <a href="scripts/agendamentoExcluir.jsp?idAgendamento=<%=a.getIdSessao()%>" class="btn-floating btn waves-effect waves-light indigo "><i class="material-icons">delete</i></a>
-                        </td>
+                                        <td><%=a.getLocalSessao()%></td>
+                                        <td><%=sdfHora.format(a.getHoraInicio().getTime())%></td>
+                                        <td>
+                                          <!--  <a href="agendamentoAlterar.jsp?idAgendamento=<%=a.getIdSessao()%>" class="waves-effect waves-indigo btn-flat "><i class="material-icons right">refresh</i>Alterar</a>-->
+                                            <a href="agendamentoAlterar.jsp?idAgendamento=<%=a.getIdSessao()%>" class="btn-floating btn waves-effect waves-light indigo "><i class="material-icons">refresh</i></a>
+                                        </td>
+                                        <td><!--<a href="scripts/agendamentoExcluir.jsp?idAgendamento=<%=a.getIdSessao()%>" class="waves-effect waves-indigo btn-flat "><i class="material-icons right">delete</i>Excluir</a>-->
+                                            <a href="scripts/agendamentoExcluir.jsp?idAgendamento=<%=a.getIdSessao()%>" class="btn-floating btn waves-effect waves-light indigo "><i class="material-icons">delete</i></a>
+                                        </td>
 
-                    </tr>
-                </tbody>
-                <%}%>
+                                    </tr>
+                                </tbody>
+                                <%}%>
 
-            </table>
-                <br>
-                <center>
-            <a href="agendamentoCadastro.jsp"class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right">create</i>Cadastrar</a>
-                </center>
+                            </table>
+                            <br>
+                            <center>
+                                <a href="agendamentoCadastro.jsp"class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right">create</i>Cadastrar</a>
+                            </center>
                         </div>
                     </div>
                 </div>
-             </div>
+            </div>
             <% }%>
 
         </main>

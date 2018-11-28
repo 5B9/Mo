@@ -18,31 +18,30 @@ import java.util.List;
  * @author Altai
  */
 public class ControleCurriculo {
-    
-     public void inserirCurriculo(Curriculo curriculo) throws PersistenciaException{
+
+    public void inserirCurriculo(Curriculo curriculo) throws PersistenciaException {
         Dao<Curriculo> curriculoDAO = new GenericDAO<>(Curriculo.class);
         curriculoDAO.salvar(curriculo);
     }
-    
-    public void alterarCurriculo(Curriculo curriculo) throws PersistenciaException{
+
+    public void alterarCurriculo(Curriculo curriculo) throws PersistenciaException {
         Dao<Curriculo> curriculoDAO = new GenericDAO<>(Curriculo.class);
         curriculoDAO.alterar(curriculo);
     }
-    
-    public Curriculo consultarCurriculoPorId(int idCurriculo) throws PersistenciaException{
+
+    public Curriculo consultarCurriculoPorId(int idCurriculo) throws PersistenciaException {
         Dao<Curriculo> curriculoDAO = new GenericDAO<>(Curriculo.class);
         return curriculoDAO.buscarPorId(idCurriculo);
     }
-    
-    public List<Curriculo> consultarTodosCurriculos(Curriculo curriculo) throws PersistenciaException{
+
+    public List<Curriculo> consultarTodosCurriculos(Curriculo curriculo) throws PersistenciaException {
         Dao<Curriculo> curriculoDAO = new GenericDAO<>(Curriculo.class);
         return curriculoDAO.buscarTodos(Curriculo.class);
     }
-    
 
-    public void excluirCurriculo(Curriculo curriculo) throws PersistenciaException{
+    public void excluirCurriculo(Curriculo curriculo) throws PersistenciaException {
         Dao<Curriculo> curriculoDAO = new GenericDAO<>(Curriculo.class);
         curriculoDAO.excluir(curriculo);
     }
-    
+
 }

@@ -63,11 +63,11 @@ public class GenericDAO<T> implements Dao<T> {
         session.clear();
         session.close();
     }
-    
+
     @Override
     public List<T> buscarTodos(Class<T> clazz) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        String hql = "from "+clazz.getCanonicalName();
+        String hql = "from " + clazz.getCanonicalName();
         Query query = session.createQuery(hql);
         List results = query.list();
         session.clear();
@@ -75,5 +75,4 @@ public class GenericDAO<T> implements Dao<T> {
         return results;
     }
 
-            
 }
