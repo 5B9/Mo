@@ -1,7 +1,7 @@
 <%-- 
-    Document   : rodape
-    Created on : 08/05/2018, 13:26:31
-    Author     : Usuario
+    Document   : index
+    Created on : 03/12/2018, 00:00:09
+    Author     : Altair & Guilherme
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

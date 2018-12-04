@@ -22,6 +22,7 @@
             String local = request.getParameter("local");
             String data = request.getParameter("dia");
             String horaIn = request.getParameter("hora");
+            String cargo = request.getParameter("cargo");
 
             
             String entrevistas[] = request.getParameterValues("entrevistas");
@@ -34,7 +35,7 @@
 
             
 
-            AgendamentoEntrevista a = new AgendamentoEntrevista(id,local, hora,deto);
+            AgendamentoEntrevista a = new AgendamentoEntrevista(id,local, hora,deto,cargo);
             ControleAgendamento controleAgendamento = new ControleAgendamento();
             controleAgendamento.alterarAgendamento(a);
 

@@ -1,3 +1,5 @@
+<%@page import="br.edu.ifpr.irati.modelo.Cargo"%>
+<%@page import="br.edu.ifpr.irati.controle.ControleCargo"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Entrevista"%>
@@ -60,6 +62,23 @@
                                             <label for="Horario de Início">Horario de Início</label>
                                         </div>
                                     </div>
+                                    
+                                     <div class="row">
+                                        <div class="input-field col s12">
+                                            <div class="input-field col s12">
+                                                <select name="cargo">
+                                                    <option value="" disabled selected>Cargo</option>
+                                                    <%ControleCargo cr = new ControleCargo();
+
+                                                        for (Cargo c : cr.consultarTodosCargos()) {%>
+                                                    <option value="<%=c.getNomeCargo()%>"><%=c.getNomeCargo()%></option>
+                                                    <%}%>
+                                                </select>
+                                                <label>Cargo</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                
                                     <center>
                                         <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
                                     </center>
@@ -88,6 +107,11 @@
                     twelveHour:false
                 });
             });
+        </script>
+        <script>
+                                            $(document).ready(function () {
+                                                $('select').formSelect();
+                                            });
         </script>
         <script>
             function validar() {

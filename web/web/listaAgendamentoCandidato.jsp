@@ -47,6 +47,7 @@
                         <th>Data</th>
                         <th>Local</th>
                         <th>Horário</th>
+                        <th>Cargo</th>
                    
                     </tr>
                 </thead>
@@ -62,7 +63,7 @@
 
                         <td><%=a.getLocalSessao()%></td>
                         <td><%=sdfHora.format(a.getHoraInicio().getTime())%></td>
-                        <td>
+                        <td><%=a.getCargoSessao() %></td>
                      
                     </tr>
                 </tbody>

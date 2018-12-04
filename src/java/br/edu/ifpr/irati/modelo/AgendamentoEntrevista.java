@@ -37,6 +37,8 @@ public class AgendamentoEntrevista implements Serializable {
     private Date horaInicio;
     @Temporal(TemporalType.DATE)
     private Date dataSessao;
+     @Column(name = "cargoSessao", nullable = false, length = 30)
+    private String cargoSessao;
     @OneToMany(fetch = FetchType.LAZY) 
     private List<Entrevista> entrevistas;
 
@@ -46,22 +48,25 @@ public class AgendamentoEntrevista implements Serializable {
         horaInicio = new Date();
         dataSessao = new Date();
         entrevistas = new ArrayList<>();
+        cargoSessao = "";
     }
 
-    public AgendamentoEntrevista(int idSessao, String localSessao, Date horaInicio, Date dataSessao) {
+    public AgendamentoEntrevista(int idSessao, String localSessao, Date horaInicio, Date dataSessao, String cargoSessao) {
         this.idSessao = idSessao;
         this.localSessao = localSessao;
         this.horaInicio = horaInicio;
         this.dataSessao = dataSessao;
+        this.cargoSessao = cargoSessao;
         entrevistas = new ArrayList<>();
     }
 
-    public AgendamentoEntrevista(int idSessao, String localSessao, Date horaInicio, Date dataSessao, List<Entrevista> entrevistas) {
+    public AgendamentoEntrevista(int idSessao, String localSessao, Date horaInicio, Date dataSessao, List<Entrevista> entrevistas, String cargoSessao) {
         this.idSessao = idSessao;
         this.localSessao = localSessao;
         this.horaInicio = horaInicio;
         this.dataSessao = dataSessao;
         this.entrevistas = entrevistas;
+        this.cargoSessao = cargoSessao;
     }
 
     public void adicionarEntrevista(Entrevista entrevista){
@@ -111,5 +116,13 @@ public class AgendamentoEntrevista implements Serializable {
 
     public void setEntrevistas(List<Entrevista> entrevistas) {
         this.entrevistas = entrevistas;
+    }
+
+    public String getCargoSessao() {
+        return cargoSessao;
+    }
+
+    public void setCargoSessao(String cargoSessao) {
+        this.cargoSessao = cargoSessao;
     }
 }

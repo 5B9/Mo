@@ -47,6 +47,7 @@
                         <th>Data</th>
                         <th>Local</th>
                         <th>Horário</th>
+                        <th>Cargo</th>
                         <th>Alterar</th>
                         <th>Excluir</th>
                     </tr>
@@ -63,6 +64,7 @@
 
                         <td><%=a.getLocalSessao()%></td>
                         <td><%=sdfHora.format(a.getHoraInicio().getTime())%></td>
+                        <td><%=a.getCargoSessao() %></td>
                         <td>
                           <!--  <a href="agendamentoAlterar.jsp?idAgendamento=<%=a.getIdSessao()%>" class="waves-effect waves-indigo btn-flat "><i class="material-icons right">refresh</i>Alterar</a>-->
                         <a href="agendamentoAlterar.jsp?idAgendamento=<%=a.getIdSessao()%>" class="btn-floating btn waves-effect waves-light indigo "><i class="material-icons">refresh</i></a>

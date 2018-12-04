@@ -1,7 +1,7 @@
 <%-- 
-    Document   : cabecalho
-    Created on : 12/12/2012, 00:00:00
-    Author     : Usualho
+    Document   : index
+    Created on : 03/12/2018, 00:00:09
+    Author     : Altair & Guilherme
 --%>
 
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
