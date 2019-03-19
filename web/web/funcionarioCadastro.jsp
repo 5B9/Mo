@@ -25,17 +25,13 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
-<style>
-            body{
-                background-color: #263238;
-            }
-        </style>
+
         <main>
             <center>
                 <%
                     if (!logado || u.getTipoUsuario().equals("candidato")) {
                 %> <p> Acesso Negado </p>
-                <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
+                <p> Clique <a href="login.jsp"> aqui</a> para fazer o login. </p> 
                 <%} else { %>
                 <div class="container" style="width: 50%;">
                     <div class="col s12 m6">

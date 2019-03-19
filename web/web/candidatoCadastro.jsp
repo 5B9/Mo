@@ -140,7 +140,7 @@
                                             <div class="file-path-wrapper">
                                                 <input class="file-path validate" type="text">
                                             </div>
-                                            <label for="crriculo">Currículo</label>
+                                            <label for="curriculo">Currículo</label>
                                         </div>
                                     </div>
                                     <center>

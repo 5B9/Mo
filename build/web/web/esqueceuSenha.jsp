@@ -17,15 +17,40 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
-        
+
         <main>
-            <p> Template </p>
+            <br><br><br>
+            <div class="container" style="width: 50%; ">
+                <div class="col s12 m6">
+                    <div class="card grey lighten-5">
+                        <div class="card-content white-text ">
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input id="email" type="email" class="validate">
+                                            <label for="email">Email</label>
+                                            <span class="helper-text" data-error="wrong" data-success="right">Digite seu email</span>
+                                        </div>
+                                        <center>
+                                            <button class="waves-effect waves-light btn indigo" type="submit" name="action">Enviar
+                                                <i class="material-icons right">send</i>
+                                            </button>
+                                        </center>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </main>
-                
+
         <footer>
             <jsp:include page="rodape.jsp" flush="true" />
         </footer>                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-        
+
     </body>
 </html>

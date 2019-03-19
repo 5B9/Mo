@@ -31,7 +31,7 @@
                             ControleCandidato controle = new ControleCandidato();
                             Candidato c = controle.consultarCandidatoPorId(u.getIdPessoa());
                             if(c.isPerfilPreenchido()){
-                            response.sendRedirect("../index.jsp");
+                            response.sendRedirect("../perfil.jsp");
                             }else{
                               response.sendRedirect("../perfilCadastro.jsp");  
                             }

@@ -30,11 +30,18 @@
         }
     </style>
     <head>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
     </head>
+<header>
 
+        <jsp:include page="cabecalho.jsp" flush="true" />
+
+    </header>
 
 
 
@@ -52,28 +59,29 @@
         <div class="section"></div>
         <main>
             <center>
-                <img class="responsive-img" style="width: 60px; height: 60px;" src="imagens/acome.jpg"/>    
+                
                 <div class="section"></div>
 
                 <p><%=mensagem%></p>
                 <div class="section"></div>
-
+                 <img class="responsive-img" style="width: 60px; height: 60px; margin-top: -45px;" src="imagens/acome.jpg"/>  
                 <div class="container">
-                    <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 40px 0px 38px; border: 1px solid #EEE;">
+                    <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 40px 0px 20px; border: 1px solid #EEE;">
 
                         <form class="col s12" action="scripts/login.jsp" method="post">
 
 
                             <div class='row'>
                                 <div class='input-field col s12'>
-                                    <input class='validate' type='text' name='usuario' id='usuario' />
+                                 
+                                    <input class='autocomplete' type='text' name='usuario' id='usuario' />
                                     <label for='usuario'>Usuário:</label>
                                 </div>
                             </div>
 
                             <div class='row'>
                                 <div class='input-field col s12'>
-                                    <input class='validate' type='password' name='senha' id='senha' />
+                                    <input class='autocomplete' type='password' name='senha' id='senha' />
                                     <label for='senha'>Senha: </label>
                                 </div>
 
@@ -92,12 +100,15 @@
                     </div>
                 </div>
                 <a href="usuarioCadastro.jsp">Criar Conta</a><br>
-                <a href="index.jsp">Voltar</a><br>
             </center>
 
             <div class="section"></div>
             <div class="section"></div>
         </main>
+                 <footer>
+            <jsp:include page="rodape.jsp" flush="true" />
+        </footer>                
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> 
     </body>
    
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>

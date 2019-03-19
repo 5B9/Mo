@@ -9,7 +9,7 @@
        
             
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>SGC Acome</title>
+        <title>Candidatos</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
@@ -48,6 +48,8 @@
                         <th>Cargo Desejado</th>
                         <th>Email</th>
                         <th>Escolaridade</th>
+                        <th>Currículo</th>
+                       
                         <th>Alterar</th>
                         <th>Excluir</th>
                     </tr>
@@ -64,7 +66,7 @@
                         <%----%><td><%=c.getCargoDesejado()%></td>
                                 <td><%=c.getEnderecoEmail()%></td>
                                 <td><%=c.getEscolaridade()%></td>
-                               
+                                <td><%=c.getCurriculo() %></td>
                         <td>
                            <!-- <a href="candidatoAlterar.jsp?idCandidato=<%=c.getIdPessoa()%>" class="waves-effect waves-indigo darken-3 btn-flat "><i class="material-icons right">refresh</i>Alterar</a> -->
                              <a href="candidatoAlterar.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>

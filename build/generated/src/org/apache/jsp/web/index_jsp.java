@@ -75,93 +75,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <body>\n");
       out.write("\n");
       out.write("        <main>\n");
-      out.write("            ");
- if (u != null) {
-
-                    if (u.getTipoUsuario().equals("funcionario")) {
-
-
-            
-      out.write("\n");
-      out.write("            <div class=\"carousel carousel-slider center\" >\n");
-      out.write("                <div class=\"carousel-fixed-item center\">\n");
-      out.write("\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"carousel-item red white-text\" href=\"#one!\">\n");
-      out.write("                    <h2>Deseja criar uma conta?</h2>\n");
-      out.write("                    <p class=\"white-text\"></p>\n");
-      out.write("                    <a class=\"btn waves-effect white grey-text darken-text-2\" href=\"usuarioCadastro.jsp\">Criar Conta</a>\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"carousel-item amber white-text\" href=\"#two!\">\n");
-      out.write("                    <h2>Second Panel</h2>\n");
-      out.write("                    <p class=\"white-text\">This is your second panel</p>\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"carousel-item green white-text\" href=\"#three!\">\n");
-      out.write("                    <h2>Third Panel</h2>\n");
-      out.write("                    <p class=\"white-text\">This is your third panel</p>\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"carousel-item blue white-text\" href=\"#four!\">\n");
-      out.write("                    <h2>Fourth Panel</h2>\n");
-      out.write("                    <p class=\"white-text\">This is your fourth panel</p>\n");
-      out.write("                </div>\n");
-      out.write("            </div>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("            ");
- } else { 
-      out.write("\n");
-      out.write("\n");
-      out.write("            <div class=\"carousel carousel-slider center\" >\n");
-      out.write("                <div class=\"carousel-fixed-item center\">\n");
-      out.write("\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"carousel-item red white-text\" href=\"#one!\">\n");
-      out.write("                    <h2>Agendamentos de Entrevistas</h2>\n");
-      out.write("                    <p class=\"white-text\"></p>\n");
-      out.write("                    <a class=\"btn waves-effect white grey-text darken-text-2\" href=\"listaAgendamentoCandidato.jsp\">Criar Conta</a>\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"carousel-item amber white-text\" href=\"#two!\">\n");
-      out.write("                    <h2>Second Panel</h2>\n");
-      out.write("                    <p class=\"white-text\">This is your second panel</p>\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"carousel-item green white-text\" href=\"#three!\">\n");
-      out.write("                    <h2>Third Panel</h2>\n");
-      out.write("                    <p class=\"white-text\">This is your third panel</p>\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"carousel-item blue white-text\" href=\"#four!\">\n");
-      out.write("                    <h2>Fourth Panel</h2>\n");
-      out.write("                    <p class=\"white-text\">This is your fourth panel</p>\n");
-      out.write("                </div>\n");
-      out.write("            </div>\n");
-      out.write("\n");
-      out.write("            ");
-
-                    }
-                }
-      out.write("\n");
-      out.write("            <div class=\"carousel carousel-slider center\" >\n");
-      out.write("                <div class=\"carousel-fixed-item center\">\n");
-      out.write("\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"carousel-item red white-text\" href=\"#one!\">\n");
-      out.write("                    <h2>Deseja criar uma conta?</h2>\n");
-      out.write("                    <p class=\"white-text\"></p>\n");
-      out.write("                    <a class=\"btn waves-effect white grey-text darken-text-2\" href=\"usuarioCadastro.jsp\">Criar Conta</a>\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"carousel-item amber white-text\" href=\"#two!\">\n");
-      out.write("                    <h2>Second Panel</h2>\n");
-      out.write("                    <p class=\"white-text\">This is your second panel</p>\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"carousel-item green white-text\" href=\"#three!\">\n");
-      out.write("                    <h2>Third Panel</h2>\n");
-      out.write("                    <p class=\"white-text\">This is your third panel</p>\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"carousel-item blue white-text\" href=\"#four!\">\n");
-      out.write("                    <h2>Fourth Panel</h2>\n");
-      out.write("                    <p class=\"white-text\">This is your fourth panel</p>\n");
-      out.write("                </div>\n");
-      out.write("            </div>\n");
+      out.write("           \n");
       out.write("        </main>\n");
       out.write("\n");
       out.write("        <footer>\n");
@@ -172,13 +86,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js\"></script>        \n");
       out.write("    </body>\n");
       out.write("\n");
-      out.write("    <script>\n");
-      out.write("        $('.carousel.carousel-slider').carousel({\n");
-      out.write("            fullWidth: true,\n");
-      out.write("            indicators: true\n");
-      out.write("        }\n");
-      out.write("        );\n");
-      out.write("    </script>\n");
+      out.write("    \n");
       out.write("    <script>\n");
       out.write("\n");
       out.write("        document.addEventListener('DOMContentLoaded', function () {\n");
@@ -186,9 +94,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            var instances = M.Sidenav.init(elems, options);\n");
       out.write("        });\n");
       out.write("\n");
-      out.write("        // Initialize collapsible (uncomment the lines below if you use the dropdown variation)\n");
-      out.write("        // var collapsibleElem = document.querySelector('.collapsible');\n");
-      out.write("        // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);\n");
+      out.write("         //Initialize collapsible (uncomment the lines below if you use the dropdown variation)\n");
+      out.write("       var collapsibleElem = document.querySelector('.collapsible');\n");
+      out.write("        var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);\n");
       out.write("    </script>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

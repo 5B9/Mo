@@ -13,11 +13,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            body{
-                background-color: #263238;
-            }
-        </style>
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
@@ -108,9 +104,11 @@
                                                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                                                     ControleAgendamento controleAgendamento = new ControleAgendamento();
                                                     AgendamentoEntrevista agendamento = new AgendamentoEntrevista();
-                                                    for (AgendamentoEntrevista a : controleAgendamento.consultarTodosAgendamentos(agendamento)) {%>
+                                                    for (AgendamentoEntrevista a : controleAgendamento.consultarTodosAgendamentos(agendamento)) {
+                                                       %>
                                                 <option value="<%=a.getIdSessao()%>">Sessão do dia: <%= sdf.format(a.getDataSessao().getTime())%></option>
-                                                <%}%>
+                                                <%
+                                                    }%>
                                             </select>
                                             <label>Sessão</label>
                                         </div>
@@ -148,10 +146,10 @@
 
 
 
-                                      
-                                            <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
-                    
-                                            
+
+                                <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
+
+
                             </div>
                         </div>
                     </form>
@@ -166,11 +164,11 @@
         </footer>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-            $(document).ready(function () {
-                $('select').formSelect();
-            });
+                                                $(document).ready(function () {
+                                                    $('select').formSelect();
+                                                });
         </script>
-                <script>
+        <script>
             function validar() {
                 if (document.formulario.funcionario.value == "") {
                     alert("Por favor, selecione o funcionário que presidirá a entrevista.");

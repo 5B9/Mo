@@ -24,11 +24,7 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
-        <style>
-            body{
-                background-color: #263238;
-            }
-        </style>
+     
         <main>
             <center>
                 <%
@@ -46,61 +42,61 @@
                                     ControleCargo cc = new ControleCargo();
                                     Cargo c = cc.consultarCargoPorId(idCargo);
                                 %>
-            <div class="row">
-                
-                <form name="formulario"class="col s12" action="scripts/cargoAlterar.jsp" method="post">
+                                <div class="row">
 
-<div class="row"><input placeholder="" id="first_name" type="hidden" name="idCargo" value="<%=idCargo %>" class="validate"/>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="..." id="first_name" type="text" name="vagas" value="<%=c.getQtdVagas()%>" class="validate">
-                                                <label for="vagas">Quantidade de Vagas</label>
+                                    <form name="formulario"class="col s12" action="scripts/cargoAlterar.jsp" method="post">
+
+                                        <div class="row"><input placeholder="" id="first_name" type="hidden" name="idCargo" value="<%=idCargo%>" class="validate"/>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input placeholder="..." id="first_name" type="text" name="vagas" value="<%=c.getQtdVagas()%>" class="validate">
+                                                    <label for="vagas">Quantidade de Vagas</label>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row" >
+                                            <div class="row" >
 
-                                            <div class="input-field col s12">
-                                                <select name="descricao">
-                                                    <option value="" disabled selected>Exigências</option>
-                                                    <option value="Ensino Fudamental Incompleto">Ensino Fundamental Incompleto</option>
-                                                    <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
-                                                    <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
-                                                    <option value="Ensino Médio Completo">Ensino Médio Completo</option>
-                                                    <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
-                                                    <option value="Ensino Superior Completo">Ensino Superior Completo</option>
-                                                </select>
-                                                <label>Exigências</label>
+                                                <div class="input-field col s12">
+                                                    <select name="descricao">
+                                                        <option value="" disabled selected>Exigências</option>
+                                                        <option value="Ensino Fudamental Incompleto">Ensino Fundamental Incompleto</option>
+                                                        <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
+                                                        <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
+                                                        <option value="Ensino Médio Completo">Ensino Médio Completo</option>
+                                                        <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+                                                        <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+                                                    </select>
+                                                    <label>Exigências</label>
 
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="..." id="first_name" type="text" name="nome" value="<%=c.getNomeCargo()%>" class="validate">
-                                                <label for="nome">Nome Cargo</label>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input placeholder="..." id="first_name" type="text" name="nome" value="<%=c.getNomeCargo()%>" class="validate">
+                                                    <label for="nome">Nome Cargo</label>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="1300" id="first_name" type="text" name="salario" value="<%=c.getSalario()%>" class="validate">
-                                                <label for="salario">Salário</label>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input placeholder="1300" id="first_name" type="text" name="salario" value="<%=c.getSalario()%>" class="validate">
+                                                    <label for="salario">Salário</label>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                  <div class="row">
-                                            <div class="input-field col s12">
-                                                <select  name="modalidade">
-                                                    <option value="" disabled selected>Modalidade</option>
-                                                    <option value="CLT">CLT</option>
-                                                    <option value="Contrato">Contrato</option>
-                                                </select>
-                                                <label for="modalidade">Modalidade</label>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <select  name="modalidade">
+                                                        <option value="" disabled selected>Modalidade</option>
+                                                        <option value="CLT">CLT</option>
+                                                        <option value="Contrato">Contrato</option>
+                                                    </select>
+                                                    <label for="modalidade">Modalidade</label>
+                                                </div>
                                             </div>
-                                        </div>
 
 
-                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Alterar</span></button>
+                                            <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Alterar</span></button>
 
                                     </form>
 
@@ -122,7 +118,7 @@
                 $('select').formSelect();
             });
         </script>   
-                <script>
+        <script>
             function validar() {
                 if (document.formulario.vagas.value == "") {
                     alert("Por favor, insira a quantdade de vagas.");
