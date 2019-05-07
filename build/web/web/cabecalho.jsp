@@ -50,7 +50,8 @@
 
             %>
 
-            <li><a href="perfil.jsp"><i class="material-icons left">face</i>Perfil Candidato</a></li>
+            <li><a href="perfilCadastro.jsp"><i class="material-icons left">face</i>Perfil Candidato</a></li>
+            <li><a href="listaAgendamentoCandidato.jsp"><i class="material-icons left">create</i>Agendamentos</a></li>
             <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
 
             <%                }
@@ -75,7 +76,7 @@
 
     %>
 
-
+ 
     <li><a href="listaCandidatos.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
     <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
     <li><a href="listaEntrevistas.jsp"><i class="material-icons left">add_box</i>Entrevistas</a></li>

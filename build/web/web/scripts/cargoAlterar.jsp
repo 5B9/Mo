@@ -11,7 +11,7 @@
     <body>
         <%
 
-            int id = Integer.parseInt(request.getParameter("id"));
+            int id = Integer.parseInt(request.getParameter("idCargo"));
             int qtdVagas = Integer.parseInt(request.getParameter("vagas"));
             String descricao = request.getParameter("descricao");
             String nomeCargo = request.getParameter("nome");

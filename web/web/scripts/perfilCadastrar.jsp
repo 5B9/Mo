@@ -17,7 +17,8 @@
     <body>
         <%
             request.setCharacterEncoding("UTF-8");
-          
+
+            int idCandidato = Integer.parseInt(request.getParameter("idCandidato"));
             String escolaridade = request.getParameter("escolaridade");
             String cargoDesejado = request.getParameter("cargoDesejado");
             String nomeUsuario = request.getParameter("nomeUsuario");
@@ -28,19 +29,17 @@
             String rg = request.getParameter("rg");
             String sexo = request.getParameter("sexo");
             String enderecoEmail = request.getParameter("endereco");
-            
+            boolean perfil = true;
             Curriculo curriculo = new Curriculo(0, new Date(), new File(request.getParameter("curriculo")));
 
-            Candidato c = new Candidato(escolaridade, cargoDesejado, curriculo, nomeUsuario, senha, tipoUsuario, 0, nomeCompleto, cpf, rg, sexo, enderecoEmail);
+            Candidato c = new Candidato(escolaridade, cargoDesejado, curriculo, nomeUsuario, senha, tipoUsuario, idCandidato, nomeCompleto, cpf, rg, sexo, enderecoEmail, perfil);
+            ControleCurriculo controleCurriculo = new ControleCurriculo();
+            ControleCandidato controleCandidato = new ControleCandidato();
+            controleCurriculo.inserirCurriculo(curriculo);
+            controleCandidato.alterarCandidato(c);
 
-          
-                ControleCurriculo controleCurriculo = new ControleCurriculo();
-                ControleCandidato controleCandidato = new ControleCandidato();
-                controleCurriculo.inserirCurriculo(curriculo);
-                controleCandidato.inserirCandidato(c);
+            response.sendRedirect("../index.jsp");
 
-                response.sendRedirect("../listaCandidatos.jsp");
-            
         %>
     </body>
 </html>

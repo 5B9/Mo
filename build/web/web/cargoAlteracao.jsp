@@ -135,7 +135,7 @@
                                                 </div>
                                             </div>
 
-                                            <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Alterar</span></button>
+                                            <button  class="waves-effect waves-light btn indigo" onclick="return validar()" type="submit" name="salvar"><span>Alterar</span></button>
 
                                     </form>
 

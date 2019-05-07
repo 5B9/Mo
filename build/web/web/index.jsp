@@ -34,7 +34,7 @@
 
         <main>
             <% if (u != null) {
-
+                 
                     if (u.getTipoUsuario().equals("funcionario")) {
 
 

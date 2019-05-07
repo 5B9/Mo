@@ -36,10 +36,10 @@ public class Candidato extends Usuario implements Serializable {
         escolaridade = "";
         cargoDesejado = "";
         curriculo = new Curriculo();
-        perfilPreenchido=false;
+        perfilPreenchido = false;
     }
 
-    public Candidato(String escolaridade, String cargoDesejado, String nomeUsuario, String senha, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail,boolean perfilPreenchido) {
+    public Candidato(String escolaridade, String cargoDesejado, String nomeUsuario, String senha, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail, boolean perfilPreenchido) {
         super(nomeUsuario, senha, tipoUsuario, idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
         this.escolaridade = escolaridade;
         this.cargoDesejado = cargoDesejado;
@@ -54,7 +54,7 @@ public class Candidato extends Usuario implements Serializable {
         this.curriculo = curriculo;
         this.perfilPreenchido=perfilPreenchido;
     }
-
+    
     public String getEscolaridade() {
         return escolaridade;
     }

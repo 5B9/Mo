@@ -36,32 +36,38 @@
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
-                            <table class="highlight">
-                                <thead>
-                                    <tr>
-                                        <th>Nome Cargo</th>
-                                        <th>Quantidade Vagas</th>
-                                        <th>Descrição</th>
-                                        <th>Alterar</th>
-                                        <th>Excluir</th>
-                                    </tr>
-                                </thead>
+            <table class="highlight">
+                <thead>
+                    <tr>
+                        <th>Nome Cargo</th>
+                        <th>Quantidade Vagas</th>
+                        <th>Descrição</th>
+                        <th>Modalidade</th>
+                        <th>Alterar</th>
+                        <th>Excluir</th>
+                    </tr>
+                </thead>
 
 
                                 <tbody>
                                     <%ControleCargo controleCargo = new ControleCargo();
                         for (Cargo c : controleCargo.consultarTodosCargos()){%>
-                                    <tr>
-                                        <%----%><td><%=c.getNomeCargo()%></td>
-                                        <%----%><td><%=c.getQtdVagas()%></td>
-                                        <%----%><td><%=c.getDescricao()%></td>
-                                        <td>
-                                           <!-- <a href="cargoAlteracao.jsp?idCargo=<%=c.getIdCargo()%>" class="waves-effect waves-indigo darken-3 btn-flat "><i class="material-icons right">refresh</i>Alterar</a> -->
-                                            <a href="cargoAlteracao.jsp?idCargo=<%=c.getIdCargo()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
-                                        </td>
-                                        <td><!--<a href="scripts/cargoExcluir.jsp?idCargo=<%=c.getIdCargo()%>" class="waves-effect  btn-flat "><i class="material-icons right">delete</i>Excluir</a> -->
-                                            <a href="scripts/cargoExcluir.jsp?idCargo=<%=c.getIdCargo()%>" class="btn-floating btn waves-effect waves-light indigo "><i class="material-icons">delete</i></a>
-                                        </td>
+                    <tr>
+                        <%----%><td><%=c.getNomeCargo()%></td>
+                        <%----%><td><%=c.getQtdVagas()%></td>
+                        <%----%><td><%=c.getDescricao()%></td>
+                       <td><%=c.getModalidade()%></td>
+                        <td>
+                           <!-- <a href="cargoAlteracao.jsp?idCargo=<%=c.getIdCargo()%>" class="waves-effect waves-indigo darken-3 btn-flat "><i class="material-icons right">refresh</i>Alterar</a> -->
+                            <a href="cargoAlteracao.jsp?idCargo=<%=c.getIdCargo()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
+                        </td>
+                        <td><!--<a href="scripts/cargoExcluir.jsp?idCargo=<%=c.getIdCargo()%>" class="waves-effect  btn-flat "><i class="material-icons right">delete</i>Excluir</a> -->
+                            <a href="scripts/cargoExcluir.jsp?idCargo=<%=c.getIdCargo()%>" class="btn-floating btn waves-effect waves-light indigo "><i class="material-icons">delete</i></a>
+                        </td>
+                       
+                    </tr>
+                </tbody>
+                <%}%>
 
                                     </tr>
                                 </tbody>

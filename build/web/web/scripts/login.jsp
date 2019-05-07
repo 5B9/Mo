@@ -27,11 +27,15 @@
                     
                     if (u.getTipoUsuario().equals("funcionario")) {
                         response.sendRedirect("../index.jsp");
-                    } else {
-                        ControleCandidato cc = new ControleCandidato();
-                        Candidato c = cc.consultarCandidatoPorId(u.getIdPessoa());
-                        response.sendRedirect("../perfilCadastro.jsp");
-                    }
+                        }if(u.getTipoUsuario().equals("candidato")){
+                            ControleCandidato controle = new ControleCandidato();
+                            Candidato c = controle.consultarCandidatoPorId(u.getIdPessoa());
+                            if(c.isPerfilPreenchido()){
+                            response.sendRedirect("../index.jsp");
+                            }else{
+                              response.sendRedirect("../perfilCadastro.jsp");  
+                            }
+                        }
                 } catch (Exception e) {
                     session.setAttribute("usuario", null);
                     //valterar o valor na variável de sessão
