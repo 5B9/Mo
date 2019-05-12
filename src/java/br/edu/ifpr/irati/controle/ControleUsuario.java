@@ -17,40 +17,42 @@ import java.util.List;
  * @author Altai
  */
 public class ControleUsuario {
-
-    public void inserirUsuario(Usuario usuario) throws PersistenciaException {
+    
+    public void inserirUsuario(Usuario usuario) throws PersistenciaException{
         Dao<Usuario> usuarioDAO = new GenericDAO<>(Usuario.class);
         usuarioDAO.salvar(usuario);
     }
-
-    public void alterarUsuario(Usuario usuario) throws PersistenciaException {
+    
+    public void alterarUsuario(Usuario usuario) throws PersistenciaException{
         Dao<Usuario> usuarioDAO = new GenericDAO<>(Usuario.class);
         usuarioDAO.alterar(usuario);
     }
-
-    public Usuario consultarUsuarioPorId(int idUsuario) throws PersistenciaException {
+    
+    public Usuario consultarUsuarioPorId(int idUsuario) throws PersistenciaException{
         Dao<Usuario> usuarioDAO = new GenericDAO<>(Usuario.class);
         return usuarioDAO.buscarPorId(idUsuario);
     }
-
-    public List<Usuario> consultarTodosUsuarios(Usuario usuario) throws PersistenciaException {
+    
+    public List<Usuario> consultarTodosUsuarios(Usuario usuario) throws PersistenciaException{
         Dao<Usuario> usuarioDAO = new GenericDAO<>(Usuario.class);
         return usuarioDAO.buscarTodos(Usuario.class);
     }
-
-    public Usuario consultarPorTipoUsuario(String tipoUsuario) throws PersistenciaException {
+    
+    public Usuario consultarPorTipoUsuario(String tipoUsuario) throws PersistenciaException{
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         return usuarioDAO.buscarPorTipoUsuario(tipoUsuario);
     }
-
-    public Usuario consultarPorNomeUsuario(String nomeUsuario) throws PersistenciaException {
+    
+    public Usuario consultarPorNomeUsuario(String nomeUsuario) throws PersistenciaException{
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         return usuarioDAO.buscarPorTipoUsuario(nomeUsuario);
     }
-
-    public void excluirUsuario(Usuario usuario) throws PersistenciaException {
+    
+    public void excluirUsuario(Usuario usuario) throws PersistenciaException{
         Dao<Usuario> usuarioDAO = new GenericDAO<>(Usuario.class);
         usuarioDAO.excluir(usuario);
     }
-
+    
+    
+    
 }

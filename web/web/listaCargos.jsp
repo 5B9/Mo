@@ -7,18 +7,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>SGC Acome</title>
+        <title>Cargos</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
-        <% 
-            session = request.getSession();
-            Usuario u = (Usuario) session.getAttribute("usuario");
-            boolean logado = false;
-                   if (u != null) {
-                   logado = true;
-                 }
-        %>
+    <% 
+        session = request.getSession();
+        Usuario u = (Usuario) session.getAttribute("usuario");
+        boolean logado = false;
+               if (u != null) {
+               logado = true;
+             }
+         %>
     </head>
     <body>
         <header>
@@ -28,11 +28,11 @@
         <main>
             <%
                 if(!logado || u.getTipoUsuario().equals("candidato")){
-            %> <p> Acesso Negado </p>
-            <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
-            <%} else{ %>
-            <br><br>
-            <div class="container" >
+                   %> <p> Acesso Negado </p>
+                    <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
+             <%} else{ %>
+             <br><br>
+             <div class="container" >
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
@@ -49,8 +49,8 @@
                 </thead>
 
 
-                                <tbody>
-                                    <%ControleCargo controleCargo = new ControleCargo();
+                <tbody>
+                    <%ControleCargo controleCargo = new ControleCargo();
                         for (Cargo c : controleCargo.consultarTodosCargos()){%>
                     <tr>
                         <%----%><td><%=c.getNomeCargo()%></td>
@@ -69,20 +69,16 @@
                 </tbody>
                 <%}%>
 
-                                    </tr>
-                                </tbody>
-                                <%}%>
-
-                            </table>
-                            <br>
-                            <center>
-                                <a href="cargoCadastro.jsp"class="waves-effect waves-light waves-darken-3 btn-small indigo "><i class="material-icons right">create</i>Cadastrar</a>
-                            </center>
-                            <% } %>
+            </table>
+                <br>
+                <center>
+            <a href="cargoCadastro.jsp"class="waves-effect waves-light waves-darken-3 btn-small indigo "><i class="material-icons right">create</i>Cadastrar</a>
+                </center>
+            <% } %>
                         </div>
                     </div>
                 </div>
-            </div>
+             </div>
         </main>
 
         <footer>

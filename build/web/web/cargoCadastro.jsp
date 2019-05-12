@@ -20,11 +20,7 @@
         %>
 
     </head>
-    <style>
-        body{
-            background-color: #263238;
-        }
-    </style>
+  
     <body>
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />

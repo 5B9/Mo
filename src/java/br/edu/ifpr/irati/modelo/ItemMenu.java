@@ -28,10 +28,11 @@ import org.hibernate.annotations.Proxy;
  *
  * @author Valter Estevam
  */
-@Entity(name = "itemmenu")
+@Entity (name = "itemmenu")
 @Proxy(lazy = false)
 public class ItemMenu implements Serializable {
-
+    
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -45,7 +46,8 @@ public class ItemMenu implements Serializable {
     private boolean visivel;
     @Column(name = "aberta", nullable = false, length = 3)
     private boolean aberta;
-
+        
+    
     /**
      * Construtor padrão
      */
@@ -60,12 +62,12 @@ public class ItemMenu implements Serializable {
 
     /**
      * Construtor sem icone.
-     *
+     * 
      * @param id
      * @param valor
-     * @param url
-     * @param visivel
-     * @param aberta
+     * @param url 
+     * @param visivel 
+     * @param aberta 
      */
     public ItemMenu(int id, String valor, String url, boolean visivel, boolean aberta) {
         this.id = id;
@@ -75,16 +77,16 @@ public class ItemMenu implements Serializable {
         this.visivel = visivel;
         this.aberta = aberta;
     }
-
+    
     /**
      * Construtor completo
-     *
+     * 
      * @param id
      * @param valor
      * @param url
-     * @param icone
+     * @param icone 
      */
-    public ItemMenu(int id, String valor, String url, String icone, boolean visivel, boolean aberta) {
+    public ItemMenu(int id, String valor, String url, String icone, boolean visivel, boolean aberta) {    
         this.id = id;
         this.valor = valor;
         this.url = url;
@@ -177,4 +179,6 @@ public class ItemMenu implements Serializable {
         this.aberta = aberta;
     }
 
+
+    
 }

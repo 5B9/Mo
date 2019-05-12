@@ -16,13 +16,14 @@ import org.hibernate.Session;
  * @author Altai
  */
 public class AgendamentoEntrevistaDAO {
-
-    public AgendamentoEntrevista buscarLocal(String local) {
+    
+     
+     public AgendamentoEntrevista buscarLocal(String local){
         Session session = HibernateUtil.getSessionFactory().openSession();
-        String hql = "from AgendamentoEntrevista sessao where sessao.local = '" + local + "' ";
+        String hql = "from AgendamentoEntrevista sessao where sessao.local = '"+local+"' ";
         Query query = session.createQuery(hql);
         query.setMaxResults(1);
-        AgendamentoEntrevista sessao = (AgendamentoEntrevista) query.uniqueResult();
+        AgendamentoEntrevista sessao = (AgendamentoEntrevista) query.uniqueResult();        
         session.clear();
         session.close();
         return sessao;

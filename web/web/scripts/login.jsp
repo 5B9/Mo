@@ -21,24 +21,24 @@
             if (nome != null && senha != null) {
                 ControleLogin lc = new ControleLogin();
                 try {
-                    
-                    Usuario u = lc.login(nome, senha);
-                    session.setAttribute("usuario", u);
-                    
-                    if (u.getTipoUsuario().equals("funcionario")) {
+
+                  
+                        Usuario u = lc.login(nome, senha);
+                        session.setAttribute("usuario", u);
+                        if(u.getTipoUsuario().equals("funcionario")){
                         response.sendRedirect("../index.jsp");
                         }if(u.getTipoUsuario().equals("candidato")){
                             ControleCandidato controle = new ControleCandidato();
                             Candidato c = controle.consultarCandidatoPorId(u.getIdPessoa());
                             if(c.isPerfilPreenchido()){
-                            response.sendRedirect("../index.jsp");
+                            response.sendRedirect("../perfil.jsp");
                             }else{
                               response.sendRedirect("../perfilCadastro.jsp");  
                             }
                         }
                 } catch (Exception e) {
                     session.setAttribute("usuario", null);
-                    //valterar o valor na variável de sessão
+                    //alterar o valor na variável de sessão
 
                     response.sendRedirect("../login.jsp?e=" + e.getMessage());
                 }

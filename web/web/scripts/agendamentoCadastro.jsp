@@ -29,6 +29,7 @@
             String local = request.getParameter("local");
             String data = request.getParameter("dataSessao");
             String horaIn = request.getParameter("hora");
+            String cargo = request.getParameter("cargo");
 
             Date deto = sdf.parse(data);
 
@@ -36,7 +37,7 @@
 
             
 
-            AgendamentoEntrevista a = new AgendamentoEntrevista(0, local, hora, deto);
+            AgendamentoEntrevista a = new AgendamentoEntrevista(0, local, hora, deto,cargo);
             ControleAgendamento controleAgendamento = new ControleAgendamento();
             controleAgendamento.inserirAgendamento(a);
 

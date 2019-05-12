@@ -16,27 +16,31 @@ import org.hibernate.Session;
  * @author Altai
  */
 public class FuncionarioDAO {
-
-    public Funcionario buscarPorTipoFuncionario(String str) {
+    
+    
+    
+     public Funcionario buscarPorTipoFuncionario(String str){
         Session session = HibernateUtil.getSessionFactory().openSession();
-        String hql = "from funcionario f where f.tipoFuncionario = '" + str + "' ";
+        String hql = "from funcionario f where f.tipoFuncionario = '"+str+"' ";
         Query query = session.createQuery(hql);
         query.setMaxResults(1);
-        Funcionario funcionario = (Funcionario) query.uniqueResult();
+        Funcionario funcionario = (Funcionario) query.uniqueResult();        
         session.clear();
         session.close();
         return funcionario;
     }
-
-    public Funcionario buscarFuncionarioPorMatricula(int matricula) {
+    
+      public Funcionario buscarFuncionarioPorMatricula(int matricula){
         Session session = HibernateUtil.getSessionFactory().openSession();
-        String hql = "from funcionario f where f.matricula = '" + matricula + "' ";
+       String hql = "from funcionario f where f.matricula = '"+matricula +"' ";
         Query query = session.createQuery(hql);
         query.setMaxResults(1);
-        Funcionario funcionario = (Funcionario) query.uniqueResult();
+        Funcionario funcionario = (Funcionario) query.uniqueResult();        
         session.clear();
         session.close();
         return funcionario;
     }
-
+     
+      
+   
 }

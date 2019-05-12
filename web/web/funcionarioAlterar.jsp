@@ -25,11 +25,7 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
-        <style>
-            body{
-                background-color: #263238;
-            }
-        </style>
+       
         <main>
             <center>
                 <%
@@ -77,7 +73,7 @@
 
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input placeholder="12/12/2012" id="first_name" type="text" name="data" value="<%=sdf.format(funcionario.getDataAdmissao())%>"class="datepicker">
+                                                <input placeholder="12/12/2012" id="first_name" type="text" name="data" value="<%=sdf.format(funcionario.getDataAdmissao())%>"class="validate">
                                                 <label for="Dia do Evento">Data de admissão</label>
                                             </div>
                                         </div>
@@ -149,47 +145,6 @@
                 $('select').formSelect();
             });
         </script>
-        <script>
-            $(document).ready(function () {
-                $('.datepicker').datepicker({format: 'mm/dd/yyyy'});
-            });
-        </script>
-        <script>
-            function validar() {
-                if (document.formulario.tipoFuncionario.value == "") {
-                    alert("Por favor, insira o tipo do funcionário.");
-                    return false;
-                } else if (document.formulario.matricula.value == "") {
-                    alert("Por favor, o número da matrícula do funcionário.");
-                    return false;
-                } else if (document.formulario.data.value == "") {
-                    alert("Por favor, insira a data que esse funcionário foi admitido.");
-                    return false;
-                } else if (document.formulario.nomeUsuario.value == "") {
-                    alert("Por favor, insira o nome de usuário desse funcionário.");
-                    return false;
-                } else if (document.formulario.senha.value == "") {
-                    alert("Por favor, insira a senha do funcionário.");
-                    return false;
-                } else if (document.formulario.nome.value == "") {
-                    alert("Por favor, insira o nome do funcionário.");
-                    return false;
-                } else if (document.formulario.cpf.value == "") {
-                    alert("Por favor, insira o CPF do funcionário.");
-                    return false;
-                } else if (document.formulario.rg.value == "") {
-                    alert("Por favor, insira o RG do funcionário.");
-                    return false;
-                } else if (document.formulario.sexo.value == "") {
-                    alert("Por favor, insira o sexo do funcionário.");
-                    return false;
-                } else if (document.formulario.endereco.value == "") {
-                    alert("Por favor, insira o endereço de e-mail desse funcionário.");
-                    return false;
-                } else {
-                    return true;
-                }
-            }
-        </script>
+
     </body>
 </html>

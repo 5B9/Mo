@@ -98,7 +98,7 @@
 
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input placeholder="" id="cpf" type="text" name="cpf" class="validate" onkeydown="javascript: fMasc(this,mCPF):" onkeypress="if(!isNaN(String.fromCharCode(window.event.keyCode)))" >
+                                            <input placeholder="" id="cpf" type="text" name="cpf" class="validate">
                                             <label for="cpf">CPF</label>
                                         </div>
                                     </div>
@@ -140,7 +140,7 @@
                                             <div class="file-path-wrapper">
                                                 <input class="file-path validate" type="text">
                                             </div>
-                                            <label for="crriculo">Currículo</label>
+                                            <label for="curriculo">Currículo</label>
                                         </div>
                                     </div>
                                     <center>

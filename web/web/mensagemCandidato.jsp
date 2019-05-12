@@ -17,15 +17,15 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
-
+        
         <main>
             <p> Template </p>
         </main>
-
+                
         <footer>
             <jsp:include page="rodape.jsp" flush="true" />
         </footer>                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-
+        
     </body>
 </html>

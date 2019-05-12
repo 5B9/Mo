@@ -18,23 +18,23 @@ import javax.persistence.InheritanceType;
  *
  * @author Altai
  */
-@Entity(name = "pessoa")
+@Entity (name = "pessoa")
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Pessoa implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    protected int idPessoa;
-    @Column(name = "nomecompleto", nullable = false, length = 100)
-    protected String nomeCompleto;
-    @Column(name = "cpf", nullable = false, length = 14)
-    protected String cpf;
-    @Column(name = "rg", nullable = false, length = 12)
-    protected String rg;
-    @Column(name = "sexo", nullable = false, length = 1)
-    protected String sexo;
-    @Column(name = "enderecoEmail", nullable = false, length = 30)
-    protected String enderecoEmail;
+public abstract class Pessoa implements Serializable{
+  
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  protected int idPessoa;
+  @Column(name = "nomecompleto", nullable = false, length = 100)
+  protected String nomeCompleto;
+  @Column(name = "cpf", nullable = false, length = 14)
+  protected String cpf;
+  @Column(name = "rg", nullable = false, length = 12)
+  protected String rg;
+  @Column(name = "sexo", nullable = false, length = 1)
+  protected String sexo;
+  @Column(name = "enderecoEmail", nullable = false, length = 30)
+  protected String enderecoEmail;
 
     public Pessoa() {
         idPessoa = 0;
@@ -106,5 +106,8 @@ public abstract class Pessoa implements Serializable {
     public String toString() {
         return this.getNomeCompleto(); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
+    
+ 
+    
 }

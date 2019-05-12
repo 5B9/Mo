@@ -15,11 +15,11 @@ import org.hibernate.annotations.Proxy;
  *
  * @author Altai
  */
-@Entity(name = "usuario")
+@Entity (name = "usuario")
 @PrimaryKeyJoinColumn(name = "idPessoa")
 @Proxy(lazy = false)
 public class Usuario extends Pessoa implements Serializable {
-
+    
     @Column(name = "nomeUsuario", nullable = false, length = 30)
     protected String nomeUsuario;
     @Column(name = "senha", nullable = false, length = 300)
@@ -40,8 +40,8 @@ public class Usuario extends Pessoa implements Serializable {
         this.senha = senha;
         this.tipoUsuario = tipoUsuario;
     }
-
-    public Usuario(String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail) {
+    
+     public Usuario( String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail) {
         super(idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
         nomeUsuario = "";
         senha = "";
@@ -53,6 +53,8 @@ public class Usuario extends Pessoa implements Serializable {
         this.senha = senha;
         this.tipoUsuario = tipoUsuario;
     }
+    
+    
 
     public String getNomeUsuario() {
         return nomeUsuario;
@@ -77,5 +79,5 @@ public class Usuario extends Pessoa implements Serializable {
     public void setTipoUsuario(String tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
-
+    
 }

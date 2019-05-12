@@ -17,35 +17,35 @@ import java.util.List;
  * @author Altai
  */
 public class ControleAgendamento {
-
-    public void inserirAgendamento(AgendamentoEntrevista agendamento) throws PersistenciaException {
+    
+    public void inserirAgendamento(AgendamentoEntrevista agendamento) throws PersistenciaException{
         Dao<AgendamentoEntrevista> agendamentoDAO = new GenericDAO<>(AgendamentoEntrevista.class);
         agendamentoDAO.salvar(agendamento);
     }
-
-    public void alterarAgendamento(AgendamentoEntrevista agendamento) throws PersistenciaException {
+    
+    public void alterarAgendamento(AgendamentoEntrevista agendamento) throws PersistenciaException{
         Dao<AgendamentoEntrevista> agendamentoDAO = new GenericDAO<>(AgendamentoEntrevista.class);
         agendamentoDAO.alterar(agendamento);
     }
-
-    public AgendamentoEntrevista consultarAgendamentoPorId(int id) throws PersistenciaException {
+    
+    public AgendamentoEntrevista consultarAgendamentoPorId(int id) throws PersistenciaException{
         Dao<AgendamentoEntrevista> agendamentoDAO = new GenericDAO<>(AgendamentoEntrevista.class);
         return agendamentoDAO.buscarPorId(id);
     }
-
-    public List<AgendamentoEntrevista> consultarTodosAgendamentos(AgendamentoEntrevista agendamento) throws PersistenciaException {
+    
+    public List<AgendamentoEntrevista> consultarTodosAgendamentos(AgendamentoEntrevista agendamento) throws PersistenciaException{
         Dao<AgendamentoEntrevista> agendamentoDAO = new GenericDAO<>(AgendamentoEntrevista.class);
         return agendamentoDAO.buscarTodos(AgendamentoEntrevista.class);
     }
-
-    public AgendamentoEntrevista consultarAgendamentoPorLocal(String local) throws PersistenciaException {
+    
+    public AgendamentoEntrevista consultarAgendamentoPorLocal(String local) throws PersistenciaException{
         AgendamentoEntrevistaDAO agendamentoDAO = new AgendamentoEntrevistaDAO();
         return agendamentoDAO.buscarLocal(local);
     }
-
-    public void excluirAgendamento(AgendamentoEntrevista agendamento) throws PersistenciaException {
+    
+    public void excluirAgendamento(AgendamentoEntrevista agendamento) throws PersistenciaException{
         Dao<AgendamentoEntrevista> agendamentoDAO = new GenericDAO<>(AgendamentoEntrevista.class);
         agendamentoDAO.excluir(agendamento);
     }
-
+    
 }

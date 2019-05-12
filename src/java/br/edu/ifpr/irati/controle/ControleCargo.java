@@ -17,35 +17,35 @@ import java.util.List;
  * @author Altai
  */
 public class ControleCargo {
-
-    public void inserirCargo(Cargo cargo) throws PersistenciaException {
+    
+           public void inserirCargo(Cargo cargo) throws PersistenciaException{
         Dao<Cargo> cargoDAO = new GenericDAO<>(Cargo.class);
         cargoDAO.salvar(cargo);
     }
-
-    public void alterarCargo(Cargo cargo) throws PersistenciaException {
+    
+    public void alterarCargo(Cargo cargo) throws PersistenciaException{
         Dao<Cargo> cargoDAO = new GenericDAO<>(Cargo.class);
         cargoDAO.alterar(cargo);
     }
-
-    public Cargo consultarCargoPorId(int idCargo) throws PersistenciaException {
+    
+    public Cargo consultarCargoPorId(int idCargo) throws PersistenciaException{
         Dao<Cargo> cargoDAO = new GenericDAO<>(Cargo.class);
         return cargoDAO.buscarPorId(idCargo);
     }
-
-    public List<Cargo> consultarTodosCargos() throws PersistenciaException {
+    
+    public List<Cargo> consultarTodosCargos() throws PersistenciaException{
         Dao<Cargo> cargoDAO = new GenericDAO<>(Cargo.class);
         return cargoDAO.buscarTodos(Cargo.class);
     }
-
-    public Cargo consultarCargoPorModalidade(String modalidade) throws PersistenciaException {
+    
+    public Cargo consultarCargoPorModalidade(String modalidade) throws PersistenciaException{
         CargoDAO cargoDAO = new CargoDAO();
         return cargoDAO.buscarPorModalidadeCargo(modalidade);
     }
-
-    public void excluirCargo(Cargo cargo) throws PersistenciaException {
+    
+    public void excluirCargo(Cargo cargo) throws PersistenciaException{
         Dao<Cargo> cargoDAO = new GenericDAO<>(Cargo.class);
-        cargoDAO.excluir(cargo);
+                cargoDAO.excluir(cargo);
     }
-
+    
 }

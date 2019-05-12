@@ -1,3 +1,5 @@
+<%@page import="br.edu.ifpr.irati.modelo.Cargo"%>
+<%@page import="br.edu.ifpr.irati.controle.ControleCargo"%>
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="br.edu.ifpr.irati.modelo.AgendamentoEntrevista"%>
@@ -13,11 +15,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
     </head>
     <body>
-        <style>
-            body{
-                background-color: #263238;
-            }
-        </style>
+        
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
@@ -69,6 +67,22 @@
                                     <label for="Horario de Início">Horario de Início</label>
                                 </div>
                             </div>
+                                    
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <div class="input-field col s12">
+                                                <select name="cargo">
+                                                    <option value="" disabled selected>Cargo</option>
+                                                    <%ControleCargo cr = new ControleCargo();
+
+                                                        for (Cargo c : cr.consultarTodosCargos()) {%>
+                                                    <option value="<%=c.getNomeCargo()%>"><%=c.getNomeCargo()%></option>
+                                                    <%}%>
+                                                </select>
+                                                <label>Cargo</label>
+                                            </div>
+                                        </div>
+                                    </div>
 
                             <center>
                                 <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
@@ -86,17 +100,22 @@
         </footer>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-                                    $(document).ready(function () {
-                                        $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
-                                    });
+            $(document).ready(function () {
+                $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
+            });
         </script>
         <script>
             $(document).ready(function () {
                 $('.timepicker').timepicker({
-                    twelveHour: false
-
+                    twelveHour:false
+                    
                 });
             });
+        </script>
+        <script>
+                                            $(document).ready(function () {
+                                                $('select').formSelect();
+                                            });
         </script>
         <script>
             function validar() {

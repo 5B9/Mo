@@ -10,8 +10,9 @@ package br.edu.ifpr.irati.util;
  * @author Altai
  */
 class HashGenerationException extends Exception {
-
-    public HashGenerationException(String mensagem) {
+    
+    
+    public HashGenerationException(String mensagem){
         super(mensagem);
     }
 }

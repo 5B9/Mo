@@ -13,8 +13,7 @@
             int id =Integer.parseInt(request.getParameter("idCandidato"));
 
             ControleCandidato controleCandidato = new ControleCandidato();
-            Candidato candidato = controleCandidato.consultarCandidatoPorId(id);
-            controleCandidato.excluirCandidato(candidato);
+            controleCandidato.excluirCandidato(controleCandidato.consultarCandidatoPorId(id));
             response.sendRedirect("../listaCandidatos.jsp");
         %>
     </body>

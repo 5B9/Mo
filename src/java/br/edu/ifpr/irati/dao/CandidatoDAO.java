@@ -16,6 +16,7 @@ import org.hibernate.Session;
  */
 public class CandidatoDAO {
 
+
     public Candidato buscarPorCargoDesejado(String str) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         String hql = "from candidato c where c.cargoDesejado = '" + str + "' ";
@@ -26,5 +27,7 @@ public class CandidatoDAO {
         session.close();
         return candidato;
     }
+
+  
 
 }
