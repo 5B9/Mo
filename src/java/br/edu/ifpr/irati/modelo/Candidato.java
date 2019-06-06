@@ -6,10 +6,9 @@
 package br.edu.ifpr.irati.modelo;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import org.hibernate.annotations.Proxy;
 
@@ -26,42 +25,50 @@ public class Candidato extends Usuario implements Serializable {
     private String escolaridade;
     @Column(name = "cargoDesejado", nullable = false, length = 15)
     private String cargoDesejado;
-    @OneToOne(fetch = FetchType.LAZY)
-    private Curriculo curriculo;
+    @Column(name = "idade", nullable = false, length = 2)
+    private String idade;
+    @Column(name = "formacoes", nullable = true, length = 200)
+    private String formacoesProfissionais;
     @Column(name = "perfilPreenchido", nullable = false, length = 15)
     private boolean perfilPreenchido;
+    
 
     public Candidato() {
         super();
         escolaridade = "";
         cargoDesejado = "";
-        curriculo = new Curriculo();
+        idade = "";
         perfilPreenchido = false;
     }
 
-    public Candidato(String escolaridade, String cargoDesejado, String nomeUsuario, String senha, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail, boolean perfilPreenchido) {
-        super(nomeUsuario, senha, tipoUsuario, idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
+    public Candidato(String escolaridade, String cargoDesejado, String idade, String formacoesProfissionais, boolean perfilPreenchido, String nomeUsuario, String senha, String tipoUsuario) {
+        super(nomeUsuario, senha, tipoUsuario);
         this.escolaridade = escolaridade;
         this.cargoDesejado = cargoDesejado;
-        curriculo = new Curriculo();
-        this.perfilPreenchido = perfilPreenchido;
-    }
-
-    public Candidato(String escolaridade, String cargoDesejado, Curriculo curriculo, String nomeUsuario, String senha, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail, boolean perfilPreenchido) {
-        super(nomeUsuario, senha, tipoUsuario, idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
-        this.escolaridade = escolaridade;
-        this.cargoDesejado = cargoDesejado;
-        this.curriculo = curriculo;
+        this.idade = idade;
+        this.formacoesProfissionais = formacoesProfissionais;
         this.perfilPreenchido = perfilPreenchido;
     }
     
-     public Candidato(String escolaridade, String cargoDesejado, Curriculo curriculo, String nomeUsuario, String senha, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail) {
-        super(nomeUsuario, senha, tipoUsuario, idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
+    public Candidato(String escolaridade, String cargoDesejado, String idade, String formacoesProfissionais, String nomeUsuario, String senha, String tipoUsuario) {
+        super(nomeUsuario, senha, tipoUsuario);
         this.escolaridade = escolaridade;
         this.cargoDesejado = cargoDesejado;
-        this.curriculo = curriculo;
-        perfilPreenchido = false;
+        this.idade = idade;
+        this.formacoesProfissionais = formacoesProfissionais;
+        this.perfilPreenchido = perfilPreenchido;
     }
+
+    public Candidato(String escolaridade, String cargoDesejado, String idade, String formacoesProfissionais, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail) {
+        super(tipoUsuario, idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
+        this.escolaridade = escolaridade;
+        this.cargoDesejado = cargoDesejado;
+        this.idade = idade;
+        this.formacoesProfissionais = formacoesProfissionais;
+        this.perfilPreenchido = perfilPreenchido;
+    }
+    
+        
 
     public String getEscolaridade() {
         return escolaridade;
@@ -79,20 +86,28 @@ public class Candidato extends Usuario implements Serializable {
         this.cargoDesejado = cargoDesejado;
     }
 
-    public Curriculo getCurriculo() {
-        return curriculo;
-    }
-
-    public void setCurriculo(Curriculo curriculo) {
-        this.curriculo = curriculo;
-    }
-
     public boolean isPerfilPreenchido() {
         return perfilPreenchido;
     }
 
     public void setPerfilPreenchido(boolean perfilPreenchido) {
         this.perfilPreenchido = perfilPreenchido;
+    }
+
+    public String getIdade() {
+        return idade;
+    }
+
+    public void setIdade(String idade) {
+        this.idade = idade;
+    }
+
+    public String getFormacoesProfissionais() {
+        return formacoesProfissionais;
+    }
+
+    public void setFormacoesProfissionais(String formacoesProfissionais) {
+        this.formacoesProfissionais = formacoesProfissionais;
     }
 
 }

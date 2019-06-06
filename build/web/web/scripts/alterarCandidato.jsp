@@ -2,7 +2,6 @@
 <%@page import="br.edu.ifpr.irati.modelo.Curriculo"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCandidato"%>
 <%@page import="br.edu.ifpr.irati.modelo.Candidato"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,7 +10,6 @@
     </head>
     <body>
         <%
-            request.setCharacterEncoding("UTF-8");
             
             int id = Integer.parseInt(request.getParameter("idCandidato"));
             String escolaridade = request.getParameter("escolaridade");
@@ -24,11 +22,11 @@
             String rg = request.getParameter("rg");
             String sexo = request.getParameter("sexo");
             String enderecoEmail = request.getParameter("endereco");
-            ControleCandidato controleCandidato = new ControleCandidato();
+            String idade = request.getParameter("idade");
+            String formacoesProfissionais = request.getParameter("formacoes");
             
-            Curriculo curriculo = controleCandidato.consultarCandidatoPorId(id).getCurriculo();
-
-            Candidato c = new Candidato(escolaridade, cargoDesejado, curriculo, nomeUsuario, senha, tipoUsuario, id, nomeCompleto, cpf, rg, sexo, enderecoEmail);
+            ControleCandidato controleCandidato = new ControleCandidato();
+            Candidato c = new Candidato(escolaridade, cargoDesejado, idade, formacoesProfissionais, nomeUsuario, senha, tipoUsuario);
 
             
             controleCandidato.alterarCandidato(c);

@@ -4,11 +4,11 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="br.edu.ifpr.irati.modelo.AgendamentoEntrevista"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleAgendamento"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8"/>
         <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -57,14 +57,14 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <input placeholder="12/12/2012" id="first_name" type="text" name="dia" value="<%=sdf.format(agendamento.getDataSessao().getTime())%>"class="datepicker">
-                                    <label for="Dia do Evento">Data da Sess√£o</label>
+                                    <label for="Dia do Evento">Data da Sess„o</label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s12">
                                     <input placeholder="12:12:00" id="first_name" type="text" name="hora" value="<%=sdfHora.format(agendamento.getHoraInicio().getTime())%>"class="timepicker">
-                                    <label for="Horario de In√≠cio">Horario de In√≠cio</label>
+                                    <label for="Horario de InÌcio">Horario de InÌcio</label>
                                 </div>
                             </div>
                                     
@@ -85,7 +85,7 @@
                                     </div>
 
                             <center>
-                                <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
+                                <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Alterar</span></button>
                             </center>
 
                         </div>
@@ -120,13 +120,13 @@
         <script>
             function validar() {
                 if (document.formulario.local.value == "") {
-                    alert("Por favor, insira o local onde dessa sess√£o");
+                    alert("Por favor, insira o local onde dessa sess„o");
                     return false;
                 } else if (document.formulario.dia.value == "") {
-                    alert("Por favor, insira a data dessa sess√£o");
+                    alert("Por favor, insira a data dessa sess„o");
                     return false;
                 } else if (document.formulario.hora.value == "") {
-                    alert("Por favor, insira o hor√°rio de in√≠cio dessa sess√£o");
+                    alert("Por favor, insira o hor·rio de inÌcio dessa sess„o");
                     return false;
                 } else {
                     return true;

@@ -12,14 +12,14 @@
         <%
 
             
-            int qtdVagas=Integer.parseInt(request.getParameter("vargas"));
+            int qtdVagas=Integer.parseInt(request.getParameter("vagas"));
             
             String descricao = request.getParameter("descricao");
             String nomeCargo = request.getParameter("nome");
             String salario = request.getParameter("salario");
             String modalidade = request.getParameter("modalidade");
             
-
+            
             Cargo c = new Cargo(0, qtdVagas, descricao, nomeCargo, salario,modalidade);
 
             ControleCargo controleCargo = new ControleCargo();

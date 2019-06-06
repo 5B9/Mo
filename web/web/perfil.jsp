@@ -5,11 +5,11 @@
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Cargo"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCargo"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8"/>
         <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -31,7 +31,7 @@
         </header>
         <main>
              
-            <div class="container" style="width: 50%;" >
+            <div class="container" style="width: 50%; border-radius: 10px;" >
                 <div class="col s12 m5" align="center">
                     <div class="card-panel indigo">
                         <span class="card-title" align="center"></span>
@@ -47,7 +47,7 @@
                             <li class="collection-item"  id="sexo" name="sexo"> Sexo: <%=candidato.getSexo()%></li>
                             <li class="collection-item"  id="escolaridade" name="escolaridade"> Escolaridade: <%=candidato.getEscolaridade() %></li>
                             <li class="collection-item"  id="cargoDesejado" name="cargoDesejado"> Cargo Desejado: <%=candidato.getCargoDesejado()%></li>
-                            <a class="collection-item" href="<%=candidato.getCurriculo()%>.pdf" target="_blank"  id="curriculo" name="curriculo"> Curr√≠culo</a>
+                            <a class="collection-item" href="<%=candidato.getCurriculo()%>.pdf" target="_blank"  id="curriculo" name="curriculo"> CurrÌculo</a>
                         </ul>
                     </div>
                 </div>
@@ -73,13 +73,13 @@
         <script>
             function validar() {
                 if (document.formulario.escolaridade.value == "") {
-                    alert("Por favor, insira o n√≠vel de escolaridade do candidato.");
+                    alert("Por favor, insira o nÌvel de escolaridade do candidato.");
                     return false;
                 } else if (document.formulario.cargoDesejado.value == "") {
                     alert("Por favor, insira o cargo desejado.");
                     return false;
                 } else if (document.formulario.nomeUsuario.value == "") {
-                    alert("Por favor, insira o seu nome de usu√°rio.");
+                    alert("Por favor, insira o seu nome de usu·rio.");
                     return false;
                 } else if (document.formulario.senha.value == "") {
                     alert("Por favor, insira a sua senha.");
@@ -97,10 +97,10 @@
                     alert("Por favor, insira o seu sexo.");
                     return false;
                 } else if (document.formulario.endereco.value == "") {
-                    alert("Por favor, insira o seu endere√ßo de e-mail.");
+                    alert("Por favor, insira o seu endereÁo de e-mail.");
                     return false;
                 } else if (document.formulario.curriculo.value == "") {
-                    alert("Por favor, insira o seu curr√≠culo.");
+                    alert("Por favor, insira o seu currÌculo.");
                     return false;
                 } else {
                     return true;

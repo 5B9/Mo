@@ -4,11 +4,11 @@
 <%@page import="br.edu.ifpr.irati.modelo.Funcionario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Entrevista"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleEntrevista"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+ <meta charset="utf-8"/>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <meta charset="utf-8"/>
         <title>Entrevistas</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -44,8 +44,9 @@
                                     <tr>
                                         <th>Funcionarios Presidindo</th>
                                         <th>Candidatos</th>
-                                        <th>Fase PsicolÃ³gica</th>
-                                        <th>Fase TÃ©cnica</th>
+                                        <th>Fase Psicológica</th>
+                                        <th>Fase Técnica</th>
+                                        <th>Cargo</th>
                                         <th>Selecionar</th>
                                         <th>Alterar</th>
                                         <th>Excluir</th>
@@ -76,7 +77,9 @@
                                         <%} else {%>
                                         <td>Reprovado</td>
                                         <%}%>
-                                        <td>
+                                       
+                                        <td><%= e.getCargo().getNomeCargo() %></td>
+                                         <td>
                                             <label>
                                                 <input type="checkbox" />
                                                 <span></span>

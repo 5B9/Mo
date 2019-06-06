@@ -1,11 +1,11 @@
 
-
-<%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
+
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+       <meta charset="utf-8"/>
         <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -44,7 +44,7 @@
 
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input placeholder="..." id="first_name" type="number" name="vargas"class="validate">
+                                                <input placeholder="..."  value="0" type="number" name="vagas">
                                                 <label for="vagas">Quantidade de Vagas</label>
                                             </div>
                                         </div>
@@ -53,15 +53,14 @@
 
                                             <div class="input-field col s12">
                                                 <select name="descricao">
-                                                    <option value="" disabled selected>ExigÃªncias</option>
                                                     <option value="Ensino Fudamental Incompleto">Ensino Fundamental Incompleto</option>
                                                     <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
-                                                    <option value="Ensino MÃ©dio Incompleto">Ensino MÃ©dio Incompleto</option>
-                                                    <option value="Ensino MÃ©dio Completo">Ensino MÃ©dio Completo</option>
+                                                    <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
+                                                    <option value="Ensino Médio Completo">Ensino Médio Completo</option>
                                                     <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
                                                     <option value="Ensino Superior Completo">Ensino Superior Completo</option>
                                                 </select>
-                                                <label>ExigÃªncias</label>
+                                                <label>Exigências</label>
 
                                             </div>
                                         </div>
@@ -77,13 +76,12 @@
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="1300" id="first_name" type="text" name="salario"class="validate">
-                                                <label for="salario">SalÃ¡rio</label>
+                                                <label for="salario">Salário</label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <select  name="modalidade">
-                                                    <option value="" disabled selected>Modalidade</option>
                                                     <option value="CLT">CLT</option>
                                                     <option value="Contrato">Contrato</option>
                                                 </select>
@@ -114,14 +112,11 @@
                                                 $('select').formSelect();
                                             });
         </script>
-        <!--Receber os clientes pela cabeÃ§a, assim, pela cabeÃ§a, agarrÃ¡-los cabeÃ§a e ,com toda a sua cabeÃ§a, jooj-->
+        <!--Receber os clientes pela cabeça, assim, pela cabeça, agarrá-los cabeça e ,com toda a sua cabeça, jooj-->
         <script>
             function validar() {
-                if (document.formulario.vargas.value == "") {
-                    alert("Por favor, insira a quantdade de vagas.");
-                    return false;
-                } else if (document.formulario.descricao.value == "") {
-                    alert("Por favor, insira a descriÃ§Ã£o desse cargo.");
+                if (document.formulario.descricao.value == "") {
+                    alert("Por favor, insira a descrição desse cargo.");
                     return false;
                 } else if (document.formulario.nome.value == "") {
                     alert("Por favor, insira o nome desse cargo.");

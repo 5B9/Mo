@@ -3,11 +3,11 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="br.edu.ifpr.irati.modelo.Funcionario"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleFuncionario"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <meta charset="utf-8"/>
         <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -67,21 +67,21 @@
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="" id="first_name" type="text" name="matricula" value="<%=funcionario.getMatricula()%>"class="validate">
-                                                <label for="matricula">NÂº matrÃ­cula</label>
+                                                <label for="matricula">Nº matrícula</label>
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="12/12/2012" id="first_name" type="text" name="data" value="<%=sdf.format(funcionario.getDataAdmissao())%>"class="validate">
-                                                <label for="Dia do Evento">Data de admissÃ£o</label>
+                                                <label for="Dia do Evento">Data de admissão</label>
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="" id="first_name" type="text" name="nomeUs"  value="<%=funcionario.getNomeUsuario()%>"class="validate">
-                                                <label for="tipo">Nome de UsuÃ¡rio</label>
+                                                <label for="tipo">Nome de Usuário</label>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -118,7 +118,7 @@
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="" id="first_name" type="text" name="endereco" value="<%=funcionario.getEnderecoEmail()%>"class="validate">
-                                                <label for="tipo">EndereÃ§o de Email</label>
+                                                <label for="tipo">Endereço de Email</label>
                                             </div>
                                         </div>
 

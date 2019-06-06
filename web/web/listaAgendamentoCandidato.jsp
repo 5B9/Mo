@@ -17,7 +17,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
     </head>
     <body>
-            
+
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
@@ -38,59 +38,82 @@
             %> <p> Acesso Negado </p>
             <p> Clique <a href="login.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
-              <br><br><br>
-             <div class="container" >
+            <br><br><br>
+            <div class="container" >
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
-            <table class="highlight">
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Local</th>
-                        <th>Horário</th>
-                        <th>Cargo</th>
-                   
-                    </tr>
-                </thead>
+                            <table class="highlight" >
+                                <thead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Local</th>
+                                        <th>Horário</th>
+                                        <th>Cargo</th>
+
+                                    </tr>
+                                </thead>
 
 
-                
-                    <%ControleAgendamento controleAgendamento = new ControleAgendamento();
-                        AgendamentoEntrevista agendamento = new AgendamentoEntrevista();
-                        ControleCandidato controleCandidato = new ControleCandidato();
-                        Candidato candidato = new Candidato();
-                        candidato = controleCandidato.consultarCandidatoPorId(u.getIdPessoa());
-                        
-                        for (AgendamentoEntrevista a : controleAgendamento.consultarTodosAgendamentos(agendamento)) {
-                            if(candidato.getCargoDesejado().equals(a.getCargoSessao())){
-                     
-                        %>
-                    <tbody>
-                        <tr>
-                        <%----%><td><%=sdf.format(a.getDataSessao().getTime())%></td>
+
+                                <% ControleAgendamento controleAgendamento = new ControleAgendamento();
+                                    AgendamentoEntrevista agendamento = new AgendamentoEntrevista();
+                                    ControleCandidato controleCandidato = new ControleCandidato();
+                                    Candidato candidato = new Candidato();
+                                    candidato = controleCandidato.consultarCandidatoPorId(u.getIdPessoa());
+                                    if (controleAgendamento.consultarTodosAgendamentos(agendamento) != null) { %>
+                                <tbody>
+                                    <tr>
+                                        <td>Não há agendamentos para o seu cargo desejado no momento</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>   
+                                <%      } else {
+                                    for (AgendamentoEntrevista a : controleAgendamento.consultarTodosAgendamentos(agendamento)) {
+                                        if (candidato.getCargoDesejado().equals(a.getCargoSessao()) == false) {
 
 
-                        <td><%=a.getLocalSessao()%></td>
-                        <td><%=sdfHora.format(a.getHoraInicio().getTime())%></td>
-                        <td><%=a.getCargoSessao() %></td>
-                     
-                    </tr>
-                </tbody>
-                <%
-       }else{ %>
+                                %>
+                                <tbody>
+                                    <tr>
+                                        <td>Não há agendamentos para o seu cargo desejado no momento</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>    
+                                <%   } else {
+                                    if (candidato.getCargoDesejado().equals(a.getCargoSessao())) {
 
-<%
-}                 
-}%>
+                                %>
+                                <tbody>
+                                    <tr>
+                                        <td><%=sdf.format(a.getDataSessao().getTime())%></td>
+                                        <td><%=a.getLocalSessao()%></td>
+                                        <td><%=sdfHora.format(a.getHoraInicio().getTime())%></td>
+                                        <td><%=a.getCargoSessao()%></td>
+                                    </tr>
+                                </tbody>
+                                <%
+                                } else { %>
 
-            </table>
+                                <%
+                                            }
+                                        }
+                                    }
+}
+                                %>
+
+                            </table>
 
                         </div>
                     </div>
                 </div>
-             </div>
-            <% }%>
+            </div>
+            <% 
+                }%>
 
         </main>
 
