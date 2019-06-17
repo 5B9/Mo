@@ -52,15 +52,6 @@
             <%                    }
                 }
 
-            <%               } else { %>
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Entrevistas<i class="material-icons left">arrow_drop_down</i></a></li>
-            <li><a href="listaCandidatos.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
-            <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
-            <li><a href="listaCargos.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
-            <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
-                <%}
-                        }
-                    }
                 %>
 
 
@@ -106,15 +97,6 @@
 
     <%                    }
         }
-
-    <%               } else { %>
-    <li><a href="listaCandidatos.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
-    <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
-    <li><a href="listaCargos.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
-    <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
-        <%}
-                }
-            }
 
         %>
 

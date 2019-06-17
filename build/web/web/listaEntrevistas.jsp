@@ -44,8 +44,8 @@
                                     <tr>
                                         <th>Funcionarios Presidindo</th>
                                         <th>Candidatos</th>
-                                        <th>Fase Psicológica</th>
-                                        <th>Fase Técnica</th>
+                                        <th>Fase Psicolï¿½gica</th>
+                                        <th>Fase Tï¿½cnica</th>
                                         <th>Cargo</th>
                                         <th>Selecionar</th>
                                         <th>Alterar</th>

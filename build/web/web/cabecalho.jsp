@@ -42,7 +42,7 @@
             %>
 
             <li><a href="listaCandidatos.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
-            <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionï¿½rios</a></li>
+            <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
             <li><a href="listaCargos.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
             <li><a href="Agendamento.jsp"><i class="material-icons left">insert_invitation</i>Agendamentos</a></li>
             <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
@@ -52,15 +52,6 @@
             <%                    }
                 }
 
-            <%               } else { %>
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Entrevistas<i class="material-icons left">arrow_drop_down</i></a></li>
-            <li><a href="listaCandidatos.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
-            <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionï¿½rios</a></li>
-            <li><a href="listaCargos.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
-            <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
-                <%}
-                        }
-                    }
                 %>
 
 
@@ -97,7 +88,7 @@
 
  
     <li><a href="listaCandidatos.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
-    <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionï¿½rios</a></li>
+    <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
     <li><a href="listaCargos.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
     <li><a href="Agendamento.jsp"><i class="material-icons left">insert_invitation</i>Agendamentos</a></li>
     <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
@@ -106,15 +97,6 @@
 
     <%                    }
         }
-
-    <%               } else { %>
-    <li><a href="listaCandidatos.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
-    <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionï¿½rios</a></li>
-    <li><a href="listaCargos.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
-    <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
-        <%}
-                }
-            }
 
         %>
 
@@ -140,10 +122,10 @@
 </ul>
 <style>
 
-    .nav-wrapper /*Classe que terï¿½ suas propriedades de estilo modificadas*/{
-        background-color /*Propriedade que serï¿½ alterada*/
+    .nav-wrapper /*Classe que terá suas propriedades de estilo modificadas*/{
+        background-color /*Propriedade que será alterada*/
         : #004080;/*Cor desejada*/
-    }/*Encerrando as modificaï¿½ï¿½es de estilo dos elementos com essa classe*/
+    }/*Encerrando as modificações de estilo dos elementos com essa classe*/
 </style>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function () {
