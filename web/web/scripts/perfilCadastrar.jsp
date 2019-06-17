@@ -28,16 +28,14 @@
             String cpf = request.getParameter("cpf");
             String rg = request.getParameter("rg");
             String sexo = request.getParameter("sexo");
-            String enderecoEmail = request.getParameter("endereco");
+            String enderecoEmail = request.getParameter("endereco"); 
             boolean perfil = true;
-            Curriculo curriculo = new Curriculo(0, new Date(), new File(request.getParameter("curriculo")));
+            String idade = request.getParameter("idade"); 
+            
 
-            Candidato c = new Candidato(escolaridade, cargoDesejado, curriculo, nomeUsuario, senha, tipoUsuario, idCandidato, nomeCompleto, cpf, rg, sexo, enderecoEmail, perfil);
-            ControleCurriculo controleCurriculo = new ControleCurriculo();
+            Candidato c = new Candidato(escolaridade, cargoDesejado, idade, "", perfil, nomeUsuario, senha, tipoUsuario, idCandidato , nomeCompleto, cpf, rg, sexo, enderecoEmail);
             ControleCandidato controleCandidato = new ControleCandidato();
-            controleCurriculo.inserirCurriculo(curriculo);
             controleCandidato.alterarCandidato(c);
-
             response.sendRedirect("../index.jsp");
 
         %>

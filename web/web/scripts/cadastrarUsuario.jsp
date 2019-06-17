@@ -26,30 +26,28 @@
             
             if (tipoUsuario.equals("funcionario")) {
                 
-                int matricula = Integer.parseInt(request.getParameter("matricula"));
-                ControleFuncionario controle = new ControleFuncionario();
-                Funcionario f = controle.consultarFuncionarioPorMatricula(matricula);
-                if (f != null) {
+             //   int matricula = Integer.parseInt(request.getParameter("matricula"));
+             //   ControleFuncionario controle = new ControleFuncionario();
+             //   Funcionario f = controle.consultarFuncionarioPorMatricula(matricula);
+            //    if (f != null) {
                     Usuario u = new Usuario(nomeUsuario, senha, tipoUsuario);
-                    
+                    ControleFuncionario controleFuncionario = new ControleFuncionario();
+                    Funcionario f = new Funcionario(0, "gerente", new Date(), nomeUsuario, senha, tipoUsuario, u.getIdPessoa(), "", "", "", "", "");
+                    controleFuncionario.inserirFuncionario(f);
                     ControleUsuario controleUsuario = new ControleUsuario();
                     controleUsuario.inserirUsuario(u);
-                    
                     response.sendRedirect("../login.jsp");
-                } else {
+               // } else {
                     
-                    response.sendRedirect("../index.jsp?e= Cadastro Inválido!");
-                }
+             //       response.sendRedirect("../index.jsp?e= Cadastro Inválido!");
+               // }
             } else {
                 Usuario u = new Usuario(nomeUsuario, senha, tipoUsuario);
-                Curriculo curriculo  = new Curriculo(0, new Date(), new File(""));
-                Candidato c = new Candidato("", "", curriculo, nomeUsuario, senha, tipoUsuario, u.getIdPessoa(), "", "", "", "", "", false);
+                Candidato c = new Candidato("", "", "", "", false, nomeUsuario, senha, tipoUsuario, u.getIdPessoa(), "", "", "", "", "");
                 ControleUsuario controleUsuario = new ControleUsuario();
                 ControleCandidato controleCandidato = new ControleCandidato();
-                ControleCurriculo controleCurriculo = new ControleCurriculo();
-                controleCurriculo.inserirCurriculo(curriculo);
+                controleUsuario.inserirUsuario(u);
                 controleCandidato.inserirCandidato(c);
-            
                 response.sendRedirect("../login.jsp");
             }
             

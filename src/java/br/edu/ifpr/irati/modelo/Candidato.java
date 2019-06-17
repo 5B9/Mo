@@ -67,6 +67,18 @@ public class Candidato extends Usuario implements Serializable {
         this.formacoesProfissionais = formacoesProfissionais;
         this.perfilPreenchido = perfilPreenchido;
     }
+
+    public Candidato(String escolaridade, String cargoDesejado, String idade, String formacoesProfissionais, boolean perfilPreenchido, String nomeUsuario, String senha, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail) {
+        super(nomeUsuario, senha, tipoUsuario, idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
+        this.escolaridade = escolaridade;
+        this.cargoDesejado = cargoDesejado;
+        this.idade = idade;
+        this.formacoesProfissionais = formacoesProfissionais;
+        this.perfilPreenchido = perfilPreenchido;
+    }
+    
+    
+    
     
         
 

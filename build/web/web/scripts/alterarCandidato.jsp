@@ -14,8 +14,8 @@
             int id = Integer.parseInt(request.getParameter("idCandidato"));
             String escolaridade = request.getParameter("escolaridade");
             String cargoDesejado = request.getParameter("cargoDesejado");
-            String nomeUsuario = request.getParameter("nomeUsuario");
-            String senha = request.getParameter("senha");
+            String nomeUsuario = "";
+            String senha = "";
             String tipoUsuario = request.getParameter("tipoUsuario");
             String nomeCompleto = request.getParameter("nome");
             String cpf = request.getParameter("cpf");
@@ -23,10 +23,10 @@
             String sexo = request.getParameter("sexo");
             String enderecoEmail = request.getParameter("endereco");
             String idade = request.getParameter("idade");
-            String formacoesProfissionais = request.getParameter("formacoes");
+            String formacoesProfissionais = "";
             
             ControleCandidato controleCandidato = new ControleCandidato();
-            Candidato c = new Candidato(escolaridade, cargoDesejado, idade, formacoesProfissionais, nomeUsuario, senha, tipoUsuario);
+            Candidato c = new Candidato(escolaridade, cargoDesejado, idade, formacoesProfissionais, tipoUsuario, id, nomeCompleto, cpf, rg, sexo, enderecoEmail);
 
             
             controleCandidato.alterarCandidato(c);

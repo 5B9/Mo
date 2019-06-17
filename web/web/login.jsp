@@ -44,12 +44,6 @@
     </header>
 
 
-
-
-
-
-
-
     <%String e = request.getParameter("e");
         String mensagem = "";
         if (e != null) {

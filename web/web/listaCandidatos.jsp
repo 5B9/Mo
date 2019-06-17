@@ -41,7 +41,7 @@
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
                             <div class="row" white-text>
-                                <table class="highlight" 
+                                <table class="highlight" >
                                        <thead>
                                         <tr>
                                             <th>Nome Completo</th>
@@ -49,6 +49,10 @@
                                             <th>Email</th>
                                             <th>Escolaridade</th>
                                             <th>Idade</th>
+                                            <th>Sexo</th>
+                                          <!--  <th>Formações</th> -->
+                                            <th>CPF</th>
+                                            <th>Sexo</th>
                                             <th>Alterar</th>
                                             <th>Excluir</th>
                                         </tr>
@@ -66,7 +70,9 @@
                                             <td><%=c.getEnderecoEmail()%></td>
                                             <td><%=c.getEscolaridade()%></td>
                                             <td><%=c.getIdade()%> </td>
-                                          
+                                            <td><%=c.getSexo() %></td>
+                                     <!--       <td><%=c.getFormacoesProfissionais()%></td> -->
+                                            <td><%=c.getCpf()%></td>
                                             <td>
                                                 <a href="candidatoAlterar.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
                                             </td>

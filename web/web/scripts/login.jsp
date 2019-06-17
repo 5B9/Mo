@@ -26,7 +26,7 @@
                         Usuario u = lc.login(nome, senha);
                         session.setAttribute("usuario", u);
                         if(u.getTipoUsuario().equals("funcionario")){
-                        response.sendRedirect("../index.jsp");
+                        response.sendRedirect("../listaFuncionarios.jsp");
                         }if(u.getTipoUsuario().equals("candidato")){
                             ControleCandidato controle = new ControleCandidato();
                             Candidato c = controle.consultarCandidatoPorId(u.getIdPessoa());
