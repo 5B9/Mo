@@ -7,7 +7,6 @@
 <%@page import="br.edu.ifpr.irati.modelo.Entrevista"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleEntrevista"%>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <style>
@@ -16,7 +15,7 @@
         }
     </style>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8"/>
         <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -92,7 +91,7 @@
                                     </div>
                                 </div>
 
-                                <!--Uma Combo Box contendo boas pr√°ticas de programa√ß√£o-->
+                                <!--Uma Combo Box contendo boas pr·ticas de programaÁ„o-->
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <div class="input-field col s12">
@@ -120,7 +119,7 @@
                                                 <option value="reprovado" >Reprovado</option>
 
                                             </select>
-                                            <label>Andamento na Entrevista Pr√°tica</label>
+                                            <label>Andamento na Entrevista Pr·tica</label>
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +136,7 @@
 
 
                                             </select>
-                                            <label>Andamento na Entrevista Psicol√≥gica</label>
+                                            <label>Andamento na Entrevista PsicolÛgica</label>
                                         </div>
                                     </div>
                                 </div>
@@ -151,8 +150,8 @@
 
                     <% }%>
                 </div>
-                <!--Esse fechamento de tags est√° confuso
-                    Veje se est√° certo =P -->
+                <!--Esse fechamento de tags est· confuso
+                    Veje se est· certo =P -->
 
 
             </center>
@@ -172,13 +171,13 @@
         <script>
             function validar() {
                 if (document.formulario.funcionario.value == "") {
-                    alert("Por favor, insira o n√≠vel de escolaridade do candidato.");
+                    alert("Por favor, insira o nÌvel de escolaridade do candidato.");
                     return false;
                 } else if (document.formulario.cargo.value == "") {
                     alert("Por favor, insira o cargo desejado.");
                     return false;
                 } else if (document.formulario.candidato.value == "") {
-                    alert("Por favor, insira o candidato que far√° a entrevista.");
+                    alert("Por favor, insira o candidato que far· a entrevista.");
                     return false;
                 } else {
                     return true;

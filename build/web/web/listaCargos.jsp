@@ -2,11 +2,11 @@
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Cargo"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCargo"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <meta charset="utf-8"/>
         <title>Cargos</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -41,7 +41,7 @@
                     <tr>
                         <th>Nome Cargo</th>
                         <th>Quantidade Vagas</th>
-                        <th>DescriÃ§Ã£o</th>
+                        <th>Descrição</th>
                         <th>Modalidade</th>
                         <th>Alterar</th>
                         <th>Excluir</th>

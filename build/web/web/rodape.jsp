@@ -24,7 +24,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            ©   Acome Brasil Ltda.
+            ©   Acome Brasil Ltda. 2019
             <a class="grey-text text-lighten-4 right" href="#!"></a>
         </div>
     </div>

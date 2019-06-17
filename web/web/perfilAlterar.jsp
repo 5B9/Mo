@@ -4,11 +4,10 @@
 <%@page import="br.edu.ifpr.irati.controle.ControleCurriculo"%>
 <%@page import="br.edu.ifpr.irati.modelo.Candidato"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCandidato"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8"/>
         <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -18,11 +17,6 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
-        <style>
-            body{
-
-            }
-        </style>
         <main>
             <center>
                 <br>
@@ -46,8 +40,8 @@
                                                     <select name="escolaridade">
                                                         <option value="Ensino Fudamental Incompleto">Ensino Fundamental Incompleto</option>
                                                         <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
-                                                        <option value="Ensino M√©dio Incompleto">Ensino M√©dio Incompleto</option>
-                                                        <option value="Ensino M√©dio Completo">Ensino M√©dio Completo</option>
+                                                        <option value="Ensino MÈdio Incompleto">Ensino MÈdio Incompleto</option>
+                                                        <option value="Ensino MÈdio Completo">Ensino MÈdio Completo</option>
                                                         <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
                                                         <option value="Ensino Superior Completo">Ensino Superior Completo</option>
                                                     </select>
@@ -77,7 +71,7 @@
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="" id="first_name" type="text" name="nomeUsuario"  value="<%=c.getNomeUsuario()%>" class="validate">
-                                                <label for="nomeUsuario">Nome de Usu√°rio</label>
+                                                <label for="nomeUsuario">Nome de Usu·rio</label>
                                             </div>
                                         </div>
 
@@ -124,7 +118,7 @@
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="" id="first_name" type="text" name="endereco" value="<%=c.getEnderecoEmail()%>"class="validate">
-                                                <label for="enderecoEmail">Endere√ßo de Email</label>
+                                                <label for="enderecoEmail">EndereÁo de Email</label>
                                             </div>
                                         </div>
 
@@ -138,7 +132,7 @@
                                             <div class="file-path-wrapper">
                                                 <input class="file-path validate" type="text" name="curriculo" value="<%=c.getCurriculo() %>">
                                             </div>
-                                            <label for="curiculo1">Curr√≠culo</label>
+                                            <label for="curiculo1">CurrÌculo</label>
                                         </div>
                                     </div>
 
@@ -167,13 +161,13 @@
         <script>
             function validar() {
                 if (document.formulario.escolaridade.value == "") {
-                    alert("Por favor, insira o n√≠vel de escolaridade do candidato.");
+                    alert("Por favor, insira o nÌvel de escolaridade do candidato.");
                     return false;
                 } else if (document.formulario.cargoDesejado.value == "") {
                     alert("Por favor, insira o cargo desejado.");
                     return false;
                 } else if (document.formulario.nomeUsuario.value == "") {
-                    alert("Por favor, insira o seu nome de usu√°rio.");
+                    alert("Por favor, insira o seu nome de usu·rio.");
                     return false;
                 } else if (document.formulario.senha.value == "") {
                     alert("Por favor, insira a sua senha.");
@@ -191,10 +185,10 @@
                     alert("Por favor, insira o seu sexo.");
                     return false;
                 } else if (document.formulario.endereco.value == "") {
-                    alert("Por favor, insira o seu endere√ßo de e-mail.");
+                    alert("Por favor, insira o seu endereÁo de e-mail.");
                     return false;
                 } else if (document.formulario.curriculo.value == "") {
-                    alert("Por favor, insira o seu curr√≠culo.");
+                    alert("Por favor, insira o seu currÌculo.");
                     return false;
                 } else {
                     return true;

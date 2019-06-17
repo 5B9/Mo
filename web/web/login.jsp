@@ -57,7 +57,7 @@
 
                 <p><%=mensagem%></p>
                 <div class="section"></div>
-
+              <!--   <img class="responsive-img" style="width: 60px; height: 60px; margin-top: -47px;" src="imagens/acome.jpg"/> --> 
                 <div class="container">
                     <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 40px 0px 38px; border: 1px solid #EEE;">
 
@@ -104,23 +104,12 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.autocomplete');
-            var instances = M.Autocomplete.init(elems, options);
-        });
+     document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.autocomplete');
+    var instances = M.Autocomplete.init(elems, options);
+  });
 
-
-        // Or with jQuery
-
-        $(document).ready(function () {
-            $('input.autocomplete').autocomplete({
-                data: {
-                    "Apple": null,
-                    "Microsoft": null,
-                    "Google": 'https://placehold.it/250x250'
-                },
-            });
-        });
     </script>
+    
 </html>
 

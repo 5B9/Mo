@@ -9,16 +9,10 @@
 <%@page import="br.edu.ifpr.irati.modelo.Cargo"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCargo"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleEntrevista"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            body{
-                background-color: #263238;
-            }
-        </style>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8"/>
         <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -61,7 +55,7 @@
                                                 <option value="<%=funcionario.getIdPessoa()%>"><%=funcionario.getNomeCompleto()%></option>
                                                 <%}%>
                                             </select>
-                                            <label>Funcion√°rio</label>
+                                            <label>Funcion·rio</label>
                                         </div>
                                     </div>
                                 </div>
@@ -103,16 +97,18 @@
                                     <div class="input-field col s12">
                                         <div class="input-field col s12">
                                             <select name="sessao">
-                                                <option value="" disabled selected>Escolha a Sess√£o</option>
+                                                <option value="" disabled selected>Escolha a Sess„o</option>
                                                 <%
                                                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                                                     ControleAgendamento controleAgendamento = new ControleAgendamento();
                                                     AgendamentoEntrevista agendamento = new AgendamentoEntrevista();
-                                                    for (AgendamentoEntrevista a : controleAgendamento.consultarTodosAgendamentos(agendamento)) {%>
-                                                <option value="<%=a.getIdSessao()%>">Sess√£o do dia: <%= sdf.format(a.getDataSessao().getTime())%></option>
-                                                <%}%>
+                                                    for (AgendamentoEntrevista a : controleAgendamento.consultarTodosAgendamentos(agendamento)) {
+                                                %>
+                                                <option value="<%=a.getIdSessao()%>">Sess„o do dia: <%= sdf.format(a.getDataSessao().getTime())%></option>
+                                                <%
+                                                    }%>
                                             </select>
-                                            <label>Sess√£o</label>
+                                            <label>Sess„o</label>
                                         </div>
                                     </div>
                                 </div>           
@@ -126,7 +122,7 @@
                                                 <option value="reprovado">Reprovado</option>
                                                 <option value="aprovado">Aprovado</option>
                                             </select>
-                                            <label>Fase T√©cnica</label>
+                                            <label>Fase TÈcnica</label>
                                         </div>
                                     </div>
                                 </div>
@@ -140,7 +136,7 @@
                                                 <option value="aprovado">Aprovado</option>
                                                 <option value="andamento">Em Andamento...</option>
                                             </select>
-                                            <label>Fase Psicol√≥gica</label>
+                                            <label>Fase PsicolÛgica</label>
                                         </div>
                                     </div>
                                 </div>
@@ -173,16 +169,16 @@
         <script>
             function validar() {
                 if (document.formulario.funcionario.value == "") {
-                    alert("Por favor, selecione o funcion√°rio que presidir√° a entrevista.");
+                    alert("Por favor, selecione o funcion·rio que presidir· a entrevista.");
                     return false;
                 } else if (document.formulario.cargo.value == "") {
                     alert("Por favor, insira um cargo para a entrevista.");
                     return false;
                 } else if (document.formulario.candidato.value == "") {
-                    alert("Por favor, insira o candidato que far√° a entrevista.");
+                    alert("Por favor, insira o candidato que far· a entrevista.");
                     return false;
                 } else if (document.formulario.sessao.value == "") {
-                    alert("Por favor, insira a sess√£o que esta entrevista ocorrer√°.");
+                    alert("Por favor, insira a sess„o que esta entrevista ocorrer·.");
                     return false;
                 } else if (document.formulario.nomeCompleto.value == "") {
                     alert("Por favor, insira o seu nome completo.");
@@ -197,10 +193,10 @@
                     alert("Por favor, insira o seu sexo.");
                     return false;
                 } else if (document.formulario.endereco.value == "") {
-                    alert("Por favor, insira o seu endere√ßo de e-mail.");
+                    alert("Por favor, insira o seu endereÁo de e-mail.");
                     return false;
                 } else if (document.formulario.curriculo.value == "") {
-                    alert("Por favor, insira o seu curr√≠culo.");
+                    alert("Por favor, insira o seu currÌculo.");
                     return false;
                 } else {
                     return true;

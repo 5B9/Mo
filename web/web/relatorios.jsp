@@ -6,7 +6,7 @@
 <%@page import="br.edu.ifpr.irati.modelo.Candidato"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCandidato"%>
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,7 +19,7 @@
             }
 
         %>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8"/>
         <title>Relatorios</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -34,40 +34,40 @@
         <p> Clique <a href="login.jsp"> aqui</a> para fazer o login. </p> 
         <%} else { %>
         <main>
-            <nav>
-                <div class="nav-wrapper">
-                    <form>
-                        <div class="input-field" style="width: 50%;">
-                            <input id="search" type="search" required>
-                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                            <i class="material-icons">close</i>
-
-                        </div>
 
 
-                    </form>
-                </div>
-            </nav>
 
             <br>
+
+            <div class="container" style=" width:40%; height: 17%; ">
+                <div class="col s12 m6">
+                    <div class="card blue-grey lighten-5">
+                        <div class="card-content black-text ">
+                <div class="center-row">
+                    <div class="input-field col s8">
+                        <i class="material-icons prefix">search</i>
+                        <input id="search" type="text" name="search">
+                    </div>
+                </div>
+                        </div>
+                        </div>
+                     </div>
+                 </div>
+
             <div class="container" >
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
                             <div class="row" white-text>
-                                <table class="highlight" 
+                                <table class="highlight" name="table"> 
                                        <thead>
                                         <tr>
                                             <th>Nome Completo</th>
                                             <th>Cargo Desejado</th>
                                             <th>Email</th>
                                             <th>Escolaridade</th>
-                                            <th>Currículo</th>
-
-                                           
                                         </tr>
                                     </thead>
-
 
                                     <tbody>
                                         <%
@@ -75,20 +75,15 @@
                                             Candidato candidato = new Candidato();
                                             for (Candidato c : controleCandidato.consultarTodosCandidatos(candidato)) {%>
                                         <tr>
-                                            <%----%><td><%=c.getNomeCompleto()%></td>
-                                            <%----%><td><%=c.getCargoDesejado()%></td>
+                                            <td><%=c.getNomeCompleto()%></td>
+                                            <td><%=c.getCargoDesejado()%></td>
                                             <td><%=c.getEnderecoEmail()%></td>
                                             <td><%=c.getEscolaridade()%></td>
-                                            <td><%=c.getCurriculo()%></td>
-                                           
-
                                         </tr>
                                     </tbody>
                                     <%}%>
-
                                 </table>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -97,8 +92,13 @@
         <% }%>
         <footer>
             <jsp:include page="rodape.jsp" flush="true" />
-        </footer>                
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        </footer>  
 
+        <script src="jquery.js"></script>
+        <script src="jquery.quicksearch.js"></script>
+        <script>
+            $('input#id_search').quicksearch('table#table_example tbody tr');
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     </body>
 </html>

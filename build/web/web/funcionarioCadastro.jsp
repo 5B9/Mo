@@ -2,11 +2,10 @@
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleFuncionario"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8"/>
         <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -37,48 +36,47 @@
                 %> <p> Acesso Negado </p>
                 <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
                 <%} else { %>
-                <div class="container" style="width: 50%;">
+                <div class="container" style="width: 60%;">
                     <div class="col s12 m6">
                         <div class="card grey lighten-5">
                             <div class="card-content white-text ">
 
                                 <div class="row">
-                                    <form class="col s12" action="scripts/funcionarioCadastro.jsp" method="post" name="formulario">
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <div class="input-field col s12">
+                                    <form class="col s12" action="scripts/funcionarioCadastro.jsp" method="post">
+                                        <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="funcionario"class="validate"/>
+                                        
+                                        <div class="center-row">
+                                            <div class="input-field col s8">
+                                                <div class="input-field col s6">
                                                     <select name="tipoFuncionario">
                                                         <option value="" disabled selected>Escolha o Tipo</option>
                                                         <option value="gerente">Gerente</option>
-                                                        <option value="funcionario">Funcion√°rio</option>
+                                                        <option value="funcionario">Funcion·rio</option>
                                                     </select>
-                                                    <label>Tipo de Funcion√°rio</label>
+                                                    <label>Tipo de Funcion·rio</label>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="funcionario"class="validate"/>
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
+                                        <div class="center-row">
+                                            <div class="input-field col s4">
                                                 <input placeholder="" id="first_name" type="text" name="matricula" class="validate">
-                                                <label for="matricula">N¬∫ matr√≠cula</label>
+                                                <label for="matricula">N∫ matrÌcula</label>
                                             </div>
                                         </div>
 
 
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input placeholder="12/12/2012" id="first_name" type="text" name="data" class="datepicker">
-                                                <label for="data">Data de admiss√£o</label>
+                                                <input placeholder="12/12/2012" id="first_name" type="text" name="data" class="validate">
+                                                <label for="data">Data de admiss„o</label>
                                             </div>
                                         </div>
 
                                         <!--<div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="" id="first_name" type="text" name="nomeUsuario" class="validate">
-                                                <label for="nomeUsuario">Nome de Usu√°rio</label>
+                                                <label for="nomeUsuario">Nome de Usu·rio</label>
                                             </div>
                                         </div>
 
@@ -126,13 +124,13 @@
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="" id="first_name" type="text" name="endereco" class="validate">
-                                                <label for="endereco">Endere√ßo de Email</label>
+                                                <label for="endereco">EndereÁo de Email</label>
                                             </div>
                                         </div>
 
 
                                         <!--    <input type="submit" name="salvar" value="Cadastrar" class="waves-effect waves-ligth  btn indigo"/> -->
-                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
+                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
                                     </form>
                                 </div>
                             </div>
