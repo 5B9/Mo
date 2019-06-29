@@ -42,7 +42,7 @@
                         <div class="card-content black-text ">
                             <div class="row" white-text>
                                 <table class="highlight" >
-                                       <thead>
+                                    <thead>
                                         <tr>
                                             <th>Nome Completo</th>
                                             <th>Cargo Desejado</th>
@@ -50,27 +50,31 @@
                                             <th>Escolaridade</th>
                                             <th>Idade</th>
                                             <th>Sexo</th>
-                                          <!--  <th>Formações</th> -->
+                                            <!--  <th>Formações</th> -->
                                             <th>CPF</th>
-                                            <th>Sexo</th>
+
                                             <th>Alterar</th>
-                                            <th>Excluir</th>
+                                            <th>Desabilitar</th>
                                         </tr>
                                     </thead>
 
 
                                     <tbody>
                                         <%
+
                                             ControleCandidato controleCandidato = new ControleCandidato();
                                             Candidato candidato = new Candidato();
-                                            for (Candidato c : controleCandidato.consultarTodosCandidatos(candidato)) {%>
+                                            for (Candidato c : controleCandidato.consultarTodosCandidatos(candidato)) {
+                                                if (c.isDesabilitar()) {%>
+
+                                        <%} else {%>
                                         <tr>
                                             <td><%=c.getNomeCompleto()%></td>
                                             <td><%=c.getCargoDesejado()%></td>
                                             <td><%=c.getEnderecoEmail()%></td>
                                             <td><%=c.getEscolaridade()%></td>
                                             <td><%=c.getIdade()%> </td>
-                                            <td><%=c.getSexo() %></td>
+                                            <td><%=c.getSexo()%></td>
                                      <!--       <td><%=c.getFormacoesProfissionais()%></td> -->
                                             <td><%=c.getCpf()%></td>
                                             <td>
@@ -83,13 +87,18 @@
 
                                         </tr>
                                     </tbody>
-                                    <%}%>
+                                    <%
+        }
+    }%>
 
                                 </table>
                             </div>
                             <br>
                             <center>
                                 <a href="candidatoCadastro.jsp" class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right">create</i>Cadastrar</a>
+                                <a href="telaHabilitarCandidatos.jsp" class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right">loupe</i>Habilitar Candidatos</a>
+                            
+                            
                             </center>
                             <% }%>
                         </div>

@@ -26,116 +26,129 @@
         </header>
 
         <main>
-            <center>
-                <%
-                    if (!logado || u.getTipoUsuario().equals("candidato")) {
-                %> <p> Acesso Negado </p>
-                <p> Clique <a href="login.jsp"> aqui</a> para fazer o login. </p> 
-                <%} else { %>
-                <div class="container" style="width: 60%;">
-                    <div class="col s12 m6">
-                        <div class="card grey lighten-5">
-                            <div class="card-content white-text ">
 
-                                <div class="row">
-                                    <form class="col s12" action="scripts/funcionarioCadastro.jsp" method="post">
-                                        <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="funcionario"class="validate"/>
-                                        
-                                        <div class="center-row">
-                                            <div class="input-field col s8">
-                                                <div class="input-field col s6">
-                                                    <select name="tipoFuncionario">
-                                                        <option value="" disabled selected>Escolha o Tipo</option>
-                                                        <option value="gerente">Gerente</option>
-                                                        <option value="funcionario">Funcionário</option>
-                                                    </select>
-                                                    <label>Tipo de Funcionário</label>
-                                                </div>
+            <%
+                if (!logado || u.getTipoUsuario().equals("candidato")) {
+            %> <p> Acesso Negado </p>
+            <p> Clique <a href="login.jsp"> aqui</a> para fazer o login. </p> 
+            <%} else { %>
+            <div class="container" style="width: 60%;">
+                <div class="col s12 m6">
+                    <div class="card grey lighten-5">
+                        <div class="card-content black-text ">
+
+                            <div class="row">
+                                <form class="col s12" action="scripts/funcionarioCadastro.jsp" method="post">
+
+                                    <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="funcionario"class="validate"/>
+                                    <div class="center-row">
+
+                                        <div class="input-field col s6">
+                                            <div class="input-field col s7">
+                                                <i class="material-icons prefix">supervisor_account</i>
+                                                <select name="tipoFuncionario">
+                                                    <option value="" disabled selected>Escolha o Tipo</option>
+                                                    <option value="gerente">Gerente</option>
+                                                    <option value="funcionario">Funcionário</option>
+                                                </select>
+                                                <label>Tipo de Funcionário</label>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="center-row">
-                                            <div class="input-field col s4">
-                                                <input placeholder="" id="first_name" type="text" name="matricula" class="validate">
-                                                <label for="matricula">Nº matrícula</label>
+                                    <div class="center-row">
+                                        <div class="input-field col s5">
+                                            <i class="material-icons prefix">call_to_action</i>
+                                            <input placeholder="" id="first_name" type="text" name="matricula" class="validate">
+                                            <label for="matricula">Nº matrícula</label>
+                                        </div>
+                                    </div>
+
+
+                                   
+
+                                    <!--<div class="row">
+                                        <div class="input-field col s12">
+                                            <input placeholder="" id="first_name" type="text" name="nomeUsuario" class="validate">
+                                            <label for="nomeUsuario">Nome de Usuário</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input placeholder="" id="first_name" type="password" name="senha" class="validate">
+                                            <label for="senha">senha</label>
+                                        </div>
+                                    </div>-->
+
+                                    <div class="center-row">
+                                        <div class="input-field col s8">
+                                            <i class="material-icons prefix">person</i>
+                                            <input placeholder="" id="first_name" type="text" name="nome" class="validate">
+                                            <label for="nome">Nome Completo</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="center-row">
+                                        <div class="input-field col s4">
+                                            <i class="material-icons prefix"> description</i>
+                                            <input placeholder="" id="first_name" type="text" name="cpf" class="validate">
+                                            <label for="cpf">CPF</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="center-row">
+                                        <div class="input-field col s4">
+                                            <i class="material-icons prefix"> featured_play_list</i>
+                                            <input placeholder="" id="first_name" type="text" name="rg" class="validate">
+                                            <label for="rg">RG</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="center-row">
+                                        <div class="input-field col s5">
+                                            <div class="input-field col s5">
+                                                <i class="material-icons prefix">wc</i>
+                                                <select name="sexo">
+                                                    <option value="" disabled selected>Sexo</option>
+                                                    <option value="M">Masculino</option>
+                                                    <option value="F">Feminino</option>
+                                                </select>
+                                                <label>Sexo</label>
                                             </div>
                                         </div>
-
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="12/12/2012" id="first_name" type="text" name="data" class="validate">
-                                                <label for="data">Data de admissão</label>
-                                            </div>
+                                    </div>
+                                    
+                                     <div class="center-row">
+                                        <div class="input-field col s3">
+                                            <i class="material-icons prefix">today</i>
+                                            <input placeholder="..." id="first_name" type="text" name="data" class="validate">
+                                            <label for="data">Data de admissão</label>
                                         </div>
+                                    </div>
 
-                                        <!--<div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="text" name="nomeUsuario" class="validate">
-                                                <label for="nomeUsuario">Nome de Usuário</label>
-                                            </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">alternate_email</i>
+                                            <input placeholder="" id="first_name" type="text" name="endereco" class="validate">
+                                            <label for="endereco">Endereço de Email</label>
+                                            <span class="helper-text" data-error="E-mail inválido" data-success="Ok!"></span>
                                         </div>
+                                    </div>
 
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="password" name="senha" class="validate">
-                                                <label for="senha">senha</label>
-                                            </div>
-                                        </div>-->
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="text" name="nome" class="validate">
-                                                <label for="nome">Nome Completo</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="text" name="cpf" class="validate">
-                                                <label for="cpf">CPF</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="text" name="rg" class="validate">
-                                                <label for="rg">RG</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <div class="input-field col s12">
-                                                    <select name="sexo">
-                                                        <option value="" disabled selected>Sexo</option>
-                                                        <option value="M">Masculino</option>
-                                                        <option value="F">Feminino</option>
-                                                    </select>
-                                                    <label>Sexo</label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="text" name="endereco" class="validate">
-                                                <label for="endereco">Endereço de Email</label>
-                                            </div>
-                                        </div>
-
-
+                                    <center>
                                         <!--    <input type="submit" name="salvar" value="Cadastrar" class="waves-effect waves-ligth  btn indigo"/> -->
                                         <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
-                                    </form>
-                                </div>
+                                    </center>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <% }%>
-            </center>
+            <% }%>
+
         </main>
 
         <footer>

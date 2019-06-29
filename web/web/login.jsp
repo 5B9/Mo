@@ -77,6 +77,7 @@
                                 <div class='input-field col s12'>
                                     <input class='autocomplete' type='password' name='senha' id='senha' />
                                     <label for='senha'>Senha: </label>
+                                    <span class="helper-text" data-error="E-mail inválido" data-success="Ok!"></span>
                                 </div>
 
                                 <label style='float: right;'>

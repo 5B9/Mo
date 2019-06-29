@@ -23,11 +23,12 @@
             <div class="container" style="width: 50%; ">
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
-                        <div class="card-content white-text ">
+                        <div class="card-content black-text ">
                             <div class="row">
                                 <form class="col s12">
                                     <div class="row">
                                         <div class="input-field col s12">
+                                            <i class="material-icons prefix">alternate_email</i>
                                             <input id="email" type="email" class="validate">
                                             <label for="email">Email</label>
                                             <span class="helper-text" data-error="wrong" data-success="right">Digite seu email</span>
