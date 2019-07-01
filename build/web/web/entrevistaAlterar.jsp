@@ -9,11 +9,7 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <!DOCTYPE html>
 <html>
-    <style>
-        body{
-            background-color: #263238;
-        }
-    </style>
+
     <head>
         <meta charset="utf-8"/>
         <title>SGC Acome</title>
@@ -133,7 +129,7 @@
                                                 <option value="aprovado">Aprovado</option>
 
                                                 <option value="reprovado">Reprovado</option>
-
+                                                <option value="andamento">Em Andamento...</option>
 
                                             </select>
                                             <label>Andamento na Entrevista Psicológica</label>

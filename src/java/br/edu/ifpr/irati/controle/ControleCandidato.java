@@ -46,8 +46,6 @@ public class ControleCandidato {
 
     public void excluirCandidato(Candidato candidato) throws PersistenciaException {
         Dao<Candidato> candidatoDAO = new GenericDAO<>(Candidato.class);
-        ControleEntrevista controleEntrevista = new ControleEntrevista();
-        controleEntrevista.excluirEntrevista(controleEntrevista.buscarEntrevistaCandidato(candidato.getIdPessoa()));
         candidatoDAO.excluir(candidato);
     }
 

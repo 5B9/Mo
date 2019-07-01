@@ -44,6 +44,7 @@
                                 <form class=" col s12" action="scripts/agendamentoCadastro.jsp" method="post" name="formulario">
                                     <div class="row">
                                         <div class="input-field col s12">
+                                            <i class="material-icons prefix">place</i>
                                             <input placeholder="Rua ..." id="first_name" type="text" name="local" class="validate">
                                             <label for="local">Local</label>
                                         </div>
@@ -51,12 +52,14 @@
 
                                     <div class="row">
                                         <div class="input-field col s12">
+                                            <i class="material-icons prefix">event</i>
                                             <input placeholder="12/12/2012" id="first_name" type="text" name="dataSessao" class="datepicker">
                                             <label for="Data">Data da Sessão</label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s12">
+                                            <i class="material-icons prefix">access_time</i>
                                             <input placeholder="12:12:00" type="text" class="timepicker" name="hora" >
                                             <label for="Horario de Início">Horario de Início</label>
                                         </div>
@@ -65,7 +68,9 @@
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <div class="input-field col s12">
+                                                <i class="material-icons prefix">work</i>
                                                 <select name="cargo">
+                                                    
                                                     <option value="" disabled selected>Cargo</option>
                                                     <%ControleCargo cr = new ControleCargo();
 
@@ -135,7 +140,7 @@
                 }
             }
         </script>
-        
+
         <script>
             function aparece()//Função referente a alteração nas vagas abertas para determinado cargo
             {
@@ -145,8 +150,8 @@
                 //Variável contendo o input da quantidade de cargos
                 var label = document.getElementById("mabel");
                 //Variável referente a Label
-            
-                
+
+
 
         </script>
     </body>

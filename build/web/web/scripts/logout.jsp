@@ -12,7 +12,7 @@
             session.invalidate();
             session=null;
         }
-        response.sendRedirect("../index.jsp");
+        response.sendRedirect("../login.jsp");
         
         
         

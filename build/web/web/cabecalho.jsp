@@ -1,9 +1,11 @@
 <%-- 
-    Document   : cabecalho
-    Created on : 12/12/2012, 00:00:00
-    Author     : Usualho
+    Document   : index
+    Created on : 03/12/2018, 00:00:09
+    Author     : Altair & Guilherme
 --%>
 
+<%@page import="br.edu.ifpr.irati.modelo.Funcionario"%>
+<%@page import="br.edu.ifpr.irati.controle.ControleFuncionario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.modelo.ItemMenu"%>
 <%@page import="br.edu.ifpr.irati.controle.ControlePaginas"%> 
@@ -21,7 +23,7 @@
 <nav>
     <div class="nav-wrapper">
 
-        <a href="index.jsp" class="brand-logo "><i class="material-icons"><img src="imagens/logo.png" width="51px" height="51px" style=" padding-top: 7px;"></i>SIGCET</a>
+        <a href="index.jsp" class="brand-logo "><i class="material-icons"><img src="imagens/logo.png" width="51px" height="51px" style=" padding-top: 7px; font-size: 18px;"></i>SIGCET</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <%
@@ -38,20 +40,30 @@
 
             <%                        if (u != null) {
                     if (u.getTipoUsuario().equals("funcionario")) {
-
+                        ControleFuncionario controleFuncionario = new ControleFuncionario();
+                        Funcionario funcionario = controleFuncionario.consultarFuncionarioPorId(u.getIdPessoa());
+                        if (funcionario.getTipoFuncionario().equals("gerente")) {
             %>
 
+            <li><a href="relatorios.jsp"><i class="material-icons left">create</i>Relatorios</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Entrevistas<i class="material-icons left">arrow_drop_down</i></a></li>
             <li><a href="listaCandidatos.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
             <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
             <li><a href="listaCargos.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
-            <li><a href="Agendamento.jsp"><i class="material-icons left">insert_invitation</i>Agendamentos</a></li>
             <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
 
 
 
-            <%                    }
-                }
 
+            <%               } else { %>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Entrevistas<i class="material-icons left">arrow_drop_down</i></a></li>
+            <li><a href="listaCandidatos.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
+            <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
+            <li><a href="listaCargos.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
+            <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
+                <%}
+                        }
+                    }
                 %>
 
 
@@ -59,8 +71,8 @@
                     if (u.getTipoUsuario().equals("candidato")) {
 
             %>
-
-            <li><a href="perfilCadastro.jsp"><i class="material-icons left">face</i>Perfil Candidato</a></li>
+            <li><a href="mensagemCandidato.jsp"><i class="material-icons left">comment</i>Mensagens</a></li>
+            <li><a href="perfil.jsp"><i class="material-icons left">face</i>Perfil Candidato</a></li>
             <li><a href="listaAgendamentoCandidato.jsp"><i class="material-icons left">create</i>Agendamentos</a></li>
             <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
 
@@ -78,25 +90,35 @@
 
     </div>
 </nav>
+
 <ul class="sidenav" id="mobile-demo">
 
 
     <%                        if (u != null) {
-            if (u.getTipoUsuario().equals("funcionario")) {
 
+            if (u.getTipoUsuario().equals("funcionario")) {
+                ControleFuncionario controleFuncionario = new ControleFuncionario();
+                Funcionario funcionario = controleFuncionario.consultarFuncionarioPorId(u.getIdPessoa());
+                if (funcionario.getTipoFuncionario().equals("gerente")) {
     %>
 
- 
+    <li><a href="relatorios.jsp"><i class="material-icons left">create</i>Relatorios</a></li>
     <li><a href="listaCandidatos.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
     <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
     <li><a href="listaCargos.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
-    <li><a href="Agendamento.jsp"><i class="material-icons left">insert_invitation</i>Agendamentos</a></li>
     <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
 
 
 
-    <%                    }
-        }
+
+    <%               } else { %>
+    <li><a href="listaCandidatos.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
+    <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
+    <li><a href="listaCargos.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
+    <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
+        <%}
+                }
+            }
 
         %>
 
@@ -106,7 +128,7 @@
 
     %>
 
-    <li><a href="perfil.jsp"><i class="material-icons left">face</i>Perfil Candidato</a></li>
+    <li><a href="perfilCadastro.jsp"><i class="material-icons left">face</i>Perfil Candidato</a></li>
     <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
 
     <%                }
@@ -139,4 +161,9 @@
         $('.sidenav').sidenav();
     });
 
+</script>
+<script>
+    $(document).ready(function () {
+        $('.dropdown-trigger').dropdown();
+    });
 </script>

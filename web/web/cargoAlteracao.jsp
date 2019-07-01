@@ -23,11 +23,7 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
-        <style>
-            body{
-                background-color: #263238;
-            }
-        </style>
+     
         <main>
             <center>
                 <%
@@ -49,47 +45,7 @@
 
                                     <form name="formulario"class="col s12" action="scripts/cargoAlterar.jsp" method="post">
 
-                                        <div class="row">
-
-                                            <form class="col s12" action="scripts/cargoAlterar.jsp" method="post">
-
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input placeholder="" id="first_name" type="hidden" name="id" value="<%= idCargo%>" class="validate"/>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input placeholder="...." id="first_name" type="text" name="descricao" vagas="<%=c.getDescricao()%>" class="validate">
-                                                        <label for="descricao">Descrição</label>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input placeholder="..." id="first_name" type="text" name="nome" value="<%=c.getNomeCargo()%>" class="validate">
-                                                        <label for="nome">Nome Cargo</label>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input placeholder="1300" id="first_name" type="text" name="salario" value="<%=c.getSalario()%>" class="validate">
-                                                        <label for="salario">Salário</label>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input placeholder="..." id="first_name" type="text" name="modalidade" value="<%=c.getModalidade()%>" class="validate">
-                                                        <label for="modalidade">Modalidade</label>
-                                                    </div>
-                                                </div>
-
-                                                <input onclick="return validar()" type="submit" name="salvar" value="Alterar!" class="waves-effect waves-indigo darken-3 btn-flat"/>
-
-                                            </form>
-
+                                        <div class="row"><input placeholder="" id="first_name" type="hidden" name="idCargo" value="<%=idCargo%>" class="validate"/>
                                             <div class="row">
                                                 <div class="input-field col s12">
                                                     <input placeholder="..." id="vagas" type="number" name="vagas" value="<%=c.getQtdVagas()%>" class="validate">
@@ -137,7 +93,8 @@
                                                 </div>
                                             </div>
 
-                                            <button  class="waves-effect waves-light btn indigo" onclick="return validar()" type="submit" name="salvar"><span>Alterar</span></button>
+
+                                            <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Alterar</span></button>
 
                                     </form>
 
@@ -155,9 +112,9 @@
         </footer>                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-                                                    $(document).ready(function () {
-                                                        $('select').formSelect();
-                                                    });
+            $(document).ready(function () {
+                $('select').formSelect();
+            });
         </script>   
         <script>
             function validar() {

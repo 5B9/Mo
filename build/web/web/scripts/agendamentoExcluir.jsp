@@ -10,14 +10,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%
+         <%
 
-           int id=Integer.parseInt(request.getParameter("idAgendamento"));
+            int id=Integer.parseInt(request.getParameter("idAgendamento"));
 
-           ControleAgendamento controleAgendamento = new ControleAgendamento();
-           controleAgendamento.excluirAgendamento(controleAgendamento.consultarAgendamentoPorId(id));
+            ControleAgendamento controleAgendamento = new ControleAgendamento();
+            controleAgendamento.excluirAgendamento(controleAgendamento.consultarAgendamentoPorId(id));
 
-           response.sendRedirect("../Agendamento.jsp");
-        %>
+            response.sendRedirect("../Agendamento.jsp");
+         %>
     </body>
 </html>

@@ -7,14 +7,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%
+         <%
 
-           int id = Integer.parseInt(request.getParameter("idFuncionario"));
+            int id = Integer.parseInt(request.getParameter("idFuncionario"));
 
-           ControleFuncionario controleFuncionario = new ControleFuncionario();
-           controleFuncionario.excluirFuncionario(controleFuncionario.consultarFuncionarioPorId(id));
+            ControleFuncionario controleFuncionario = new ControleFuncionario();
+            controleFuncionario.excluirFuncionario(controleFuncionario.consultarFuncionarioPorId(id));
 
-           response.sendRedirect("../listaFuncionarios.jsp");
-        %>
+            response.sendRedirect("../listaFuncionarios.jsp");
+         %>
     </body>
 </html>

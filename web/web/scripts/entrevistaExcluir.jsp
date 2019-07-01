@@ -13,14 +13,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%
+ <%
 
-                   int id=Integer.parseInt(request.getParameter("idEntrevista"));
+            int id=Integer.parseInt(request.getParameter("idEntrevista"));
 
-                   ControleEntrevista controleEntrevista = new ControleEntrevista();
-                   controleEntrevista.excluirEntrevista(controleEntrevista.consultarEntrevistaPorId(id) );
+            ControleEntrevista controleEntrevista = new ControleEntrevista();
+            controleEntrevista.excluirEntrevista(controleEntrevista.consultarEntrevistaPorId(id) );
 
-                   response.sendRedirect("../listaEntrevistas.jsp");
-        %>
+            response.sendRedirect("../listaEntrevistas.jsp");
+         %>
     </body>
 </html>

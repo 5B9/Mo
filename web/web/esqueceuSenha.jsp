@@ -3,7 +3,6 @@
     Created on : 08/05/2018, 11:39:48
     Author     : Valter Estevam
 --%>
-<%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,97 +18,39 @@
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
 
-
         <main>
-            <br>
-            <div class="container" style="width: 30%;">
+            <br><br><br>
+            <div class="container" style="width: 50%; ">
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
-                        <div class="card-content white-text ">
+                        <div class="card-content black-text ">
                             <div class="row">
-                                <form class="col s12" action="scripts/cadastrarUsuario.jsp" method="post">
-
+                                <form class="col s12">
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <div class="input-field col s12">
-
-                                                <select onchange="aparece()" name="tipo" id="tipo">
-                                                    <option value="" disabled selected>Tipo Usuário</option>
-
-                                                    <option value="funcionario">funcionário</option>
-
-                                                    <option value="candidato" >candidato</option>
-
-                                                </select>
-                                                <label>Tipo de Usuário</label>
-                                            </div>
+                                            <i class="material-icons prefix">alternate_email</i>
+                                            <input id="email" type="email" class="validate">
+                                            <label for="email">Email</label>
+                                            <span class="helper-text" data-error="wrong" data-success="right">Digite seu email</span>
                                         </div>
+                                        <center>
+                                            <button class="waves-effect waves-light btn indigo" type="submit" name="action">Enviar
+                                                <i class="material-icons right">send</i>
+                                            </button>
+                                        </center>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input placeholder="" id="nomeUsuario" type="text" name="nomeUsuario" class="validate">
-                                            <label for="nomeUsuario">E-mail:</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input placeholder="" id="senha" type="password" name="senha" class="validate">
-                                            <label for="senha">CPF:</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input placeholder="..." id="matricula" type="hidden" name="matricula" class="validate">
-                                            <label id="mabel" style="display:none;" for="Ma">Nº de matrícula</label>
-                                        </div>
-                                    </div>
-                                    <center>
-                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
-                                    </center>
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
 
-
-
         </main>
 
         <footer>
             <jsp:include page="rodape.jsp" flush="true" />
-        </footer>  
-        <script>
-            $(document).ready(function () {
-                $('select').formSelect();
-            });
-        </script>
-        <script>
-            function aparece()//Função referente ao input número de matrícula
-            {
-                var comboBox = document.getElementById("tipo").value;
-                //Variável contendo o valor da option
-                var mathmagic = document.getElementById("matricula");
-                //Variável contendo o input do nº da matrícula 
-                var label = document.getElementById("mabel");
-                //Variável referente a Label
-
-                if (comboBox == "funcionario") {
-
-                    label.style.display = "block";
-                    mathmagic.setAttribute("type", "text");
-                } else {
-                    label.style.display = "none";
-                    mathmagic.setAttribute("type", "hidden");
-                }
-            }
-
-        </script>
+        </footer>                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
     </body>

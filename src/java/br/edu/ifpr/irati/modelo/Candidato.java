@@ -31,6 +31,8 @@ public class Candidato extends Usuario implements Serializable {
     private String formacoesProfissionais;
     @Column(name = "perfilPreenchido", nullable = false, length = 15)
     private boolean perfilPreenchido;
+     @Column(name = "desabilitar", nullable = false, length = 15)
+    private boolean desabilitar;
     
 
     public Candidato() {
@@ -39,15 +41,17 @@ public class Candidato extends Usuario implements Serializable {
         cargoDesejado = "";
         idade = "";
         perfilPreenchido = false;
+        desabilitar = false;
     }
 
-    public Candidato(String escolaridade, String cargoDesejado, String idade, String formacoesProfissionais, boolean perfilPreenchido, String nomeUsuario, String senha, String tipoUsuario) {
+    public Candidato(String escolaridade, String cargoDesejado, String idade, String formacoesProfissionais, boolean perfilPreenchido,boolean desabilitar, String nomeUsuario, String senha, String tipoUsuario) {
         super(nomeUsuario, senha, tipoUsuario);
         this.escolaridade = escolaridade;
         this.cargoDesejado = cargoDesejado;
         this.idade = idade;
         this.formacoesProfissionais = formacoesProfissionais;
         this.perfilPreenchido = perfilPreenchido;
+        this.desabilitar = desabilitar;
     }
     
     public Candidato(String escolaridade, String cargoDesejado, String idade, String formacoesProfissionais, String nomeUsuario, String senha, String tipoUsuario) {
@@ -57,6 +61,7 @@ public class Candidato extends Usuario implements Serializable {
         this.idade = idade;
         this.formacoesProfissionais = formacoesProfissionais;
         this.perfilPreenchido = perfilPreenchido;
+        this.desabilitar = desabilitar;
     }
 
     public Candidato(String escolaridade, String cargoDesejado, String idade, String formacoesProfissionais, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail) {
@@ -66,10 +71,20 @@ public class Candidato extends Usuario implements Serializable {
         this.idade = idade;
         this.formacoesProfissionais = formacoesProfissionais;
         this.perfilPreenchido = perfilPreenchido;
+        this.desabilitar = desabilitar;
+    }
+
+    public Candidato(String escolaridade, String cargoDesejado, String idade, String formacoesProfissionais, boolean perfilPreenchido, boolean desabilitar, String nomeUsuario, String senha, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail) {
+        super(nomeUsuario, senha, tipoUsuario, idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
+        this.escolaridade = escolaridade;
+        this.cargoDesejado = cargoDesejado;
+        this.idade = idade;
+        this.formacoesProfissionais = formacoesProfissionais;
+        this.perfilPreenchido = perfilPreenchido;
+        this.desabilitar = desabilitar;
     }
     
-        
-
+    
     public String getEscolaridade() {
         return escolaridade;
     }
@@ -108,6 +123,14 @@ public class Candidato extends Usuario implements Serializable {
 
     public void setFormacoesProfissionais(String formacoesProfissionais) {
         this.formacoesProfissionais = formacoesProfissionais;
+    }
+
+    public boolean isDesabilitar() {
+        return desabilitar;
+    }
+
+    public void setDesabilitar(boolean desabilitar) {
+        this.desabilitar = desabilitar;
     }
 
 }

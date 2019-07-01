@@ -35,7 +35,7 @@
             %> <p> Acesso Negado </p>
             <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
-            <br><br><br>
+            <br><br>
             <div class="container" >
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
@@ -52,9 +52,9 @@
                                             <th>Sexo</th>
                                             <!--  <th>Formações</th> -->
                                             <th>CPF</th>
-
+                                            <th>Selecionar</th>
                                             <th>Alterar</th>
-                                            <th>Desabilitar</th>
+                                           
                                         </tr>
                                     </thead>
 
@@ -66,8 +66,6 @@
                                             Candidato candidato = new Candidato();
                                             for (Candidato c : controleCandidato.consultarTodosCandidatos(candidato)) {
                                                 if (c.isDesabilitar()) {%>
-
-                                        <%} else {%>
                                         <tr>
                                             <td><%=c.getNomeCompleto()%></td>
                                             <td><%=c.getCargoDesejado()%></td>
@@ -75,30 +73,34 @@
                                             <td><%=c.getEscolaridade()%></td>
                                             <td><%=c.getIdade()%> </td>
                                             <td><%=c.getSexo()%></td>
-                                     <!--       <td><%=c.getFormacoesProfissionais()%></td> -->
+                                     <!--   <td><%=c.getFormacoesProfissionais()%></td> -->
                                             <td><%=c.getCpf()%></td>
+                                    <center>
+                                            <td>
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                    </center>
                                             <td>
                                                 <a href="candidatoAlterar.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
                                             </td>
-                                            <td>
-
-                                                <a href="scripts/excluirCandidato.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">delete</i></a>
-                                            </td>
+                                         
 
                                         </tr>
                                     </tbody>
-                                    <%
-        }
-    }%>
+                                    <%} else {
+
+                                            }
+                                        }%>
 
                                 </table>
                             </div>
                             <br>
                             <center>
-                                <a href="candidatoCadastro.jsp" class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right">create</i>Cadastrar</a>
-                                <a href="telaHabilitarCandidatos.jsp" class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right">loupe</i>Habilitar Candidatos</a>
-                            
-                            
+                                <a href="candidatoCadastro.jsp" class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right"></i>Habilitar</a>
+
                             </center>
                             <% }%>
                         </div>

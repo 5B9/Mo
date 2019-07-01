@@ -30,14 +30,14 @@
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
         <main>
-             
+
             <div class="container" style="width: 50%; border-radius: 10px;" >
                 <div class="col s12 m5" align="center">
                     <div class="card-panel indigo">
                         <span class="card-title" align="center"></span>
                         <ul class="collection">
-                            <input placeholder="" id="first_name" type="hidden" name="nomeUsuario" value="<%=candidato.getNomeUsuario() %>" class="validate"/>
-                            <input placeholder="" id="first_name" type="hidden" name="senha" value="<%=candidato.getSenha() %>" class="validate"/>
+                            <input placeholder="" id="first_name" type="hidden" name="nomeUsuario" value="<%=candidato.getNomeUsuario()%>" class="validate"/>
+                            <input placeholder="" id="first_name" type="hidden" name="senha" value="<%=candidato.getSenha()%>" class="validate"/>
                             <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="<%=candidato.getTipoUsuario()%>" class="validate"/>
                             <li class="collection-item" id="idCandidato" name="idCandidato">Identificador: <%=candidato.getIdPessoa()%></li>
                             <li class="collection-item"  id="nome" name="nome"> Nome Completo: <%=candidato.getNomeCompleto()%></li>
@@ -45,9 +45,9 @@
                             <li class="collection-item"  id="rg" name="rg"> RG: <%=candidato.getRg()%></li>
                             <li class="collection-item"  id="cpf" name="cpf"> CPF: <%=candidato.getCpf()%></li>
                             <li class="collection-item"  id="sexo" name="sexo"> Sexo: <%=candidato.getSexo()%></li>
-                            <li class="collection-item"  id="escolaridade" name="escolaridade"> Escolaridade: <%=candidato.getEscolaridade() %></li>
+                            <li class="collection-item"  id="escolaridade" name="escolaridade"> Escolaridade: <%=candidato.getEscolaridade()%></li>
                             <li class="collection-item"  id="cargoDesejado" name="cargoDesejado"> Cargo Desejado: <%=candidato.getCargoDesejado()%></li>
-                            <a class="collection-item" href="<%=candidato.getCurriculo()%>.pdf" target="_blank"  id="curriculo" name="curriculo"> Currículo</a>
+                            <li class="collection-item"  id="idade" name="idade"> Idade: <%=candidato.getIdade()%></li>
                         </ul>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                 <a  class="waves-effect waves-light btn indigo" href=" perfilAlterar.jsp?idCandidato=<%=candidato.getIdPessoa()%>" ><span>Alterar</span></a>
             </center>
 
-         
+
             <br>
 
         </main>

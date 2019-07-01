@@ -1,4 +1,7 @@
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="br.edu.ifpr.irati.controle.ControleUsuario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleFuncionario"%>
@@ -15,12 +18,12 @@
 
     </head>
     <header>
-            <jsp:include page="cabecalho.jsp" flush="true" />
-        </header>
+        <jsp:include page="cabecalho.jsp" flush="true" />
+    </header>
     <body>
-         <style>
+        <style>
             body{
-             
+
             }
         </style>
 
@@ -29,14 +32,14 @@
             <div class="container" style="width: 30%;">
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
-                        <div class="card-content white-text ">
+                        <div class="card-content black-text ">
                             <div class="row">
                                 <form class="col s12" action="scripts/cadastrarUsuario.jsp" method="post">
 
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <div class="input-field col s12">
-
+                                                <i class="material-icons prefix">person</i>
                                                 <select onchange="aparece()" name="tipo" id="tipo">
                                                     <option value="" disabled selected>Tipo Usuário</option>
 
@@ -52,17 +55,20 @@
 
                                     <div class="row">
                                         <div class="input-field col s12">
+                                            <i class="material-icons prefix">perm_identity</i>
                                             <input placeholder="" id="nomeUsuario" type="text" name="nomeUsuario" class="validate">
                                             <label for="nomeUsuario">Nome de Usuário:</label>
                                         </div>
                                     </div>
-
+                                    
                                     <div class="row">
                                         <div class="input-field col s12">
+                                            <i class="material-icons prefix"> vpn_key</i>
                                             <input placeholder="" id="senha" type="password" name="senha" class="validate">
                                             <label for="senha">Senha:</label>
                                         </div>
                                     </div>
+
 
                                     <div class="row">
                                         <div class="input-field col s12">
@@ -90,9 +96,9 @@
         </footer>                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-                                                        $(document).ready(function () {
-                                                            $('select').formSelect();
-                                                        });
+                                            $(document).ready(function () {
+                                                $('select').formSelect();
+                                            });
         </script>
         <script>
             function aparece()//Função referente ao input número de matrícula
@@ -103,9 +109,9 @@
                 //Variável contendo o input do nº da matrícula 
                 var label = document.getElementById("mabel");
                 //Variável referente a Label
-                
+
                 if (comboBox == "funcionario") {
-                    
+
                     label.style.display = "block";
                     mathmagic.setAttribute("type", "text");
                 } else {
