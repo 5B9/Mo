@@ -17,7 +17,7 @@
             ControleAgendamento controleAgendamento = new ControleAgendamento();
             controleAgendamento.excluirAgendamento(controleAgendamento.consultarAgendamentoPorId(id));
 
-            response.sendRedirect("../Agendamento.jsp");
+            response.sendRedirect("../agendamentoLista.jsp");
          %>
     </body>
 </html>

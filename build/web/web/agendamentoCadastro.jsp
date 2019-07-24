@@ -41,7 +41,7 @@
                     <div class="card grey lighten-5">
                         <div class="card-content">
                             <div class="row">
-                                <form class=" col s12" action="scripts/agendamentoCadastro.jsp" method="post" name="formulario">
+                                <form class=" col s12" action="scripts/agendamentoCadastrar.jsp" method="post" name="formulario">
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <i class="material-icons prefix">place</i>

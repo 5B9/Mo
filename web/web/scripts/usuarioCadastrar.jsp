@@ -1,9 +1,5 @@
-
-<%@page import="br.edu.ifpr.irati.controle.ControleCurriculo"%>
-<%@page import="java.io.File"%>
 <%@page import="java.util.Date"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCandidato"%>
-<%@page import="br.edu.ifpr.irati.modelo.Curriculo"%>
 <%@page import="br.edu.ifpr.irati.modelo.Candidato"%>
 <%@page import="br.edu.ifpr.irati.modelo.Funcionario"%>
 <%@page import="br.edu.ifpr.irati.dao.FuncionarioDAO"%>

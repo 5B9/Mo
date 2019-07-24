@@ -1,7 +1,5 @@
 <%@page import="br.edu.ifpr.irati.modelo.Cargo"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCargo"%>
-<%@page import="br.edu.ifpr.irati.modelo.Curriculo"%>
-<%@page import="br.edu.ifpr.irati.controle.ControleCurriculo"%>
 <%@page import="br.edu.ifpr.irati.modelo.Candidato"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCandidato"%>
 

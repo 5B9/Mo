@@ -14,7 +14,7 @@
             ControleCargo controleCargo = new ControleCargo();
             controleCargo.excluirCargo(controleCargo.consultarCargoPorId(id) );
 
-            response.sendRedirect("../listaCargos.jsp");
+            response.sendRedirect("../cargoLista.jsp");
          %>
     </body>
 </html>

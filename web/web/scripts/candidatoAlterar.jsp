@@ -30,7 +30,7 @@
 
             
             controleCandidato.alterarCandidato(c);
-            response.sendRedirect("../listaCandidatos.jsp");
+            response.sendRedirect("../candidatoLista.jsp");
 
         %>
     </body>

@@ -55,7 +55,7 @@
                 ControleEntrevista controleEntrevista = new ControleEntrevista();
                 controleEntrevista.alterarEntrevista(e);
 
-                response.sendRedirect("../listaEntrevistas.jsp");
+                response.sendRedirect("../entrevistaLista.jsp");
             
 
 

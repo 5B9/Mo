@@ -17,15 +17,10 @@
 
 
     </head>
+    <body>
     <header>
         <jsp:include page="cabecalho.jsp" flush="true" />
-    </header>
-    <body>
-        <style>
-            body{
-
-            }
-        </style>
+    </header>  
 
         <main>
             <br>
@@ -34,7 +29,7 @@
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
                             <div class="row">
-                                <form class="col s12" action="scripts/cadastrarUsuario.jsp" method="post">
+                                <form class="col s12" action="scripts/usuarioCadastrar.jsp" method="post">
 
                                     <div class="row">
                                         <div class="input-field col s12">

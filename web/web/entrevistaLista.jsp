@@ -85,11 +85,9 @@
                                                 </label>
                                             </td>
                                             <td>
-                                            <!--    <a href="entrevistaAlterar.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="waves-effect waves-indigo darken-4 btn-flat "><i class="material-icons right">refresh</i>Alterar</a> -->
-                                                <a href="entrevistaAlterar.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
+                                            <a href="entrevistaAlterar.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
                                             </td>
                                             <td>
-                                             <!--   <a href="scripts/entrevistaExcluir.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="waves-effect waves-indigo darken-4 btn-flat "><i class="material-icons right">delete</i>Excluir</a> -->
                                                 <a href="scripts/entrevistaExcluir.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">delete</i></a>
                                             </td>
 

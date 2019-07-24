@@ -17,7 +17,7 @@
             Candidato c = new Candidato(candidato.getEscolaridade(), candidato.getCargoDesejado(), candidato.getIdade(), candidato.getFormacoesProfissionais(),true,true, candidato.getNomeUsuario(), candidato.getSenha(), candidato.getTipoUsuario(), id, candidato.getNomeCompleto(), candidato.getCpf(), candidato.getRg(), candidato.getSexo(), candidato.getEnderecoEmail()); 
             //controleCandidato.excluirCandidato(controleCandidato.consultarCandidatoPorId(id));
             controleCandidato.alterarCandidato(c);
-            response.sendRedirect("../listaCandidatos.jsp");
+            response.sendRedirect("../candidatoLista.jsp");
         %>
     </body>
 </html>

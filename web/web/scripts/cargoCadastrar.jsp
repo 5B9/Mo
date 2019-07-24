@@ -24,7 +24,7 @@
 
             ControleCargo controleCargo = new ControleCargo();
             controleCargo.inserirCargo(c);
-            response.sendRedirect("../listaCargos.jsp");
+            response.sendRedirect("../cargoLista.jsp");
 
         %>
     </body>

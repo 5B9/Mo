@@ -22,7 +22,7 @@
 
             ControleCargo controleCargo = new ControleCargo();
             controleCargo.alterarCargo(c);
-             response.sendRedirect("../listaCargos.jsp");
+             response.sendRedirect("../cargoLista.jsp");
 
         %>
     </body>

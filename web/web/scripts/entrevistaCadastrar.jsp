@@ -52,7 +52,7 @@
             ControleEntrevista controleEntrevista = new ControleEntrevista();
 
             controleEntrevista.inserirEntrevista(e);
-            response.sendRedirect("../listaEntrevistas.jsp");
+            response.sendRedirect("../entrevistaLista.jsp");
 
         %>
     </body>

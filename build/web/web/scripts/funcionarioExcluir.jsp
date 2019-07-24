@@ -14,7 +14,7 @@
             ControleFuncionario controleFuncionario = new ControleFuncionario();
             controleFuncionario.excluirFuncionario(controleFuncionario.consultarFuncionarioPorId(id));
 
-            response.sendRedirect("../listaFuncionarios.jsp");
+            response.sendRedirect("../funcionarioLista.jsp");
          %>
     </body>
 </html>

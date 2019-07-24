@@ -36,7 +36,7 @@
                     <div class="card blue-grey lighten-5">
                         <div class="card-content black-text ">
                             <div class="row">
-                                <form class="col s12" action="scripts/candidatoCadastro.jsp" method="post" name="formulario" >
+                                <form class="col s12" action="scripts/candidatoCadastrar.jsp" method="post" name="formulario" >
 
                                     <input placeholder="" id="tipoUsuario" type="hidden" name="tipoUsuario" value="candidato" class="validate">
 

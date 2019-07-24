@@ -39,7 +39,7 @@
             <%} else { %>
             <center>
                 <div class="container" style="width:50%;">
-                    <form name="formulario" class="col s12" action="scripts/entrevistaCadastro.jsp" method="post">
+                    <form name="formulario" class="col s12" action="scripts/entrevistaCadastrar.jsp" method="post">
                         <div class="card grey lighten-5">
                             <div class="card-content white-text ">
 
@@ -112,9 +112,6 @@
                                         </div>
                                     </div>
                                 </div>           
-
-
-
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <div class="input-field col s12">
@@ -126,8 +123,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <div class="input-field col s12">

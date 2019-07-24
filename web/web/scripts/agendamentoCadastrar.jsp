@@ -41,7 +41,7 @@
             ControleAgendamento controleAgendamento = new ControleAgendamento();
             controleAgendamento.inserirAgendamento(a);
 
-            response.sendRedirect("../Agendamento.jsp");
+            response.sendRedirect("../agendamentoLista.jsp");
 
         %>
     </body>

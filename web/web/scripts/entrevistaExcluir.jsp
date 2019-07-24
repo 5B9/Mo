@@ -20,7 +20,7 @@
             ControleEntrevista controleEntrevista = new ControleEntrevista();
             controleEntrevista.excluirEntrevista(controleEntrevista.consultarEntrevistaPorId(id) );
 
-            response.sendRedirect("../listaEntrevistas.jsp");
+            response.sendRedirect("../entrevistaLista.jsp");
          %>
     </body>
 </html>

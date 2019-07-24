@@ -33,10 +33,11 @@
             String idade = request.getParameter("idade"); 
             
 
-            Candidato c = new Candidato(escolaridade, cargoDesejado, idade, "", perfil, nomeUsuario, senha, tipoUsuario, idCandidato , nomeCompleto, cpf, rg, sexo, enderecoEmail);
+           /* Candidato c = new Candidato(escolaridade, cargoDesejado, idade, "", perfil, nomeUsuario, senha, tipoUsuario, idCandidato , nomeCompleto, cpf, rg, sexo, enderecoEmail);
             ControleCandidato controleCandidato = new ControleCandidato();
             controleCandidato.alterarCandidato(c);
-            response.sendRedirect("../index.jsp");
+            */
+           response.sendRedirect("../index.jsp");
 
         %>
     </body>

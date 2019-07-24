@@ -38,7 +38,7 @@
                         <div class="card-content black-text ">
 
                             <div class="row">
-                                <form class="col s12" action="scripts/funcionarioCadastro.jsp" method="post">
+                                <form class="col s12" action="scripts/funcionarioCadastrar.jsp" method="post">
 
                                     <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="funcionario"class="validate"/>
                                     <div class="center-row">
@@ -63,24 +63,6 @@
                                             <label for="matricula">Nº matrícula</label>
                                         </div>
                                     </div>
-
-
-                                   
-
-                                    <!--<div class="row">
-                                        <div class="input-field col s12">
-                                            <input placeholder="" id="first_name" type="text" name="nomeUsuario" class="validate">
-                                            <label for="nomeUsuario">Nome de Usuário</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input placeholder="" id="first_name" type="password" name="senha" class="validate">
-                                            <label for="senha">senha</label>
-                                        </div>
-                                    </div>-->
-
                                     <div class="center-row">
                                         <div class="input-field col s8">
                                             <i class="material-icons prefix">person</i>
