@@ -7,11 +7,6 @@ package br.edu.ifpr.irati.dao;
 
 import br.edu.ifpr.irati.modelo.AgendamentoEntrevista;
 import gerais.HibernateUtil;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -32,5 +27,4 @@ public class AgendamentoEntrevistaDAO {
         return sessao;
     }
 
-    public void inserirAgendamentoEntrevista(int IdAgendamento, int IdEntrevista) {}
 }
