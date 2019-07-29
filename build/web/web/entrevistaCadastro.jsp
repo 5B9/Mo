@@ -84,9 +84,15 @@
                                                 <%
                                                     ControleCandidato controleCandidatos = new ControleCandidato();
                                                     Candidato c = new Candidato();
-                                                    for (Candidato candidato : controleCandidatos.consultarTodosCandidatos(c)) {%>
+
+                                                    for (Candidato candidato : controleCandidatos.consultarTodosCandidatos(c)) {
+
+                                                %>
                                                 <option value="<%=candidato.getIdPessoa()%>"><%=candidato.getNomeCompleto()%></option>
                                                 <%}%>
+
+
+                                               
                                             </select>
                                             <label>Candidato</label>
                                         </div>
@@ -141,10 +147,6 @@
                                     </div>
                                 </div>
 
-
-
-
-
                                 <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
 
 
@@ -153,7 +155,8 @@
                     </form>
                 </div>
             </center>
-            <% }%>
+            <%}
+                %>
 
         </main>
 

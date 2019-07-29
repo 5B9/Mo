@@ -39,7 +39,7 @@ public class AgendamentoEntrevista implements Serializable {
     private Date dataSessao;
      @Column(name = "cargoSessao", nullable = false, length = 30)
     private String cargoSessao;
-    @OneToMany(fetch = FetchType.LAZY) 
+    @OneToMany(fetch = FetchType.EAGER) 
     private List<Entrevista> entrevistas;
 
     public AgendamentoEntrevista() {

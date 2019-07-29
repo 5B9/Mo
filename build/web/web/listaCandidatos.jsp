@@ -50,9 +50,8 @@
                                             <th>Escolaridade</th>
                                             <th>Idade</th>
                                             <th>Sexo</th>
-                                            <!--  <th>Formações</th> -->
+                                            <th>Formações Profissionais</th>
                                             <th>CPF</th>
-
                                             <th>Alterar</th>
                                             <th>Desabilitar</th>
                                         </tr>
@@ -75,7 +74,9 @@
                                             <td><%=c.getEscolaridade()%></td>
                                             <td><%=c.getIdade()%> </td>
                                             <td><%=c.getSexo()%></td>
-                                     <!--       <td><%=c.getFormacoesProfissionais()%></td> -->
+                                            <td><%=c.getFormacoesProfissionais()
+                                                
+                                            %> </td>
                                             <td><%=c.getCpf()%></td>
                                             <td>
                                                 <a href="candidatoAlterar.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
@@ -96,7 +97,7 @@
                             <br>
                             <center>
                                 <a href="candidatoCadastro.jsp" class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right">create</i>Cadastrar</a>
-                                <a href="telaHabilitarCandidatos.jsp" class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right">loupe</i>Habilitar Candidatos</a>
+                                <a href="telaHabilitarCandidatos.jsp" class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right">person_add</i>Habilitar Candidatos</a>
                             
                             
                             </center>

@@ -6,7 +6,7 @@
 <html>
     <head>
 
-          <meta charset="utf-8"/>
+        <meta charset="utf-8"/>
         <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -41,8 +41,8 @@
                                     <input placeholder="" id="tipoUsuario" type="hidden" name="tipoUsuario" value="candidato" class="validate">
 
                                     <div class="center-row">
-                                      <div class="input-field col s8">
-                                          <i class="material-icons prefix">person</i>
+                                        <div class="input-field col s8">
+                                            <i class="material-icons prefix">person</i>
                                             <input placeholder=""  id="nomeCompleto" type="text" name="nomeCompleto" class="validate" maxlength="60">
                                             <label for="nomeCompleto">Nome Completo*</label>
                                         </div>
@@ -62,9 +62,6 @@
                                         </div>
                                     </div>
 
-                               
-                                    
-                                   
                                     <div class="center-row">
                                         <div class="input-field col s3">
                                             <i class="material-icons prefix">perm_contact_calendar</i>
@@ -83,7 +80,7 @@
 
                                     <div class="center-row">
                                         <div class="input-field col s4">
-                                             <i class="material-icons prefix"> featured_play_list</i>
+                                            <i class="material-icons prefix"> featured_play_list</i>
                                             <input placeholder="" id="rg"  type="text" name="rg" class="validate" maxlength="9">
                                             <label for="rg">RG*</label>
                                         </div>
@@ -103,7 +100,7 @@
                                     <div class="center-row" >
                                         <div class="input-field col s6">
                                             <div class="input-field col s9">
-                                                 <i class="material-icons prefix">school</i>
+                                                <i class="material-icons prefix">school</i>
                                                 <select name="escolaridade">
                                                     <option value="" disabled selected>Escolaridade</option>
                                                     <option value="Ensino Fudamental Incompleto">Ensino Fundamental Incompleto</option>
@@ -135,6 +132,16 @@
                                         </div>
                                     </div>
 
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">mode_edit</i>
+                                                <textarea id="formacoes" class="materialize-textarea" data-length="280"></textarea>
+                                                <label for="formacoes">Formações Profissionais</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
 
                                     <center>
                                         <button  class="waves-effect waves-light btn indigo " type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
@@ -158,6 +165,12 @@
                                             $(document).ready(function () {
                                                 $('select').formSelect();
                                             });
+        </script>
+        <script>
+
+            $(document).ready(function () {
+                $('input#input_text, textarea#textarea2').characterCounter();
+            });
         </script>
         <script>
             function validar() {

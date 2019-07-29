@@ -29,12 +29,13 @@
 
         <main>
             <br>
+            
             <div class="container" style="width: 30%;">
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
                             <div class="row">
-                                <form class="col s12" action="scripts/cadastrarUsuario.jsp" method="post">
+                                <form class="col s12" name="formulario" action="scripts/cadastrarUsuario.jsp" method="post">
 
                                     <div class="row">
                                         <div class="input-field col s12">
@@ -60,7 +61,7 @@
                                             <label for="nomeUsuario">Nome de Usuário:</label>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <i class="material-icons prefix"> vpn_key</i>
@@ -70,8 +71,10 @@
                                     </div>
 
 
+
                                     <div class="row">
                                         <div class="input-field col s12">
+                                            <i  id="icone" style="display:none;" class="material-icons prefix">confirmation_number</i>
                                             <input placeholder="..." id="matricula" type="hidden" name="matricula" class="validate">
                                             <label id="mabel" style="display:none;" for="Ma">Nº de matrícula</label>
                                         </div>
@@ -103,23 +106,60 @@
         <script>
             function aparece()//Função referente ao input número de matrícula
             {
-                var comboBox = document.getElementById("tipo").value;
                 //Variável contendo o valor da option
-                var mathmagic = document.getElementById("matricula");
+                var comboBox = document.getElementById("tipo").value;
                 //Variável contendo o input do nº da matrícula 
-                var label = document.getElementById("mabel");
+                var mathmagic = document.getElementById("matricula");
                 //Variável referente a Label
+                var label = document.getElementById("mabel");
+                //Variável referente ao ícone
+                var icon = document.getElementById("icone");
 
                 if (comboBox == "funcionario") {
-
+                    icon.style.display = "block";
                     label.style.display = "block";
                     mathmagic.setAttribute("type", "text");
                 } else {
+                    icon.style.display = "none";
                     label.style.display = "none";
                     mathmagic.setAttribute("type", "hidden");
+
+
                 }
+
+
+
             }
 
+        </script>
+        <script>
+            function validar() {
+    
+          if(document.formulario.tipo.value == "funcionario"){
+                    if (document.formulario.nomeUsuario.value == "") {
+                    alert("Por favor, insira o nome de usuário.");
+                    return false;
+                } else if (document.formulario.senha.value == "") {
+                    alert("Por favor, insira a senha.");
+                    return false;
+                 
+                } else if(document.formulario.matricula.value == ""){
+                    alert("Por favor, insira o número de matrícula.");
+                    return false;
+                }
+                
+        }else{
+             if (document.formulario.nomeUsuario.value == "") {
+                    alert("Por favor, insira o nome de usuário.");
+                    return false;
+                } else if (document.formulario.senha.value == "") {
+                    alert("Por favor, insira a senha.");
+                    return false;
+                 
+                } 
+        }
+              
+            }
         </script>
     </body>
 </html>

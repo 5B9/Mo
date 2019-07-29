@@ -26,7 +26,8 @@
             String formacoesProfissionais = "";
             
             ControleCandidato controleCandidato = new ControleCandidato();
-            Candidato c = new Candidato(escolaridade, cargoDesejado, idade, formacoesProfissionais, tipoUsuario, id, nomeCompleto, cpf, rg, sexo, enderecoEmail);
+            Candidato candidato = controleCandidato.consultarCandidatoPorId(id);
+            Candidato c = new Candidato(escolaridade, cargoDesejado, idade, formacoesProfissionais,true,false, candidato.getNomeUsuario(),candidato.getSenha(),  tipoUsuario, id, nomeCompleto, cpf, rg, sexo, enderecoEmail);
 
             
             controleCandidato.alterarCandidato(c);

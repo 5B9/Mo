@@ -6,12 +6,16 @@
 package br.edu.ifpr.irati.modelo;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import org.hibernate.annotations.Proxy;
 
@@ -19,23 +23,26 @@ import org.hibernate.annotations.Proxy;
  *
  * @author Altai
  */
-@Entity (name = "entrevista")
+@Entity(name = "entrevista")
 @Proxy(lazy = false)
 public class Entrevista implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idEntrevista;
-    @OneToOne (fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     private Funcionario funcionarioMinistrante;
-    @OneToOne (fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     private Cargo cargo;
     @Column(name = "fasePsicologica", nullable = false, length = 20)
     private String fasePsicologica;
     @Column(name = "faseTecnica", nullable = false, length = 20)
     private boolean faseTecnica;
-    @OneToOne (fetch = FetchType.EAGER)
+    @Column(name = "desabilitar", nullable = false, length = 15)
+    private boolean desabilitar;
+    @OneToOne(fetch = FetchType.EAGER)
     private Candidato candidato;
+
 
     public Entrevista() {
         idEntrevista = 0;
@@ -44,15 +51,18 @@ public class Entrevista implements Serializable {
         fasePsicologica = "";
         faseTecnica = false;
         candidato = new Candidato();
+        desabilitar = false;
+        
     }
 
-    public Entrevista(int idEntrevista, Funcionario funcionarioMinistrante, Cargo cargo, String fasePsicologica, boolean faseTecnica, Candidato candidato) {
+    public Entrevista(int idEntrevista, Funcionario funcionarioMinistrante, Cargo cargo, String fasePsicologica, boolean faseTecnica, Candidato candidato, boolean desabilitar) {
         this.idEntrevista = idEntrevista;
         this.funcionarioMinistrante = funcionarioMinistrante;
         this.cargo = cargo;
         this.fasePsicologica = fasePsicologica;
         this.faseTecnica = faseTecnica;
         this.candidato = candidato;
+        this.desabilitar = desabilitar;
     }
 
     public int getIdEntrevista() {
@@ -102,5 +112,14 @@ public class Entrevista implements Serializable {
     public void setCandidato(Candidato candidato) {
         this.candidato = candidato;
     }
-    
+
+    public boolean isDesabilitar() {
+        return desabilitar;
+    }
+
+    public void setDesabilitar(boolean desabilitar) {
+        this.desabilitar = desabilitar;
+    }
+
+   
 }

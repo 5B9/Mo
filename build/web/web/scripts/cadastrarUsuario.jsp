@@ -43,7 +43,7 @@
                // }
             } else {
                 Usuario u = new Usuario(nomeUsuario, senha, tipoUsuario);
-                Candidato c = new Candidato("", "", "", "", false, nomeUsuario, senha, tipoUsuario, u.getIdPessoa(), "", "", "", "", "");
+                Candidato c = new Candidato("", "", "", "", false,false, nomeUsuario, senha, tipoUsuario, u.getIdPessoa(), "", "", "", "", "");
                 ControleUsuario controleUsuario = new ControleUsuario();
                 ControleCandidato controleCandidato = new ControleCandidato();
                 controleUsuario.inserirUsuario(u);

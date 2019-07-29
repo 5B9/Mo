@@ -48,11 +48,17 @@
             ControleAgendamento controleAgendamento = new ControleAgendamento();
             AgendamentoEntrevista a = controleAgendamento.consultarAgendamentoPorId(idSessao);
 
-            Entrevista e = new Entrevista(0, funcionario, cargo, fasePsicologica, faseTecnica, candidato);
+            Entrevista e = new Entrevista(0, funcionario, cargo, fasePsicologica, faseTecnica, candidato, false);
             ControleEntrevista controleEntrevista = new ControleEntrevista();
 
             controleEntrevista.inserirEntrevista(e);
-            response.sendRedirect("../listaEntrevistas.jsp");
+            
+            
+            
+            a.adicionarEntrevista(e);
+            controleAgendamento.alterarAgendamento(a);
+              response.sendRedirect("../listaEntrevistas.jsp");
+
 
         %>
     </body>

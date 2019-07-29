@@ -4,6 +4,7 @@
     Author     : Altai
 --%>
 
+<%@page import="br.edu.ifpr.irati.modelo.Entrevista"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleEntrevista"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -18,8 +19,9 @@
             int id=Integer.parseInt(request.getParameter("idEntrevista"));
 
             ControleEntrevista controleEntrevista = new ControleEntrevista();
-            controleEntrevista.excluirEntrevista(controleEntrevista.consultarEntrevistaPorId(id) );
-
+            Entrevista entrevista = controleEntrevista.consultarEntrevistaPorId(id);
+            Entrevista e = new Entrevista(entrevista.getIdEntrevista(), entrevista.getFuncionarioMinistrante(), entrevista.getCargo(), entrevista.getFasePsicologica(), entrevista.isFaseTecnica(), entrevista.getCandidato(), true);
+            controleEntrevista.alterarEntrevista(entrevista);
             response.sendRedirect("../listaEntrevistas.jsp");
          %>
     </body>

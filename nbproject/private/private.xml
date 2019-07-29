@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Altai/acome/web/web/relatorios.jsp</file>
             <file>file:/C:/Users/Altai/acome/web/web/login.jsp</file>
-            <file>file:/C:/Users/Altai/acome/web/web/listaCandidatos.jsp</file>
-            <file>file:/C:/Users/Altai/acome/web/web/telaHabilitarCandidatos.jsp</file>
+            <file>file:/C:/Users/Altai/acome/web/web/scripts/entrevistaCadastro.jsp</file>
+            <file>file:/C:/Users/Altai/acome/src/java/br/edu/ifpr/irati/modelo/Entrevista.java</file>
+            <file>file:/C:/Users/Altai/acome/src/java/br/edu/ifpr/irati/modelo/AgendamentoEntrevista.java</file>
         </group>
     </open-files>
 </project-private>

@@ -70,6 +70,7 @@
                                  
                                     <input class='autocomplete' type='text' name='usuario' id='usuario' />
                                     <label for='usuario'>Usuário:</label>
+                                   
                                 </div>
                             </div>
 

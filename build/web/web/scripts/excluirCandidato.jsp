@@ -1,4 +1,5 @@
 
+<%@page import="br.edu.ifpr.irati.controle.ControleEntrevista"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCandidato"%>
 <%@page import="br.edu.ifpr.irati.modelo.Candidato"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -17,6 +18,8 @@
             Candidato c = new Candidato(candidato.getEscolaridade(), candidato.getCargoDesejado(), candidato.getIdade(), candidato.getFormacoesProfissionais(),true,true, candidato.getNomeUsuario(), candidato.getSenha(), candidato.getTipoUsuario(), id, candidato.getNomeCompleto(), candidato.getCpf(), candidato.getRg(), candidato.getSexo(), candidato.getEnderecoEmail()); 
             //controleCandidato.excluirCandidato(controleCandidato.consultarCandidatoPorId(id));
             controleCandidato.alterarCandidato(c);
+            
+            ControleEntrevista controleEntrevista = new ControleEntrevista();
             response.sendRedirect("../listaCandidatos.jsp");
         %>
     </body>
