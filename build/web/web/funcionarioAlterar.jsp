@@ -7,11 +7,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <meta charset="utf-8"/>
+        <meta charset="utf-8"/>
         <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
         <%
             session = request.getSession();
             Usuario u = (Usuario) session.getAttribute("usuario");
@@ -25,7 +26,7 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
-       
+
         <main>
             <center>
                 <%
@@ -99,13 +100,13 @@
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="text" name="cpf" value="<%=funcionario.getCpf()%>"class="validate">
+                                                <input placeholder="" id="cpf" type="text" name="cpf" value="<%=funcionario.getCpf()%>"class="validate">
                                                 <label for="tipo">CPF</label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="text" name="rg" value="<%=funcionario.getRg()%>"class="validate">
+                                                <input placeholder="" id="rg" type="text" name="rg" value="<%=funcionario.getRg()%>"class="validate">
                                                 <label for="tipo">RG</label>
                                             </div>
                                         </div>
@@ -145,6 +146,13 @@
                 $('select').formSelect();
             });
         </script>
-
+        <script>
+            $(document).ready(function () {
+                var $campoCpf = $("#cpf");
+                var $campoRg = $("#rg");
+                $campoCpf.mask('000.000.000-00', {reverse: true});
+                $campoRg.mask('000.000.000-00', {reverse: true});
+            });
+        </script>
     </body>
 </html>

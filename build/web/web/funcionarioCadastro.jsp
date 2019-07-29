@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
         <%
             session = request.getSession();
             Usuario u = (Usuario) session.getAttribute("usuario");
@@ -18,15 +19,12 @@
                 logado = true;
             }
         %>
-
     </head>
     <body>
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
-
         <main>
-
             <%
                 if (!logado || u.getTipoUsuario().equals("candidato")) {
             %> <p> Acesso Negado </p>
@@ -36,13 +34,10 @@
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
-
                             <div class="row">
                                 <form class="col s12" action="scripts/funcionarioCadastrar.jsp" method="post">
-
                                     <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="funcionario"class="validate"/>
                                     <div class="center-row">
-
                                         <div class="input-field col s6">
                                             <div class="input-field col s7">
                                                 <i class="material-icons prefix">supervisor_account</i>
@@ -55,7 +50,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="center-row">
                                         <div class="input-field col s5">
                                             <i class="material-icons prefix">call_to_action</i>
@@ -70,23 +64,20 @@
                                             <label for="nome">Nome Completo</label>
                                         </div>
                                     </div>
-
                                     <div class="center-row">
                                         <div class="input-field col s4">
                                             <i class="material-icons prefix"> description</i>
-                                            <input placeholder="" id="first_name" type="text" name="cpf" class="validate">
+                                            <input placeholder="" id="cpf" type="text" name="cpf" class="validate">
                                             <label for="cpf">CPF</label>
                                         </div>
                                     </div>
-
                                     <div class="center-row">
                                         <div class="input-field col s4">
                                             <i class="material-icons prefix"> featured_play_list</i>
-                                            <input placeholder="" id="first_name" type="text" name="rg" class="validate">
+                                            <input placeholder="" id="rg" type="text" name="rg" class="validate">
                                             <label for="rg">RG</label>
                                         </div>
                                     </div>
-
                                     <div class="center-row">
                                         <div class="input-field col s5">
                                             <div class="input-field col s5">
@@ -100,15 +91,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                     <div class="center-row">
+                                    <div class="center-row">
                                         <div class="input-field col s3">
                                             <i class="material-icons prefix">today</i>
                                             <input placeholder="..." id="first_name" type="text" name="data" class="validate">
                                             <label for="data">Data de admissão</label>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <i class="material-icons prefix">alternate_email</i>
@@ -117,7 +106,6 @@
                                             <span class="helper-text" data-error="E-mail inválido" data-success="Ok!"></span>
                                         </div>
                                     </div>
-
                                     <center>
                                         <!--    <input type="submit" name="salvar" value="Cadastrar" class="waves-effect waves-ligth  btn indigo"/> -->
                                         <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
@@ -128,11 +116,8 @@
                     </div>
                 </div>
             </div>
-
             <% }%>
-
         </main>
-
         <footer>
             <jsp:include page="rodape.jsp" flush="true" />
         </footer>                
@@ -142,6 +127,13 @@
                 $('select').formSelect();
             });
         </script>
-
+        <script>
+            $(document).ready(function () {
+                var $campoCpf = $("#cpf");
+                var $campoRg = $("#rg");
+                $campoCpf.mask('000.000.000-00', {reverse: true});
+                $campoRg.mask('000.000.000-00', {reverse: true});
+            });
+        </script>
     </body>
 </html>

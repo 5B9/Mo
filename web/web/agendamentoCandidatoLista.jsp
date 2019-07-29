@@ -1,4 +1,3 @@
-
 <%@page import="br.edu.ifpr.irati.modelo.Candidato"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCandidato"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -17,7 +16,6 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
     </head>
     <body>
-
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
@@ -31,7 +29,6 @@
                 logado = true;
             }
         %>
-
         <main>
             <%
                 if (!logado) {
@@ -50,12 +47,8 @@
                                         <th>Local</th>
                                         <th>Horário</th>
                                         <th>Cargo</th>
-
                                     </tr>
                                 </thead>
-
-
-
                                 <% ControleAgendamento controleAgendamento = new ControleAgendamento();
                                     AgendamentoEntrevista agendamento = new AgendamentoEntrevista();
                                     ControleCandidato controleCandidato = new ControleCandidato();
@@ -73,8 +66,6 @@
                                 <%      } else {
                                     for (AgendamentoEntrevista a : controleAgendamento.consultarTodosAgendamentos(agendamento)) {
                                         if (candidato.getCargoDesejado().equals(a.getCargoSessao()) == false) {
-
-
                                 %>
                                 <tbody>
                                     <tr>
@@ -86,7 +77,6 @@
                                 </tbody>    
                                 <%   } else {
                                     if (candidato.getCargoDesejado().equals(a.getCargoSessao())) {
-
                                 %>
                                 <tbody>
                                     <tr>
@@ -98,25 +88,20 @@
                                 </tbody>
                                 <%
                                 } else { %>
-
                                 <%
                                                 }
                                             }
                                         }
                                     }
                                 %>
-
                             </table>
-
                         </div>
                     </div>
                 </div>
             </div>
             <%
                 }%>
-
         </main>
-
         <footer>
             <jsp:include page="rodape.jsp" flush="true" />
         </footer>                
