@@ -4,6 +4,7 @@
     Author     : Altai
 --%>
 
+<%@page import="br.edu.ifpr.irati.modelo.Entrevista"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleEntrevista"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

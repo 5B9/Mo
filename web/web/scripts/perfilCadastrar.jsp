@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCurriculo"%>
 <%@page import="java.util.Date"%>
@@ -34,8 +33,8 @@
             
 
            /* Candidato c = new Candidato(escolaridade, cargoDesejado, idade, "", perfil, nomeUsuario, senha, tipoUsuario, idCandidato , nomeCompleto, cpf, rg, sexo, enderecoEmail);
-            ControleCandidato controleCandidato = new ControleCandidato();
-            controleCandidato.alterarCandidato(c);
+=======
+            Candidato c = new Candidato(escolaridade, cargoDesejado, idade, "", perfil, nomeUsuario, senha, tipoUsuario, idCandidato , nomeCompleto, cpf, rg, sexo, enderecoEmail);
             */
            response.sendRedirect("../index.jsp");
 

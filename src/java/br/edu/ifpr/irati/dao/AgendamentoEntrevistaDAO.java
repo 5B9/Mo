@@ -5,6 +5,7 @@
  */
 package br.edu.ifpr.irati.dao;
 
+import br.edu.ifpr.irati.jmail.configuracao.Conexao;
 import br.edu.ifpr.irati.modelo.AgendamentoEntrevista;
 import gerais.HibernateUtil;
 import org.hibernate.Query;
@@ -28,3 +29,5 @@ public class AgendamentoEntrevistaDAO {
     }
 
 }
+
+   

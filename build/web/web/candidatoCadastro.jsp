@@ -129,6 +129,16 @@
                                         </div>
                                     </div>
 
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">mode_edit</i>
+                                                <textarea id="formacoes" class="materialize-textarea" data-length="280"></textarea>
+                                                <label for="formacoes">Formações Profissionais</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
 
                                     <center>
                                         <button  class="waves-effect waves-light btn indigo " type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
@@ -152,6 +162,12 @@
                                             $(document).ready(function () {
                                                 $('select').formSelect();
                                             });
+        </script>
+        <script>
+
+            $(document).ready(function () {
+                $('input#input_text, textarea#textarea2').characterCounter();
+            });
         </script>
         <script>
             function validar() {
