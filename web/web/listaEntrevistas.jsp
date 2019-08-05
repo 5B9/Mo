@@ -11,7 +11,8 @@
         <title>Entrevistas</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>   <%
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>   
+        <%
             session = request.getSession();
             Usuario u = (Usuario) session.getAttribute("usuario");
             boolean logado = false;
@@ -49,6 +50,7 @@
                                             <th>Selecionar</th>
                                             <th>Alterar</th>
                                             <th>Excluir</th>
+                                            <th>Finalizar Processo</th>
                                         </tr>
                                     </thead>
 
@@ -85,14 +87,17 @@
                                                 </label>
                                             </td>
                                             <td>
-                                            <!--    <a href="entrevistaAlterar.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="waves-effect waves-indigo darken-4 btn-flat "><i class="material-icons right">refresh</i>Alterar</a> -->
+                                            <!--<a href="entrevistaAlterar.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="waves-effect waves-indigo darken-4 btn-flat "><i class="material-icons right">refresh</i>Alterar</a> -->
                                                 <a href="entrevistaAlterar.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
                                             </td>
                                             <td>
-                                             <!--   <a href="scripts/entrevistaExcluir.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="waves-effect waves-indigo darken-4 btn-flat "><i class="material-icons right">delete</i>Excluir</a> -->
                                                 <a href="scripts/entrevistaExcluir.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">delete</i></a>
                                             </td>
-
+                                            <% if (!e.isSituacaoProcesso()) {%>
+                                            <td>
+                                                <a href="finalizarProcesso.jsp?idEntrevista=<%=e.getIdEntrevista()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">done_all</i></a>
+                                            </td>
+                                            <%}%>
                                         </tr>
 
                                     </tbody>
@@ -105,6 +110,7 @@
                                 <a href="entrevistaCadastro.jsp"class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right">create</i>Cadastrar</a>
                                 <a href="mensagens.jsp"class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right">send</i>Enviar Mensagem</a>
                             </center>
+
                             <% }%>
                         </div>
                     </div>

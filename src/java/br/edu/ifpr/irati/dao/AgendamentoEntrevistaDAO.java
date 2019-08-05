@@ -5,14 +5,8 @@
  */
 package br.edu.ifpr.irati.dao;
 
-import br.edu.ifpr.irati.jmail.configuracao.Conexao;
 import br.edu.ifpr.irati.modelo.AgendamentoEntrevista;
 import gerais.HibernateUtil;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
