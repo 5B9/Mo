@@ -1,4 +1,3 @@
-
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleUsuario"%>
@@ -14,41 +13,32 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
-
-
     </head>
     <body>
-    <header>
-        <jsp:include page="cabecalho.jsp" flush="true" />
-    </header>  
-
+        <header>
+            <jsp:include page="cabecalho.jsp" flush="true" />
+        </header>  
         <main>
             <br>
-            
             <div class="container" style="width: 30%;">
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
                             <div class="row">
                                 <form class="col s12" action="scripts/usuarioCadastrar.jsp" method="post">
-
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <div class="input-field col s12">
                                                 <i class="material-icons prefix">person</i>
                                                 <select onchange="aparece()" name="tipo" id="tipo">
                                                     <option value="" disabled selected>Tipo Usuário</option>
-
                                                     <option value="funcionario">funcionário</option>
-
                                                     <option value="candidato" >candidato</option>
-
                                                 </select>
                                                 <label>Tipo de Usuário</label>
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <i class="material-icons prefix">perm_identity</i>
@@ -56,7 +46,6 @@
                                             <label for="nomeUsuario">Nome de Usuário:</label>
                                         </div>
                                     </div>
-                                    
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <i class="material-icons prefix"> vpn_key</i>
@@ -64,10 +53,6 @@
                                             <label for="senha">Senha:</label>
                                         </div>
                                     </div>
-
-
-
-
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <i  id="icone" style="display:none;" class="material-icons prefix">confirmation_number</i>
@@ -80,16 +65,11 @@
                                     </center>
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
         </main>
-
         <footer>
             <jsp:include page="rodape.jsp" flush="true" />
         </footer>                
@@ -100,58 +80,46 @@
                                             });
         </script>
         <script>
-            function aparece()//Função referente ao input número de matrícula
-            {
+            function aparece()/*Função referente ao input número de matrícula*/{
                 //Variável contendo o valor da option
                 var comboBox = document.getElementById("tipo").value;
                 //Variável contendo o input do nº da matrícula 
                 var mathmagic = document.getElementById("matricula");
                 //Variável referente a Label
-
+                var label = document.getElementById("mabel");
+                //Variável do icon
+                var icon = document. getElementById("icone");
                 if (comboBox == "funcionario") {
-
+                    icon.style.display="block";
                     label.style.display = "block";
                     mathmagic.setAttribute("type", "text");
                 } else {
                     icon.style.display = "none";
                     label.style.display = "none";
                     mathmagic.setAttribute("type", "hidden");
-
-
                 }
-
-
-
             }
-
-        </script>
-        <script>
             function validar() {
-    
-          if(document.formulario.tipo.value == "funcionario"){
-                    if (document.formulario.nomeUsuario.value == "") {
-                    alert("Por favor, insira o nome de usuário.");
-                    return false;
-                } else if (document.formulario.senha.value == "") {
-                    alert("Por favor, insira a senha.");
-                    return false;
-                 
-                } else if(document.formulario.matricula.value == ""){
-                    alert("Por favor, insira o número de matrícula.");
-                    return false;
+                if (document.formulario.tipo.value === "funcionario") {
+                    if (document.formulario.nomeUsuario.value === "") {
+                        alert("Por favor, insira o nome de usuário.");
+                        return false;
+                    } else if (document.formulario.senha.value === "") {
+                        alert("Por favor, insira a senha.");
+                        return false;
+                    } else if (document.formulario.matricula.value === "") {
+                        alert("Por favor, insira o número de matrícula.");
+                        return false;
+                    }
+                } else {
+                    if (document.formulario.nomeUsuario.value === "") {
+                        alert("Por favor, insira o nome de usuário.");
+                        return false;
+                    } else if (document.formulario.senha.value === "") {
+                        alert("Por favor, insira a senha.");
+                        return false;
+                    }
                 }
-                
-        }else{
-             if (document.formulario.nomeUsuario.value == "") {
-                    alert("Por favor, insira o nome de usuário.");
-                    return false;
-                } else if (document.formulario.senha.value == "") {
-                    alert("Por favor, insira a senha.");
-                    return false;
-                 
-                } 
-        }
-              
             }
         </script>
     </body>

@@ -34,106 +34,97 @@
                 %> <p> Acesso Negado </p>
                 <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
                 <%} else { %>
-                <div class="container" style="width: 50%;">
+                <%
+                    int idFuncionario = Integer.parseInt(request.getParameter("idFuncionario"));
+                    ControleFuncionario f = new ControleFuncionario();
+                    Funcionario funcionario = f.consultarFuncionarioPorId(idFuncionario);
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                %>
+                <div class="container" style="width: 60%;">
                     <div class="col s12 m6">
                         <div class="card grey lighten-5">
-                            <div class="card-content white-text ">
-
-
-                                <%
-
-                                    int idFuncionario = Integer.parseInt(request.getParameter("idFuncionario"));
-                                    ControleFuncionario f = new ControleFuncionario();
-                                    Funcionario funcionario = f.consultarFuncionarioPorId(idFuncionario);
-
-                                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
-                                %>
+                            <div class="card-content black-text ">
                                 <div class="row">
                                     <form class="col s12" action="scripts/funcionarioAlterar.jsp" method="post">
                                         <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="funcionario"class="validate"/>
-                                        <input placeholder="" id="first_name" type="hidden" name="id" value="<%=funcionario.getIdPessoa()%>"class="validate"/>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <div class="input-field col s12">
+                                        <div class="center-row">
+                                            <div class="input-field col s6">
+                                                <div class="input-field col s7">
                                                     <select name="tipoFuncionario">
-
-                                                        <option value="<%=funcionario.getTipoFuncionario()%>"><%=funcionario.getTipoFuncionario()%></option>
+                                                        <option value="<%=funcionario.getTipoFuncionario()%>" disabled selected>Escolha o Tipo</option>
+                                                        <option value="gerente">Gerente</option>
+                                                        <option value="funcionario">Funcionário</option>
                                                     </select>
-                                                    <label>Tipo</label>
+                                                    <label>Tipo de Funcionário</label>
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="text" name="matricula" value="<%=funcionario.getMatricula()%>"class="validate">
+                                        <div class="center-row">
+                                            <div class="input-field col s5">
+                                                <i class="material-icons prefix">call_to_action</i>
+                                                <input placeholder="" id="first_name" type="text" name="matricula" value="<%=funcionario.getMatricula()%>" class="validate">
                                                 <label for="matricula">Nº matrícula</label>
                                             </div>
                                         </div>
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="12/12/2012" id="first_name" type="text" name="data" value="<%=sdf.format(funcionario.getDataAdmissao())%>"class="validate">
-                                                <label for="Dia do Evento">Data de admissão</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="text" name="nomeUs"  value="<%=funcionario.getNomeUsuario()%>"class="validate">
-                                                <label for="tipo">Nome de Usuário</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="password" name="senha" value="<%=funcionario.getSenha()%>" class="validate">
-                                                <label for="tipo">SENHA</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
+                                        <div class="center-row">
+                                            <div class="input-field col s8">
+                                                <i class="material-icons prefix">person</i>
                                                 <input placeholder="" id="first_name" type="text" name="nome" value="<%=funcionario.getNomeCompleto()%>"class="validate">
-                                                <label for="tipo">Nome Completo</label>
+                                                <label for="nome">Nome Completo</label>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
+                                        <div class="center-row">
+                                            <div class="input-field col s4">
+                                                <i class="material-icons prefix"> description</i>
                                                 <input placeholder="" id="cpf" type="text" name="cpf" value="<%=funcionario.getCpf()%>"class="validate">
-                                                <label for="tipo">CPF</label>
+                                                <label for="cpf">CPF</label>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
+                                        <div class="center-row">
+                                            <div class="input-field col s4">
+                                                <i class="material-icons prefix"> featured_play_list</i>
                                                 <input placeholder="" id="rg" type="text" name="rg" value="<%=funcionario.getRg()%>"class="validate">
-                                                <label for="tipo">RG</label>
+                                                <label for="rg">RG</label>
+                                            </div>
+                                        </div>
+                                        <div class="center-row">
+                                            <div class="input-field col s5">
+                                                <div class="input-field col s5">
+                                                    <select name="sexo">
+                                                        <option value="<%=funcionario.getSexo()%>" disabled selected>Sexo</option>
+                                                        <option value="M">Masculino</option>
+                                                        <option value="F">Feminino</option>
+                                                    </select>
+                                                    <label>Sexo</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="center-row">
+                                            <div class="input-field col s3">
+                                                <i class="material-icons prefix">today</i>
+                                                <input placeholder="..." id="first_name" type="text" name="data" value=""<%=funcionario.getDataAdmissao()%> class="validate">
+                                                <label for="data">Data de admissão</label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="text" name="sexo" value="<%=funcionario.getSexo()%>"class="validate">
-                                                <label for="tipo">Sexo</label>
+                                                <i class="material-icons prefix">alternate_email</i>
+                                                <input placeholder="" id="first_name" type="text" value="<%=funcionario.getEnderecoEmail()%>" name="endereco" class="validate">
+                                                <label for="endereco">Endereço de Email</label>
+                                                <span class="helper-text" data-error="E-mail inválido" data-success="Ok!"></span>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="" id="first_name" type="text" name="endereco" value="<%=funcionario.getEnderecoEmail()%>"class="validate">
-                                                <label for="tipo">Endereço de Email</label>
-                                            </div>
-                                        </div>
-
-
-                                        <button  class="waves-effect waves-light btn indigo " type="submit" name="salvar"><span>Alterar</span></button>
+                                        <center>
+                                            <!--    <input type="submit" name="salvar" value="Cadastrar" class="waves-effect waves-ligth  btn indigo"/> -->
+                                            <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
+                                        </center>
                                     </form>
-
                                 </div>
-                                <% }%>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                <%}%>
             </center>
         </main>
 
