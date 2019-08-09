@@ -19,7 +19,7 @@
         </header>
 
         <main>
-<p>Encontra esse file</p>
+
             <br>
             <div class="container" style="width: 60%;">
                 <div class="col s12 m6">
@@ -80,6 +80,12 @@
                                             <label for="idade">Idade</label>
                                         </div>
                                     </div>
+
+
+
+
+
+
                                     <div class="center-row">
                                         <div class="input-field col s5">
                                             <i class="material-icons prefix">person</i>
@@ -87,20 +93,23 @@
                                             <label for="nomeCompleto">Nome Completo</label>
                                         </div>
                                     </div>
+
                                     <div class="center-row">
                                         <div class="input-field col s4">
                                             <i class="material-icons prefix"> description</i>
-                                            <input placeholder="" id="cpf" type="text" name="cpf" value="<%=c.getCpf()%>" class="validate" maxlength="11">
+                                            <input placeholder="" id="first_name" type="text" name="cpf" value="<%=c.getCpf()%>" class="validate" maxlength="11">
                                             <label for="cpf">CPF</label>
                                         </div>
                                     </div>
+
                                     <div class="center-row">
                                         <div class="input-field col s3">
                                             <i class="material-icons prefix"> featured_play_list</i>
-                                            <input placeholder="" id="rg" type="text" name="rg" value="<%=c.getRg()%>" class="validate" maxlength="9">
+                                            <input placeholder="" id="first_name" type="text" name="rg" value="<%=c.getRg()%>" class="validate" maxlength="9">
                                             <label for="rg">RG</label>
                                         </div>
                                     </div>
+
                                     <div class="center-row">
                                         <div class="input-field col s3">
                                             <div class="input-field col s12">
@@ -113,6 +122,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="row">
                                         <div class="input-field col s6">
                                             <i class="material-icons prefix">alternate_email</i>
@@ -120,7 +130,19 @@
                                             <label for="enderecoEmail">Endereço de Email</label>
                                         </div>
                                     </div>
+
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">mode_edit</i>
+                                                <textarea id="formacoes" class="materialize-textarea" data-length="280"></textarea>
+                                                <label for="formacoes">Formações Profissionais</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <center>
+
                                         <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Alterar</span></button>
                                     </center> </form>    
                             </div>

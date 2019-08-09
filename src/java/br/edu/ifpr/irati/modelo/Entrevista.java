@@ -42,6 +42,8 @@ public class Entrevista implements Serializable {
     private boolean desabilitar;
     @OneToOne(fetch = FetchType.EAGER)
     private Candidato candidato;
+    @Column(name = "situacaoProcesso", nullable = false, length = 15)
+    private boolean situacaoProcesso;
 
 
     public Entrevista() {
@@ -52,7 +54,7 @@ public class Entrevista implements Serializable {
         faseTecnica = false;
         candidato = new Candidato();
         desabilitar = false;
-        
+        situacaoProcesso = false;
     }
 
     public Entrevista(int idEntrevista, Funcionario funcionarioMinistrante, Cargo cargo, String fasePsicologica, boolean faseTecnica, Candidato candidato, boolean desabilitar) {
@@ -63,6 +65,17 @@ public class Entrevista implements Serializable {
         this.faseTecnica = faseTecnica;
         this.candidato = candidato;
         this.desabilitar = desabilitar;
+    }
+    
+    public Entrevista(int idEntrevista, Funcionario funcionarioMinistrante, Cargo cargo, String fasePsicologica, boolean faseTecnica, Candidato candidato, boolean desabilitar, boolean situacaoProcesso) {
+        this.idEntrevista = idEntrevista;
+        this.funcionarioMinistrante = funcionarioMinistrante;
+        this.cargo = cargo;
+        this.fasePsicologica = fasePsicologica;
+        this.faseTecnica = faseTecnica;
+        this.candidato = candidato;
+        this.desabilitar = desabilitar;
+        this.situacaoProcesso = situacaoProcesso;
     }
 
     public int getIdEntrevista() {
@@ -119,6 +132,14 @@ public class Entrevista implements Serializable {
 
     public void setDesabilitar(boolean desabilitar) {
         this.desabilitar = desabilitar;
+    }
+
+    public boolean isSituacaoProcesso() {
+        return situacaoProcesso;
+    }
+
+    public void setSituacaoProcesso(boolean situacaoProcesso) {
+        this.situacaoProcesso = situacaoProcesso;
     }
 
    

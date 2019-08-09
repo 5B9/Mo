@@ -97,9 +97,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <% }%>
+            </div>            <% }%>
+            
             <footer>
                 <jsp:include page="rodape.jsp" flush="true" />
             </footer>  
