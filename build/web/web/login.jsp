@@ -69,11 +69,11 @@
                                 <%}%>
                             </table>
                             <br>
-                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="z-depth-1 grey lighten-4 row" style="display:inline-block; padding: 30px 40px 0px 20px; border: 1px solid #EEE;margin-top: 8px;">
-                    <form class="col s12" action="scripts/login.jsp" method="post">
+                    <form class="col s12" name="formulario" action="scripts/login.jsp" method="post">
                         <div class='row'>
                             <div class='input-field col s12'>                                 
                                 <input class='autocomplete' type='text' name='usuario' id='usuario' />
@@ -96,7 +96,7 @@
                         <br>
                         <center>
                             <div class='row'>
-                                <button type='submit' name='btn_login' value="Login" class='col s12 btn btn-large waves-effect indigo'>Login</button>
+                                <button onclick="return validar()" type='submit' name='btn_login' value="Login" class='col s12 btn btn-large waves-effect indigo'>Login</button>
                             </div>
                         </center>
                     </form>
@@ -111,15 +111,23 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> 
     </body>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js">
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script>
+                                    document.addEventListener('DOMContentLoaded', function () {
+                                        var elems = document.querySelectorAll('.autocomplete');
+                                        var instances = M.Autocomplete.init(elems, options);
+                                    });
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.autocomplete');
-            var instances = M.Autocomplete.init(elems, options);
-        });
-
-    </script>
+        function validar() {
+                if (document.formulario.usuario.value == "") {
+                    alert("Por favor, insira o nome de usuário.");
+                    return false;
+                } else if (document.formulario.senha.value == "") {
+                    alert("Por favor, insira a senha.");
+                    return false;
+                } else {
+            }
+        }</script>
 
 </html>

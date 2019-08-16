@@ -16,7 +16,7 @@
 
             int id = Integer.parseInt(request.getParameter("id"));
             String data = request.getParameter("data");
-            String nomeUsuario = request.getParameter("nomeUs");
+            String nomeUsuario = request.getParameter("endereco");
             String senha = request.getParameter("senha");
             String tipoFuncionario = request.getParameter("tipoFuncionario");
             String tipoUsuario = request.getParameter("tipoUsuario");

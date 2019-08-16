@@ -25,7 +25,7 @@
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
                             <div class="row">
-                                <form class="col s12" action="scripts/usuarioCadastrar.jsp" method="post">
+                                <form class="col s12" name="formulario" action="scripts/usuarioCadastrar.jsp" method="post">
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <div class="input-field col s12">
@@ -100,22 +100,22 @@
                 }
             }
             function validar() {
-                if (document.formulario.tipo.value === "funcionario") {
-                    if (document.formulario.nomeUsuario.value === "") {
+                if (document.formulario.tipo.value == "funcionario") {
+                    if (document.formulario.nomeUsuario.value == "") {
                         alert("Por favor, insira o nome de usuário.");
                         return false;
-                    } else if (document.formulario.senha.value === "") {
+                    } else if (document.formulario.senha.value == "") {
                         alert("Por favor, insira a senha.");
                         return false;
-                    } else if (document.formulario.matricula.value === "") {
+                    } else if (document.formulario.matricula.value == "") {
                         alert("Por favor, insira o número de matrícula.");
                         return false;
                     }
                 } else {
-                    if (document.formulario.nomeUsuario.value === "") {
+                    if (document.formulario.nomeUsuario.value == "") {
                         alert("Por favor, insira o nome de usuário.");
                         return false;
-                    } else if (document.formulario.senha.value === "") {
+                    } else if (document.formulario.senha.value == "") {
                         alert("Por favor, insira a senha.");
                         return false;
                     }

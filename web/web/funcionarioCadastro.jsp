@@ -35,13 +35,13 @@
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
                             <div class="row">
-                                <form class="col s12" action="scripts/funcionarioCadastrar.jsp" method="post">
+                                <form class="col s12" name="formulario" action="scripts/funcionarioCadastrar.jsp" method="post">
                                     <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="funcionario"class="validate"/>
                                     <div class="center-row">
                                         <div class="input-field col s6">
                                             <div class="input-field col s7">
                                                 <i class="material-icons prefix">supervisor_account</i>
-                                                <select name="tipoFuncionario">
+                                                <select id="tipoFuncionario" name="tipoFuncionario">
                                                     <option value="" disabled selected>Escolha o Tipo</option>
                                                     <option value="gerente">Gerente</option>
                                                     <option value="funcionario">Funcionário</option>
@@ -94,7 +94,7 @@
                                     <div class="center-row">
                                         <div class="input-field col s3">
                                             <i class="material-icons prefix">today</i>
-                                            <input placeholder="..." id="first_name" type="text" name="data" class="validate">
+                                            <input placeholder="..." type="text" name="data" class="datepicker">
                                             <label for="data">Data de admissão</label>
                                         </div>
                                     </div>
@@ -108,7 +108,7 @@
                                     </div>
                                     <center>
                                         <!--    <input type="submit" name="salvar" value="Cadastrar" class="waves-effect waves-ligth  btn indigo"/> -->
-                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
+                                        <button onclick="return validar()" class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
                                     </center>
                                 </form>
                             </div>
@@ -123,17 +123,51 @@
         </footer>                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-            $(document).ready(function () {
-                $('select').formSelect();
-            });
+                                            $(document).ready(function () {
+                                                $('select').formSelect();
+                                                $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
+                                                $('.datepicker-date-display').css("background-color", "#003366");
+                                                var $campoCpf = $("#cpf");
+                                                var $campoRg = $("#rg");
+                                                $campoCpf.mask('000.000.000-00', {reverse: true});
+                                                $campoRg.mask('000.000.000-00', {reverse: true});
+                                            });
         </script>
         <script>
-            $(document).ready(function () {
-                var $campoCpf = $("#cpf");
-                var $campoRg = $("#rg");
-                $campoCpf.mask('000.000.000-00', {reverse: true});
-                $campoRg.mask('000.000.000-00', {reverse: true});
-            });
+            function validar() {
+                if (document.formulario.tipoFuncionario.value == "") {
+                    alert("Por favor, insira o tipo de funcionario.");
+                    return false;
+                }
+                if (document.formulario.matricula.value == "") {
+                    alert("Por favor, insira um nº de matrícula.");
+                    return false;
+                }
+                if (document.formulario.nome.value == "") {
+                    alert("Por favor, insira o nome do funcionário.");
+                    return false;
+                }
+                if (document.formulario.cpf.value == "") {
+                    alert("Por favor, insira o CPF do funcionario.");
+                    return false;
+                }
+                if (document.formulario.rg.value == "") {
+                    alert("Por favor, insira o RG do funcionario.");
+                    return false;
+                }
+                if (document.formulario.sexo.value == "") {
+                    alert("Por favor, insira o sexo do funcionario.");
+                    return false;
+                }
+                if (document.formulario.data.value == "") {
+                    alert("Por favor, insira a data de admissão funcionario.");
+                    return false;
+                }
+                if (document.formulario.endereco.value == "") {
+                    alert("Por favor, insira o endereço de e-mail do funcionáirio.");
+                    return false;
+                }
+            }
         </script>
     </body>
 </html>

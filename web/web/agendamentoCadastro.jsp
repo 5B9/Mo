@@ -70,7 +70,7 @@
                                             <div class="input-field col s12">
                                                 <i class="material-icons prefix">work</i>
                                                 <select name="cargo">
-                                                    
+
                                                     <option value="" disabled selected>Cargo</option>
                                                     <%ControleCargo cr = new ControleCargo();
 
@@ -110,19 +110,9 @@
         <script>
                                             $(document).ready(function () {
                                                 $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
+                                                $('.timepicker').timepicker({twelveHour: false;});
+                                                $('select').formSelect();
                                             });
-        </script>
-        <script>
-            $(document).ready(function () {
-                $('.timepicker').timepicker({
-                    twelveHour: false
-                });
-            });
-        </script>
-        <script>
-            $(document).ready(function () {
-                $('select').formSelect();
-            });
         </script>
         <script>
             function validar() {
@@ -140,7 +130,6 @@
                 }
             }
         </script>
-
         <script>
             function aparece()//Função referente a alteração nas vagas abertas para determinado cargo
             {
@@ -151,7 +140,7 @@
                 var label = document.getElementById("mabel");
                 //Variável referente a Label
 
-
+            }
 
         </script>
     </body>

@@ -1,4 +1,5 @@
 
+<%@page import="java.util.Date"%>
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="br.edu.ifpr.irati.modelo.Funcionario"%>
@@ -39,6 +40,8 @@
                     ControleFuncionario f = new ControleFuncionario();
                     Funcionario funcionario = f.consultarFuncionarioPorId(idFuncionario);
                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                    String dataAdmissao;
+                    dataAdmissao = sdf.format(funcionario.getDataAdmissao());
                 %>
                 <div class="container" style="width: 60%;">
                     <div class="col s12 m6">
@@ -46,6 +49,7 @@
                             <div class="card-content black-text ">
                                 <div class="row">
                                     <form class="col s12" action="scripts/funcionarioAlterar.jsp" method="post">
+                                        <input placeholder="..." id="first_name" type="hidden" name="id" value="<%=funcionario.getIdPessoa()%>" class="">
                                         <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="funcionario"class="validate"/>
                                         <div class="center-row">
                                             <div class="input-field col s6">
@@ -91,7 +95,7 @@
                                             <div class="input-field col s5">
                                                 <div class="input-field col s5">
                                                     <select name="sexo">
-                                                        <option value="<%=funcionario.getSexo()%>" disabled selected>Sexo</option>
+                                                        <option value="<%=funcionario.getSexo()%>" disabled selected></option>
                                                         <option value="M">Masculino</option>
                                                         <option value="F">Feminino</option>
                                                     </select>
@@ -99,10 +103,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <%%>
                                         <div class="center-row">
                                             <div class="input-field col s3">
                                                 <i class="material-icons prefix">today</i>
-                                                <input placeholder="..." id="first_name" type="text" name="data" value=""<%=funcionario.getDataAdmissao()%> class="validate">
+                                                <input placeholder="..." id="first_name" type="text" name="data" value="<%=dataAdmissao%>" class="datepicker">
                                                 <label for="data">Data de admissão</label>
                                             </div>
                                         </div>
@@ -114,8 +119,16 @@
                                                 <span class="helper-text" data-error="E-mail inválido" data-success="Ok!"></span>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i id="cliqueProVisivel" class="material-icons prefix">smoking_rooms</i>
+                                                <i id="cliqueProInvisivel" class="material-icons prefix">smoke_free</i>
+                                                <input placeholder="" id="first_name" type="password" value="<%=funcionario.getSenha()%>" name="senha" class="validate">
+                                                <label for="endereco">Senha</label>
+                                                <span class="helper-text" data-error="E-mail inválido" data-success="Ok!"></span>
+                                            </div>
+                                        </div>
                                         <center>
-                                            <!--    <input type="submit" name="salvar" value="Cadastrar" class="waves-effect waves-ligth  btn indigo"/> -->
                                             <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
                                         </center>
                                     </form>
@@ -135,15 +148,17 @@
         <script>
             $(document).ready(function () {
                 $('select').formSelect();
-            });
-        </script>
-        <script>
-            $(document).ready(function () {
+                $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
+                $('.datepicker-date-display').css("background-color", "#003366");
                 var $campoCpf = $("#cpf");
                 var $campoRg = $("#rg");
                 $campoCpf.mask('000.000.000-00', {reverse: true});
                 $campoRg.mask('000.000.000-00', {reverse: true});
             });
+            $(document).ready(function () {
+            $("#cliqueProVisivel").click(function(){
+            $(senha).();
+            })
         </script>
     </body>
 </html>

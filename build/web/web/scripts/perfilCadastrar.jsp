@@ -15,7 +15,7 @@
     </head>
     <body>
         <%
-            request.setCharacterEncoding("UTF-8");
+            
 
             int idCandidato = Integer.parseInt(request.getParameter("idCandidato"));
             String escolaridade = request.getParameter("escolaridade");
@@ -32,11 +32,18 @@
             String idade = request.getParameter("idade"); 
             
 
+<<<<<<< HEAD
            /* Candidato c = new Candidato(escolaridade, cargoDesejado, idade, "", perfil, nomeUsuario, senha, tipoUsuario, idCandidato , nomeCompleto, cpf, rg, sexo, enderecoEmail);
 =======
             Candidato c = new Candidato(escolaridade, cargoDesejado, idade, "", perfil, nomeUsuario, senha, tipoUsuario, idCandidato , nomeCompleto, cpf, rg, sexo, enderecoEmail);
             */
            response.sendRedirect("../index.jsp");
+=======
+            Candidato c = new Candidato(escolaridade, cargoDesejado, idade, "", true,true, nomeUsuario, senha, tipoUsuario, idCandidato , nomeCompleto, cpf, rg, sexo, enderecoEmail);
+            ControleCandidato controleCandidato = new ControleCandidato();
+            controleCandidato.alterarCandidato(c);
+            response.sendRedirect("../index.jsp");
+>>>>>>> origin/master
 
         %>
     </body>
