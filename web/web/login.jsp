@@ -48,28 +48,30 @@
             <p><%=mensagem%></p>
             <!--   <img class="responsive-img" style="width: 60px; height: 60px; margin-top: -47px;" src="imagens/acome.jpg"/> --> 
             <div class="row">
-                <div class="col s12 m6">
-                    <div class="card grey lighten-5">
-                        <div class="card-content black-text ">
-                            <table class="highlight">
-                                <tr>
-                                    <th>Cargo</th>
-                                    <th>Vagas</th>
-                                    <th>Descrição</th>
-                                    <th>?</th>
-                                </tr>
-                                <%ControleCargo controleCargo = new ControleCargo();
-                                    for (Cargo c : controleCargo.consultarTodosCargos()) {%>
-                                <tr>
-                                    <td><%=c.getNomeCargo()%></td>
-                                    <td><%=c.getQtdVagas()%></td>
-                                    <td><%=c.getDescricao()%></td>
-                                    <td>?</td>
-                                </tr>
-                                <%}%>
-                            </table>
-                            <br>
-                        </div>
+                <div class="col s6 m4">
+                    <div class="card-content black-text ">
+                        <ul class="collapsible">
+                            <% ControleCargo controleCargo = new ControleCargo();
+                                for (Cargo c : controleCargo.consultarTodosCargos()) {
+                                    if (c.getQtdVagas() > 0) {%>
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">account_box</i><%=c.getNomeCargo()%></div>
+                                <div class="collapsible-body">
+                                    <table class="striped">
+                                        <tr>
+                                            <th>Vagas</th>
+                                            <th>Descrição</th>
+                                        </tr>
+                                        <tr>
+                                            <td><%=c.getQtdVagas()%></td>
+                                            <td><%=c.getDescricao()%></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </li>
+                            <%}%>
+                            <%}%>
+                        </ul>
                     </div>
                 </div>
                 <div class="z-depth-1 grey lighten-4 row" style="display:inline-block; padding: 30px 40px 0px 20px; border: 1px solid #EEE;margin-top: 8px;">
@@ -116,17 +118,18 @@
                                     document.addEventListener('DOMContentLoaded', function () {
                                         var elems = document.querySelectorAll('.autocomplete');
                                         var instances = M.Autocomplete.init(elems, options);
+                                        $('.collapsible').collapsible();
                                     });
     </script>
     <script>
         function validar() {
-                if (document.formulario.usuario.value == "") {
-                    alert("Por favor, insira o nome de usuário.");
-                    return false;
-                } else if (document.formulario.senha.value == "") {
-                    alert("Por favor, insira a senha.");
-                    return false;
-                } else {
+            if (document.formulario.usuario.value == "") {
+                alert("Por favor, insira o nome de usuário.");
+                return false;
+            } else if (document.formulario.senha.value == "") {
+                alert("Por favor, insira a senha.");
+                return false;
+            } else {
             }
         }</script>
 

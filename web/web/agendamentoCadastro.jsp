@@ -19,8 +19,6 @@
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
         <main>
-            <style>
-            </style>
             <%
                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                 session = request.getSession();
@@ -35,7 +33,6 @@
             %> <p> Acesso Negado </p>
             <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
-            <br><br>
             <div class="container" style="width: 30%;">
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
@@ -49,7 +46,6 @@
                                             <label for="local">Local</label>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <i class="material-icons prefix">event</i>
@@ -64,16 +60,13 @@
                                             <label for="Horario de Início">Horario de Início</label>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <div class="input-field col s12">
                                                 <i class="material-icons prefix">work</i>
                                                 <select name="cargo">
-
                                                     <option value="" disabled selected>Cargo</option>
                                                     <%ControleCargo cr = new ControleCargo();
-
                                                         for (Cargo c : cr.consultarTodosCargos()) {%>
                                                     <option value="<%=c.getNomeCargo()%>"><%=c.getNomeCargo()%></option>
                                                     <%}%>
@@ -82,14 +75,12 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <input placeholder="..." id="vagas" type="hidden" name="vagas" class="validate">
                                             <label id="mabel" style="display:none;" for="vagas">Vagas abertas</label>
                                         </div>
                                     </div>
-
                                     <center>
                                         <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
                                     </center>
@@ -100,7 +91,6 @@
                 </div>
             </div>
             <% }%>
-
         </main>
         <br>
         <footer>
@@ -108,11 +98,21 @@
         </footer>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-                                            $(document).ready(function () {
-                                                $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
-                                                $('.timepicker').timepicker({twelveHour: false;});
-                                                $('select').formSelect();
-                                            });
+                $(document).ready(function () {
+                    $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
+                });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('.timepicker').timepicker({
+                    twelveHour: false
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('select').formSelect();
+            });
         </script>
         <script>
             function validar() {
@@ -129,19 +129,6 @@
                     return true;
                 }
             }
-        </script>
-        <script>
-            function aparece()//Função referente a alteração nas vagas abertas para determinado cargo
-            {
-                var comboBox = document.getElementById("cargo").value;
-                //Variável contendo o valor da option
-                var mathmagic = document.getElementById("vagas");
-                //Variável contendo o input da quantidade de cargos
-                var label = document.getElementById("mabel");
-                //Variável referente a Label
-
-            }
-
         </script>
     </body>
 </html>

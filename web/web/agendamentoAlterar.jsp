@@ -45,21 +45,24 @@
                 <form class="col s12" action="scripts/agendamentoAlterar.jsp" method="post" name="formulario">
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
-                            <input placeholder="" id="first_name" type="hidden" name="idAgendamento" value="<%= idAgendamento%>" class="validate"/>
+                            <input placeholder="" id="first_name" type="hidden" name="idAgendamento" value="<%=idAgendamento%>" class="validate"/>
                             <div class="row">
                                 <div class="input-field col s12">
+                                    <i class="material-icons prefix">place</i>
                                     <input placeholder="" id="first_name" type="text" name="local" value="<%=agendamento.getLocalSessao()%>"class="validate">
                                     <label for="local">Local</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
+                                    <i class="material-icons prefix">event</i>
                                     <input placeholder="12/12/2012" id="first_name" type="text" name="dia" value="<%=sdf.format(agendamento.getDataSessao().getTime())%>"class="datepicker">
                                     <label for="Dia do Evento">Data da Sessão</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
+                                    <i class="material-icons prefix">access_time</i>
                                     <input placeholder="12:12:00" id="first_name" type="text" name="hora" value="<%=sdfHora.format(agendamento.getHoraInicio().getTime())%>"class="timepicker">
                                     <label for="Horario de Início">Horario de Início</label>
                                 </div>
@@ -67,10 +70,11 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <div class="input-field col s12">
+                                        <i class="material-icons prefix">work</i>
                                         <select name="cargo">
                                             <option value="" disabled selected>Cargo</option>
                                             <%ControleCargo cr = new ControleCargo();
-                                                        for (Cargo c : cr.consultarTodosCargos()) {%>
+                                                for (Cargo c : cr.consultarTodosCargos()) {%>
                                             <option value="<%=c.getNomeCargo()%>"><%=c.getNomeCargo()%></option>
                                             <%}%>
                                         </select>
@@ -94,14 +98,15 @@
         <script>
                                     $(document).ready(function () {
                                         $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
-                                    });
+                                        $('.datepicker-date-display').css("background-color", "#003366");
+                                    })
         </script>
         <script>
             $(document).ready(function () {
                 $('.timepicker').timepicker({
                     twelveHour: false
-
-                });
+                })
+                $('.timepicker-digital-display').css("background-color","#003366");
             });
         </script>
         <script>

@@ -31,7 +31,6 @@
                 Funcionario f = new Funcionario(0, "gerente", new Date(), nomeUsuario, senha, tipoUsuario, u.getIdPessoa(), "", "", "", "", "");
                 controleFuncionario.inserirFuncionario(f);
                 ControleUsuario controleUsuario = new ControleUsuario();
-                controleUsuario.inserirUsuario(u);
                 response.sendRedirect("../login.jsp");
             } else if (tipoUsuario.equals("candidato")) {
                 Usuario u = new Usuario(nomeUsuario, senha, tipoUsuario);

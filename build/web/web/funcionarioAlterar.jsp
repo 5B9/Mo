@@ -1,10 +1,8 @@
-
 <%@page import="java.util.Date"%>
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="br.edu.ifpr.irati.modelo.Funcionario"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleFuncionario"%>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,7 +25,6 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
-
         <main>
             <center>
                 <%
@@ -121,13 +118,12 @@
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <i id="cliqueProVisivel" class="material-icons prefix">smoking_rooms</i>
-                                                <i id="cliqueProInvisivel" class="material-icons prefix">smoke_free</i>
+                                                
                                                 <input placeholder="" id="first_name" type="password" value="<%=funcionario.getSenha()%>" name="senha" class="validate">
                                                 <label for="endereco">Senha</label>
-                                                <span class="helper-text" data-error="E-mail inválido" data-success="Ok!"></span>
                                             </div>
                                         </div>
+
                                         <center>
                                             <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
                                         </center>
@@ -140,25 +136,41 @@
                 <%}%>
             </center>
         </main>
-
         <footer>
             <jsp:include page="rodape.jsp" flush="true" />
         </footer>                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
             $(document).ready(function () {
-                $('select').formSelect();
                 $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
                 $('.datepicker-date-display').css("background-color", "#003366");
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+            $('.timepicker').timepicker({
+            twelveHour: false;
+            })
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('select').formSelect();
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
                 var $campoCpf = $("#cpf");
                 var $campoRg = $("#rg");
                 $campoCpf.mask('000.000.000-00', {reverse: true});
                 $campoRg.mask('000.000.000-00', {reverse: true});
-            });
-            $(document).ready(function () {
-            $("#cliqueProVisivel").click(function(){
-            $(senha).();
             })
+        </script>
+        <script>
+            $(document).ready(function () {
+
+            })
+            )}
         </script>
     </body>
 </html>

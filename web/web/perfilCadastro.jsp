@@ -1,9 +1,7 @@
-
 <%@page import="br.edu.ifpr.irati.controle.ControleUsuario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Cargo"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCargo"%>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,17 +24,12 @@
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
         <main>
-
-
-
-            <br><br>
             <div class="container" style=" width:60%; ">
                 <div class="col s12 m6">
                     <div class="card blue-grey lighten-5">
                         <div class="card-content black-text ">
                             <div class="row">
                                 <form class="col s12" action="scripts/perfilCadastrar.jsp" method="post" name="formulario" >
-
                                     <input placeholder="" id="tipoUsuario" type="hidden" name="tipoUsuario" value="candidato" class="validate">
                                     <input placeholder="" id="idCandidato" type="hidden" name="idCandidato" value="<%=u.getIdPessoa()%>" class="validate">
                                     <input placeholder="" id="nomeUsuario" type="hidden" name="nomeUsuario" value="<%=u.getNomeUsuario()%>" class="validate">
@@ -48,7 +41,6 @@
                                             <label for="nomeCompleto">Nome Completo*</label>
                                         </div>
                                     </div>
-
                                     <div class="center-row">
                                         <div class="input-field col s3">
                                             <div class="input-field col s12">
@@ -62,10 +54,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-
-
                                     <div class="center-row">
                                         <div class="input-field col s3">
                                             <i class="material-icons prefix">perm_contact_calendar</i>
@@ -73,15 +61,13 @@
                                             <label for="idade">Idade*</label>
                                         </div>
                                     </div>
-
                                     <div class="center-row">
                                         <div class="input-field col s4">
                                             <i class="material-icons prefix"> description</i>
-                                            <input placeholder="" id="cpf" type="text" name="cpf" class="validate"   maxlength="11">
+                                            <input placeholder="" id="cpf" type="text" name="cpf" class="validate" maxlength="11">
                                             <label for="cpf">CPF*</label>
                                         </div>
                                     </div>
-
                                     <div class="center-row">
                                         <div class="input-field col s4">
                                             <i class="material-icons prefix"> featured_play_list</i>
@@ -89,7 +75,6 @@
                                             <label for="rg">RG*</label>
                                         </div>
                                     </div>
-
                                     <div class="row">                        
                                         <div class="input-field col s11">
                                             <i class="material-icons prefix">alternate_email</i>
@@ -98,9 +83,6 @@
                                             <span class="helper-text" data-error="E-mail inválido" data-success="Ok!">Obrigatório caso deseje receber nossa resposta.</span>
                                         </div>
                                     </div>
-                                    <br>
-                                    <hr>
-                                    <br>
                                     <div class="center-row" >
                                         <div class="input-field col s6">
                                             <div class="input-field col s9">
@@ -118,7 +100,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="input-field col s6">
                                             <div class="input-field col s10">
@@ -126,7 +107,6 @@
                                                 <select name="cargoDesejado">
                                                     <option value="" disabled selected>Cargo Desejado</option>
                                                     <%ControleCargo cr = new ControleCargo();
-
                                                         for (Cargo c : cr.consultarTodosCargos()) {%>
                                                     <option value="<%=c.getNomeCargo()%>"><%=c.getNomeCargo()%></option>
                                                     <%}%>
@@ -135,8 +115,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-
                                     <center>
                                         <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick=" return validar()"><span>Cadastrar</span></button>
                                     </center>
@@ -146,10 +124,7 @@
                     </div>
                 </div>
             </div>
-
-
         </main>
-
         <footer>
             <jsp:include page="rodape.jsp" flush="true" />
         </footer>    
@@ -192,6 +167,14 @@
                     return true;
                 }
             }
+        </script>
+         <script>
+            $(document).ready(function () {
+                var $campoCpf = $("#cpf");
+                var $campoRg = $("#rg");
+                $campoCpf.mask('000.000.000-00', {reverse: true});
+                $campoRg.mask('000.000.000-00', {reverse: true});
+            });
         </script>
     </body>
 </html>
