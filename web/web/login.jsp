@@ -51,7 +51,8 @@
                 <div class="col s6 m4">
                     <div class="card-content black-text ">
                         <ul class="collapsible">
-                            <% ControleCargo controleCargo = new ControleCargo();
+                            <%
+                                ControleCargo controleCargo = new ControleCargo();
                                 for (Cargo c : controleCargo.consultarTodosCargos()) {
                                     if (c.getQtdVagas() > 0) {%>
                             <li>
@@ -69,11 +70,25 @@
                                     </table>
                                 </div>
                             </li>
-                            <%}%>
-                            <%}%>
+                            <li> </li>
+                                <%}%>
+                                <%}%>
                         </ul>
                     </div>
                 </div>
+
+                <button data-target="modal1" class="btn modal-trigger">Modal</button>
+
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <h4>Modal Header</h4>
+                        <p>A bunch of text</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                    </div>
+                </div>
+                
                 <div class="z-depth-1 grey lighten-4 row" style="display:inline-block; padding: 30px 40px 0px 20px; border: 1px solid #EEE;margin-top: 8px;">
                     <form class="col s12" name="formulario" action="scripts/login.jsp" method="post">
                         <div class='row'>
@@ -115,11 +130,14 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
     <script>
-                                    document.addEventListener('DOMContentLoaded', function () {
-                                        var elems = document.querySelectorAll('.autocomplete');
-                                        var instances = M.Autocomplete.init(elems, options);
+                                    $(document).ready(function () {
                                         $('.collapsible').collapsible();
                                     });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
     </script>
     <script>
         function validar() {

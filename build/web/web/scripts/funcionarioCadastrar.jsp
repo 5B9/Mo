@@ -1,4 +1,5 @@
 
+<%@page import="br.edu.ifpr.irati.dao.FuncionarioDAO"%>
 <%@page import="java.util.Date"%>
 <
 <%@page import="br.edu.ifpr.irati.modelo.Funcionario"%>
@@ -15,8 +16,8 @@
     <body>
         <%
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            
-            
+            FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+
             String tipoFuncionario = request.getParameter("tipoFuncionario");
             String tipoUsuario = request.getParameter("tipoUsuario");
             String data = request.getParameter("data");
@@ -29,14 +30,16 @@
             String endereco = request.getParameter("endereco");
             int matricula = Integer.parseInt(request.getParameter("matricula"));
 
-             Date dataAdm = sdf.parse(data);
-            
-            Funcionario f = new Funcionario(matricula,tipoFuncionario, dataAdm, tipoUsuario, 0, nomeCompleto, cpf, rg, sexo, endereco);
+            Date dataAdm = sdf.parse(data);
 
-            ControleFuncionario controleFuncionario = new ControleFuncionario();
-            controleFuncionario.inserirFuncionario(f);
-            response.sendRedirect("../funcionarioLista.jsp");
-
+            if (funcionarioDAO.validarCadastros(nomeUsuario, senha)){
+                Funcionario f = new Funcionario(matricula, tipoFuncionario, dataAdm, tipoUsuario, 0, nomeCompleto, cpf, rg, sexo, endereco);
+                ControleFuncionario controleFuncionario = new ControleFuncionario();
+                controleFuncionario.inserirFuncionario(f);
+                response.sendRedirect("../funcionarioLista.jsp");
+            }else{
+                response.sendRedirect("../funcionarioLista.jsp");
+                }
         %>
     </body>
 </html>

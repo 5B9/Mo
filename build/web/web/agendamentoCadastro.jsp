@@ -100,6 +100,7 @@
         <script>
                 $(document).ready(function () {
                     $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
+                    $('.datepicker-date-display').css("background-color", "#003366");
                 });
         </script>
         <script>
@@ -107,6 +108,7 @@
                 $('.timepicker').timepicker({
                     twelveHour: false
                 });
+                 $('.timepicker-digital-display').css("background-color","#003366");
             });
         </script>
         <script>

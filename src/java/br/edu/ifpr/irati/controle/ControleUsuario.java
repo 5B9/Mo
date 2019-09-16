@@ -33,7 +33,7 @@ public class ControleUsuario {
         return usuarioDAO.buscarPorId(idUsuario);
     }
     
-    public List<Usuario> consultarTodosUsuarios(Usuario usuario) throws PersistenciaException{
+    public List<Usuario> consultarTodosUsuarios() throws PersistenciaException{
         Dao<Usuario> usuarioDAO = new GenericDAO<>(Usuario.class);
         return usuarioDAO.buscarTodos(Usuario.class);
     }
