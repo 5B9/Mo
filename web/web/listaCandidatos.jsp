@@ -49,13 +49,15 @@
                                     <thead>
                                         <tr>
                                             <th>Nome Completo</th>
-                                            <th>Cargo Desejado</th>
+                                   
                                             <th>Email</th>
                                             <th>Escolaridade</th>
                                             <th>Idade</th>
                                             <th>Sexo</th>
-                                            <th>Formações Profissionais</th>
-                                            <th>CPF</th>
+                                            <th>Formações Acadêmicas</th>
+                                            <th>Formações Complementares</th>
+                                            <th>Atuação profissional</th>
+                                            
                                             <th>Alterar</th>
                                             <th>Desabilitar</th>
                                         </tr>
@@ -73,11 +75,40 @@
                                         <%} else {%>
                                         <tr>
                                             <td><%=c.getNomeCompleto()%></td>
-                                            <td><%=c.getCargoDesejado()%></td>
+                                          
                                             <td><%=c.getEnderecoEmail()%></td>
                                             <td><%=c.getEscolaridade()%></td>
                                             <td><%=c.getIdade()%> </td>
                                             <td><%=c.getSexo()%></td>
+                                            <%
+                                                if (c.getFormacoesAcademicas()== null) {
+                                            %>
+                                            <td>Não possui formações Acadêmicas</td>
+                                            <%  }else if(c.getFormacoesAcademicas().equals("")) { %>
+                                                  <td>Não possui formações acadêmicas</td>
+                                                <%
+                                                } else {%> 
+                                            <td><%=c.getFormacoesAcademicas()%></td>
+                                           
+                                            <%}
+                                            %>  
+                                            
+                                      <%
+                                                if (c.getFormacoesComplementares()== null) {
+                                            %>
+                                            <td>Não possui formações complementares</td>
+                                            <%  }else if(c.getFormacoesComplementares().equals("")) { %>
+                                                  <td>Não possui formações complementares</td>
+                                                <%
+                                                } else {%> 
+                                            <td><%=c.getFormacoesComplementares()%></td>
+                                            <%}
+                                            %> 
+                                            
+                                            
+                                             
+                                             
+                                             
                                             <%
                                                 if (c.getFormacoesProfissionais() == null) {
                                             %>
@@ -89,7 +120,8 @@
                                             <td><%=c.getFormacoesProfissionais()%></td>
                                             <%}
                                             %> 
-                                            <td><%=c.getCpf()%></td>
+                                            
+                                            
                                             <td>
                                                 <a href="candidatoAlterar.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
                                             </td>

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Action_file
-    Created on : 16/09/2019, 09:04:08
+    Document   : Uploading_1
+    Created on : 17/09/2019, 20:44:31
     Author     : Altai
 --%>
 
@@ -10,16 +10,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Guru File</title>
+<title>Guru Uploading File</title>
 </head>
 <body>
-<a>Guru File Upload:</a>
-Select file: <br />
-<form action="Action_file_upload.jsp" method="post"
+File: <br />
+<form action="guru_upload" method="post"
                         enctype="multipart/form-data">
-<input type="file" name="file" size="50" />
+<input type="file" name="guru_file" size="50" />
 <br />
-<input type="submit" value="Upload File" />
+<input type="submit" value="Upload" />
 </form>
 </body>
 </html>

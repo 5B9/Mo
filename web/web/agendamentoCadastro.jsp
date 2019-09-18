@@ -135,9 +135,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
                                             $(document).ready(function () {
-                                               
                                                 $('.datepicker').datepicker({minDate: new Date()});
                                                  $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
+                                                 
                                                 $('.datepicker-date-display').css('background-color', '#003366');
                                                 $('.timepicker').timepicker({twelveHour: false});
                                                 $('.timepicker-digital-display').css('background-color', '#003366');

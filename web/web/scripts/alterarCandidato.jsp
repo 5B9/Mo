@@ -17,17 +17,19 @@
             String nomeUsuario = "";
             String senha = "";
             String tipoUsuario = request.getParameter("tipoUsuario");
-            String nomeCompleto = request.getParameter("nome");
+            String nomeCompleto = request.getParameter("nomeCompleto");
             String cpf = request.getParameter("cpf");
             String rg = request.getParameter("rg");
             String sexo = request.getParameter("sexo");
             String enderecoEmail = request.getParameter("endereco");
             String idade = request.getParameter("idade");
-            String formacoesProfissionais = "";
+            String formacoesAcademicas = request.getParameter("formacoesAcademicas");
+            String formacoesComplementares = request.getParameter("formacoesComplementares");
+            String formacoesProfissionais = request.getParameter("formacoesProfisionais");
             
             ControleCandidato controleCandidato = new ControleCandidato();
             Candidato candidato = controleCandidato.consultarCandidatoPorId(id);
-            Candidato c = new Candidato(escolaridade, cargoDesejado, idade, formacoesProfissionais,true,false, candidato.getNomeUsuario(),candidato.getSenha(),  tipoUsuario, id, nomeCompleto, cpf, rg, sexo, enderecoEmail);
+            Candidato c = new Candidato(escolaridade, cargoDesejado, idade, formacoesProfissionais, formacoesAcademicas, formacoesComplementares, tipoUsuario, id, nomeCompleto, cpf, rg, sexo, enderecoEmail);
 
             
             controleCandidato.alterarCandidato(c);

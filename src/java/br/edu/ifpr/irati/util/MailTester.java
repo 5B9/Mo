@@ -35,8 +35,8 @@ public class MailTester {
 
         //sete quantos destinatarios desejar
         Map<String, String> map = new HashMap<String, String>();
-        map.put("altairsantaclara@gmail.com.br", "email gmail");
-        map.put("gui.horst.simpson@gmail.com", "email gmail");
+        map.put("altairsantaclara@gmail.com", "email gmail");
+        map.put("gabichicalski@gmail.com", "email gmail");
         
 
         mj.setToMailsUsers(map);
@@ -64,24 +64,17 @@ public class MailTester {
     private static String htmlMessage() {
         return  "<html> " +
                 "<head>" +
-                "<title>Email no formato HTML com Javamail!</title> " +
+                "<title>Teste de Envio de Email - ACOME</title> " +
                 "</head> " +
                 "<body> " +
                 "<div style='background-color:orange; width:28%; height:100px;'>" +
                 "<ul>  " +
-                "<li>Leia o novo tutorial JavaMail do Programando com Java.</li> " +
-                "<li>Aprenda como enviar emails com anexos.</li>" +
-                " <li>Aprenda como enviar emails em formato texto simples ou html.</li> " +
-                "<li>Aprenda como enviar seu email para mais de um destinatario.</li>" +
+                "<li>TESTE</li> " +
+                "<li></li>" +
+                " <li></li> " +
+                "<li></li>" +
                 "</ul> " +
-                "<p>Visite o blog " +
-                "<a href='http://mballem.wordpress.com/' target='new'>Programando com Java</a>" +
-                "</p>" +
-                "</div>" +
-                "<div style='background-color:FFFFF; width:28%; height:50px;' align='center'>" +
-                "Download do JavaMail<br/>" +
-                "<a href='http://www.oracle.com/technetwork/java/javaee/index-138643.html'>" +
-                "<img src='http://www.oracleimg.com/admin/images/ocom/hp/oralogo_small.gif'/>" +
+               
                 "</a> " +
                 "</div>" +
                 "</body> " +

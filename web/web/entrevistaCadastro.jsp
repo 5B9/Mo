@@ -45,7 +45,20 @@
                             <div class="row">
 
                                 <form name="formulario" class="col s12" action="scripts/entrevistaCadastro.jsp" method="post">
-
+                                         
+                                     <div class="row">
+                                        <div class="input-field col s12">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">payment</i>
+                                                <select name="tipoEntrevista">
+                                                    <option value="" disabled selected>Tipo</option>
+                                                    <option value="Técnica">Técnica</option>
+                                                    <option value="Psicológica">Psicológica</option>
+                                                </select>
+                                                <label>Tipo de Entrevista</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                     
                                     <div class="center-row">
                                         <div class="input-field col s12">

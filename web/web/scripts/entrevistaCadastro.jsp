@@ -48,9 +48,9 @@
             ControleAgendamento controleAgendamento = new ControleAgendamento();
             AgendamentoEntrevista a = controleAgendamento.consultarAgendamentoPorId(idSessao);
             
-           
+            String tipoEntrevista  = request.getParameter("tipoEntrevista");
 
-            Entrevista e = new Entrevista(0, funcionario, cargo, fasePsicologica, faseTecnica, candidato, false);
+            Entrevista e = new Entrevista(0,tipoEntrevista, funcionario, cargo, fasePsicologica, faseTecnica, candidato, false);
             ControleEntrevista controleEntrevista = new ControleEntrevista();
 
             controleEntrevista.inserirEntrevista(e);
