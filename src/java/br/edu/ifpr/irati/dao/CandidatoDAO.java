@@ -18,23 +18,22 @@ import org.hibernate.Session;
  */
 public class CandidatoDAO {
 
-
     public boolean validarCadastroCandidatos(String nome, String senha) throws PersistenciaException {
         int flare = 0;
         ControleCandidato controleCandidato = new ControleCandidato();
-        Candidato cn =new Candidato();
+        Candidato cn = new Candidato();
         for (Candidato candidato : controleCandidato.consultarTodosCandidatos(cn)) {
             if (candidato.getNomeUsuario().equals(nome) && candidato.getSenha().equals(senha)) {
                 flare++;
             }
-            if (flare > 0) {
-                return true;
-            } else {
-                return false;
-            }
         }
-        return true;
+        if (flare > 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
+
     public Candidato buscarPorCargoDesejado(String str) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         String hql = "from candidato c where c.cargoDesejado = '" + str + "' ";
@@ -45,7 +44,5 @@ public class CandidatoDAO {
         session.close();
         return candidato;
     }
-
-  
 
 }

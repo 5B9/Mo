@@ -48,7 +48,7 @@ public class ControleCandidato {
         Dao<Candidato> candidatoDAO = new GenericDAO<>(Candidato.class);
         candidatoDAO.excluir(candidato);
     }
-    public boolean validarCadastroCandidatos(String nome, String senha) {
+    public boolean validarCadastroCandidatos(String nome, String senha) throws PersistenciaException {
         CandidatoDAO candidatoDAO = new CandidatoDAO();
         return candidatoDAO.validarCadastroCandidatos(nome, senha);
     }

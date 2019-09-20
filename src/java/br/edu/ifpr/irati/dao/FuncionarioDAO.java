@@ -23,24 +23,19 @@ import org.hibernate.Session;
  */
 public class FuncionarioDAO {
 
-    public boolean validarCadastroFuncionarios(String nome, String senha) {
+    public boolean validarCadastroFuncionarios(String nome, String senha) throws PersistenciaException{
         int flare = 0;
         ControleFuncionario controleFuncionario = new ControleFuncionario();
-        try {
             for (Funcionario funcionario : controleFuncionario.consultarTodosFuncionarios()) {
                 if (funcionario.getNomeUsuario().equals(nome) && funcionario.getSenha().equals(senha)) {
                     flare++;
                 }
-                if (flare > 0) {
-                    return true;
-                } else {
-                    return false;
                 }
+            if (flare > 0) {
+                    return false;
+                } else {
+                    return true;
             }
-        } catch (PersistenciaException ex) {
-            Logger.getLogger(FuncionarioDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return true;
     }
 
     public Funcionario buscarPorTipoFuncionario(String str) {

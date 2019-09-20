@@ -76,19 +76,6 @@
                         </ul>
                     </div>
                 </div>
-
-                <button data-target="modal1" class="btn modal-trigger">Modal</button>
-
-                <div id="modal1" class="modal">
-                    <div class="modal-content">
-                        <h4>Modal Header</h4>
-                        <p>A bunch of text</p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                    </div>
-                </div>
-                
                 <div class="z-depth-1 grey lighten-4 row" style="display:inline-block; padding: 30px 40px 0px 20px; border: 1px solid #EEE;margin-top: 8px;">
                     <form class="col s12" name="formulario" action="scripts/login.jsp" method="post">
                         <div class='row'>
@@ -133,11 +120,6 @@
                                     $(document).ready(function () {
                                         $('.collapsible').collapsible();
                                     });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('.modal').modal();
-        });
     </script>
     <script>
         function validar() {

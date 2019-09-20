@@ -37,11 +37,10 @@
                     response.sendRedirect("../login.jsp?e=Nome de Usuario e senha inválidos");
                 }
             } else if (tipoUsuario.equals("candidato")) {
-                if (controleFuncionario.validarCadastroFuncionarios(nomeUsuario, senha)) {
+                if (controleCandidato.validarCadastroCandidatos(nomeUsuario, senha)) {
                     Usuario u = new Usuario(nomeUsuario, senha, tipoUsuario);
                     Candidato c = new Candidato("", "", "", "", false, false, nomeUsuario, senha, tipoUsuario, 0, "", "", "", "", "");
                     ControleUsuario controleUsuario = new ControleUsuario();
-                    controleUsuario.inserirUsuario(u);
                     controleCandidato.inserirCandidato(c);
                     response.sendRedirect("../login.jsp");
                 } else {
