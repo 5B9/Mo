@@ -25,7 +25,7 @@
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
                             <div class="row">
-                                <form class="col s12">
+                                <form class="col s12" method="POST" >
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <i class="material-icons prefix">alternate_email</i>

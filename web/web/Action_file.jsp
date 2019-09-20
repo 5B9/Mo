@@ -1,7 +1,7 @@
 <%-- 
     Document   : Action_file
     Created on : 16/09/2019, 09:04:08
-    Author     : Altai
+    Author     : Altair
 --%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
