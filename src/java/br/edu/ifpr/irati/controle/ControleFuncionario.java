@@ -53,7 +53,7 @@ public class ControleFuncionario {
         usuarioDAO.excluir(funcionario);
     }
 
-    public boolean validarCadastroFuncionarios(String nome, String senha) {
+    public boolean validarCadastroFuncionarios(String nome, String senha) throws PersistenciaException {
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         return funcionarioDAO.validarCadastroFuncionarios(nome, senha);
     }
