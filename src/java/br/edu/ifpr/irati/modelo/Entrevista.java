@@ -44,7 +44,8 @@ public class Entrevista implements Serializable {
     private Candidato candidato;
     @Column(name = "situacaoProcesso", nullable = false, length = 15)
     private boolean situacaoProcesso;
-
+    @Column(name = "tipoEntrevista", nullable = false, length = 30)
+    private String tipoEntrevista;
 
     public Entrevista() {
         idEntrevista = 0;
@@ -55,9 +56,10 @@ public class Entrevista implements Serializable {
         candidato = new Candidato();
         desabilitar = false;
         situacaoProcesso = false;
+        tipoEntrevista = "";
     }
 
-    public Entrevista(int idEntrevista, Funcionario funcionarioMinistrante, Cargo cargo, String fasePsicologica, boolean faseTecnica, Candidato candidato, boolean desabilitar) {
+    public Entrevista(int idEntrevista,String tipoEntrevista ,Funcionario funcionarioMinistrante, Cargo cargo, String fasePsicologica, boolean faseTecnica, Candidato candidato, boolean desabilitar) {
         this.idEntrevista = idEntrevista;
         this.funcionarioMinistrante = funcionarioMinistrante;
         this.cargo = cargo;
@@ -65,9 +67,10 @@ public class Entrevista implements Serializable {
         this.faseTecnica = faseTecnica;
         this.candidato = candidato;
         this.desabilitar = desabilitar;
+        this.tipoEntrevista = tipoEntrevista;
     }
-    
-    public Entrevista(int idEntrevista, Funcionario funcionarioMinistrante, Cargo cargo, String fasePsicologica, boolean faseTecnica, Candidato candidato, boolean desabilitar, boolean situacaoProcesso) {
+
+    public Entrevista(int idEntrevista,String tipoEntrevista, Funcionario funcionarioMinistrante, Cargo cargo, String fasePsicologica, boolean faseTecnica, Candidato candidato, boolean desabilitar, boolean situacaoProcesso) {
         this.idEntrevista = idEntrevista;
         this.funcionarioMinistrante = funcionarioMinistrante;
         this.cargo = cargo;
@@ -76,6 +79,7 @@ public class Entrevista implements Serializable {
         this.candidato = candidato;
         this.desabilitar = desabilitar;
         this.situacaoProcesso = situacaoProcesso;
+        this.tipoEntrevista = tipoEntrevista;
     }
 
     public int getIdEntrevista() {
@@ -142,5 +146,14 @@ public class Entrevista implements Serializable {
         this.situacaoProcesso = situacaoProcesso;
     }
 
-   
+    public String getTipoEntrevista() {
+        return tipoEntrevista;
+    }
+
+    public void setTipoEntrevista(String tipoEntrevista) {
+        this.tipoEntrevista = tipoEntrevista;
+    }
+
+  
+
 }

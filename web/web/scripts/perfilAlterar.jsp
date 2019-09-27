@@ -31,9 +31,14 @@
             String enderecoEmail = request.getParameter("endereco");
             ControleCandidato controleCandidato = new ControleCandidato();
             boolean perfil = true;
-            /*Candidato c = new Candidato(escolaridade, cargoDesejado, idade, formacoesProfissionais, nomeUsuario, senha, tipoUsuario);
+            
+            Curriculo curriculo = controleCandidato.consultarCandidatoPorId(id).getCurriculo();
+
+            Candidato c = new Candidato(escolaridade, cargoDesejado, curriculo, nomeUsuario, senha, tipoUsuario, id, nomeCompleto, cpf, rg, sexo, enderecoEmail,perfil);
+
+            
             controleCandidato.alterarCandidato(c);
-            */response.sendRedirect("../perfil.jsp");
+            response.sendRedirect("../perfil.jsp");
 
         %>
     </body>

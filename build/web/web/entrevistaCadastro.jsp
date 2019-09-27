@@ -37,121 +37,151 @@
             %> <p> Acesso Negado </p>
             <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
-            <center>
-                <div class="container" style="width:50%;">
-                    <form name="formulario" class="col s12" action="scripts/entrevistaCadastrar.jsp" method="post">
-                        <div class="card grey lighten-5">
-                            <div class="card-content white-text ">
 
-                                <div class="row">
-                                    <div class="input-field col s12">
+            <div class="container" style="width: 50%;">
+                <div class="col s12 m6">
+                    <div class="card grey lighten-5">
+                        <div class="card-content">
+                            <div class="row">
+
+                                <form name="formulario" class="col s12" action="scripts/entrevistaCadastro.jsp" method="post">
+                                         
+                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <select name="funcionario">
-                                                <option value="" disabled selected>Escolha o Funcionario</option>
-                                                <%ControleEntrevista controleEntrevista = new ControleEntrevista();
-
-                                                    ControleFuncionario controleFuncionario = new ControleFuncionario();
-                                                    for (Funcionario funcionario : controleFuncionario.consultarTodosFuncionarios()) {%>
-                                                <option value="<%=funcionario.getIdPessoa()%>"><%=funcionario.getNomeCompleto()%></option>
-                                                <%}%>
-                                            </select>
-                                            <label>Funcionário</label>
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">payment</i>
+                                                <select name="tipoEntrevista">
+                                                    <option value="" disabled selected>Tipo</option>
+                                                    <option value="Técnica">Técnica</option>
+                                                    <option value="Psicológica">Psicológica</option>
+                                                </select>
+                                                <label>Tipo de Entrevista</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <!--Uma Combo Box contendo os cargos-->
-                                <div class="row">
-                                    <div class="input-field col s12">
+                                    
+                                    <div class="center-row">
                                         <div class="input-field col s12">
-                                            <select name="cargo">
-                                                <option value="" disabled selected>Escolha o Cargo</option>
-                                                <% ControleCargo controleCargos = new ControleCargo();
-                                                    for (Cargo cargo : controleCargos.consultarTodosCargos()) {%>
-                                                <option value="<%=cargo.getIdCargo()%>"><%=cargo.getNomeCargo()%></option>
-                                                <%}%>
-                                            </select>
-                                            <label>Cargo</label>
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">face</i>
+                                                <select name="funcionario">
+                                                    <option value="" disabled selected>Escolha o Funcionario</option>
+                                                    <%ControleEntrevista controleEntrevista = new ControleEntrevista();
+
+                                                        ControleFuncionario controleFuncionario = new ControleFuncionario();
+                                                        for (Funcionario funcionario : controleFuncionario.consultarTodosFuncionarios()) {%>
+                                                    <option value="<%=funcionario.getIdPessoa()%>"><%=funcionario.getNomeCompleto()%></option>
+                                                    <%}%>
+                                                </select>
+                                                <label>Funcionário</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="input-field col s12">
+                                    <div class="center-row">
                                         <div class="input-field col s12">
-                                            <select name="candidato">
-                                                <option value="" disabled selected>Escolha o Candidato</option>
-                                                <%
-                                                    ControleCandidato controleCandidatos = new ControleCandidato();
-                                                    Candidato c = new Candidato();
-
-                                                    for (Candidato candidato : controleCandidatos.consultarTodosCandidatos(c)) {
-
-                                                %>
-                                                <option value="<%=candidato.getIdPessoa()%>"><%=candidato.getNomeCompleto()%></option>
-                                                <%}%>
-
-
-                                               
-                                            </select>
-                                            <label>Candidato</label>
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">work</i>
+                                                <select name="cargo">
+                                                    <option value="" disabled selected>Escolha o Cargo</option>
+                                                    <% ControleCargo controleCargos = new ControleCargo();
+                                                        for (Cargo cargo : controleCargos.consultarTodosCargos()) {
+                                                            if (cargo.getQtdVagas() > 0) {
+                                                    %>
+                                                    <option value="<%=cargo.getIdCargo()%>"><%=cargo.getNomeCargo()%></option>
+                                                    <%  }
+                                                        }
+                                                        session.setAttribute("cargoSelecionado", request.getParameter("cargo"));
+                                                    %>
+                                                </select>
+                                                <label>Cargo</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="input-field col s12">
+                                    <div class="center-row">
                                         <div class="input-field col s12">
-                                            <select name="sessao">
-                                                <option value="" disabled selected>Escolha a Sessão</option>
-                                                <%
-                                                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                                                    ControleAgendamento controleAgendamento = new ControleAgendamento();
-                                                    AgendamentoEntrevista agendamento = new AgendamentoEntrevista();
-                                                    for (AgendamentoEntrevista a : controleAgendamento.consultarTodosAgendamentos(agendamento)) {
-                                                %>
-                                                <option value="<%=a.getIdSessao()%>">Sessão do dia: <%= sdf.format(a.getDataSessao().getTime())%></option>
-                                                <%
-                                                    }%>
-                                            </select>
-                                            <label>Sessão</label>
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">person</i>
+                                                <select name="candidato">
+                                                    <option value="" disabled selected>Escolha o Candidato</option>
+                                                    <%
+                                                        ControleCandidato controleCandidatos = new ControleCandidato();
+                                                        Candidato c = new Candidato();
+
+                                                        for (Candidato candidato : controleCandidatos.consultarTodosCandidatos(c)) {
+
+                                                    %>
+                                                    <option value="<%=candidato.getIdPessoa()%>"><%=candidato.getNomeCompleto()%></option>
+                                                    <%}
+                                                    %>
+                                                </select>
+                                                <label>Candidato</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>           
-                                <div class="row">
-                                    <div class="input-field col s12">
+
+                                    <div class="center-row">
                                         <div class="input-field col s12">
-                                            <select name="faseTecnica">
-                                                <option value="reprovado">Reprovado</option>
-                                                <option value="aprovado">Aprovado</option>
-                                            </select>
-                                            <label>Fase Técnica</label>
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">perm_contact_calendar</i>
+                                                <select name="sessao">
+                                                    <option value="" disabled selected>Escolha a Sessão</option>
+                                                    <%
+                                                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                                                        ControleAgendamento controleAgendamento = new ControleAgendamento();
+                                                        AgendamentoEntrevista agendamento = new AgendamentoEntrevista();
+                                                        for (AgendamentoEntrevista a : controleAgendamento.consultarTodosAgendamentos(agendamento)) {
+                                                    %>
+                                                    <option value="<%=a.getIdSessao()%>">Sessão do dia: <%= sdf.format(a.getDataSessao().getTime())%></option>
+                                                    <%
+                                                }%>
+                                                </select>
+                                                <label>Sessão</label>
+                                            </div>
+                                        </div>
+                                    </div>           
+
+                                    <div class="center-row">
+                                        <div class="input-field col s12">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">thumbs_up_down</i>
+                                                <select name="faseTecnica">
+                                                    <option value="reprovado">Reprovado</option>
+                                                    <option value="aprovado">Aprovado</option>
+                                                </select>
+                                                <label>Fase Técnica</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
+
+                                    <div class="center-row">
                                         <div class="input-field col s12">
-                                            <select name="fasePsicologica">
-                                                <option value="reprovado">Reprovado</option>
-                                                <option value="aprovado">Aprovado</option>
-                                                <option value="andamento">Em Andamento...</option>
-                                            </select>
-                                            <label>Fase Psicológica</label>
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix" >thumbs_up_down</i>
+                                                <select  name="fasePsicologica">
+                                                    <option value="reprovado">Reprovado</option>
+                                                    <option value="aprovado">Aprovado</option>
+                                                    <option value="andamento">Em Andamento...</option>
+                                                </select>
+                                                <label>Fase Psicológica</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
-
-
+                                    <center>
+                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
+                                    </center>
+                        </form>
                             </div>
+                        
                         </div>
-                    </form>
+                        
+                    </div>
                 </div>
-            </center>
+            </div>
+
             <%}
-                %>
+            %>
 
         </main>
 
@@ -201,5 +231,35 @@
                 }
             }
         </script>
+        <script>
+            function aparece()//Função referente ao input número de matrícula
+            {
+                //Variável contendo o valor da option
+                var comboBox = document.getElementById("tipoEntrevista").value;
+                //Variável contendo o input do nº da matrícula 
+                var mathmagic = document.getElementById("faseTecnica");
+                //Variável referente a Label
+                var label = document.getElementById("mabel");
+                //Variável referente ao ícone
+                var icon = document.getElementById("icone");
+
+                if (comboBox == "funcionario") {
+                    icon.style.display = "block";
+                    label.style.display = "block";
+                    mathmagic.setAttribute("type", "text");
+                } else {
+                    icon.style.display = "none";
+                    label.style.display = "none";
+                    mathmagic.setAttribute("type", "hidden");
+
+
+                }
+
+
+
+            }
+
+        </script>
+        
     </body>
 </html>

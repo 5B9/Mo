@@ -27,8 +27,7 @@
         </header>
 
         <main>
-            <center>
-                <%
+                 <%
                     if (!logado || u.getTipoUsuario().equals("candidato")) {
                 %> <p> Acesso Negado </p>
                 <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
@@ -37,21 +36,23 @@
                 <div class="container" style="width: 50%;">
                     <div class="col s12 m6">
                         <div class="card grey lighten-5">
-                            <div class="card-content white-text ">
+                            <div class="card-content black-text ">
 
                                 <div class="row">
                                     <form class="col s12" action="scripts/cargoCadastrar.jsp" method="post" name="formulario">
 
-                                        <div class="row">
-                                            <div class="input-field col s12">
+                                        <div class="center-row">
+                                            <div class="input-field col s5">
+                                                <i class="material-icons prefix">looks_one</i>
                                                 <input placeholder="..."  value="0" type="number" name="vagas">
                                                 <label for="vagas">Quantidade de Vagas</label>
                                             </div>
                                         </div>
 
-                                        <div class="row" >
+                                        <div class="center-row" >
 
-                                            <div class="input-field col s12">
+                                            <div class="input-field col s6">
+                                                <i class="material-icons prefix">school</i>
                                                 <select name="descricao">
                                                     <option value="Ensino Fudamental Incompleto">Ensino Fundamental Incompleto</option>
                                                     <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
@@ -66,21 +67,25 @@
                                         </div>
 
 
-
-                                        <div class="row">
-                                            <div class="input-field col s12">
+                                        <div class="center-row">
+                                            <div class="input-field col s4">
+                                                <i class="material-icons prefix">edit</i>
                                                 <input placeholder="...." id="first_name" type="text" name="nome"class="validate">
                                                 <label for="nome">Nome Cargo</label>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
+                                        
+                                        <div class="center-row">
+                                            <div class="input-field col s4">
+                                                 <i class="material-icons prefix">attach_money</i>
                                                 <input placeholder="1300" id="first_name" type="text" name="salario"class="validate">
                                                 <label for="salario">Salário</label>
                                             </div>
                                         </div>
+                                        
                                         <div class="row">
-                                            <div class="input-field col s12">
+                                            <div class="input-field col s3">
+                                                <i class="material-icons prefix">receipt</i>
                                                 <select  name="modalidade">
                                                     <option value="CLT">CLT</option>
                                                     <option value="Contrato">Contrato</option>
@@ -100,7 +105,7 @@
                         </div>
                     </div>
                 </div>
-            </center>
+            
         </main>
 
         <footer>

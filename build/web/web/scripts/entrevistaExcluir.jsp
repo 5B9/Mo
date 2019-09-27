@@ -19,9 +19,10 @@
             int id=Integer.parseInt(request.getParameter("idEntrevista"));
 
             ControleEntrevista controleEntrevista = new ControleEntrevista();
-            controleEntrevista.excluirEntrevista(controleEntrevista.consultarEntrevistaPorId(id) );
-
-            response.sendRedirect("../entrevistaLista.jsp");
+            Entrevista entrevista = controleEntrevista.consultarEntrevistaPorId(id);
+            Entrevista e = new Entrevista(entrevista.getIdEntrevista(), entrevista.getFuncionarioMinistrante(), entrevista.getCargo(), entrevista.getFasePsicologica(), entrevista.isFaseTecnica(), entrevista.getCandidato(), true,true);
+            controleEntrevista.alterarEntrevista(entrevista);
+            response.sendRedirect("../listaEntrevistas.jsp");
          %>
     </body>
 </html>

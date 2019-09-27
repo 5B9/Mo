@@ -16,7 +16,7 @@
 
             int id = Integer.parseInt(request.getParameter("id"));
             String data = request.getParameter("data");
-            String nomeUsuario = request.getParameter("endereco");
+            String nomeUsuario = request.getParameter("nomeUs");
             String senha = request.getParameter("senha");
             String tipoFuncionario = request.getParameter("tipoFuncionario");
             String tipoUsuario = request.getParameter("tipoUsuario");
@@ -31,7 +31,7 @@
 
             ControleFuncionario controleFuncionario = new ControleFuncionario();
             controleFuncionario.alterarFuncionario(funcionario);
-            response.sendRedirect("../funcionarioLista.jsp");
+            response.sendRedirect("../listaFuncionarios.jsp");
 
         %>
     </body>

@@ -42,51 +42,53 @@
                 Entrevista ei = e.consultarEntrevistaPorId(idEntevista);
             %>
 
-            <center>
-                <div class="container" style="width: 50%;">
-                    <form class="col s12" action="scripts/finalizarProcesso.jsp" method="post" name="formulario">
-
+                <br>
+                <div class="container" style="width: 40%; height:30%;">
+                    <div class="col s12 m6">
                         <div class="card grey lighten-5">
-                            <div class="card-content white-text ">
-
+                            <div class="card-content">
                                 <div class="row">
-                                    <div class="input-field col s12">
-                                        <input placeholder="" id="first_name" type="hidden" name="idEntrevista" value="<%= idEntevista%>"class="validate"/>
-                                    </div>
-                                </div>
+                                    <form class="col s12" action="scripts/finalizarProcesso.jsp" method="post" name="formulario">
 
 
 
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <div class="input-field col s12">
-                                            <select name="fasePsicologica">
-
-
-                                                <option value="aprovado">Aprovado</option>
-
-                                                <option value="reprovado">Reprovado</option>
-
-                                            </select>
-                                            <label>Andamento na Entrevista Psicológica</label>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input placeholder="" id="first_name" type="hidden" name="idEntrevista" value="<%= idEntevista%>"class="validate"/>
+                                            </div>
                                         </div>
-                                    </div>
+
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <div class="input-field col s12">
+                                                    <i class="material-icons prefix">people_outline</i>
+                                                    <select name="fasePsicologica">
+
+
+                                                        <option value="aprovado">Aprovado</option>
+
+                                                        <option value="reprovado">Reprovado</option>
+
+                                                    </select>
+                                                    <label>Andamento na Entrevista Psicológica</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            <center>
+                                        <button  class="waves-effect waves-light btn indigo " type="submit" name="salvar" onclick="return validar()"><span>Finalizar</span></button>
+                                            </center>
+
+                                    </form>
+
+
+                                  
                                 </div>
-
-                                <button  class="waves-effect waves-light btn indigo " type="submit" name="salvar" onclick="return validar()"><span>Finalizar</span></button>
-
                             </div>
                         </div>
-                    </form>
-
-
-                    <% }%>
+                    </div>
                 </div>
-                <!--Esse fechamento de tags está confuso
-                    Veje se está certo =P -->
-
-
-            </center>
+  <% }%>
+            
         </main>
 
         <footer>

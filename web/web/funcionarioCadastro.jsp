@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
         <%
             session = request.getSession();
             Usuario u = (Usuario) session.getAttribute("usuario");
@@ -19,12 +18,15 @@
                 logado = true;
             }
         %>
+
     </head>
     <body>
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
+
         <main>
+
             <%
                 if (!logado || u.getTipoUsuario().equals("candidato")) {
             %> <p> Acesso Negado </p>
@@ -34,14 +36,17 @@
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
+
                             <div class="row">
-                                <form class="col s12" name="formulario" action="scripts/funcionarioCadastrar.jsp" method="post">
+                                <form class="col s12" action="scripts/funcionarioCadastro.jsp" method="post">
+
                                     <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="funcionario"class="validate"/>
                                     <div class="center-row">
+
                                         <div class="input-field col s6">
                                             <div class="input-field col s7">
                                                 <i class="material-icons prefix">supervisor_account</i>
-                                                <select id="tipoFuncionario" name="tipoFuncionario">
+                                                <select name="tipoFuncionario">
                                                     <option value="" disabled selected>Escolha o Tipo</option>
                                                     <option value="gerente">Gerente</option>
                                                     <option value="funcionario">Funcionário</option>
@@ -50,6 +55,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="center-row">
                                         <div class="input-field col s5">
                                             <i class="material-icons prefix">call_to_action</i>
@@ -57,6 +63,24 @@
                                             <label for="matricula">Nº matrícula</label>
                                         </div>
                                     </div>
+
+
+                                   
+
+                                    <!--<div class="row">
+                                        <div class="input-field col s12">
+                                            <input placeholder="" id="first_name" type="text" name="nomeUsuario" class="validate">
+                                            <label for="nomeUsuario">Nome de Usuário</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input placeholder="" id="first_name" type="password" name="senha" class="validate">
+                                            <label for="senha">senha</label>
+                                        </div>
+                                    </div>-->
+
                                     <div class="center-row">
                                         <div class="input-field col s8">
                                             <i class="material-icons prefix">person</i>
@@ -64,20 +88,23 @@
                                             <label for="nome">Nome Completo</label>
                                         </div>
                                     </div>
+
                                     <div class="center-row">
                                         <div class="input-field col s4">
                                             <i class="material-icons prefix"> description</i>
-                                            <input placeholder="" id="cpf" type="text" name="cpf" class="validate">
+                                            <input placeholder="" id="first_name" type="text" name="cpf" class="validate">
                                             <label for="cpf">CPF</label>
                                         </div>
                                     </div>
+
                                     <div class="center-row">
                                         <div class="input-field col s4">
                                             <i class="material-icons prefix"> featured_play_list</i>
-                                            <input placeholder="" id="rg" type="text" name="rg" class="validate">
+                                            <input placeholder="" id="first_name" type="text" name="rg" class="validate">
                                             <label for="rg">RG</label>
                                         </div>
                                     </div>
+
                                     <div class="center-row">
                                         <div class="input-field col s5">
                                             <div class="input-field col s5">
@@ -91,13 +118,15 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="center-row">
+                                    
+                                     <div class="center-row">
                                         <div class="input-field col s3">
                                             <i class="material-icons prefix">today</i>
-                                            <input placeholder="..." type="text" name="data" class="datepicker">
+                                            <input placeholder="..." id="first_name" type="text" name="data" class="datepicker">
                                             <label for="data">Data de admissão</label>
                                         </div>
                                     </div>
+
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <i class="material-icons prefix">alternate_email</i>
@@ -106,9 +135,10 @@
                                             <span class="helper-text" data-error="E-mail inválido" data-success="Ok!"></span>
                                         </div>
                                     </div>
+
                                     <center>
                                         <!--    <input type="submit" name="salvar" value="Cadastrar" class="waves-effect waves-ligth  btn indigo"/> -->
-                                        <button onclick="return validar()" class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
+                                        <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar"><span>Cadastrar</span></button>
                                     </center>
                                 </form>
                             </div>
@@ -116,58 +146,27 @@
                     </div>
                 </div>
             </div>
+
             <% }%>
+
         </main>
+
         <footer>
             <jsp:include page="rodape.jsp" flush="true" />
         </footer>                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-                                            $(document).ready(function () {
-                                                $('select').formSelect();
-                                                $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
-                                                $('.datepicker-date-display').css("background-color", "#003366");
-                                                var $campoCpf = $("#cpf");
-                                                var $campoRg = $("#rg");
-                                                $campoCpf.mask('000.000.000-00', {reverse: true});
-                                                $campoRg.mask('000.000.000-00', {reverse: true});
-                                            });
+            $(document).ready(function () {
+                $('select').formSelect();
+            });
         </script>
         <script>
-            function validar() {
-                if (document.formulario.tipoFuncionario.value == "") {
-                    alert("Por favor, insira o tipo de funcionario.");
-                    return false;
-                }
-                if (document.formulario.matricula.value == "") {
-                    alert("Por favor, insira um nº de matrícula.");
-                    return false;
-                }
-                if (document.formulario.nome.value == "") {
-                    alert("Por favor, insira o nome do funcionário.");
-                    return false;
-                }
-                if (document.formulario.cpf.value == "") {
-                    alert("Por favor, insira o CPF do funcionario.");
-                    return false;
-                }
-                if (document.formulario.rg.value == "") {
-                    alert("Por favor, insira o RG do funcionario.");
-                    return false;
-                }
-                if (document.formulario.sexo.value == "") {
-                    alert("Por favor, insira o sexo do funcionario.");
-                    return false;
-                }
-                if (document.formulario.data.value == "") {
-                    alert("Por favor, insira a data de admissão funcionario.");
-                    return false;
-                }
-                if (document.formulario.endereco.value == "") {
-                    alert("Por favor, insira o endereço de e-mail do funcionáirio.");
-                    return false;
-                }
-            }
+                                            $(document).ready(function () {
+                                                $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
+                                                $('.datepicker').datepicker({minDate: new Date()});
+                                                $('.datepicker-date-display').css('background-color', '#003366');
+                                            });
         </script>
+
     </body>
 </html>

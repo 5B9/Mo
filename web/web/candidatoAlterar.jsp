@@ -1,5 +1,7 @@
 <%@page import="br.edu.ifpr.irati.modelo.Cargo"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCargo"%>
+<%@page import="br.edu.ifpr.irati.modelo.Curriculo"%>
+<%@page import="br.edu.ifpr.irati.controle.ControleCurriculo"%>
 <%@page import="br.edu.ifpr.irati.modelo.Candidato"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCandidato"%>
 
@@ -11,7 +13,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
     </head>
     <body>
         <header>
@@ -38,6 +39,63 @@
                                     <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="candidato" class="validate"/>
                                     <input placeholder="" id="first_name" type="hidden" name="idCandidato" value="<%= idCandidato%>" class="validate"/>
 
+                                     <div class="center-row">
+                                        <div class="input-field col s8">
+                                            <i class="material-icons prefix">person</i>
+                                            <input placeholder=""  id="nomeCompleto" type="text" name="nomeCompleto" value="<%=c.getNomeCompleto() %>" class="validate" maxlength="60">
+                                            <label for="nomeCompleto">Nome Completo*</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="center-row">
+                                        <div class="input-field col s3">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">wc</i>
+                                                <select name="sexo">
+                                                    <option value="" disabled selected>Sexo</option>
+                                                    <option value="M">Masculino</option>
+                                                    <option value="F">Feminino</option>
+                                                </select>
+                                                <label>Sexo*</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="center-row">
+                                        <div class="input-field col s3">
+                                            <i class="material-icons prefix">perm_contact_calendar</i>
+                                            <input placeholder=""  id="idade" type="text" name="idade" value="<%=c.getIdade() %>" class="validate" maxlength="2">
+                                            <label for="idade">Idade*</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="center-row">
+                                        <div class="input-field col s4">
+                                            <i class="material-icons prefix"> description</i>
+                                            <input placeholder="" id="cpf" type="text" name="cpf" value="<%=c.getCpf()%>" class="validate"   maxlength="11">
+                                            <label for="cpf">CPF*</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="center-row">
+                                        <div class="input-field col s4">
+                                            <i class="material-icons prefix"> featured_play_list</i>
+                                            <input placeholder="" id="rg"  type="text" name="rg" value="<%=c.getRg()%>" class="validate" maxlength="9">
+                                            <label for="rg">RG*</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">                        
+                                        <div class="input-field col s11">
+                                            <i class="material-icons prefix">alternate_email</i>
+                                            <input id="endereco"  name="endereco" type="email" value="<%=c.getEnderecoEmail()%>" class="validate">
+                                            <label for="email">Email</label>
+                                            <span class="helper-text" data-error="E-mail inválido" data-success="Ok!">Obrigatório caso deseje receber nossa resposta.</span>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <hr>
+                                    <br>
                                     <div class="center-row" >
                                         <div class="input-field col s6">
                                             <div class="input-field col s9">
@@ -56,87 +114,49 @@
                                         </div>
                                     </div>
 
-                                    <div class="center-row">
-                                        <div class="input-field col s6">
-                                            <div class="input-field col 10">
-                                                <i class="material-icons prefix">work</i>
-                                                <select name="cargoDesejado">
-                                                    <option value="" disabled selectedvalue="<%=c.getCargoDesejado()%>"></option>
-                                                    <%ControleCargo cr = new ControleCargo();
-                                                            for (Cargo cg : cr.consultarTodosCargos()) {%>
-                                                    <option value="<%=cg.getNomeCargo()%>"><%=cg.getNomeCargo()%></option>
-                                                    <%}%>
-                                                </select>
-                                                <label>Cargo Desejado</label> 
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="center-row">
-                                        <div class="input-field col s2">
-                                            <i class="material-icons prefix">perm_contact_calendar</i>
-                                            <input placeholder="" value="<%=c.getIdade()%>"  id="idade" type="text" name="idade" class="validate" maxlength="2">
-                                            <label for="idade">Idade</label>
-                                        </div>
-                                    </div>
-
-
-
-
-
-
-                                    <div class="center-row">
-                                        <div class="input-field col s5">
-                                            <i class="material-icons prefix">person</i>
-                                            <input placeholder="" id="nomeCompleto" type="text" name="nome" value="<%=c.getNomeCompleto()%>"class="validate">
-                                            <label for="nomeCompleto">Nome Completo</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="center-row">
-                                        <div class="input-field col s4">
-                                            <i class="material-icons prefix"> description</i>
-                                            <input placeholder="" id="first_name" type="text" name="cpf" value="<%=c.getCpf()%>" class="validate" maxlength="11">
-                                            <label for="cpf">CPF</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="center-row">
-                                        <div class="input-field col s3">
-                                            <i class="material-icons prefix"> featured_play_list</i>
-                                            <input placeholder="" id="first_name" type="text" name="rg" value="<%=c.getRg()%>" class="validate" maxlength="9">
-                                            <label for="rg">RG</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="center-row">
-                                        <div class="input-field col s3">
-                                            <div class="input-field col s12">
-                                                <i class="material-icons prefix">wc</i>
-                                                <select name="sexo">
-                                                    <option value="M">Masculino</option>
-                                                    <option value="F">Feminino</option>
-                                                </select>
-                                                <label>Sexo</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <i class="material-icons prefix">alternate_email</i>
-                                            <input placeholder="" id="first_name" type="text" name="endereco" value="<%=c.getEnderecoEmail()%>"class="validate">
-                                            <label for="enderecoEmail">Endereço de Email</label>
+                                            <div class="input-field col s10">
+                                                <i class="material-icons prefix">work</i>
+                                                <select name="cargoDesejado">
+                                                    <option value="" disabled selected>Cargo Desejado</option>
+                                                    <%ControleCargo cr = new ControleCargo();
+
+                                                        for (Cargo ca : cr.consultarTodosCargos()) {%>
+                                                    <option value="<%=ca.getNomeCargo()%>"><%=ca.getNomeCargo()%></option>
+                                                    <%}%>
+                                                </select>
+                                                <label>Cargo Desejado*</label>
+                                            </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <i class="material-icons prefix">mode_edit</i>
-                                                <textarea id="formacoes" class="materialize-textarea" data-length="280"></textarea>
-                                                <label for="formacoes">Formações Profissionais</label>
+                                                <i class="material-icons prefix">book</i>
+                                                <textarea id="formacoesAcademicas" value="<%=c.getFormacoesAcademicas()%>" class="materialize-textarea" data-length="280"></textarea>
+                                                <label for="formacoes">Formação Acadêmica/titulação</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">format_list_bulleted</i>
+                                                <textarea id="formacoesComplementares" class="materialize-textarea" value="<%=c.getFormacoesComplementares()%>" data-length="280"></textarea>
+                                                <label for="formacoes">Formações Complementares</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">business_center</i>
+                                                <textarea id="formacoesProfissional" class="materialize-textarea" value="<%=c.getFormacoesProfissionais()%>" data-length="280"></textarea>
+                                                <label for="formacoes">Atuação Profissional</label>
                                             </div>
                                         </div>
                                     </div>
@@ -200,14 +220,6 @@
                     return true;
                 }
             }
-        </script>
-        <script>
-            $(document).ready(function () {
-                var $campoCpf = $("#cpf");
-                var $campoRg = $("#rg");
-                $campoCpf.mask('000.000.000-00', {reverse: true});
-                $campoRg.mask('000.000.000-00', {reverse: true});
-            });
-        </script>
+        </script>        
     </body>
 </html>

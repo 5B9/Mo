@@ -1,4 +1,15 @@
 
+           /* Candidato c = new Candidato(escolaridade, cargoDesejado, idade, "", perfil, nomeUsuario, senha, tipoUsuario, idCandidato , nomeCompleto, cpf, rg, sexo, enderecoEmail);
+=======
+            Candidato c = new Candidato(escolaridade, cargoDesejado, idade, "", perfil, nomeUsuario, senha, tipoUsuario, idCandidato , nomeCompleto, cpf, rg, sexo, enderecoEmail);
+            */
+           response.sendRedirect("../index.jsp");
+=======
+            Candidato c = new Candidato(escolaridade, cargoDesejado, idade, "", true,true, nomeUsuario, senha, tipoUsuario, idCandidato , nomeCompleto, cpf, rg, sexo, enderecoEmail);
+            ControleCandidato controleCandidato = new ControleCandidato();
+            controleCandidato.alterarCandidato(c);
+            response.sendRedirect("../index.jsp");
+
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCurriculo"%>
 <%@page import="java.util.Date"%>
@@ -32,19 +43,7 @@
             String idade = request.getParameter("idade"); 
             
 
-<<<<<<< HEAD
-           /* Candidato c = new Candidato(escolaridade, cargoDesejado, idade, "", perfil, nomeUsuario, senha, tipoUsuario, idCandidato , nomeCompleto, cpf, rg, sexo, enderecoEmail);
-=======
-            Candidato c = new Candidato(escolaridade, cargoDesejado, idade, "", perfil, nomeUsuario, senha, tipoUsuario, idCandidato , nomeCompleto, cpf, rg, sexo, enderecoEmail);
-            */
-           response.sendRedirect("../index.jsp");
-=======
             Candidato c = new Candidato(escolaridade, cargoDesejado, idade, "", true,true, nomeUsuario, senha, tipoUsuario, idCandidato , nomeCompleto, cpf, rg, sexo, enderecoEmail);
             ControleCandidato controleCandidato = new ControleCandidato();
             controleCandidato.alterarCandidato(c);
-            response.sendRedirect("../index.jsp");
->>>>>>> origin/master
-
-        %>
-    </body>
-</html>
+            response.sendRedirect("../perfil.jsp");

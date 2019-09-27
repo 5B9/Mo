@@ -24,10 +24,10 @@ import org.hibernate.annotations.Proxy;
  *
  * @author Altai
  */
-@Entity (name = "agendamento")
+@Entity(name = "agendamento")
 @Proxy(lazy = false)
 public class AgendamentoEntrevista implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idSessao;
@@ -37,9 +37,13 @@ public class AgendamentoEntrevista implements Serializable {
     private Date horaInicio;
     @Temporal(TemporalType.DATE)
     private Date dataSessao;
-     @Column(name = "cargoSessao", nullable = false, length = 30)
+    @Column(name = "cargoSessao", nullable = false, length = 30)
     private String cargoSessao;
-    @OneToMany(fetch = FetchType.EAGER) 
+    @Column(name = "tipoSessao", nullable = false, length = 30)
+    private String tipoSessao;
+    @Column(name = "desabilitar", nullable = false, length = 30)
+    private boolean desabilitar;
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Entrevista> entrevistas;
 
     public AgendamentoEntrevista() {
@@ -49,39 +53,43 @@ public class AgendamentoEntrevista implements Serializable {
         dataSessao = new Date();
         entrevistas = new ArrayList<>();
         cargoSessao = "";
+        tipoSessao = "";
+        desabilitar = false;
     }
 
-    public AgendamentoEntrevista(int idSessao, String localSessao, Date horaInicio, Date dataSessao, String cargoSessao) {
+    public AgendamentoEntrevista(int idSessao, String localSessao, Date horaInicio, Date dataSessao, String cargoSessao, boolean desabilitar, String tipoSessao) {
         this.idSessao = idSessao;
         this.localSessao = localSessao;
         this.horaInicio = horaInicio;
         this.dataSessao = dataSessao;
         this.cargoSessao = cargoSessao;
+        this.desabilitar = desabilitar;
+        this.tipoSessao = tipoSessao;
         entrevistas = new ArrayList<>();
     }
 
-    public AgendamentoEntrevista(int idSessao, String localSessao, Date horaInicio, Date dataSessao, List<Entrevista> entrevistas, String cargoSessao) {
+    public AgendamentoEntrevista(int idSessao, String localSessao, Date horaInicio, Date dataSessao, List<Entrevista> entrevistas, String cargoSessao, boolean desabilitar) {
         this.idSessao = idSessao;
         this.localSessao = localSessao;
         this.horaInicio = horaInicio;
         this.dataSessao = dataSessao;
         this.entrevistas = entrevistas;
         this.cargoSessao = cargoSessao;
+        this.desabilitar = desabilitar;
     }
 
-    public void adicionarEntrevista(Entrevista entrevista){
+    public void adicionarEntrevista(Entrevista entrevista) {
         this.entrevistas.add(entrevista);
     }
-    
-    public void removerEentrevista(Entrevista entrevista){
+
+    public void removerEentrevista(Entrevista entrevista) {
         this.entrevistas.remove(entrevista);
     }
 
-    
     public Date getHoraInicio() {
         return horaInicio;
     }
-    
+
     public void setHoraInicio(Date horaInicio) {
         this.horaInicio = horaInicio;
     }
@@ -124,5 +132,21 @@ public class AgendamentoEntrevista implements Serializable {
 
     public void setCargoSessao(String cargoSessao) {
         this.cargoSessao = cargoSessao;
+    }
+
+    public boolean isDesabilitar() {
+        return desabilitar;
+    }
+
+    public void setDesabilitar(boolean desabilitar) {
+        this.desabilitar = desabilitar;
+    }
+
+    public String getTipoSessao() {
+        return tipoSessao;
+    }
+
+    public void setTipoSessao(String tipoSessao) {
+        this.tipoSessao = tipoSessao;
     }
 }

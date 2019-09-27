@@ -19,6 +19,8 @@
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
         <main>
+            <style>
+            </style>
             <%
                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                 session = request.getSession();
@@ -33,12 +35,30 @@
             %> <p> Acesso Negado </p>
             <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
+            <br><br>
             <div class="container" style="width: 30%;">
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
                         <div class="card-content">
                             <div class="row">
-                                <form class=" col s12" action="scripts/agendamentoCadastrar.jsp" method="post" name="formulario">
+                                <form class=" col s12" action="scripts/agendamentoCadastro.jsp" method="post" name="formulario">
+
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">payment</i>
+                                                <select name="tipoSessao">
+                                                    <option value="" disabled selected>Tipo</option>
+                                                    <option value="Técnica">Técnica</option>
+                                                    <option value="Psicológica">Psicológica</option>
+                                                </select>
+                                                <label>Tipo da Sessão</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <i class="material-icons prefix">place</i>
@@ -46,6 +66,15 @@
                                             <label for="local">Local</label>
                                         </div>
                                     </div>
+
+                                    <!--   <div class="row">
+                                           <div class="input-field col s12">
+                                               <i class="material-icons prefix">event</i>
+                                               <input placeholder="12/12/2012" id="first_name" type="text" name="dataSessao" class="datepicker">
+                                               <label for="Data">Data da Sessão</label>
+                                           </div>
+                                       </div> -->
+
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <i class="material-icons prefix">event</i>
@@ -53,6 +82,7 @@
                                             <label for="Data">Data da Sessão</label>
                                         </div>
                                     </div>
+
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <i class="material-icons prefix">access_time</i>
@@ -60,13 +90,16 @@
                                             <label for="Horario de Início">Horario de Início</label>
                                         </div>
                                     </div>
+
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <div class="input-field col s12">
                                                 <i class="material-icons prefix">work</i>
                                                 <select name="cargo">
+
                                                     <option value="" disabled selected>Cargo</option>
                                                     <%ControleCargo cr = new ControleCargo();
+
                                                         for (Cargo c : cr.consultarTodosCargos()) {%>
                                                     <option value="<%=c.getNomeCargo()%>"><%=c.getNomeCargo()%></option>
                                                     <%}%>
@@ -75,12 +108,14 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <input placeholder="..." id="vagas" type="hidden" name="vagas" class="validate">
                                             <label id="mabel" style="display:none;" for="vagas">Vagas abertas</label>
                                         </div>
                                     </div>
+
                                     <center>
                                         <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
                                     </center>
@@ -91,6 +126,7 @@
                 </div>
             </div>
             <% }%>
+
         </main>
         <br>
         <footer>
@@ -98,23 +134,15 @@
         </footer>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-                $(document).ready(function () {
-                    $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
-                    $('.datepicker-date-display').css("background-color", "#003366");
-                });
-        </script>
-        <script>
-            $(document).ready(function () {
-                $('.timepicker').timepicker({
-                    twelveHour: false
-                });
-                 $('.timepicker-digital-display').css("background-color","#003366");
-            });
-        </script>
-        <script>
-            $(document).ready(function () {
-                $('select').formSelect();
-            });
+                                            $(document).ready(function () {
+                                                $('.datepicker').datepicker({minDate: new Date()});
+                                                 $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
+                                                 
+                                                $('.datepicker-date-display').css('background-color', '#003366');
+                                                $('.timepicker').timepicker({twelveHour: false});
+                                                $('.timepicker-digital-display').css('background-color', '#003366');
+                                                $('select').formSelect();
+                                            });
         </script>
         <script>
             function validar() {
@@ -132,5 +160,19 @@
                 }
             }
         </script>
+        <script>
+            function aparece()//Função referente a alteração nas vagas abertas para determinado cargo
+            {
+                var comboBox = document.getElementById("cargo").value;
+                //Variável contendo o valor da option
+                var mathmagic = document.getElementById("vagas");
+                //Variável contendo o input da quantidade de cargos
+                var label = document.getElementById("mabel");
+                //Variável referente a Label
+
+
+
+        </script>
+
     </body>
 </html>

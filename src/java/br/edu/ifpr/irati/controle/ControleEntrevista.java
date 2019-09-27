@@ -48,4 +48,9 @@ public class ControleEntrevista {
         return eDAO.buscarPorIdCandidato(id);
     }
     
+        public List<Entrevista> buscarEntrevistaPorSessao(int id) throws PersistenciaException{
+        EntrevistaDAO eDAO = new EntrevistaDAO();
+        return eDAO.buscarEntrevistasPorSessao(id);
+    }
+    
 }

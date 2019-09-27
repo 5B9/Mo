@@ -29,19 +29,39 @@ public class Funcionario extends Usuario implements Serializable {
     private Date dataAdmissao;
     @Column(name = "matricula", nullable = false, length = 15)
     private int matricula;
+    @Column(name = "desabilitar", nullable = false, length = 15)
+    private boolean desabilitar;
 
     public Funcionario() {
         super();
         tipoFuncionario = "";
         dataAdmissao = new Date();
         matricula = 0;
+        desabilitar = false;
     }
 
+    public Funcionario(int matricula,String tipoFuncionario, Date dataAdmissao, String nomeUsuario, String senha, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail, boolean desabilitar) {
+        super(nomeUsuario, senha, tipoUsuario, idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
+        this.tipoFuncionario = tipoFuncionario;
+        this.dataAdmissao = dataAdmissao;
+        this.matricula = matricula;
+        this.desabilitar = desabilitar;
+    }
+    
     public Funcionario(int matricula,String tipoFuncionario, Date dataAdmissao, String nomeUsuario, String senha, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail) {
         super(nomeUsuario, senha, tipoUsuario, idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
         this.tipoFuncionario = tipoFuncionario;
         this.dataAdmissao = dataAdmissao;
         this.matricula = matricula;
+        this.desabilitar = desabilitar;
+    }
+    
+    public Funcionario(int matricula,String tipoFuncionario, Date dataAdmissao, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail, boolean desabilitar) {
+        super(tipoUsuario, idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
+        this.tipoFuncionario = tipoFuncionario;
+        this.dataAdmissao = dataAdmissao;
+        this.matricula = matricula;
+        this.desabilitar = desabilitar;
     }
     
     public Funcionario(int matricula,String tipoFuncionario, Date dataAdmissao, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail) {
@@ -49,6 +69,7 @@ public class Funcionario extends Usuario implements Serializable {
         this.tipoFuncionario = tipoFuncionario;
         this.dataAdmissao = dataAdmissao;
         this.matricula = matricula;
+        this.desabilitar = desabilitar;
     }
 
     public String getTipoFuncionario() {
@@ -73,6 +94,14 @@ public class Funcionario extends Usuario implements Serializable {
 
     public void setMatricula(int matricula) {
         this.matricula = matricula;
+    }
+
+    public boolean isDesabilitar() {
+        return desabilitar;
+    }
+
+    public void setDesabilitar(boolean desabilitar) {
+        this.desabilitar = desabilitar;
     }
 
 }

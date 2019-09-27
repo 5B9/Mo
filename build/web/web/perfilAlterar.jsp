@@ -122,19 +122,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="row">
-                                        <div class="file-field input-field">
-                                            <div class="waves-effect waves-light btn indigo ">
-                                                <span>File</span>
-                                                <input type="file" name="curriculo1" >
-
-                                            </div>
-                                            <div class="file-path-wrapper">
-                                                <input class="file-path validate" type="text" name="curriculo" value="<%=c.getCurriculo() %>">
-                                            </div>
-                                            <label for="curiculo1">Currículo</label>
-                                        </div>
-                                    </div>
+                              
 
 
                                         <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Alterar</span></button>

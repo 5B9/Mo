@@ -5,12 +5,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <meta charset="utf-8"/>
         <title>SGC Acome</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
     </head>
     <body>
         <header>
@@ -36,8 +36,15 @@
                     <div class="card blue-grey lighten-5">
                         <div class="card-content black-text ">
                             <div class="row">
-                                <form class="col s12" action="scripts/candidatoCadastrar.jsp" method="post" name="formulario" >
+
+
+
+                                <form class="col s12" action="scripts/candidatoCadastro.jsp" method="post" name="formulario" enctype="multipart/form-data">
+
                                     <input placeholder="" id="tipoUsuario" type="hidden" name="tipoUsuario" value="candidato" class="validate">
+
+
+
                                     <div class="center-row">
                                         <div class="input-field col s8">
                                             <i class="material-icons prefix">person</i>
@@ -59,6 +66,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="center-row">
                                         <div class="input-field col s3">
                                             <i class="material-icons prefix">perm_contact_calendar</i>
@@ -66,10 +74,11 @@
                                             <label for="idade">Idade*</label>
                                         </div>
                                     </div>
+
                                     <div class="center-row">
                                         <div class="input-field col s4">
                                             <i class="material-icons prefix"> description</i>
-                                            <input placeholder="" id="cpf" type="text" name="cpf" class="validate" maxlength="14">
+                                            <input placeholder="" id="cpf" type="text" name="cpf" class="validate"   maxlength="11">
                                             <label for="cpf">CPF*</label>
                                         </div>
                                     </div>
@@ -77,7 +86,7 @@
                                     <div class="center-row">
                                         <div class="input-field col s4">
                                             <i class="material-icons prefix"> featured_play_list</i>
-                                            <input placeholder="" id="rg" type="text" name="rg" class="validate" maxlength="12">
+                                            <input placeholder="" id="rg"  type="text" name="rg" class="validate" maxlength="9">
                                             <label for="rg">RG*</label>
                                         </div>
                                     </div>
@@ -131,12 +140,43 @@
                                     <div class="row">
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <i class="material-icons prefix">mode_edit</i>
-                                                <textarea id="formacoes" class="materialize-textarea" data-length="280"></textarea>
-                                                <label for="formacoes">Formações Profissionais</label>
+                                                <i class="material-icons prefix">book</i>
+                                                <textarea id="formacoesAcademicas" class="materialize-textarea" data-length="280"></textarea>
+                                                <label for="formacoes">Formação Acadêmica/titulação</label>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">format_list_bulleted</i>
+                                                <textarea id="formacoesComplementares" class="materialize-textarea" data-length="280"></textarea>
+                                                <label for="formacoes">Formações Complementares</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">business_center</i>
+                                                <textarea id="formacoesProfissional" class="materialize-textarea" data-length="280"></textarea>
+                                                <label for="formacoes">Atuação Profissional</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="file-field input-field">
+                                        <div class="btn indigo">
+                                            <span>File</span>
+                                            <input type="file" multiple>
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text" placeholder="Insira sua foto">
+                                        </div>
+                                    </div>
+
 
 
                                     <center>
@@ -203,6 +243,47 @@
                 } else {
                     return true;
                 }
+            }
+        </script>
+
+        <script language="javascript">
+            function valida() {
+                if (valida_cpf(document.getElementById('cpf').value))
+                        else
+                    alert('CPF Inválido');
+            }
+
+            function valida_cpf(cpf) {
+                var numeros, digitos, soma, i, resultado, digitos_iguais;
+                digitos_iguais = 1;
+                if (cpf.length < 11)
+                    return false;
+                for (i = 0; i < cpf.length - 1; i++)
+                    if (cpf.charAt(i) != cpf.charAt(i + 1))
+                    {
+                        digitos_iguais = 0;
+                        break;
+                    }
+                if (!digitos_iguais)
+                {
+                    numeros = cpf.substring(0, 9);
+                    digitos = cpf.substring(9);
+                    soma = 0;
+                    for (i = 10; i > 1; i--)
+                        soma += numeros.charAt(10 - i) * i;
+                    resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+                    if (resultado != digitos.charAt(0))
+                        return false;
+                    numeros = cpf.substring(0, 10);
+                    soma = 0;
+                    for (i = 11; i > 1; i--)
+                        soma += numeros.charAt(11 - i) * i;
+                    resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+                    if (resultado != digitos.charAt(1))
+                        return false;
+                    return true;
+                } else
+                    return false;
             }
         </script>
         <script>

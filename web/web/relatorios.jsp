@@ -38,12 +38,8 @@
         <p> Clique <a href="login.jsp"> aqui</a> para fazer o login. </p> 
         <%} else { %>
         <main>
-
-
-
-
             <br>
-            <div class="container" style="width: 20%; height: 20%;">
+            <div class="container" style="width: 20%;">
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
@@ -60,9 +56,6 @@
                 </div>
             </div>
 
-
-
-            <br><br>
             <div class="container" >
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
@@ -75,6 +68,7 @@
                                             <th>Cargo Desejado</th>
                                             <th>Email</th>
                                             <th>Escolaridade</th>
+                                            <th>Currículo</th>
                                         </tr>
                                     </thead>
 
@@ -88,25 +82,42 @@
                                             <td><%=c.getCargoDesejado()%></td>
                                             <td><%=c.getEnderecoEmail()%></td>
                                             <td><%=c.getEscolaridade()%></td>
+                                            <td>  <a href="scripts/gerarCurriculo.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn-large waves-effect waves-light  btn-small indigo "><i class="material-icons">description</i></a>
+
+
                                         </tr>
                                     </tbody>
                                     <%}%>
+
                                 </table>
+
+
+
                             </div>
-                            </main>
+
+                            <center>
+                                <a href="scripts/gerarPDF.jsp"class="waves-effect waves-light waves-darken-3 btn-small indigo "><i class="material-icons right"></i>Gerar Relatórios</a>
+                            </center>
+
+
+
                         </div>
                     </div>
                 </div>
-            </div>            <% }%>
-            
-            <footer>
-                <jsp:include page="rodape.jsp" flush="true" />
-            </footer>  
+            </div>
+            <br><% }%>
+        </main>
 
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-            <script>
-                $('input#txt_consulta').quicksearch('table#tabela tbody tr');
-            </script>
+        <footer>
+            <jsp:include page="rodape.jsp" flush="true" />
+        </footer>  
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <script>
+            $('input#txt_consulta').quicksearch('table#tabela tbody tr');
+        </script>
+
     </body>
 </html>

@@ -51,11 +51,11 @@
            
             }
             
-                Entrevista e = new Entrevista(idEntrevista, funcionario, cargo, fasePsicologica, faseTecnica, candidato);
+                Entrevista e = new Entrevista(idEntrevista, funcionario, cargo, fasePsicologica, faseTecnica, candidato, true);
                 ControleEntrevista controleEntrevista = new ControleEntrevista();
                 controleEntrevista.alterarEntrevista(e);
 
-                response.sendRedirect("../entrevistaLista.jsp");
+                response.sendRedirect("../listaEntrevistas.jsp");
             
 
 

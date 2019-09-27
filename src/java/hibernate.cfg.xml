@@ -17,5 +17,7 @@
         <mapping class ="br.edu.ifpr.irati.modelo.Entrevista"/>
         <mapping class ="br.edu.ifpr.irati.modelo.Cargo"/>
         <mapping class ="br.edu.ifpr.irati.modelo.AgendamentoEntrevista"/>
+        <mapping class ="br.edu.ifpr.irati.modelo.Curriculo"/>
+        <mapping class ="br.edu.ifpr.irati.modelo.ItemMenu"/>
     </session-factory>
 </hibernate-configuration>

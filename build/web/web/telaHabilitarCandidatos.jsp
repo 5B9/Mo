@@ -35,7 +35,11 @@
             %> <p> Acesso Negado </p>
             <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
-            <br><br>
+             <div class="row">
+                <a href="listaCandidatos.jsp" class="grey lighten-5 waves-effect waves-light btn col s6  " value="" style="color: gray;">Candidatos Habilitados</a>
+                <a href="telaHabilitarCandidatos.jsp" class="light-blue darken-4 waves-effect waves-light btn col s6" value="" style="color: white;">Candidatos Desabilitados</a>
+            </div>
+            <br>
             <div class="container" >
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
@@ -52,8 +56,8 @@
                                             <th>Sexo</th>
                                             <!--  <th>Formações</th> -->
                                             <th>CPF</th>
-                                            <th>Selecionar</th>
                                             <th>Alterar</th>
+                                            <th>Habilitar Candidato</th>
                                            
                                         </tr>
                                     </thead>
@@ -75,18 +79,13 @@
                                             <td><%=c.getSexo()%></td>
                                      <!--   <td><%=c.getFormacoesProfissionais()%></td> -->
                                             <td><%=c.getCpf()%></td>
-                                    <center>
-                                            <td>
-                                                <label>
-                                                    <input type="checkbox" />
-                                                    <span></span>
-                                                </label>
-                                            </td>
-                                    </center>
+                                  
                                             <td>
                                                 <a href="candidatoAlterar.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
                                             </td>
-                                         
+                                            <td>
+                                                <a href="scripts/habilitarCandidato.jsp?idCandidato=<%=c.getIdPessoa()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">add</i></a>
+                                            </td>
 
                                         </tr>
                                     </tbody>
@@ -98,10 +97,7 @@
                                 </table>
                             </div>
                             <br>
-                            <center>
-                                <a href="candidatoCadastro.jsp" class="waves-effect waves-indigo btn-small indigo "><i class="material-icons right"></i>Habilitar</a>
-
-                            </center>
+                          
                             <% }%>
                         </div>
                     </div>

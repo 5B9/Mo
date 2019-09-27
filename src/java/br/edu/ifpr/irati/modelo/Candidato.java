@@ -23,17 +23,20 @@ public class Candidato extends Usuario implements Serializable {
 
     @Column(name = "escolaridade", nullable = false, length = 50)
     private String escolaridade;
-    @Column(name = "cargoDesejado", nullable = false, length = 15)
+    @Column(name = "cargoDesejado", nullable = false, length = 50)
     private String cargoDesejado;
     @Column(name = "idade", nullable = false, length = 2)
     private String idade;
-    @Column(name = "formacoes", nullable = true, length = 200)
+    @Column(name = "formacoesAcademicas", nullable = true, length = 200)
+    private String formacoesAcademicas;
+    @Column(name = "formacoesComplementares", nullable = true, length = 200)
+    private String formacoesComplementares;
+    @Column(name = "formacoesProfissionais", nullable = true, length = 200)
     private String formacoesProfissionais;
     @Column(name = "perfilPreenchido", nullable = false, length = 15)
     private boolean perfilPreenchido;
-     @Column(name = "desabilitar", nullable = false, length = 15)
+    @Column(name = "desabilitar", nullable = false, length = 15)
     private boolean desabilitar;
-    
 
     public Candidato() {
         super();
@@ -42,34 +45,43 @@ public class Candidato extends Usuario implements Serializable {
         idade = "";
         perfilPreenchido = false;
         desabilitar = false;
+        formacoesAcademicas = "";
+        formacoesComplementares = "";
+        formacoesProfissionais = "";
     }
 
-    public Candidato(String escolaridade, String cargoDesejado, String idade, String formacoesProfissionais, boolean perfilPreenchido,boolean desabilitar, String nomeUsuario, String senha, String tipoUsuario) {
+    public Candidato(String escolaridade, String cargoDesejado, String idade, String formacoesProfissionais, String formacoesAcademicas, String formacoesComplementares, boolean perfilPreenchido, boolean desabilitar, String nomeUsuario, String senha, String tipoUsuario) {
         super(nomeUsuario, senha, tipoUsuario);
         this.escolaridade = escolaridade;
         this.cargoDesejado = cargoDesejado;
         this.idade = idade;
         this.formacoesProfissionais = formacoesProfissionais;
+        this.formacoesAcademicas = formacoesAcademicas;
+        this.formacoesComplementares = formacoesAcademicas;
         this.perfilPreenchido = perfilPreenchido;
         this.desabilitar = desabilitar;
     }
-    
-    public Candidato(String escolaridade, String cargoDesejado, String idade, String formacoesProfissionais, String nomeUsuario, String senha, String tipoUsuario) {
+
+    public Candidato(String escolaridade, String cargoDesejado, String idade, String formacoesProfissionais, String formacoesAcademicas, String formacoesComplementares, String nomeUsuario, String senha, String tipoUsuario) {
         super(nomeUsuario, senha, tipoUsuario);
         this.escolaridade = escolaridade;
         this.cargoDesejado = cargoDesejado;
         this.idade = idade;
         this.formacoesProfissionais = formacoesProfissionais;
+        this.formacoesAcademicas = formacoesAcademicas;
+        this.formacoesComplementares = formacoesAcademicas;
         this.perfilPreenchido = perfilPreenchido;
         this.desabilitar = desabilitar;
     }
 
-    public Candidato(String escolaridade, String cargoDesejado, String idade, String formacoesProfissionais, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail) {
+    public Candidato(String escolaridade, String cargoDesejado, String idade, String formacoesProfissionais, String formacoesAcademicas, String formacoesComplementares, String tipoUsuario, int idPessoa, String nomeCompleto, String cpf, String rg, String sexo, String enderecoEmail) {
         super(tipoUsuario, idPessoa, nomeCompleto, cpf, rg, sexo, enderecoEmail);
         this.escolaridade = escolaridade;
         this.cargoDesejado = cargoDesejado;
         this.idade = idade;
         this.formacoesProfissionais = formacoesProfissionais;
+        this.formacoesAcademicas = formacoesAcademicas;
+        this.formacoesComplementares = formacoesAcademicas;
         this.perfilPreenchido = perfilPreenchido;
         this.desabilitar = desabilitar;
     }
@@ -83,8 +95,7 @@ public class Candidato extends Usuario implements Serializable {
         this.perfilPreenchido = perfilPreenchido;
         this.desabilitar = desabilitar;
     }
-    
-    
+
     public String getEscolaridade() {
         return escolaridade;
     }
@@ -131,6 +142,22 @@ public class Candidato extends Usuario implements Serializable {
 
     public void setDesabilitar(boolean desabilitar) {
         this.desabilitar = desabilitar;
+    }
+
+    public String getFormacoesAcademicas() {
+        return formacoesAcademicas;
+    }
+
+    public void setFormacoesAcademicas(String formacoesAcademicas) {
+        this.formacoesAcademicas = formacoesAcademicas;
+    }
+
+    public String getFormacoesComplementares() {
+        return formacoesComplementares;
+    }
+
+    public void setFormacoesComplementares(String formacoesComplementares) {
+        this.formacoesComplementares = formacoesComplementares;
     }
 
 }

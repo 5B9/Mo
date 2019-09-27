@@ -10,12 +10,18 @@
 <%@page import="br.edu.ifpr.irati.modelo.ItemMenu"%>
 <%@page import="br.edu.ifpr.irati.controle.ControlePaginas"%> 
 
+<style>
+    #dropdown1{
+        top:64px !important;
+    }
+    </style>
+
 <meta charset="utf-8"/>
 
 <ul id="dropdown1" class="dropdown-content">
-    <li><a href="agendamentoLista.jsp"><i class="material-icons left">insert_invitation</i>Agendamentos</a></li>
+    <li><a href="Agendamento.jsp"><i class="material-icons left">insert_invitation</i>Agendamentos</a></li>
     <li class="divider"></li>
-    <li><a href="entrevistaLista.jsp"><i class="material-icons left">add_box</i>Cadastros</a></li>
+    <li><a href="listaEntrevistas.jsp"><i class="material-icons left">add_box</i>Cadastros</a></li>
     <li class="divider"></li>
 
 </ul>
@@ -47,19 +53,19 @@
 
             <li><a href="relatorios.jsp"><i class="material-icons left">create</i>Relatorios</a></li>
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Entrevistas<i class="material-icons left">arrow_drop_down</i></a></li>
-            <li><a href="candidatoLista.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
-            <li><a href="funcionarioLista.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
-            <li><a href="cargoLista.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
+            <li><a href="listaCandidatos.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
+            <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
+            <li><a href="listaCargos.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
             <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
-            <p>Encontra esse file</p>
+
 
 
 
             <%               } else { %>
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Entrevistas<i class="material-icons left">arrow_drop_down</i></a></li>
-            <li><a href="candidatoLista.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
-            <li><a href="funcionarioLista.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
-            <li><a href="cargoLista.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
+            <li><a href="listaCandidatos.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
+            <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
+            <li><a href="listaCargos.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
             <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
                 <%}
                         }
@@ -73,7 +79,7 @@
             %>
             <li><a href="mensagemCandidato.jsp"><i class="material-icons left">comment</i>Mensagens</a></li>
             <li><a href="perfil.jsp"><i class="material-icons left">face</i>Perfil Candidato</a></li>
-            <li><a href="agendamentoCandidatoLista.jsp"><i class="material-icons left">create</i>Agendamentos</a></li>
+            <li><a href="listaAgendamentoCandidato.jsp"><i class="material-icons left">create</i>Agendamentos</a></li>
             <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
 
             <%                }
@@ -83,6 +89,7 @@
             %>
             <li><a href="usuarioCadastro.jsp"><i class="material-icons left">account_circle</i>Usuario</a></li> 
             <li><a href="login.jsp"><i class="material-icons left">power_settings_new</i>Login</a></li> 
+
             <% }
             %>
         </ul>
@@ -102,18 +109,18 @@
     %>
 
     <li><a href="relatorios.jsp"><i class="material-icons left">create</i>Relatorios</a></li>
-    <li><a href="candidatoLista.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
-    <li><a href="funcionarioLista.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
-    <li><a href="cargoLista.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
+    <li><a href="listaCandidatos.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
+    <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
+    <li><a href="listaCargos.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
     <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
 
 
 
 
     <%               } else { %>
-    <li><a href="candidatoLista.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
-    <li><a href="funcionarioLista.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
-    <li><a href="cargoLista.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
+    <li><a href="listaCandidatos.jsp"><i class="material-icons left">face</i>Candidatos</a></li>
+    <li><a href="listaFuncionarios.jsp"><i class="material-icons left">person</i>Funcionários</a></li>
+    <li><a href="listaCargos.jsp"><i class="material-icons left">border_color</i>Cargos</a></li>
     <li><a href="scripts/logout.jsp"><i class="material-icons left">cancel</i>Logout</a></li> 
         <%}
                 }

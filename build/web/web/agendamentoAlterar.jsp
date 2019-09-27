@@ -15,7 +15,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
     </head>
     <body>
-
+        
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
@@ -45,74 +45,78 @@
                 <form class="col s12" action="scripts/agendamentoAlterar.jsp" method="post" name="formulario">
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
-                            <input placeholder="" id="first_name" type="hidden" name="idAgendamento" value="<%=idAgendamento%>" class="validate"/>
+                            <input placeholder="" id="first_name" type="hidden" name="idAgendamento" value="<%= idAgendamento%>" class="validate"/>
+
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <i class="material-icons prefix">place</i>
                                     <input placeholder="" id="first_name" type="text" name="local" value="<%=agendamento.getLocalSessao()%>"class="validate">
                                     <label for="local">Local</label>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <i class="material-icons prefix">event</i>
                                     <input placeholder="12/12/2012" id="first_name" type="text" name="dia" value="<%=sdf.format(agendamento.getDataSessao().getTime())%>"class="datepicker">
                                     <label for="Dia do Evento">Data da Sessão</label>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <i class="material-icons prefix">access_time</i>
                                     <input placeholder="12:12:00" id="first_name" type="text" name="hora" value="<%=sdfHora.format(agendamento.getHoraInicio().getTime())%>"class="timepicker">
                                     <label for="Horario de Início">Horario de Início</label>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <div class="input-field col s12">
-                                        <i class="material-icons prefix">work</i>
-                                        <select name="cargo">
-                                            <option value="" disabled selected>Cargo</option>
-                                            <%ControleCargo cr = new ControleCargo();
-                                                for (Cargo c : cr.consultarTodosCargos()) {%>
-                                            <option value="<%=c.getNomeCargo()%>"><%=c.getNomeCargo()%></option>
-                                            <%}%>
-                                        </select>
-                                        <label>Cargo</label>
+                                    
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <div class="input-field col s12">
+                                                <select name="cargo">
+                                                    <option value="" disabled selected>Cargo</option>
+                                                    <%ControleCargo cr = new ControleCargo();
+
+                                                        for (Cargo c : cr.consultarTodosCargos()) {%>
+                                                    <option value="<%=c.getNomeCargo()%>"><%=c.getNomeCargo()%></option>
+                                                    <%}%>
+                                                </select>
+                                                <label>Cargo</label>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+
                             <center>
                                 <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Alterar</span></button>
                             </center>
+
                         </div>
                         <% }%>
                     </div>
                 </form>
             </div>
         </main>
+
         <footer>
             <jsp:include page="rodape.jsp" flush="true" />
         </footer>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-                                    $(document).ready(function () {
-                                        $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
-                                        $('.datepicker-date-display').css("background-color", "#003366");
-                                    })
+            $(document).ready(function () {
+                $('.datepicker').datepicker({format: 'dd/mm/yyyy'});
+                $('.datepicker').datepicker({minDate: new Date()});
+    });
         </script>
         <script>
             $(document).ready(function () {
                 $('.timepicker').timepicker({
-                    twelveHour: false
-                })
-                $('.timepicker-digital-display').css("background-color","#003366");
+                    twelveHour:false
+                    
+                });
             });
         </script>
         <script>
-            $(document).ready(function () {
-                $('select').formSelect();
-            });
+                                            $(document).ready(function () {
+                                                $('select').formSelect();
+                                            });
         </script>
         <script>
             function validar() {

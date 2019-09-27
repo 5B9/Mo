@@ -43,14 +43,15 @@ public class ControleCandidato {
         CandidatoDAO candidatoDAO = new CandidatoDAO();
         return candidatoDAO.buscarPorCargoDesejado(cargoDesejado);
     }
+    
+    public Candidato consultarCandidatoPorEmail (String email) throws PersistenciaException{
+        CandidatoDAO candidatoDAO = new CandidatoDAO();
+        return candidatoDAO.buscarPorEmail(email);
+    }
 
     public void excluirCandidato(Candidato candidato) throws PersistenciaException {
         Dao<Candidato> candidatoDAO = new GenericDAO<>(Candidato.class);
         candidatoDAO.excluir(candidato);
-    }
-    public boolean validarCadastroCandidatos(String nome, String senha) throws PersistenciaException {
-        CandidatoDAO candidatoDAO = new CandidatoDAO();
-        return candidatoDAO.validarCadastroCandidatos(nome, senha);
     }
 
 }
