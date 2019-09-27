@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 08/05/2018, 11:39:48
-    Author     : Valter Estevam
+    Author     : Altair
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,21 +25,24 @@
                     <div class="card grey lighten-5">
                         <div class="card-content black-text ">
                             <div class="row">
-                                <form class="col s12" method="POST" >
+                              
+                                <form class="col s12" method="POST" action="scripts/esqueceuSenha.jsp" >
                                     <div class="row">
                                         <div class="input-field col s12">
                                             <i class="material-icons prefix">alternate_email</i>
-                                            <input id="email" type="email" class="validate">
+                                            <input id="email" name="email" type="email" class="validate">
                                             <label for="email">Email</label>
-                                            <span class="helper-text" data-error="wrong" data-success="right">Digite seu email</span>
+                                            <span class="helper-text" data-error="Errado!" data-success="Ok!">Digite seu email</span>
                                         </div>
                                         <center>
-                                            <button class="waves-effect waves-light btn indigo" type="submit" name="action">Enviar
+                                            <button class="waves-effect waves-light btn indigo" type="submit"  name="action">Enviar
                                                 <i class="material-icons right">send</i>
                                             </button>
                                         </center>
                                     </div>
                                 </form>
+                                
+                               
                             </div>
                         </div>
                     </div>

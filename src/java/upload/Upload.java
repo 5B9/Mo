@@ -69,7 +69,7 @@ public class Upload extends HttpServlet {
             request.setAttribute("message","Desculpe este Servlet lida apenas com pedido de upload de arquivos");
         }
  
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/login.jsp").forward(request, response);
     }
  
 }
