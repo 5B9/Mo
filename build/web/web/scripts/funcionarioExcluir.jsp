@@ -17,7 +17,7 @@
             Funcionario funcionario = new Funcionario(f.getMatricula(), f.getTipoFuncionario(), f.getDataAdmissao(), f.getTipoUsuario(), id, f.getNomeCompleto(), f.getCpf(), f.getRg(), f.getSexo(), f.getEnderecoEmail(), true);
             controleFuncionario.alterarFuncionario(funcionario);
 
-            response.sendRedirect("../listaFuncionarios.jsp");
+            response.sendRedirect("../funcionarioLista.jsp");
          %>
     </body>
 </html>

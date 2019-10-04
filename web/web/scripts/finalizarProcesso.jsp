@@ -37,7 +37,7 @@
         } else {
             Entrevista e = new Entrevista(entrevista.getIdEntrevista(), entrevista.getFuncionarioMinistrante(), entrevista.getCargo(), fasePsicologica, entrevista.isFaseTecnica(), entrevista.getCandidato(), false, true);
             controleEntrevista.alterarEntrevista(e);
-            response.sendRedirect("../listaEntrevistas.jsp");
+            response.sendRedirect("../entrevistaLista.jsp");
         }
     %>
 </html>

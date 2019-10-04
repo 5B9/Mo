@@ -18,7 +18,7 @@
         int novaQtdVagas = cargo.getQtdVagas() + qtdVagas;
         Cargo c = new Cargo(idCargo, novaQtdVagas, cargo.getDescricao(), cargo.getNomeCargo(), cargo.getSalario(), cargo.getModalidade());
         controleCargo.alterarCargo(c);
-        response.sendRedirect("../listaCargos.jsp");
+        response.sendRedirect("../cargoLista.jsp");
 
     %>
 </html>

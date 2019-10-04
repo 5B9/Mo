@@ -35,7 +35,7 @@
 
             ControleFuncionario controleFuncionario = new ControleFuncionario();
             controleFuncionario.inserirFuncionario(f);
-            response.sendRedirect("../listaFuncionarios.jsp");
+            response.sendRedirect("../funcionarioLista.jsp");
 
         %>
     </body>

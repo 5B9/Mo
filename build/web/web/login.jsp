@@ -72,11 +72,12 @@
                                             <td><%=c.getQtdVagas()%></td>
                                             <td><%=c.getDescricao()%></td>
                                         </tr>
-                                    </table>
+                                    
+                            <%}%>
+                            <%}%>
+                            </table>
                                 </div>
                             </li>
-                            <%}%>
-                            <%}%>
 
                         </ul>
                     </div>

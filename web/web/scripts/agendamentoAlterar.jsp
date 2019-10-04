@@ -35,11 +35,11 @@
 
             
 
-            AgendamentoEntrevista a = new AgendamentoEntrevista(id,local, hora,deto,cargo,false);
+            AgendamentoEntrevista a = new AgendamentoEntrevista(0, local, hora, deto, entrevistas, cargo, false);
             ControleAgendamento controleAgendamento = new ControleAgendamento();
             controleAgendamento.alterarAgendamento(a);
 
-            response.sendRedirect("../Agendamento.jsp");
+            response.sendRedirect("../agendamentoLista.jsp");
         %>
     </body>
 </html>

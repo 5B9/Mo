@@ -22,7 +22,7 @@
             Entrevista entrevista = controleEntrevista.consultarEntrevistaPorId(id);
             Entrevista e = new Entrevista(entrevista.getIdEntrevista(), entrevista.getFuncionarioMinistrante(), entrevista.getCargo(), entrevista.getFasePsicologica(), entrevista.isFaseTecnica(), entrevista.getCandidato(), true,true);
             controleEntrevista.alterarEntrevista(entrevista);
-            response.sendRedirect("../listaEntrevistas.jsp");
+            response.sendRedirect("../entrevistaLista.jsp");
          %>
     </body>
 </html>

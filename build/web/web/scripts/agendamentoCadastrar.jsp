@@ -18,7 +18,7 @@
     </head>
     <body>
         <%
-            ControleEntrevista ce = new ControleEntrevista();
+            /**ControleEntrevista ce = new ControleEntrevista();
             List<Entrevista> entrevistas = new ArrayList<>();
 
            
@@ -40,7 +40,7 @@
             AgendamentoEntrevista a = new AgendamentoEntrevista(0, local, hora, deto,cargo);
             ControleAgendamento controleAgendamento = new ControleAgendamento();
             controleAgendamento.inserirAgendamento(a);
-
+*/
             response.sendRedirect("../agendamentoLista.jsp");
 
         %>

@@ -15,39 +15,33 @@
         <%
             String nome = request.getParameter("usuario");
             String senha = request.getParameter("senha");
-
             session = request.getSession();
-
             if (nome != null && senha != null) {
                 ControleLogin lc = new ControleLogin();
                 try {
-
-                  
-                        Usuario u = lc.login(nome, senha);
-                        session.setAttribute("usuario", u);
-                        if(u.getTipoUsuario().equals("funcionario")){
-                        response.sendRedirect("../listaFuncionarios.jsp");
-                        }if(u.getTipoUsuario().equals("candidato")){
-                            ControleCandidato controle = new ControleCandidato();
-                            Candidato c = controle.consultarCandidatoPorId(u.getIdPessoa());
-                            if(c.isPerfilPreenchido()){
+                    Usuario u = lc.login(nome, senha);
+                    session.setAttribute("usuario", u);
+                    if (u.getTipoUsuario().equals("funcionario")) {
+                        response.sendRedirect("../funcionarioLista.jsp");
+                    }
+                    if (u.getTipoUsuario().equals("candidato")) {
+                        ControleCandidato controle = new ControleCandidato();
+                        Candidato c = controle.consultarCandidatoPorId(u.getIdPessoa());
+                        if (c.isPerfilPreenchido()) {
                             response.sendRedirect("../perfil.jsp");
-                            }else{
-                              response.sendRedirect("../perfilCadastro.jsp");  
-                            }
+                        } else {
+                            response.sendRedirect("../perfilCadastro.jsp");
                         }
+                    }
                 } catch (Exception e) {
                     session.setAttribute("usuario", null);
                     //alterar o valor na variável de sessão
-
                     response.sendRedirect("../login.jsp?e=" + e.getMessage());
                 }
             } else {
                 session.setAttribute("usuario", null);
                 response.sendRedirect("../login.jsp?e= Acesso Negado");
             }
-
-
         %>
     </body>
 </html>
