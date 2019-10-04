@@ -49,16 +49,12 @@
                                             <th>Sexo</th>
                                             <!--  <th>Formações</th> -->
                                             <th>CPF</th>
-
                                             <th>Alterar</th>
                                             <th>Desabilitar</th>
                                         </tr>
                                     </thead>
-
-
                                     <tbody>
                                         <%
-
                                             ControleCandidato controleCandidato = new ControleCandidato();
                                             Candidato candidato = new Candidato();
                                             for (Candidato c : controleCandidato.consultarTodosCandidatos(candidato)) {

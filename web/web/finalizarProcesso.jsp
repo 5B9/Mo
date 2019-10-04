@@ -102,21 +102,5 @@
                 $('select').formSelect();
             });
         </script>
-        <script>
-            function validar() {
-                if (document.formulario.funcionario.value == "") {
-                    alert("Por favor, insira o nível de escolaridade do candidato.");
-                    return false;
-                } else if (document.formulario.cargo.value == "") {
-                    alert("Por favor, insira o cargo desejado.");
-                    return false;
-                } else if (document.formulario.candidato.value == "") {
-                    alert("Por favor, insira o candidato que fará a entrevista.");
-                    return false;
-                } else {
-                    return true;
-                }
-            }
-        </script>
     </body>
 </html>

@@ -1,9 +1,7 @@
-
 <%@page import="java.util.List"%>
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Cargo"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCargo"%>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,7 +23,6 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
-
         <main>
             <%
                 if (!logado || u.getTipoUsuario().equals("candidato")) {
@@ -52,14 +49,11 @@
                                         <th>Abrir Vaga</th>
                                     </tr>
                                 </thead>
-
-
                                 <tbody>
                                     <%ControleCargo controleCargo = new ControleCargo();
-                                      List<Cargo> cargos = controleCargo.consultarTodosCargos();
-                                      
-                                      
-                                        for(int i = 0; i < cargos.size(); i++) {
+                                        List<Cargo> cargos = controleCargo.consultarTodosCargos();
+
+                                        for (int i = 0; i < cargos.size(); i++) {
                                             if (cargos.get(i).getQtdVagas() == 0) {
                                     %>
                                     <tr>
@@ -69,45 +63,27 @@
                                         <td><%=cargos.get(i).getModalidade()%></td>
                                         <td>
                                            <!-- <a href="cargoAlteracao.jsp?idCargo=<%=cargos.get(i).getIdCargo()%>" class="waves-effect waves-indigo darken-3 btn-flat "><i class="material-icons right">refresh</i>Alterar</a> -->
-                                            <a href="cargoAlteracao.jsp?idCargo=<%=cargos.get(i).getIdCargo()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
+                                            <a href="cargoAlterar.jsp?idCargo=<%=cargos.get(i).getIdCargo()%>" class="btn-floating btn waves-effect waves-light  indigo "><i class="material-icons">refresh</i></a>
                                         </td>
                                         <td><!--<a href="scripts/cargoExcluir.jsp?idCargo=<%=cargos.get(i).getIdCargo()%>" class="waves-effect  btn-flat "><i class="material-icons right">delete</i>Excluir</a> -->
                                             <a href="scripts/cargoExcluir.jsp?idCargo=<%=cargos.get(i).getIdCargo()%>" class="btn-floating btn waves-effect waves-light indigo "><i class="material-icons">delete</i></a>
                                         </td>
-
                                         <td>
                                             <a href="abrirVagas.jsp?idCargo=<%=cargos.get(i).getIdCargo()%>" class="btn-floating btn waves-effect waves-light indigo "><i class="material-icons">add</i></a>
                                         </td>
-
                                     </tr>
                                 </tbody>
-
                                 <%  } else { %> 
-                  
-                            
-                                    <%
-
-                                        }
-                                    %>
-
-
-
-
-
-                                    <%
-                                        }
-                                    %>
-
+                                <%
+                                    }
+                                %>
                             </table>
-                         
-                            
                             <% }%>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
-
         <footer>
             <jsp:include page="rodape.jsp" flush="true" />
         </footer>                

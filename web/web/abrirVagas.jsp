@@ -86,27 +86,5 @@
                                                     $('select').formSelect();
                                                 });
         </script>   
-        <script>
-            function validar() {
-                if (document.formulario.vagas.value == "") {
-                    alert("Por favor, insira a quantdade de vagas.");
-                    return false;
-                } else if (document.formulario.descricao.value == "") {
-                    alert("Por favor, insira a descrição desse cargo.");
-                    return false;
-                } else if (document.formulario.nome.value == "") {
-                    alert("Por favor, insira o nome desse cargo.");
-                    return false;
-                } else if (document.formulario.salario.value == "") {
-                    alert("Por favor, insira o motivo desse cargo.");
-                    return false;
-                } else if (document.formulario.modalidade.value == "") {
-                    alert("Por favor, insira a modalidade.");
-                    return false;
-                } else {
-                    return true;
-                }
-            }
-        </script>
     </body>
 </html>

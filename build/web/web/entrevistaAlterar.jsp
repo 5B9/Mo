@@ -146,10 +146,6 @@
 
                     <% }%>
                 </div>
-                <!--Esse fechamento de tags está confuso
-                    Veje se está certo =P -->
-
-
             </center>
         </main>
 

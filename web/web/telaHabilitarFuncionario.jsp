@@ -36,7 +36,7 @@
             <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
             <div class="row">
-                <a href="listaFuncionarios.jsp" class="grey lighten-5 waves-effect waves-light btn col s6  " value="" style="color: gray;">Funcionários Habilitados</a>
+                <a href="funcionarioLista.jsp" class="grey lighten-5 waves-effect waves-light btn col s6  " value="" style="color: gray;">Funcionários Habilitados</a>
                 <a href="telaHabilitarFuncionario.jsp" class="light-blue darken-4 waves-effect waves-light btn col s6" value="" style="color: white;">Funcionários Desabilitados</a>
             </div>
             <br>

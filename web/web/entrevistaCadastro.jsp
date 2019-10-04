@@ -31,22 +31,18 @@
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
         <main>
-
             <%
                 if (!logado || u.getTipoUsuario().equals("candidato")) {
             %> <p> Acesso Negado </p>
             <p> Clique <a href="index.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
-
             <div class="container" style="width: 50%;">
                 <div class="col s12 m6">
                     <div class="card grey lighten-5">
                         <div class="card-content">
                             <div class="row">
-
                                 <form name="formulario" class="col s12" action="scripts/entrevistaCadastro.jsp" method="post">
-                                         
-                                     <div class="row">
+                                    <div class="row">
                                         <div class="input-field col s12">
                                             <div class="input-field col s12">
                                                 <i class="material-icons prefix">payment</i>
@@ -59,7 +55,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="center-row">
                                         <div class="input-field col s12">
                                             <div class="input-field col s12">
@@ -135,7 +131,7 @@
                                                     %>
                                                     <option value="<%=a.getIdSessao()%>">Sessão do dia: <%= sdf.format(a.getDataSessao().getTime())%></option>
                                                     <%
-                                                }%>
+                                                        }%>
                                                 </select>
                                                 <label>Sessão</label>
                                             </div>
@@ -171,11 +167,11 @@
                                     <center>
                                         <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Cadastrar</span></button>
                                     </center>
-                        </form>
+                                </form>
                             </div>
-                        
+
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -190,9 +186,9 @@
         </footer>    
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <script>
-                                    $(document).ready(function () {
-                                        $('select').formSelect();
-                                    });
+                                            $(document).ready(function () {
+                                                $('select').formSelect();
+                                            });
         </script>
         <script>
             function validar() {
@@ -260,6 +256,6 @@
             }
 
         </script>
-        
+
     </body>
 </html>

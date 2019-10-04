@@ -33,7 +33,7 @@
                                 c = controleCandidato.consultarCandidatoPorId(idCandidato);
                             %>
                             <div class="row">
-                                <form class="col s12" action="scripts/alterarCandidato.jsp" name="formulario" method="post">
+                                <form class="col s12" action="scripts/candidatoAlterar.jsp" name="formulario" method="post">
 
 
                                     <input placeholder="" id="first_name" type="hidden" name="tipoUsuario" value="candidato" class="validate"/>

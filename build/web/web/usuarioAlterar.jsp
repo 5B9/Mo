@@ -35,7 +35,7 @@
                                     f = controle.consultarFuncionarioPorId(idFuncionario);
                                 %>
                                 <div class="row">
-                                    <form class="col s12" action="scripts/alterarUsuario.jsp" name="formulario" method="post">
+                                    <form class="col s12" action="scripts/usuarioAlterar.jsp" name="formulario" method="post">
 
 
 

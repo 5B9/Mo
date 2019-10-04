@@ -1,4 +1,3 @@
-
 <%@page import="br.edu.ifpr.irati.modelo.Usuario"%>
 <%@page import="br.edu.ifpr.irati.modelo.Cargo"%>
 <%@page import="br.edu.ifpr.irati.controle.ControleCargo"%>
@@ -23,7 +22,6 @@
         <header>
             <jsp:include page="cabecalho.jsp" flush="true" />
         </header>
-     
         <main>
             <center>
                 <%
@@ -35,17 +33,14 @@
                     <div class="col s12 m6">
                         <div class="card grey lighten-5">
                             <div class="card-content white-text ">
-
                                 <%
                                     int idCargo = Integer.parseInt(request.getParameter("idCargo"));
                                     ControleCargo cc = new ControleCargo();
                                     Cargo c = cc.consultarCargoPorId(idCargo);
                                 %>
                                 <div class="row">
-
                                     <form name="formulario"class="col s12" action="scripts/cargoAlterar.jsp" method="post">
-
-                                        <div class="row"><input placeholder="" id="first_name" type="hidden" name="idCargo" value="<%=idCargo%>" class="validate"/>
+                                        <input placeholder="" id="first_name" type="hidden" name="idCargo" value="<%=idCargo%>" class="validate"/>
                                             <div class="row">
                                                 <div class="input-field col s12">
                                                     <input placeholder="..." id="vagas" type="number" name="vagas" value="<%=c.getQtdVagas()%>" class="validate">
@@ -53,7 +48,6 @@
                                                 </div>
                                             </div>
                                             <div class="row" >
-
                                                 <div class="input-field col s12">
                                                     <select name="descricao">
                                                         <option value="Ensino Fudamental Incompleto">Ensino Fundamental Incompleto</option>
@@ -64,24 +58,20 @@
                                                         <option value="Ensino Superior Completo">Ensino Superior Completo</option>
                                                     </select>
                                                     <label>Exigências</label>
-
                                                 </div>
                                             </div>
-
                                             <div class="row">
                                                 <div class="input-field col s12">
                                                     <input placeholder="..." id="first_name" type="text" name="nome" value="<%=c.getNomeCargo()%>" class="validate">
                                                     <label for="nome">Nome Cargo</label>
                                                 </div>
                                             </div>
-
                                             <div class="row">
                                                 <div class="input-field col s12">
                                                     <input placeholder="1300" id="first_name" type="text" name="salario" value="<%=c.getSalario()%>" class="validate">
                                                     <label for="salario">Salário</label>
                                                 </div>
                                             </div>
-
                                             <div class="row">
                                                 <div class="input-field col s12">
                                                     <select  name="modalidade">
@@ -92,10 +82,7 @@
                                                     <label for="modalidade">Modalidade</label>
                                                 </div>
                                             </div>
-
-
                                             <button  class="waves-effect waves-light btn indigo" type="submit" name="salvar" onclick="return validar()"><span>Alterar</span></button>
-
                                     </form>
 
                                 </div>

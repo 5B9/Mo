@@ -5,8 +5,12 @@
  */
 package br.edu.ifpr.irati.dao;
 
+import br.edu.ifpr.irati.controle.ControleCandidato;
+import br.edu.ifpr.irati.exception.PersistenciaException;
 import br.edu.ifpr.irati.modelo.Candidato;
 import gerais.HibernateUtil;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -39,6 +43,21 @@ public class CandidatoDAO {
         return candidato;
     }
 
-  
+   public boolean validarCadastroCandidatos(String nomeUsuario, String senha){
+          ControleCandidato controleCandidato = new ControleCandidato();
+          Candidato candidato = new Candidato();
+         try {
+             for(Candidato c:controleCandidato.consultarTodosCandidatos(candidato)){
+                 if(c.getNomeUsuario().equals(nomeUsuario)&&c.getSenha().equals(senha)){
+                 return true;
+                 }else{
+                 return false;
+                 }
+             }
+         } catch (PersistenciaException ex) {
+             Logger.getLogger(FuncionarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+         }
+      return false;
+      }
 
 }

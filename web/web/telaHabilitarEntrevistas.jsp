@@ -34,7 +34,7 @@
             <p> Clique <a href="login.jsp"> aqui</a> para fazer o login. </p> 
             <%} else { %>
             <div class="row">
-                <a href="listaEntrevistas.jsp" class="grey lighten-5 waves-effect waves-light btn col s6 " value="" style="color: gray;">Entrevistas em Andamento</a>
+                <a href="entrevistaLista.jsp" class="grey lighten-5 waves-effect waves-light btn col s6 " value="" style="color: gray;">Entrevistas em Andamento</a>
                 <a href="telaHabilitarEntrevistas.jsp" class=" light-blue darken-4 waves-effect waves-light btn col s6" value="" style="color: white;">Entrevistas finalizadas</a>
             </div>
             <br>

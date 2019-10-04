@@ -41,36 +41,33 @@
     <header>
         <jsp:include page="cabecalho.jsp" flush="true" />
     </header>
-
-
-    <%String e = request.getParameter("e");
-        String mensagem = "";
-        if (e != null) {
-            mensagem = e;
-        }%>
     <body>
+
+        <%String e = request.getParameter("e");
+            String mensagem = "";
+            if (e != null) {
+                mensagem = e;
+            }%>
         <main>
-           
 
+            <p><%=mensagem%></p>
 
-                <p><%=mensagem%></p>
-              
-                <!--   <img class="responsive-img" style="width: 60px; height: 60px; margin-top: -47px;" src="imagens/acome.jpg"/> --> 
-                <div class="row">
-                    <div class="col s6 m4">
+            <!--   <img class="responsive-img" style="width: 60px; height: 60px; margin-top: -47px;" src="imagens/acome.jpg"/> --> 
+            <div class="row">
+                <div class="col s6 m4">
                     <div class="card-content black-text ">
                         <ul class="collapsible">
-                            <% ControleCargo controleCargo = new ControleCargo();
-                                for (Cargo c : controleCargo.consultarTodosCargos()) {
-                                    if (c.getQtdVagas() > 0) {%>
                             <li>
-                                <div class="collapsible-header"><i class="material-icons">account_box</i><%=c.getNomeCargo()%></div>
+                                <div class="collapsible-header"><i class="material-icons">account_box</i>Vagas Disponíveis</div>
                                 <div class="collapsible-body">
                                     <table class="striped">
                                         <tr>
                                             <th>Vagas</th>
                                             <th>Exigências</th>
                                         </tr>
+                                        <% ControleCargo controleCargo = new ControleCargo();
+                                            for (Cargo c : controleCargo.consultarTodosCargos()) {
+                                                if (c.getQtdVagas() > 0) {%>
                                         <tr>
                                             <td><%=c.getQtdVagas()%></td>
                                             <td><%=c.getDescricao()%></td>
@@ -80,52 +77,52 @@
                             </li>
                             <%}%>
                             <%}%>
-                            
+
                         </ul>
                     </div>
                 </div>
 
-                   
-                    <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 40px 0px 20px; border: 1px solid #EEE;">
 
-                        <form class="col s12" action="scripts/login.jsp" method="post">
+                <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 40px 0px 20px; border: 1px solid #EEE;">
 
-                            <div class='row'>
-                                <div class='input-field col s12'>
-                                    <input class='autocomplete' type='text' name='usuario' id='usuario' />
-                                    <label for='usuario'>Usuário:</label>
-                                </div>
+                    <form class="col s12" action="scripts/login.jsp" method="post">
+
+                        <div class='row'>
+                            <div class='input-field col s12'>
+                                <input class='autocomplete' type='text' name='usuario' id='usuario' />
+                                <label for='usuario'>Usuário:</label>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class='input-field col s12'>
+                                <input class='autocomplete' type='password' name='senha' id='senha' />
+                                <label for='senha'>Senha: </label>
+                                <span class="helper-text" data-error="E-mail inválido" data-success="Ok!"></span>
                             </div>
 
-                            <div class='row'>
-                                <div class='input-field col s12'>
-                                    <input class='autocomplete' type='password' name='senha' id='senha' />
-                                    <label for='senha'>Senha: </label>
-                                    <span class="helper-text" data-error="E-mail inválido" data-success="Ok!"></span>
-                                </div>
+                            <label style='float: right;'>
+                                <a class='pink-text' href="esqueceuSenha.jsp"><b>Esqueceu a senha?</b></a>
+                            </label>
+                        </div>
 
-                                <label style='float: right;'>
-                                    <a class='pink-text' href="esqueceuSenha.jsp"><b>Esqueceu a senha?</b></a>
-                                </label>
-                            </div>
-
-                            <br>
-                            <center>
-                                <div class='row'>
-                                    <button type='submit' name='btn_login' value="Login" class='col s12 btn btn-large waves-effect indigo'>Login</button>
-                                </div>
-                            </center>
-                        </form>
-                      <center>
-                         <a href="usuarioCadastro.jsp">Criar Conta</a><br>
-                        </center>
                         <br>
-                    </div>
-                
-                      
+                        <center>
+                            <div class='row'>
+                                <button type='submit' name='btn_login' value="Login" class='col s12 btn btn-large waves-effect indigo'>Login</button>
+                            </div>
+                        </center>
+                    </form>
+                    <center>
+                        <a href="usuarioCadastro.jsp">Criar Conta</a><br>
+                    </center>
+                    <br>
                 </div>
-               
-           
+
+
+            </div>
+
+
 
             <div class="section"></div>
             <div class="section"></div>
@@ -134,8 +131,6 @@
             <jsp:include page="rodape.jsp" flush="true" />
         </footer>                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> 
-    </body>
-
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
@@ -146,5 +141,5 @@
         });
 
     </script>
-
+</body>
 </html>
